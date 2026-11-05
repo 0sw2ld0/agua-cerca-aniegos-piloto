@@ -1,0 +1,66 @@
+[
+  {
+    "key": "ves-sector1-grupo1-20261104",
+    "district": "Villa El Salvador",
+    "location": "Sector 1, Grupo 1",
+    "summary": "Aniego y rebalse de alcantarillado reportados en viviendas y vías del sector.",
+    "day": "2026-11-04",
+    "coordinates": [
+      -76.9473219,
+      -12.1873388
+    ],
+    "precision": "Centro referencial del sector; no delimita el aniego",
+    "sources": [
+      {
+        "name": "RPP",
+        "url": "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004"
+      }
+    ],
+    "location_evidence": "ArcGIS World Geocoding: Sector 1 Grupo 1, Villa El Salvador, Lima; score 100, tipo Locality. Consulta 2026-11-05. No es levantamiento del incidente."
+  },
+  {
+    "key": "ves-solidaridad-20261104",
+    "district": "Villa El Salvador",
+    "location": "Exteriores del Hospital de la Solidaridad",
+    "summary": "Una publicación reporta agua acumulada en los accesos del establecimiento. Ubicación precisa pendiente.",
+    "day": "2026-11-04",
+    "coordinates": null,
+    "precision": "Solo referencia del lugar; sin punto verificado",
+    "sources": [
+      {
+        "name": "América Noticias",
+        "url": "https://www.americatv.com.pe/noticias/actualidad/llovizna-genera-aniego-frente-hospital-solidaridad-ves-n524138"
+      }
+    ]
+  },
+  {
+    "key": "vmt-26noviembre-20261104",
+    "district": "Villa María del Triunfo",
+    "location": "Avenida 26 de Noviembre",
+    "summary": "Se reportó acumulación de agua y lodo en la avenida. No se ha identificado el tramo exacto.",
+    "day": "2026-11-04",
+    "coordinates": null,
+    "precision": "Tramo no determinado; sin punto verificado",
+    "sources": [
+      {
+        "name": "RPP",
+        "url": "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004"
+      }
+    ]
+  },
+  {
+    "key": "chorrillos-gorriones-20261104",
+    "district": "Chorrillos",
+    "location": "Pasaje Los Gorriones, primera cuadra de avenida Guardia Civil",
+    "summary": "Se reportó una calle inundada. La dirección todavía requiere verificación espacial.",
+    "day": "2026-11-04",
+    "coordinates": null,
+    "precision": "Dirección publicada; sin punto verificado",
+    "sources": [
+      {
+        "name": "Caretas",
+        "url": "https://caretas.pe/sociedad/llovizna-en-lima-provoca-aniegos-en-vmt-villa-el-salvador-y-chorrillos-reportan-viviendas-inundadas"
+      }
+    ]
+  }
+]

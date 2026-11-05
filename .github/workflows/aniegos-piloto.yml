@@ -1,8 +1,13 @@
-name: Piloto de reportes de aniegos
+name: Reportes recientes de aniegos
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '17,47 * * * *'
 permissions:
-  contents: read
+  contents: write
+concurrency:
+  group: aniegos-feed
+  cancel-in-progress: false
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -11,8 +16,19 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Tests
         run: python3 -m unittest discover -s tools/aniegos/tests -v
-      - name: Generar reporte de prueba
+      - name: Recopilar fuentes
         run: python3 tools/aniegos/generate.py --output resultado
+      - name: Generar archivo para la app
+        run: python3 tools/aniegos/publish.py --report resultado/report.json --output data/aniegos.json
+      - name: Publicar archivo actualizado
+        run: |
+          git add data/aniegos.json
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Actualizar reportes recientes de aniegos'
+            git push
+          fi
       - name: Guardar resultados y fallos
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

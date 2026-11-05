@@ -92,7 +92,7 @@ def article(data, url, feed_entry=None):
     if not news:
         # A publisher's own RSS can supply the timestamp when its page has no JSON-LD.
         # Search-engine dates must never enter this path.
-        if (feed_entry and feed_entry.get('kind') == 'official'
+        if (feed_entry and feed_entry.get('kind') in ('official', 'publisher')
                 and feed_entry.get('url') == url and page.meta.get('og:type') == 'article'):
             return {'url': url, 'title': page.meta.get('og:title', ''),
                     'published_at': feed_entry['published_at'], 'modified_at': None,
@@ -232,11 +232,13 @@ def approved_features(reviews, candidates, now):
 def run(config, output, now, reviews):
     fetch = Fetcher(config['allowed_hosts'])
     discovery, errors, candidates = [], [], []
+    healthy_sources = 0
     urls = {url: 'seed' for url in config['seed_urls']}
     feed_entries = {}
     for feed in config['feeds']:
         try:
             entries = discover(fetch.get(feed['url']), feed['kind'], now)
+            healthy_sources += 1
             discovery.extend({k: v for k, v in item.items() if k != '_body'} for item in entries)
             if feed['kind'] != 'discovery_only':
                 for item in entries:
@@ -247,6 +249,7 @@ def run(config, output, now, reviews):
     for url, provenance in list(urls.items())[:15]:
         try:
             candidates.append(candidate(fetch.get(url), url, now, provenance, feed_entries.get(url)))
+            healthy_sources += 1
         except (OSError, ValueError) as error:
             errors.append({'url': url, 'error': str(error), 'stage': 'article'})
     features, rejected_reviews = approved_features(reviews, candidates, now)
@@ -256,6 +259,7 @@ def run(config, output, now, reviews):
         'automatically_discovered_candidates': sum(c.get('discovered_via') == 'publisher_feed' for c in candidates),
         'rejected_articles': sum(c.get('decision') == 'rejected' for c in candidates),
         'fetch_errors': len(errors), 'reviewed_map_points': len(features),
+        'healthy_sources': healthy_sources,
     }
     report = {'schema_version': 1, 'generated_at': now.isoformat(), 'window_hours': 48,
               'mode': 'local_pilot_not_app_feed', 'counts': counts, 'discovery': discovery,
@@ -281,7 +285,7 @@ def run(config, output, now, reviews):
     (output / 'RESULTADO.md').write_text('\n'.join(lines) + '\n')
     print(json.dumps(counts, ensure_ascii=False, indent=2))
     # Partial success is explicit. A totally failed run must fail CI rather than publish empty success.
-    return 0 if any(c.get('decision') == 'needs_review' for c in candidates) else 2
+    return 0 if healthy_sources > 0 else 2
 
 
 if __name__ == '__main__':

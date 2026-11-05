@@ -1,5 +1,7 @@
-# Agua Cerca · piloto de reportes de aniegos
+# Agua Cerca · reportes recientes de aniegos
 
-Experimento de recopilación de publicaciones recientes. No es un servicio de alertas ni confirma aniegos activos.
+Recopilación de publicaciones y reportes revisados, con cobertura parcial. No confirma que un aniego siga activo.
 
-Ver [funcionamiento y límites](tools/aniegos/README.md). La ejecución manual en Actions conserva resultados como artifacts; no publica datos para la app.
+La app consulta [data/aniegos.json](data/aniegos.json). Actualización programada cada 30 minutos mediante Actions, sujeta a retrasos. Los nuevos artículos se muestran por verificar; solo los incidentes revisados con coordenadas documentadas generan puntos referenciales.
+
+Ver [metodología, fuentes y límites](tools/aniegos/README.md).

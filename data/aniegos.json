@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-05T11:31:12.043594-05:00",
+  "coverage": "partial",
+  "source_errors": 1,
+  "reports": [
+    {
+      "id": -2822031115421324,
+      "kind": "incident",
+      "district": "Villa El Salvador",
+      "location": "Sector 1, Grupo 1",
+      "summary": "Aniego y rebalse de alcantarillado reportados en viviendas y vías del sector.",
+      "date": "2026-11-04",
+      "expires_at": "2026-11-06T00:00:00-05:00",
+      "status": "Situación actual sin confirmar",
+      "coordinates": [
+        -76.9473219,
+        -12.1873388
+      ],
+      "precision": "Centro referencial del sector; no delimita el aniego",
+      "sources": [
+        {
+          "name": "RPP",
+          "url": "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004"
+        }
+      ]
+    },
+    {
+      "id": -2486419936353639,
+      "kind": "incident",
+      "district": "Villa El Salvador",
+      "location": "Exteriores del Hospital de la Solidaridad",
+      "summary": "Una publicación reporta agua acumulada en los accesos del establecimiento. Ubicación precisa pendiente.",
+      "date": "2026-11-04",
+      "expires_at": "2026-11-06T00:00:00-05:00",
+      "status": "Situación actual sin confirmar",
+      "coordinates": null,
+      "precision": "Solo referencia del lugar; sin punto verificado",
+      "sources": [
+        {
+          "name": "América Noticias",
+          "url": "https://www.americatv.com.pe/noticias/actualidad/llovizna-genera-aniego-frente-hospital-solidaridad-ves-n524138"
+        }
+      ]
+    },
+    {
+      "id": -1039885431064824,
+      "kind": "incident",
+      "district": "Villa María del Triunfo",
+      "location": "Avenida 26 de Noviembre",
+      "summary": "Se reportó acumulación de agua y lodo en la avenida. No se ha identificado el tramo exacto.",
+      "date": "2026-11-04",
+      "expires_at": "2026-11-06T00:00:00-05:00",
+      "status": "Situación actual sin confirmar",
+      "coordinates": null,
+      "precision": "Tramo no determinado; sin punto verificado",
+      "sources": [
+        {
+          "name": "RPP",
+          "url": "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004"
+        }
+      ]
+    },
+    {
+      "id": -2267106281634186,
+      "kind": "incident",
+      "district": "Chorrillos",
+      "location": "Pasaje Los Gorriones, primera cuadra de avenida Guardia Civil",
+      "summary": "Se reportó una calle inundada. La dirección todavía requiere verificación espacial.",
+      "date": "2026-11-04",
+      "expires_at": "2026-11-06T00:00:00-05:00",
+      "status": "Situación actual sin confirmar",
+      "coordinates": null,
+      "precision": "Dirección publicada; sin punto verificado",
+      "sources": [
+        {
+          "name": "Caretas",
+          "url": "https://caretas.pe/sociedad/llovizna-en-lima-provoca-aniegos-en-vmt-villa-el-salvador-y-chorrillos-reportan-viviendas-inundadas"
+        }
+      ]
+    },
+    {
+      "id": -3835135891462904,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Las lloviznas en Lima casi igualan un récord de 1970: aniegos, vías inundadas y desagües colapsados en la zona sur",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T13:03:50+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "www.infobae.com",
+          "url": "https://www.infobae.com/peru/2026/11/05/las-lloviznas-en-lima-casi-igualan-un-record-de-1970-aniegos-vias-inundadas-y-desagues-colapsados-en-distritos-del-sur/"
+        }
+      ]
+    },
+    {
+      "id": -536568935701588,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Defensoría del Pueblo supervisa atención de aniegos en distritos de Lima Metropolitana y solicita medidas urgentes para proteger la salud de la población",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T05:18:02+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "www.defensoria.gob.pe",
+          "url": "https://www.defensoria.gob.pe/defensoria-del-pueblo-supervisa-atencion-de-aniegos-en-distritos-de-lima-metropolitana-y-solicita-medidas-urgentes-para-proteger-la-salud-de-la-poblacion/"
+        }
+      ]
+    },
+    {
+      "id": -356573824015246,
+      "kind": "publication",
+      "district": "Villa El Salvador",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Pacientes desafían calles inundadas para llegar al hospital de Villa El Salvador: adultos mayores son los más afectados",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T15:20:59+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "www.infobae.com",
+          "url": "https://www.infobae.com/peru/2026/11/05/pacientes-desafian-calles-inundadas-para-llegar-al-hospital-de-villa-el-salvador-adultos-mayores-son-los-mas-afectados/"
+        }
+      ]
+    },
+    {
+      "id": -1238527932989475,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Lluvias en Perú EN VIVO: precipitaciones por el Fenómeno El Niño en el sur de Lima inundan calles y dejan viviendas afectadas",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T11:42:28+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "www.infobae.com",
+          "url": "https://www.infobae.com/peru/2026/11/05/lluvias-en-peru-en-vivo-precipitaciones-por-el-fenomeno-el-nino-en-el-sur-de-lima-inundan-calles-y-dejan-viviendas-afectadas/"
+        }
+      ]
+    }
+  ]
+}

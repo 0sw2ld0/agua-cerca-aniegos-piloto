@@ -1,14 +1,49 @@
 {
-  "allowed_hosts": ["rpp.pe", "www.americatv.com.pe", "www.defensoria.gob.pe", "news.google.com", "andina.pe", "www.iagua.es"],
+  "allowed_hosts": [
+    "rpp.pe",
+    "www.americatv.com.pe",
+    "www.defensoria.gob.pe",
+    "news.google.com",
+    "andina.pe",
+    "www.iagua.es",
+    "caretas.pe",
+    "www.infobae.com",
+    "larepublica.pe",
+    "elbuho.pe"
+  ],
   "feeds": [
-    {"url": "https://www.defensoria.gob.pe/feed/", "kind": "official"},
-    {"url": "https://news.google.com/rss/search?q=aniego+Lima+when:2d&hl=es-419&gl=PE&ceid=PE:es-419", "kind": "discovery_only"}
+    {
+      "url": "https://www.defensoria.gob.pe/feed/",
+      "kind": "official"
+    },
+    {
+      "url": "https://news.google.com/rss/search?q=aniego+Lima+when:2d&hl=es-419&gl=PE&ceid=PE:es-419",
+      "kind": "discovery_only"
+    },
+    {
+      "url": "https://caretas.pe/feed/",
+      "kind": "publisher"
+    },
+    {
+      "url": "https://www.infobae.com/arc/outboundfeeds/rss/category/peru/",
+      "kind": "publisher"
+    },
+    {
+      "url": "https://larepublica.pe/rss/sociedad.xml",
+      "kind": "publisher"
+    },
+    {
+      "url": "https://elbuho.pe/feed/",
+      "kind": "publisher"
+    }
   ],
   "seed_urls": [
     "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004",
     "https://www.americatv.com.pe/noticias/actualidad/llovizna-genera-aniego-frente-hospital-solidaridad-ves-n524138",
     "https://rpp.pe/lima/actualidad/ves-al-menos-50-familias-afectadas-tras-colapso-del-sistema-de-alcantarillado-por-la-intensa-llovizna-noticia-1716018",
     "https://andina.pe/agencia/noticia-sunass-monitorea-atencion-a-vecinos-afectados-aniego-ves-villa-maria-y-chorrillos-1087999.aspx",
-    "https://www.iagua.es/noticias/redaccion/sunass-fiscaliza-el-alcantarillado-de-lima-ante-un-nino-costero-extraordinario"
+    "https://www.iagua.es/noticias/redaccion/sunass-fiscaliza-el-alcantarillado-de-lima-ante-un-nino-costero-extraordinario",
+    "https://caretas.pe/sociedad/llovizna-en-lima-provoca-aniegos-en-vmt-villa-el-salvador-y-chorrillos-reportan-viviendas-inundadas",
+    "https://www.infobae.com/peru/2026/11/05/las-lloviznas-en-lima-casi-igualan-un-record-de-1970-aniegos-vias-inundadas-y-desagues-colapsados-en-distritos-del-sur/"
   ]
 }
