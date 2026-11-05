@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-05T14:43:01.648086-05:00",
+  "generated_at": "2026-11-05T17:19:40.591694-05:00",
   "coverage": "partial",
   "source_errors": 1,
   "reports": [
@@ -156,24 +156,6 @@
       ]
     },
     {
-      "id": -980508045419418,
-      "kind": "publication",
-      "district": "Villa El Salvador",
-      "location": "Publicación reciente · por verificar",
-      "summary": "Pacientes desafían calles inundadas para llegar al hospital de Villa El Salvador: adultos mayores son los más afectados",
-      "date": "2026-11-05",
-      "expires_at": "2026-11-07T15:20:59+00:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
-      "sources": [
-        {
-          "name": "www.infobae.com",
-          "url": "https://www.infobae.com/peru/2026/11/05/pacientes-desafian-calles-inundadas-para-llegar-al-hospital-de-villa-el-salvador-adultos-mayores-son-los-mas-afectados/"
-        }
-      ]
-    },
-    {
       "id": -2368260803210119,
       "kind": "publication",
       "district": "Villa El Salvador",
@@ -192,20 +174,20 @@
       ]
     },
     {
-      "id": -4282831988837211,
+      "id": -750501486607710,
       "kind": "publication",
-      "district": "Chorrillos",
+      "district": "Lima Metropolitana",
       "location": "Publicación reciente · por verificar",
-      "summary": "SJL lidera lista de distritos con mayor riesgo de inundaciones ante El Niño, según Cenepred: Comas y Chorrillos también figuran entre los más expuestos",
-      "date": "2026-11-04",
-      "expires_at": "2026-11-06T16:35:42+00:00",
+      "summary": "El Niño ya afecta Lima: Se activa una quebrada y lluvias inundan distritos impidiendo el tráfico",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T20:26:26+00:00",
       "status": "Fecha del hecho por verificar",
       "coordinates": null,
       "precision": "Sin punto verificado",
       "sources": [
         {
-          "name": "larepublica.pe",
-          "url": "https://larepublica.pe/sociedad/2026/11/04/san-juan-de-lurigancho-lidera-la-lista-de-distritos-en-riesgo-muy-alto-por-inundaciones-ante-el-nino-segun-cenepred-comas-y-chorrillos-tambien-figuran-entre-los-mas-expuestos-135168"
+          "name": "elbuho.pe",
+          "url": "https://elbuho.pe/2026/11/el-nino-ya-afecta-lima-se-activa-una-quebrada-y-lluvias-inundan-distritos-impidiendo-el-trafico/"
         }
       ]
     },
