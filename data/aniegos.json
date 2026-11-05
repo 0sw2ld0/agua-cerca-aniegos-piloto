@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-05T12:28:48.124964-05:00",
+  "generated_at": "2026-11-05T14:43:01.648086-05:00",
   "coverage": "partial",
-  "source_errors": 0,
+  "source_errors": 1,
   "reports": [
     {
       "id": -2822031115421324,
@@ -138,20 +138,20 @@
       ]
     },
     {
-      "id": -4120311867112626,
+      "id": -3327443709068013,
       "kind": "publication",
       "district": "Lima Metropolitana",
       "location": "Publicación reciente · por verificar",
-      "summary": "Defensoría del Pueblo supervisa atención de aniegos en distritos de Lima Metropolitana y solicita medidas urgentes para proteger la salud de la población",
+      "summary": "Lluvias en Perú EN VIVO: precipitaciones por el Fenómeno El Niño en el sur de Lima inundan calles y dejan viviendas afectadas",
       "date": "2026-11-05",
-      "expires_at": "2026-11-07T05:18:02+00:00",
+      "expires_at": "2026-11-07T11:42:28+00:00",
       "status": "Fecha del hecho por verificar",
       "coordinates": null,
       "precision": "Sin punto verificado",
       "sources": [
         {
-          "name": "www.defensoria.gob.pe",
-          "url": "https://www.defensoria.gob.pe/defensoria-del-pueblo-supervisa-atencion-de-aniegos-en-distritos-de-lima-metropolitana-y-solicita-medidas-urgentes-para-proteger-la-salud-de-la-poblacion/"
+          "name": "www.infobae.com",
+          "url": "https://www.infobae.com/peru/2026/11/05/lluvias-en-peru-en-vivo-precipitaciones-por-el-fenomeno-el-nino-en-el-sur-de-lima-inundan-calles-y-dejan-viviendas-afectadas/"
         }
       ]
     },
@@ -174,38 +174,20 @@
       ]
     },
     {
-      "id": -3327443709068013,
+      "id": -2368260803210119,
       "kind": "publication",
-      "district": "Lima Metropolitana",
+      "district": "Villa El Salvador",
       "location": "Publicación reciente · por verificar",
-      "summary": "Lluvias en Perú EN VIVO: precipitaciones por el Fenómeno El Niño en el sur de Lima inundan calles y dejan viviendas afectadas",
+      "summary": "Bus de El Rápido queda atascado por inundación en Villa El Salvador y conductor no puede salir por el agua",
       "date": "2026-11-05",
-      "expires_at": "2026-11-07T11:42:28+00:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
-      "sources": [
-        {
-          "name": "www.infobae.com",
-          "url": "https://www.infobae.com/peru/2026/11/05/lluvias-en-peru-en-vivo-precipitaciones-por-el-fenomeno-el-nino-en-el-sur-de-lima-inundan-calles-y-dejan-viviendas-afectadas/"
-        }
-      ]
-    },
-    {
-      "id": -776914803680170,
-      "kind": "publication",
-      "district": "Lima Metropolitana",
-      "location": "Publicación reciente · por verificar",
-      "summary": "VES, VMT y SJM amanecen bajo el agua tras intensa llovizna en Lima: inundaciones afectan viviendas y vías",
-      "date": "2026-11-05",
-      "expires_at": "2026-11-07T15:17:04+00:00",
+      "expires_at": "2026-11-07T15:35:04+00:00",
       "status": "Fecha del hecho por verificar",
       "coordinates": null,
       "precision": "Sin punto verificado",
       "sources": [
         {
           "name": "larepublica.pe",
-          "url": "https://larepublica.pe/sociedad/2026/11/05/villa-el-salvador-vmt-y-sjm-amanecen-bajo-el-agua-tras-intensa-llovizna-en-lima-inundaciones-afectan-viviendas-y-vias-488030"
+          "url": "https://larepublica.pe/sociedad/2026/11/05/bus-de-el-rapido-queda-atascado-por-inundacion-en-villa-el-salvador-y-conductor-no-puede-salir-por-el-agua-168840"
         }
       ]
     },
@@ -224,6 +206,24 @@
         {
           "name": "larepublica.pe",
           "url": "https://larepublica.pe/sociedad/2026/11/04/san-juan-de-lurigancho-lidera-la-lista-de-distritos-en-riesgo-muy-alto-por-inundaciones-ante-el-nino-segun-cenepred-comas-y-chorrillos-tambien-figuran-entre-los-mas-expuestos-135168"
+        }
+      ]
+    },
+    {
+      "id": -3530674736147524,
+      "kind": "publication",
+      "district": "Villa El Salvador",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Lima no soporta las lluvias y Villa El Salvador es el primero en inundarse (VIDEO)",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T17:42:56+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "elbuho.pe",
+          "url": "https://elbuho.pe/2026/11/lima-no-soporta-las-lluvias-y-villa-el-salvador-es-el-primero-en-inundarse-video/"
         }
       ]
     }
