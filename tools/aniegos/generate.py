@@ -246,7 +246,7 @@ def run(config, output, now, reviews):
                     feed_entries[item['url']] = item
         except (OSError, ValueError, ET.ParseError) as error:
             errors.append({'url': feed['url'], 'error': str(error), 'stage': 'discovery'})
-    for url, provenance in list(urls.items())[:15]:
+    for url, provenance in sorted(urls.items(), key=lambda item: item[1] == "seed")[:15]:
         try:
             candidates.append(candidate(fetch.get(url), url, now, provenance, feed_entries.get(url)))
             healthy_sources += 1

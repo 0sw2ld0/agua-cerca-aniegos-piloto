@@ -13,13 +13,18 @@ def stable_id(key):
     return -int(hashlib.sha256(key.encode()).hexdigest()[:13], 16)
 
 
+def canonical(url):
+    parts = urlsplit(url)
+    return parts.scheme + '://' + parts.netloc.lower() + parts.path.rstrip('/')
+
+
 def build(report, reviews, now, allowed):
     guard = Fetcher(allowed)
     rows, consumed, ids = [], set(), set()
     for review in reviews:
         for source in review['sources']:
             guard.check(source['url'])
-            consumed.add(source['url'])  # Expired reviewed events must not re-enter as new publications.
+            consumed.add(canonical(source['url']))  # Never renew an expired reviewed event.
         start = datetime.strptime(review['day'], '%Y-%m-%d').replace(tzinfo=PERU)
         expires = start + timedelta(hours=48)
         if not start <= now < expires:
@@ -40,7 +45,7 @@ def build(report, reviews, now, allowed):
                      'status': 'Situación actual sin confirmar', 'coordinates': coords,
                      'precision': review['precision'], 'sources': review['sources']})
     for item in report['candidates']:
-        if item.get('decision') != 'needs_review' or item['url'] in consumed:
+        if item.get('decision') != 'needs_review' or canonical(item['url']) in consumed:
             continue
         guard.check(item['url'])
         stamp = instant(item.get('published_at'))
@@ -52,7 +57,11 @@ def build(report, reviews, now, allowed):
                                       'San Juan de Miraflores') if normalized(name) in title]
         if not districts and 'lima' not in title:
             continue
-        rows.append({'id': stable_id(item['url']), 'kind': 'publication',
+        identifier = stable_id(canonical(item['url']))
+        if identifier in ids:
+            continue
+        ids.add(identifier)
+        rows.append({'id': identifier, 'kind': 'publication',
                      'district': ' / '.join(districts) or 'Lima Metropolitana',
                      'location': 'Publicación reciente · por verificar',
                      'summary': item['title'][:240],
