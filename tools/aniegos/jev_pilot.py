@@ -5,7 +5,9 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
-from generate import Fetcher, PERU, article, instant, normalized, recent_publication
+from urllib.parse import urlsplit
+import xml.etree.ElementTree as ET
+from generate import Fetcher, PERU, article, discover, instant, normalized, recent_publication
 from jev_client import JevClient
 from jev_questions import date_spans, extractive_payload, questions_for, route, verdict, YES
 
@@ -79,6 +81,28 @@ def analyze(document, text, client, now):
             'model': response.get('model'), 'cached': cached}
 
 
+def publisher_entries(config, urls, fetch, now):
+    """Only the publisher's own RSS can supply missing metadata/body."""
+    hosts = {urlsplit(url).hostname for url in urls}
+    entries, failures = {}, []
+    for feed in config.get('feeds', []):
+        if feed['kind'] not in ('official', 'publisher') or urlsplit(feed['url']).hostname not in hosts:
+            continue
+        try:
+            xml = fetch.get(feed['url'])
+            valid = {entry['url']:entry for entry in discover(xml, feed['kind'], now)}
+            for item in ET.fromstring(xml).findall('.//item'):
+                url = item.findtext('link')
+                if url not in valid or urlsplit(url).hostname != urlsplit(feed['url']).hostname:
+                    continue
+                entry = valid[url]
+                entry['_body'] = item.findtext('{http://purl.org/rss/1.0/modules/content/}encoded', '') or entry['_body']
+                entries[url] = entry
+        except Exception as error:
+            failures.append({'source_url':feed['url'], 'error_type':type(error).__name__, 'stage':'publisher_rss'})
+    return entries, failures
+
+
 def run(report, config, output, private, now, budget=0.02, client=None, fetch=None):
     output.mkdir(parents=True, exist_ok=True)
     client = client or JevClient(private, budget=budget, key_file=Path('/nonexistent'), allow_network=True)
@@ -93,14 +117,17 @@ def run(report, config, output, private, now, budget=0.02, client=None, fetch=No
         seen.add(item['url'])
         candidates.append(item)
     candidates = candidates[:MAX_ARTICLES]
+    entries, rss_failures = publisher_entries(config, [item['url'] for item in candidates], fetch, now)
+    failures.extend(rss_failures)
     for item in candidates:
         try:
             fetch.check(item['url'])
-            source = article(fetch.get(item['url']), item['url'])
+            source = article(fetch.get(item['url']), item['url'], entries.get(item['url']))
             if not source or not recent_publication(source['published_at'], now):
                 skipped.append({'source_url':item['url'], 'reason':'missing_or_expired_source_metadata'})
                 continue
-            text_parts = passages(source['_body'])
+            body = source['_body'] or entries.get(item['url'], {}).get('_body', '')
+            text_parts = passages(body)
             if not text_parts:
                 skipped.append({'source_url':item['url'], 'reason':'no_suitable_article_passages'})
                 continue

@@ -49,3 +49,25 @@ class PilotTests(unittest.TestCase):
             content=(Path(d)/'out/report.json').read_text()
             self.assertNotIn('secret must never appear',content)
             self.assertTrue(json.loads(content)['errors'])
+
+class PublisherFallbackTests(unittest.TestCase):
+    def test_official_rss_without_jsonld_reaches_model(self):
+        import html
+        url=DOC['url']
+        class PublicClient(Client):
+            ledger={'attempts':[], 'input_tokens':0,'output_tokens':0,'estimated_cost_usd':0}
+        class Fetch:
+            def check(self,url): pass
+            def get(self,location):
+                if location.endswith('/feed'):
+                    return '<rss xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><item><title>Aniego en Lima</title><link>'+url+'</link><pubDate>Thu, 05 Nov 2026 10:00:00 -0500</pubDate><content:encoded>'+html.escape('<p>Hay un aniego en la calle Las Flores con agua acumulada frente al mercado.</p>')+'</content:encoded></item></channel></rss>'
+                return '<meta property="og:type" content="article"><meta property="og:title" content="Aniego en Lima">'
+        report={'candidates':[{'decision':'needs_review','url':url,'published_at':DOC['published']}], 'errors':[]}
+        config={'feeds':[{'url':'https://rpp.pe/feed','kind':'publisher'}]}
+        with tempfile.TemporaryDirectory() as d:
+            code=run(report,config,Path(d)/'out',Path(d)/'private',NOW,client=PublicClient(),fetch=Fetch())
+            self.assertEqual(code,0)
+            result=json.loads((Path(d)/'out/report.json').read_text())
+            self.assertEqual(result['draft_count'],1)
+            self.assertEqual(result['drafts'][0]['place'],'calle Las Flores con agua acumulada frente al mercado')
+            self.assertNotIn('frente al mercado',(Path(d)/'out/RESUMEN.md').read_text())
