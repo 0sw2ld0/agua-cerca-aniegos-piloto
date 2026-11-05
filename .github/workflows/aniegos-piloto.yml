@@ -1,0 +1,23 @@
+name: Piloto de reportes de aniegos
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Tests
+        run: python3 -m unittest discover -s tools/aniegos/tests -v
+      - name: Generar reporte de prueba
+        run: python3 tools/aniegos/generate.py --output resultado
+      - name: Guardar resultados y fallos
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: aniegos-piloto
+          path: resultado/
+          if-no-files-found: warn
+          retention-days: 7
