@@ -11,7 +11,7 @@ from generate import Fetcher, PERU, article, discover, instant, normalized, rece
 from jev_client import JevClient
 from jev_state import PersistentJevClient, DeferredRequest
 from publish import canonical
-from jev_questions import date_spans, extractive_payload, questions_for, route, verdict, YES
+from jev_questions import confirmed_date, date_extraction, date_spans, questions_for, route, verdict, YES
 
 MAX_ARTICLES = 3
 MAX_PASSAGES = 2
@@ -28,21 +28,34 @@ class Paragraphs(HTMLParser):
             self.parts.append('\n')
 
 
-def passages(body):
+def passages(body, published_day=None):
     if '<' in body:
         parser = Paragraphs()
         parser.feed(body)
         body = ''.join(parser.parts)
     # Preserve abbreviation periods. Each passage is evidence, not an incident yet.
     body = re.sub(r'\b(Av|Jr|Urb)\.', lambda m: m[0][:-1] + '\u2024', body)
-    parts = re.split(r'\n+|(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÑ¿])', body)
-    output = []
-    for part in parts:
-        part = ' '.join(part.replace('\u2024', '.').split())
+    parts = re.split(r'\n+|(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÑ¿])|(?<=[a-záéíóúñ]{3}\.)(?=[A-ZÁÉÍÓÚÑ])', body)
+    parts = [' '.join(part.replace('\u2024', '.').split()) for part in parts]
+    parts = [part for part in parts if part]
+    output, seen = [], set()
+    for i, part in enumerate(parts):
         if (50 <= len(part) <= 1800 and any(word in normalized(part) for word in
-                ('aniego', 'agua acumulada', 'inund', 'hidrojet', 'bomba', 'limpieza'))):
-            if part not in output:
-                output.append(part)
+                ('aniego', 'agua acumulada', 'inund', 'hidrojet', 'bomba', 'limpieza')) and part not in seen):
+            seen.add(part)
+            nearby = tuple((key, parts[j]) for key, j in [('before', i-1), ('after', i+1)]
+                           if 0 <= j < len(parts) and len(parts[j]) <= 1200)
+            output.append((part, nearby) if published_day else part)
+    if published_day:
+        # Prefer one passage with its own recent time cue, even late in the article.
+        # Keep the first eligible passage as well: an undated report can still be useful.
+        floor = (datetime.fromisoformat(published_day) - timedelta(days=2)).date().isoformat()
+        for i, (part, _) in enumerate(output):
+            if any(floor <= cue['date'] <= published_day and not cue['year_inferred']
+                   for cue in date_spans(part, published_day)):
+                if i >= MAX_PASSAGES:
+                    output.insert(1, output.pop(i))
+                break
     return output[:MAX_PASSAGES]
 
 
@@ -60,8 +73,8 @@ def selected(answers, gate, choice, options):
     return key
 
 
-def analyze(document, text, client, now):
-    payload = extractive_payload(document, text)
+def analyze(document, text, client, now, context=()):
+    payload, dates = date_extraction(document, text, context)
     payload['state']['fragments'] = {'passage_0': {'text': text}}
     payload['questions'].update({'passage_0__' + k: v for k, v in questions_for('passage_0').items()})
     response, cached = client.ask(payload)
@@ -69,11 +82,8 @@ def analyze(document, text, client, now):
     values = verdict(answers, 'passage_0')
     state = payload['state']
     place_key = selected(answers, 'has_place', 'place', state['places'])
-    date_key = selected(answers, 'has_explicit_date', 'date', state['dates'])
-    dates = date_spans(text, document['published'][:10])
-    date = dates[int(date_key.split('_')[-1])] if date_key else None
-    # Publication timestamp is NOT an event date. An inferred year remains provisional.
-    day = date['date'] if date and not date['year_inferred'] else None
+    date = confirmed_date(answers, dates)
+    day = date['date'] if date else None
     decision = route(values, day, now) if day else 'review_date'
     return {'source_url': document['url'], 'published_at': document['published'],
             'incident_date': day, 'date_evidence': date,
@@ -129,19 +139,19 @@ def run(report, config, output, private, now, budget=0.02, client=None, fetch=No
                 skipped.append({'source_url':item['url'], 'reason':'missing_or_expired_source_metadata'})
                 continue
             body = source['_body'] or entries.get(item['url'], {}).get('_body', '')
-            text_parts = passages(body)
+            stamp = instant(source['published_at']).astimezone(PERU)
+            text_parts = passages(body, stamp.date().isoformat())
             if not text_parts:
                 skipped.append({'source_url':item['url'], 'reason':'no_suitable_article_passages'})
                 continue
-            stamp = instant(source['published_at']).astimezone(PERU)
             document = {'url':canonical(item['url']), 'title':source['title'], 'published':stamp.isoformat()}
             before = getattr(client, 'new_requests', 0)
             if processed_articles >= MAX_ARTICLES:
                 skipped.append({'source_url':item['url'], 'reason':'run_article_limit'})
                 continue
-            for text in text_parts:
+            for text, context in text_parts:
                 try:
-                    drafts.append(analyze(document, text, client, now))
+                    drafts.append(analyze(document, text, client, now, context))
                 except DeferredRequest as error:
                     skipped.append({'source_url':item['url'], 'reason':str(error)})
             if getattr(client, 'new_requests', before + 1) > before:

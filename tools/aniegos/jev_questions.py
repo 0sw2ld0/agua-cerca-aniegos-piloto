@@ -92,25 +92,62 @@ def date_spans(text, published_day):
             continue
         dates.append({'span': match[0], 'date': day.strftime('%Y-%m-%d'),
                       'year_inferred': not bool(match[3])})
-    for match in re.finditer(r'\b(hoy|ayer|mañana)\b', text, flags=re.IGNORECASE):
-        day = base + timedelta(days={'hoy': 0, 'ayer': -1, 'mañana': 1}[match[0].lower()])
+    relative = {'hoy': 0, 'ayer': -1, 'anteayer': -2,
+                'esta mañana': 0, 'esta madrugada': 0, 'anoche': -1}
+    weekdays = ('lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo')
+    # "El día anterior" has no fixed anchor and bare "mañana" can mean morning.
+    expressions = '|'.join((*relative, *weekdays))
+    for match in re.finditer(r'\b(?:' + expressions + r')\b', text, flags=re.IGNORECASE):
+        span = match[0].lower()
+        if span in relative:
+            day = base + timedelta(days=relative[span])
+        else:
+            if re.search(r'\b(?:próximo|próxima|siguiente)\s*$', text[:match.start()], re.I):
+                continue
+            if re.match(r'\s+\d{1,2}\b', text[match.end():]):
+                continue  # Never read a weekday separately from its explicit calendar date.
+            day = base - timedelta(days=(base.weekday() - weekdays.index(span)) % 7)
         dates.append({'span': match[0], 'date': day.strftime('%Y-%m-%d'), 'year_inferred': False})
     return dates
 
 
-def extractive_payload(document, fragment):
+def date_extraction(document, fragment, context=()):
     places = address_spans(fragment)
     options = {'place_' + str(i): label for i, label in enumerate(places)}
-    dates = date_spans(fragment, document['published'][:10])
-    date_options = {'date_' + str(i): item['span'] for i, item in enumerate(dates)}
     questions = {
         'has_place': {'type': 'noul', 'instructions': '¿Alguna referencia de `places` identifica el lugar principal descrito en `fragment`?'},
-        'has_explicit_date': {'type': 'noul', 'instructions': '¿`fragment` indica la fecha en que ocurrió el aniego?',
-                              'criteria': {'true': 'El fragmento asigna un día absoluto o relativo al episodio.',
-                                           'false': 'Solo conocemos cuándo se publicó el documento o el fragmento no indica un día del episodio.'}},
     }
     if options:
         questions['place'] = {'type': 'choice', 'instructions': '¿Qué referencia de `places` ubica con más detalle el lugar principal descrito en `fragment`?', 'criteria': options}
-    if date_options:
-        questions['date'] = {'type': 'choice', 'instructions': '¿Qué expresión de `dates` indica cuándo ocurrió el aniego de `fragment`?', 'criteria': date_options}
-    return {'model': MODEL, 'state': {'document': document, 'fragment': fragment, 'places': options, 'dates': date_options}, 'questions': questions}
+    dates = {}
+    for segment, text in [('fragment', fragment), *context]:
+        for item in date_spans(text, document['published'][:10]):
+            if len(dates) >= 8:
+                break
+            key = 'date_' + str(len(dates))
+            dates[key] = {**item, 'segment': segment}
+            target = 'fragment' if segment == 'fragment' else 'context.' + segment
+            questions[key] = {
+                'type': 'noul',
+                'instructions': f'¿La expresión literal «{item["span"]}» en `{target}` fecha la ocurrencia o la observación del mismo aniego descrito en `fragment`?',
+                'criteria': {
+                    'true': 'El texto vincula esa expresión con el agua acumulada del mismo episodio y lugar. Si solo indica un día de semana, se refiere a esa semana respecto de la publicación original.',
+                    'false': 'Es una fecha de publicación, una fecha de limpieza o visita sin observación del aniego, un pronóstico, parte de una dirección, otro lugar, otro episodio o no se puede establecer el vínculo.',
+                },
+            }
+    state = {'document': document, 'fragment': fragment, 'context': dict(context), 'places': options}
+    return {'model': MODEL, 'state': state, 'questions': questions}, dates
+
+
+def confirmed_date(answers, dates):
+    supported = []
+    for key, date in dates.items():
+        answer = answers.get(key, {})
+        p = answer.get('noul')
+        if answer.get('type') != 'noul' or type(p) not in (int, float) or not 0 <= p <= 1:
+            raise ValueError('Invalid typed date answer')
+        if p >= YES:
+            supported.append(date)
+    if len({date['date'] for date in supported}) == 1:
+        return next((date for date in supported if not date['year_inferred']), None)
+    return None

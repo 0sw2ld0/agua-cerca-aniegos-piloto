@@ -6,7 +6,7 @@ import unittest
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from generate import instant
 from jev_pilot import analyze, passages, run, selected
-from jev_questions import questions_for
+from jev_questions import confirmed_date, date_extraction, date_spans, questions_for
 
 NOW=instant('2026-11-05T17:00:00Z')
 DOC={'url':'https://rpp.pe/example','title':'Aniego','published':'2026-11-05T10:00:00-05:00'}
@@ -34,6 +34,33 @@ class PilotTests(unittest.TestCase):
         self.assertEqual(len(p),2)
         self.assertIn('Av.',p[0])
         self.assertEqual(passages('Un aniego '+ 'x'*2000),[])
+
+    def test_dated_passage_is_considered_after_two_undated_leads(self):
+        lead = 'Vecinos reportan aniegos en varios sectores de Lima Sur.'
+        other = 'En una de las calles anegadas se interrumpió el tránsito por la acumulación de agua.'
+        date_context = 'El miércoles hubo lluvias en Villa El Salvador.'
+        heroes = 'El COEN informó de una inundación el miércoles en la avenida Los Héroes.'
+        selected_passages = passages('\n'.join([lead, other, date_context, heroes]), '2026-11-05')
+        self.assertEqual([text for text, _ in selected_passages], [lead, heroes])
+        self.assertEqual(dict(selected_passages[1][1])['before'], date_context)
+
+    def test_association_requires_typed_support_for_same_incident(self):
+        target = 'El COEN informó de una inundación en la avenida Los Héroes.'
+        nearby = (('before', 'El miércoles hubo lluvias en Villa El Salvador.'),
+                  ('after', 'El 16 de agosto de 2026 hubo otro aniego en el sector.'))
+        payload, dates = date_extraction(DOC, target, nearby)
+        self.assertEqual(payload['state']['fragment'], target)
+        self.assertEqual(dates['date_0']['segment'], 'before')
+        def answers(first, second):
+            return {f'date_{i}': {'type': 'noul', 'noul': p} for i, p in enumerate((first, second))}
+        self.assertEqual(confirmed_date(answers(.95, .05), dates)['date'], '2026-11-04')
+        self.assertIsNone(confirmed_date(answers(.50, .05), dates))
+        self.assertIsNone(confirmed_date(answers(.95, .95), dates))
+
+    def test_date_candidates_do_not_use_unanchored_or_future_weekdays(self):
+        self.assertEqual(date_spans('El día anterior. El próximo miércoles.', '2026-11-05'), [])
+        self.assertEqual(date_spans('jueves 5 de noviembre de 2026', '2026-11-04'),
+                         [{'span': '5 de noviembre de 2026', 'date': '2026-11-05', 'year_inferred': False}])
 
     def test_api_failure_produces_error_artifact_not_empty_success(self):
         class Broken(Client):
