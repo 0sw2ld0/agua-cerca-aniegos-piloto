@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-05T11:35:03.983358-05:00",
+  "generated_at": "2026-11-05T11:38:29.557440-05:00",
   "coverage": "partial",
-  "source_errors": 1,
+  "source_errors": 0,
   "reports": [
     {
       "id": -2822031115421324,
@@ -80,25 +80,7 @@
       ]
     },
     {
-      "id": -3835135891462904,
-      "kind": "publication",
-      "district": "Lima Metropolitana",
-      "location": "Publicación reciente · por verificar",
-      "summary": "Las lloviznas en Lima casi igualan un récord de 1970: aniegos, vías inundadas y desagües colapsados en la zona sur",
-      "date": "2026-11-05",
-      "expires_at": "2026-11-07T13:03:50+00:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
-      "sources": [
-        {
-          "name": "www.infobae.com",
-          "url": "https://www.infobae.com/peru/2026/11/05/las-lloviznas-en-lima-casi-igualan-un-record-de-1970-aniegos-vias-inundadas-y-desagues-colapsados-en-distritos-del-sur/"
-        }
-      ]
-    },
-    {
-      "id": -536568935701588,
+      "id": -4120311867112626,
       "kind": "publication",
       "district": "Lima Metropolitana",
       "location": "Publicación reciente · por verificar",
@@ -116,7 +98,7 @@
       ]
     },
     {
-      "id": -356573824015246,
+      "id": -980508045419418,
       "kind": "publication",
       "district": "Villa El Salvador",
       "location": "Publicación reciente · por verificar",
@@ -134,7 +116,7 @@
       ]
     },
     {
-      "id": -1238527932989475,
+      "id": -3327443709068013,
       "kind": "publication",
       "district": "Lima Metropolitana",
       "location": "Publicación reciente · por verificar",
@@ -148,6 +130,24 @@
         {
           "name": "www.infobae.com",
           "url": "https://www.infobae.com/peru/2026/11/05/lluvias-en-peru-en-vivo-precipitaciones-por-el-fenomeno-el-nino-en-el-sur-de-lima-inundan-calles-y-dejan-viviendas-afectadas/"
+        }
+      ]
+    },
+    {
+      "id": -776914803680170,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "VES, VMT y SJM amanecen bajo el agua tras intensa llovizna en Lima: inundaciones afectan viviendas y vías",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T15:17:04+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "larepublica.pe",
+          "url": "https://larepublica.pe/sociedad/2026/11/05/villa-el-salvador-vmt-y-sjm-amanecen-bajo-el-agua-tras-intensa-llovizna-en-lima-inundaciones-afectan-viviendas-y-vias-488030"
         }
       ]
     }
