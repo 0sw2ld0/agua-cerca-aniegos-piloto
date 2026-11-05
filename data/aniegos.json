@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-05T12:25:53.215022-05:00",
+  "generated_at": "2026-11-05T12:27:36.489179-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
@@ -9,7 +9,7 @@
       "kind": "incident",
       "district": "Villa El Salvador",
       "location": "Sector 1, Grupo 1",
-      "summary": "Aniego y rebalse de alcantarillado reportados en viviendas y vías del sector.",
+      "summary": "Defensoría informó el 5/11 a las 12:13 que Sector 1, Grupo 1 ya fue atendido y se encontraba limpio durante la visita. Reporte inicial del 4/11; sin verificación posterior.",
       "date": "2026-11-04",
       "expires_at": "2026-11-06T00:00:00-05:00",
       "status": "Situación actual sin confirmar",
@@ -22,6 +22,10 @@
         {
           "name": "RPP",
           "url": "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004"
+        },
+        {
+          "name": "Defensoría del Pueblo · actualización 5/11, 12:13",
+          "url": "https://www.defensoria.gob.pe/defensoria-del-pueblo-despliega-personal-en-lima-sur-para-verificar-atencion-de-aniegos-y-limpieza-publica/"
         }
       ]
     },
@@ -80,19 +84,55 @@
       ]
     },
     {
-      "id": -1311430176211363,
-      "kind": "publication",
-      "district": "Lima Metropolitana",
-      "location": "Publicación reciente · por verificar",
-      "summary": "Defensoría del Pueblo despliega personal en Lima Sur para verificar atención de aniegos y limpieza pública",
+      "id": -2426100408893695,
+      "kind": "incident",
+      "district": "Villa María del Triunfo",
+      "location": "Av. Pachacútec, cuadra 34 · frente a la Red Integrada de Salud",
+      "summary": "Defensoría reportó un aniego de consideración y dos bombas de succión trabajando en la remoción del agua. Publicación del 5/11, 12:13; no acredita la situación después de la visita.",
       "date": "2026-11-05",
-      "expires_at": "2026-11-07T17:13:39+00:00",
-      "status": "Fecha del hecho por verificar",
+      "expires_at": "2026-11-07T00:00:00-05:00",
+      "status": "Situación actual sin confirmar",
       "coordinates": null,
-      "precision": "Sin punto verificado",
+      "precision": "Dirección publicada por Defensoría; sin punto verificado",
       "sources": [
         {
-          "name": "www.defensoria.gob.pe",
+          "name": "Defensoría del Pueblo · 5/11, 12:13",
+          "url": "https://www.defensoria.gob.pe/defensoria-del-pueblo-despliega-personal-en-lima-sur-para-verificar-atencion-de-aniegos-y-limpieza-publica/"
+        }
+      ]
+    },
+    {
+      "id": -2650544351713563,
+      "kind": "incident",
+      "district": "Villa María del Triunfo",
+      "location": "Bypass de Av. Pachacútec con Av. 26 de Noviembre, debajo de la línea férrea",
+      "summary": "Defensoría informó labores ininterrumpidas desde el día anterior, con seis camiones de la Municipalidad de Lima. Reporte del 5/11, 12:13; el inicio exacto del aniego no está determinado.",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T00:00:00-05:00",
+      "status": "Situación actual sin confirmar",
+      "coordinates": null,
+      "precision": "Dirección publicada por Defensoría; sin punto verificado",
+      "sources": [
+        {
+          "name": "Defensoría del Pueblo · 5/11, 12:13",
+          "url": "https://www.defensoria.gob.pe/defensoria-del-pueblo-despliega-personal-en-lima-sur-para-verificar-atencion-de-aniegos-y-limpieza-publica/"
+        }
+      ]
+    },
+    {
+      "id": -1981645859568302,
+      "kind": "incident",
+      "district": "Lima Sur · distrito por precisar",
+      "location": "Av. El Sol con Av. Separadora Industrial · zona del bypass",
+      "summary": "Defensoría verificó un aniego y un vehículo de limpieza operando en la zona. Publicación del 5/11, 12:13; ubicación espacial y distrito pendientes de comprobación.",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T00:00:00-05:00",
+      "status": "Situación actual sin confirmar",
+      "coordinates": null,
+      "precision": "Dirección publicada por Defensoría; sin punto verificado",
+      "sources": [
+        {
+          "name": "Defensoría del Pueblo · 5/11, 12:13",
           "url": "https://www.defensoria.gob.pe/defensoria-del-pueblo-despliega-personal-en-lima-sur-para-verificar-atencion-de-aniegos-y-limpieza-publica/"
         }
       ]
@@ -112,6 +152,24 @@
         {
           "name": "www.defensoria.gob.pe",
           "url": "https://www.defensoria.gob.pe/defensoria-del-pueblo-supervisa-atencion-de-aniegos-en-distritos-de-lima-metropolitana-y-solicita-medidas-urgentes-para-proteger-la-salud-de-la-poblacion/"
+        }
+      ]
+    },
+    {
+      "id": -3365816164748747,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Emergencia en Lima Sur: fuertes lluvias, inundaciones, aniegos y decenas de familias afectadas",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T14:54:09+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "caretas.pe",
+          "url": "https://caretas.pe/sociedad/emergencia-en-lima-sur-fuertes-lluvias-inundaciones-aniegos-y-decenas-de-familias-afectadas-senamhi/"
         }
       ]
     },

@@ -13,8 +13,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class PublishTests(unittest.TestCase):
     def setUp(self):
-        self.reviews = json.loads((ROOT / 'reviewed.json').read_text())
-        self.hosts = json.loads((ROOT / 'config.json').read_text())['allowed_hosts']
+        # Fixed synthetic cases: live editorial additions must not change temporal tests.
+        self.reviews = [{'key': 'synthetic-' + str(i), 'district': 'Test district',
+                         'location': 'Test location', 'summary': 'Synthetic report',
+                         'day': '2026-11-04', 'coordinates': [-77.0, -12.0] if i == 0 else None,
+                         'precision': 'Synthetic', 'location_evidence': 'Test fixture only',
+                         'sources': [{'name': 'Test', 'url': 'https://rpp.pe/test-' + str(i)}]}
+                        for i in range(4)]
+        self.hosts = ['rpp.pe']
 
     def test_reviewed_incidents_include_one_referential_point_and_district_notices(self):
         feed = build({'candidates': [], 'errors': []}, self.reviews, NOW, self.hosts)

@@ -3,7 +3,7 @@
     "key": "ves-sector1-grupo1-20261104",
     "district": "Villa El Salvador",
     "location": "Sector 1, Grupo 1",
-    "summary": "Aniego y rebalse de alcantarillado reportados en viviendas y vías del sector.",
+    "summary": "Defensoría informó el 5/11 a las 12:13 que Sector 1, Grupo 1 ya fue atendido y se encontraba limpio durante la visita. Reporte inicial del 4/11; sin verificación posterior.",
     "day": "2026-11-04",
     "coordinates": [
       -76.9473219,
@@ -14,6 +14,10 @@
       {
         "name": "RPP",
         "url": "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004"
+      },
+      {
+        "name": "Defensoría del Pueblo · actualización 5/11, 12:13",
+        "url": "https://www.defensoria.gob.pe/defensoria-del-pueblo-despliega-personal-en-lima-sur-para-verificar-atencion-de-aniegos-y-limpieza-publica/"
       }
     ],
     "location_evidence": "ArcGIS World Geocoding: Sector 1 Grupo 1, Villa El Salvador, Lima; score 100, tipo Locality. Consulta 2026-11-05. No es levantamiento del incidente."
@@ -60,6 +64,51 @@
       {
         "name": "Caretas",
         "url": "https://caretas.pe/sociedad/llovizna-en-lima-provoca-aniegos-en-vmt-villa-el-salvador-y-chorrillos-reportan-viviendas-inundadas"
+      }
+    ]
+  },
+  {
+    "key": "vmt-pachacutec34-20261105",
+    "district": "Villa María del Triunfo",
+    "location": "Av. Pachacútec, cuadra 34 · frente a la Red Integrada de Salud",
+    "summary": "Defensoría reportó un aniego de consideración y dos bombas de succión trabajando en la remoción del agua. Publicación del 5/11, 12:13; no acredita la situación después de la visita.",
+    "day": "2026-11-05",
+    "coordinates": null,
+    "precision": "Dirección publicada por Defensoría; sin punto verificado",
+    "sources": [
+      {
+        "name": "Defensoría del Pueblo · 5/11, 12:13",
+        "url": "https://www.defensoria.gob.pe/defensoria-del-pueblo-despliega-personal-en-lima-sur-para-verificar-atencion-de-aniegos-y-limpieza-publica/"
+      }
+    ]
+  },
+  {
+    "key": "vmt-bypass-pachacutec26-20261105",
+    "district": "Villa María del Triunfo",
+    "location": "Bypass de Av. Pachacútec con Av. 26 de Noviembre, debajo de la línea férrea",
+    "summary": "Defensoría informó labores ininterrumpidas desde el día anterior, con seis camiones de la Municipalidad de Lima. Reporte del 5/11, 12:13; el inicio exacto del aniego no está determinado.",
+    "day": "2026-11-05",
+    "coordinates": null,
+    "precision": "Dirección publicada por Defensoría; sin punto verificado",
+    "sources": [
+      {
+        "name": "Defensoría del Pueblo · 5/11, 12:13",
+        "url": "https://www.defensoria.gob.pe/defensoria-del-pueblo-despliega-personal-en-lima-sur-para-verificar-atencion-de-aniegos-y-limpieza-publica/"
+      }
+    ]
+  },
+  {
+    "key": "limasur-sol-separadora-20261105",
+    "district": "Lima Sur · distrito por precisar",
+    "location": "Av. El Sol con Av. Separadora Industrial · zona del bypass",
+    "summary": "Defensoría verificó un aniego y un vehículo de limpieza operando en la zona. Publicación del 5/11, 12:13; ubicación espacial y distrito pendientes de comprobación.",
+    "day": "2026-11-05",
+    "coordinates": null,
+    "precision": "Dirección publicada por Defensoría; sin punto verificado",
+    "sources": [
+      {
+        "name": "Defensoría del Pueblo · 5/11, 12:13",
+        "url": "https://www.defensoria.gob.pe/defensoria-del-pueblo-despliega-personal-en-lima-sur-para-verificar-atencion-de-aniegos-y-limpieza-publica/"
       }
     ]
   }
