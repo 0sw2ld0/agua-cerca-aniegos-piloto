@@ -9,6 +9,8 @@ from urllib.parse import urlsplit
 import xml.etree.ElementTree as ET
 from generate import Fetcher, PERU, article, discover, instant, normalized, recent_publication
 from jev_client import JevClient
+from jev_state import PersistentJevClient, DeferredRequest
+from publish import canonical
 from jev_questions import date_spans, extractive_payload, questions_for, route, verdict, YES
 
 MAX_ARTICLES = 3
@@ -112,13 +114,13 @@ def run(report, config, output, private, now, budget=0.02, client=None, fetch=No
     for item in report['candidates']:
         if item.get('decision') != 'needs_review' or not recent_publication(item.get('published_at'), now):
             continue
-        if item['url'] in seen:
+        if canonical(item['url']) in seen:
             continue
-        seen.add(item['url'])
+        seen.add(canonical(item['url']))
         candidates.append(item)
-    candidates = candidates[:MAX_ARTICLES]
     entries, rss_failures = publisher_entries(config, [item['url'] for item in candidates], fetch, now)
     failures.extend(rss_failures)
+    processed_articles = 0
     for item in candidates:
         try:
             fetch.check(item['url'])
@@ -132,9 +134,18 @@ def run(report, config, output, private, now, budget=0.02, client=None, fetch=No
                 skipped.append({'source_url':item['url'], 'reason':'no_suitable_article_passages'})
                 continue
             stamp = instant(source['published_at']).astimezone(PERU)
-            document = {'url':item['url'], 'title':source['title'], 'published':stamp.isoformat()}
+            document = {'url':canonical(item['url']), 'title':source['title'], 'published':stamp.isoformat()}
+            before = getattr(client, 'new_requests', 0)
+            if processed_articles >= MAX_ARTICLES:
+                skipped.append({'source_url':item['url'], 'reason':'run_article_limit'})
+                continue
             for text in text_parts:
-                drafts.append(analyze(document, text, client, now))
+                try:
+                    drafts.append(analyze(document, text, client, now))
+                except DeferredRequest as error:
+                    skipped.append({'source_url':item['url'], 'reason':str(error)})
+            if getattr(client, 'new_requests', before + 1) > before:
+                processed_articles += 1
         except Exception as error:
             # No error text: providers/auth must never leak into public logs/artifacts.
             failures.append({'source_url':item['url'], 'error_type':type(error).__name__})
@@ -144,18 +155,20 @@ def run(report, config, output, private, now, budget=0.02, client=None, fetch=No
                'verified_map_points':0, 'api_attempts':len(usage['attempts']),
                'input_tokens':usage['input_tokens'], 'output_tokens':usage['output_tokens'],
                'estimated_cost_usd':usage['estimated_cost_usd'], 'max_budget_usd':budget,
+               'reused_requests':getattr(client,'cache_hits',0),
+               'new_requests':getattr(client,'new_requests',len(usage['attempts'])),
                'collection_errors':len(report.get('errors',[])),
                'drafts':drafts, 'errors':failures, 'skipped':skipped}
     (output/'report.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n')
     lines = ['# Prueba de Jev en Actions', '',
              'Borradores experimentales. No modifica el feed ni confirma ausencia de aniegos.', '',
              f"Artículos seleccionados: {len(candidates)}; borradores: {len(drafts)}; puntos verificados: 0.",
-             f"Llamadas: {summary['api_attempts']}; costo estimado: US${summary['estimated_cost_usd']:.8f}; límite: US${budget:.2f}.",
+             f"Consultas reutilizadas: {summary['reused_requests']}; llamadas: {summary['api_attempts']}; costo estimado: US${summary['estimated_cost_usd']:.8f}; límite: US${budget:.2f}.",
              f"Fallos del análisis: {len(failures)}; fallos del recolector: {summary['collection_errors']}.", '',
              'Las fechas faltantes, las ubicaciones y los estados inciertos requieren comprobación.']
     (output/'RESUMEN.md').write_text('\n'.join(lines)+'\n')
     print(json.dumps({k:summary[k] for k in ('draft_count','api_attempts','estimated_cost_usd','verified_map_points')}))
-    return 2 if failures or not drafts else 0
+    return 2 if failures else 0
 
 
 if __name__ == '__main__':
@@ -163,6 +176,9 @@ if __name__ == '__main__':
     parser.add_argument('--report',type=Path,required=True)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--private',type=Path,required=True)
+    parser.add_argument('--state',type=Path,required=True)
     args=parser.parse_args()
     config=json.loads(Path(__file__).with_name('config.json').read_text())
-    raise SystemExit(run(json.loads(args.report.read_text()),config,args.output,args.private,datetime.now(PERU)))
+    now=datetime.now(PERU)
+    client=PersistentJevClient(args.state,args.private,now)
+    raise SystemExit(run(json.loads(args.report.read_text()),config,args.output,args.private,now,client=client))

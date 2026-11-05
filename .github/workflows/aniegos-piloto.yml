@@ -14,26 +14,58 @@ jobs:
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: main
       - name: Tests
         run: python3 -m unittest discover -s tools/aniegos/tests -v
       - name: Recopilar fuentes
         run: python3 tools/aniegos/generate.py --output resultado
+      - name: Analizar evidencia nueva con Jev
+        id: jev
+        continue-on-error: true
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: python3 tools/aniegos/jev_pilot.py --report resultado/report.json --output resultado-jev --private "$RUNNER_TEMP/jev-private" --state data/jev-state.json
+      - name: Persistir respuestas y consumo, también ante fallos
+        if: always()
+        run: |
+          if [ -f data/jev-state.json ]; then
+            git add data/jev-state.json
+            if ! git diff --cached --quiet; then
+              git config user.name 'github-actions[bot]'
+              git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+              git commit -m 'Guardar respuestas y consumo de Jev'
+              git pull --rebase origin main
+              git push origin HEAD:main
+            fi
+          fi
       - name: Generar archivo para la app
         run: python3 tools/aniegos/publish.py --report resultado/report.json --output data/aniegos.json
       - name: Publicar archivo actualizado
         run: |
           git add data/aniegos.json
+          if [ -f data/jev-state.json ]; then git add data/jev-state.json; fi
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
             git commit -m 'Actualizar reportes recientes de aniegos'
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
       - name: Guardar resultados y fallos
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: aniegos-piloto
-          path: resultado/
+          path: |
+            resultado/
+            resultado-jev/
           if-no-files-found: warn
           retention-days: 7
+      - name: Mostrar consumo y reutilización de Jev
+        if: always()
+        run: |
+          if [ -f resultado-jev/RESUMEN.md ]; then cat resultado-jev/RESUMEN.md >> "$GITHUB_STEP_SUMMARY"; fi
+      - name: Señalar fallos de Jev
+        if: always() && steps.jev.outcome == 'failure'
+        run: exit 1
