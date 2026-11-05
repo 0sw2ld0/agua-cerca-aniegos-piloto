@@ -1,0 +1,41 @@
+name: Probar Jev con noticias
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: jev-manual-pilot
+  cancel-in-progress: false
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Tests sin llamadas a la API
+        run: python3 -m unittest discover -s tools/aniegos/tests -v
+      - name: Recopilar publicaciones de las últimas 48 horas
+        run: python3 tools/aniegos/generate.py --output resultado
+      - name: Analizar con Jev (máximo US$0.02 por ejecución)
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: |
+          if [ -z "$TYPESAFE_API_KEY" ]; then
+            echo 'Falta el secreto TYPESAFE_API_KEY'
+            exit 1
+          fi
+          python3 tools/aniegos/jev_pilot.py --report resultado/report.json --output resultado-jev --private "$RUNNER_TEMP/jev-private"
+      - name: Resumen de la prueba
+        if: always()
+        run: |
+          if [ -f resultado-jev/RESUMEN.md ]; then
+            cat resultado-jev/RESUMEN.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Guardar solo el informe resumido
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: resultado-jev
+          path: resultado-jev/
+          if-no-files-found: warn
+          retention-days: 7

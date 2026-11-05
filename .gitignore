@@ -1,3 +1,7 @@
 __pycache__/
 *.pyc
 resultado/
+.env
+.env.*
+resultado-jev/
+.jev-private/
