@@ -62,7 +62,7 @@ class PersistentJevClient:
                 raise ValueError('Unsupported Jev state schema; do not reset silently')
         else:
             self.state = {'schema_version':1, 'previous_estimated_cost_usd':PREVIOUS_ESTIMATED_COST,
-                          'entries':{}, 'attempts':[]}
+                          'previous_cost_day':'2026-11-05', 'entries':{}, 'attempts':[]}
         self.client = client or JevClient(private,budget=RUN_LIMIT,key_file=Path('/nonexistent'),allow_network=True)
         self.ledger = self.client.ledger
         self.cache_hits = 0
@@ -86,6 +86,8 @@ class PersistentJevClient:
         spent=sum(a['committed_usd'] for a in self.state['attempts'])
         today=self.now.strftime('%Y-%m-%d')
         daily=sum(a['committed_usd'] for a in self.state['attempts'] if a['day']==today)
+        if self.state.get('previous_cost_day', '2026-11-05') == today:
+            daily += self.state['previous_estimated_cost_usd']
         reserve=RESERVE_PER_ATTEMPT
         if (self.run_committed+reserve>RUN_LIMIT or daily+reserve>DAY_LIMIT or
                 self.state['previous_estimated_cost_usd']+spent+reserve>PILOT_LIMIT):

@@ -72,6 +72,14 @@ class StateTests(unittest.TestCase):
             c.state['attempts']=[]
             with self.assertRaises(DeferredRequest):c.ask(blocked)
 
+    def test_prior_trials_also_count_toward_their_day_limit(self):
+        from jev_client import RESERVE_PER_ATTEMPT
+        with tempfile.TemporaryDirectory() as d:
+            m=Model();c=PersistentJevClient(Path(d)/'state',Path(d)/'private',NOW,m)
+            c.state['attempts']=[{'day':'2026-11-05','committed_usd':DAY_LIMIT-RESERVE_PER_ATTEMPT,'status':'success'}]
+            with self.assertRaises(DeferredRequest): c.ask(PAYLOAD)
+            self.assertEqual(m.calls,0)
+
     def test_invalid_response_is_not_persisted_as_success(self):
         class Bad(Model):
             def ask(self,payload):
