@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-05T11:38:29.557440-05:00",
+  "generated_at": "2026-11-05T12:25:53.215022-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
@@ -80,6 +80,24 @@
       ]
     },
     {
+      "id": -1311430176211363,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Defensoría del Pueblo despliega personal en Lima Sur para verificar atención de aniegos y limpieza pública",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T17:13:39+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "www.defensoria.gob.pe",
+          "url": "https://www.defensoria.gob.pe/defensoria-del-pueblo-despliega-personal-en-lima-sur-para-verificar-atencion-de-aniegos-y-limpieza-publica/"
+        }
+      ]
+    },
+    {
       "id": -4120311867112626,
       "kind": "publication",
       "district": "Lima Metropolitana",
@@ -134,20 +152,20 @@
       ]
     },
     {
-      "id": -776914803680170,
+      "id": -4282831988837211,
       "kind": "publication",
-      "district": "Lima Metropolitana",
+      "district": "Chorrillos",
       "location": "Publicación reciente · por verificar",
-      "summary": "VES, VMT y SJM amanecen bajo el agua tras intensa llovizna en Lima: inundaciones afectan viviendas y vías",
-      "date": "2026-11-05",
-      "expires_at": "2026-11-07T15:17:04+00:00",
+      "summary": "SJL lidera lista de distritos con mayor riesgo de inundaciones ante El Niño, según Cenepred: Comas y Chorrillos también figuran entre los más expuestos",
+      "date": "2026-11-04",
+      "expires_at": "2026-11-06T16:35:42+00:00",
       "status": "Fecha del hecho por verificar",
       "coordinates": null,
       "precision": "Sin punto verificado",
       "sources": [
         {
           "name": "larepublica.pe",
-          "url": "https://larepublica.pe/sociedad/2026/11/05/villa-el-salvador-vmt-y-sjm-amanecen-bajo-el-agua-tras-intensa-llovizna-en-lima-inundaciones-afectan-viviendas-y-vias-488030"
+          "url": "https://larepublica.pe/sociedad/2026/11/04/san-juan-de-lurigancho-lidera-la-lista-de-distritos-en-riesgo-muy-alto-por-inundaciones-ante-el-nino-segun-cenepred-comas-y-chorrillos-tambien-figuran-entre-los-mas-expuestos-135168"
         }
       ]
     }
