@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T16:13:43.314496-05:00",
+  "generated_at": "2026-11-06T16:43:53.303409-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
@@ -188,24 +188,6 @@
       ]
     },
     {
-      "id": -2368260803210119,
-      "kind": "publication",
-      "district": "Villa El Salvador",
-      "location": "Publicación reciente · por verificar",
-      "summary": "Bus de El Rápido queda atascado por inundación en Villa El Salvador y conductor no puede salir por el agua",
-      "date": "2026-11-05",
-      "expires_at": "2026-11-07T15:35:04+00:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
-      "sources": [
-        {
-          "name": "larepublica.pe",
-          "url": "https://larepublica.pe/sociedad/2026/11/05/bus-de-el-rapido-queda-atascado-por-inundacion-en-villa-el-salvador-y-conductor-no-puede-salir-por-el-agua-168840"
-        }
-      ]
-    },
-    {
       "id": -4103614806204810,
       "kind": "publication",
       "district": "Lima Metropolitana",
@@ -346,6 +328,24 @@
         {
           "name": "elcomercio.pe",
           "url": "https://elcomercio.pe/lima/sucesos/villa-el-salvador-amanece-con-calles-inundadas-y-desagues-colapsados-por-lluvias-apuesplan-ultimas-noticia/"
+        }
+      ]
+    },
+    {
+      "id": -2368260803210119,
+      "kind": "publication",
+      "district": "Villa El Salvador",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Bus de El Rápido queda atascado por inundación en Villa El Salvador y conductor no puede salir por el agua",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T15:35:04+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "larepublica.pe",
+          "url": "https://larepublica.pe/sociedad/2026/11/05/bus-de-el-rapido-queda-atascado-por-inundacion-en-villa-el-salvador-y-conductor-no-puede-salir-por-el-agua-168840"
         }
       ]
     }
