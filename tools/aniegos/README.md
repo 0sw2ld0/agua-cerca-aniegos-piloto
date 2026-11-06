@@ -5,7 +5,7 @@ Recopilación pública con Python 3.9+, sin claves ni dependencias. La app desca
 ```sh
 python3 -m unittest discover -s tools/aniegos/tests -v
 python3 tools/aniegos/generate.py --output /tmp/aniegos-resultado
-python3 tools/aniegos/publish.py --report /tmp/aniegos-resultado/report.json --output data/aniegos.json
+python3 tools/aniegos/publish.py --report /tmp/aniegos-resultado/report.json --output data/aniegos.json --places-cache data/lugares-osm.json
 ```
 
 ## Qué se publica
@@ -14,6 +14,17 @@ python3 tools/aniegos/publish.py --report /tmp/aniegos-resultado/report.json --o
 - `publication`: artículo descubierto o descargado con fecha reciente, por verificar. La fecha es de publicación, no de ocurrencia. No genera un marcador. La app permite leer el aviso y abrir la fuente.
 
 Los nuevos artículos no se convierten automáticamente en incidentes georreferenciados. La revisión separa los lugares de una misma nota, excluye antecedentes antiguos y documenta la precisión. Las fuentes ya asociadas a un incidente revisado no lo renuevan al vencer. Los estados de atención/resolución requieren una publicación de seguimiento; en esta versión todos los incidentes se muestran como situación actual sin confirmar.
+
+## Ubicación automática con OpenStreetMap
+
+`publish.py --places-cache data/lugares-osm.json` intenta ubicar cada incidente revisado y vigente que no tenga coordenadas. Las reglas están en `osm_places.py`, son deterministas y no usan IA:
+
+- **Cruce:** el lugar nombra dos vías («Av. X con Av. Y»). Ambas deben existir en OSM con el mismo nombre y compartir nodos que formen un solo cruce dentro del polígono del distrito escrito en la revisión. Si hay dos cruces posibles, no se dibuja nada.
+- **Bypass, paso a desnivel, puente o túnel:** si el texto lo menciona, el punto se mueve al centro de las estructuras viales cortas junto a ese cruce, que es donde se acumula el agua. Se descartan viaductos largos y puentes peatonales.
+- **Establecimiento:** hospital, clínica, mercado o colegio nombrado en la revisión, con una sola coincidencia dentro del distrito. El punto es referencial: no es el lugar exacto del agua.
+- Una sola avenida, una cuadra, un sector o un distrito «por precisar» no generan punto.
+
+El resultado pasa por `validate_geocoding` y se marca como punto referencial de ±50 m, con atribución a OpenStreetMap (ODbL). La caché guarda los aciertos 30 días y los casos sin coincidencia 24 h. Un fallo de Nominatim u Overpass no se guarda: se reintenta en la siguiente ejecución y nunca equivale a «no existe el lugar». Por ejecución hay como máximo seis búsquedas nuevas y 150 s de red. Las coordenadas escritas a mano en `reviewed.json` tienen prioridad.
 
 ## Fuentes y límites
 

@@ -18,7 +18,8 @@ def canonical(url):
     return parts.scheme + '://' + parts.netloc.lower() + parts.path.rstrip('/')
 
 
-def build(report, reviews, now, allowed):
+def build(report, reviews, now, allowed, locate=None):
+    """locate(review) -> {'point', 'precision', 'evidence'} | None, for reviews without a point."""
     guard = Fetcher(allowed)
     rows, consumed, ids = [], set(), set()
     for review in reviews:
@@ -29,11 +30,16 @@ def build(report, reviews, now, allowed):
         expires = start + timedelta(hours=48)
         if not start <= now < expires:
             continue
-        coords = review.get('coordinates')
+        coords, precision = review.get('coordinates'), review['precision']
+        evidence = review.get('location_evidence')
+        if coords is None and locate:
+            found = locate(review)
+            if found:
+                coords, precision, evidence = found['point'], found['precision'], found['evidence']
         if coords is not None:
             if (len(coords) != 2 or not all(type(c) in (float, int) for c in coords)
                     or not -78 <= coords[0] <= -75 or not -14 <= coords[1] <= -10
-                    or not review.get('location_evidence')):
+                    or not evidence):
                 raise ValueError('Unverified geometry')
         identifier = stable_id(review['key'])
         if identifier in ids:
@@ -43,7 +49,7 @@ def build(report, reviews, now, allowed):
                      'location': review['location'], 'summary': review['summary'],
                      'date': review['day'], 'expires_at': expires.isoformat(),
                      'status': 'Situación actual sin confirmar', 'coordinates': coords,
-                     'precision': review['precision'], 'sources': review['sources']})
+                     'precision': precision, 'sources': review['sources']})
     for item in report['candidates']:
         if item.get('decision') != 'needs_review' or canonical(item['url']) in consumed:
             continue
@@ -79,11 +85,23 @@ if __name__ == '__main__':
     parser.add_argument('--report', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--reviews', type=Path, default=Path(__file__).with_name('reviewed.json'))
+    parser.add_argument('--places-cache', type=Path,
+                        help='OpenStreetMap lookups (JSON). Without it, no automatic points are added.')
     args = parser.parse_args()
     config = json.loads(Path(__file__).with_name('config.json').read_text())
+    now = datetime.now(PERU)
+    locator = None
+    if args.places_cache:
+        from osm_places import Locator
+        cache = json.loads(args.places_cache.read_text()) if args.places_cache.exists() else {}
+        locator = Locator(cache, now)
     result = build(json.loads(args.report.read_text()), json.loads(args.reviews.read_text()),
-                   datetime.now(PERU), config['allowed_hosts'])
+                   now, config['allowed_hosts'], locator.locate if locator else None)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
+    if locator:
+        args.places_cache.parent.mkdir(parents=True, exist_ok=True)
+        args.places_cache.write_text(json.dumps(locator.cache, ensure_ascii=False, indent=1, sort_keys=True) + '\n')
     print(json.dumps({'app_reports': len(result['reports']),
-                      'map_points': sum(r['coordinates'] is not None for r in result['reports'])}))
+                      'map_points': sum(r['coordinates'] is not None for r in result['reports']),
+                      'osm_lookups': locator.log if locator else []}, ensure_ascii=False))
