@@ -180,3 +180,9 @@ details.bloque summary { cursor: pointer; font-weight: 600; font-size: 14px; }
   .tarjeta-mapa { bottom: 12px; max-height: 58%; }
   body.pantalla-mapa header.barra nav a { padding: 5px 10px; font-size: 13px; }
 }
+header.barra nav a { white-space: nowrap; }
+@media (max-width: 600px) {
+  header.barra { gap: 8px; }
+  header.barra nav { margin-left: 0; width: 100%; overflow-x: auto; scrollbar-width: none; }
+  header.barra nav a { padding: 5px 10px; font-size: 13px; }
+}
