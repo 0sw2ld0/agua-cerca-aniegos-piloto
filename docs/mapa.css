@@ -43,7 +43,9 @@ body.pantalla-mapa { height: 100dvh; display: flex; flex-direction: column; over
   border: 1px solid var(--borde); border-radius: 12px; box-shadow: var(--sombra-fuerte); max-height: 50vh; overflow-y: auto; }
 .resultados button { display: block; width: 100%; text-align: left; font: inherit; font-size: 14px; color: var(--texto);
   background: none; border: 0; border-bottom: 1px solid var(--borde); padding: 10px 12px; cursor: pointer; }
-.resultados button:hover, .resultados button:focus-visible { background: var(--fondo); }
+.resultados button:hover, .resultados button:focus-visible, .resultados button[aria-selected="true"] { background: var(--fondo); }
+.resultados button strong { font-weight: 600; }
+.resultados button[aria-selected="true"] { box-shadow: inset 3px 0 0 var(--azul); }
 .resultados p { margin: 0; padding: 10px 12px; font-size: 14px; }
 
 /* ---- controles flotantes del mapa ---- */

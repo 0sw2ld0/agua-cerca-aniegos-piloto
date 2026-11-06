@@ -866,25 +866,126 @@ function fijarReferencia(ref, zoom = 15) {
   pintarPestanas(); pintarContenido();
 }
 function quitarReferencia() { estado.referencia = null; marcaReferencia?.remove(); marcaReferencia = null; pintarContenido(); }
-let ultimaBusqueda = 0;
+// Autocomplete uses Photon (komoot, OpenStreetMap data), which is meant for search-as-you-type.
+// Nominatim forbids autocomplete; it is only a fallback when the user presses "Buscar".
+const LIMITE_LIMA = { s: -12.65, n: -11.5, w: -77.4, e: -76.45 };
+const enLima = (lat, lon) => lat >= LIMITE_LIMA.s && lat <= LIMITE_LIMA.n && lon >= LIMITE_LIMA.w && lon <= LIMITE_LIMA.e;
+const busqueda = { sugerencias: [], activa: -1, control: null, cache: new Map(), temporizador: null, ultimaNominatim: 0 };
+function etiquetaPhoton(p) {
+  const via = p.street ? [p.street, p.housenumber].filter(Boolean).join(' ') : '';
+  const principal = limpio(p.name || via || p.district || p.city || '', 100);
+  const lugar = [...new Set([p.name && via ? via : null, p.district || p.locality, p.city].filter(Boolean).map(x => limpio(x, 60)))]
+    .filter(x => x !== principal).join(' · ');
+  return { principal, lugar };
+}
+async function sugerir(texto) {
+  const clave = plano(texto);
+  if (busqueda.cache.has(clave)) return busqueda.cache.get(clave);
+  busqueda.control?.abort();
+  busqueda.control = new AbortController();
+  const q = new URLSearchParams({ q: texto, limit: '12', lang: 'default',
+    bbox: `${LIMITE_LIMA.w},${LIMITE_LIMA.s},${LIMITE_LIMA.e},${LIMITE_LIMA.n}`, lat: '-12.06', lon: '-77.03' });
+  const r = await fetch('https://photon.komoot.io/api/?' + q, { signal: busqueda.control.signal });
+  if (!r.ok) throw new Error('photon ' + r.status);
+  const vistos = new Set(), lista = [];
+  for (const f of (await r.json()).features || []) {
+    const [lon, lat] = f.geometry?.coordinates || [];
+    if (!enLima(lat, lon)) continue;
+    const { principal, lugar } = etiquetaPhoton(f.properties || {});
+    const k = plano(principal + '|' + lugar);
+    if (!principal || vistos.has(k)) continue;
+    vistos.add(k); lista.push({ lat, lon, principal, lugar });
+  }
+  // Photon is fuzzy: rank by how many typed words appear, and drop results matching none of them.
+  const VACIAS = new Set(['av', 'avenida', 'jr', 'jiron', 'calle', 'psje', 'pasaje', 'de', 'del', 'la', 'el', 'los', 'las']);
+  const palabras = clave.split(/[^a-z0-9]+/).filter(w => w.length >= 2 && !VACIAS.has(w));
+  const puntaje = x => { const t = plano(x.principal + ' ' + x.lugar); return palabras.filter(w => t.includes(w)).length +
+    palabras.filter(w => plano(x.principal).includes(w)).length * 0.5; };
+  const ordenada = lista.map((x, i) => ({ x, p: puntaje(x), i })).sort((a, b) => b.p - a.p || a.i - b.i);
+  const mejor = ordenada.length ? ordenada[0].p : 0;
+  const final = ordenada.filter(o => !palabras.length || o.p > 0 || mejor === 0).slice(0, 6).map(o => o.x);
+  busqueda.cache.set(clave, final);
+  return final;
+}
+function elegirSugerencia(x) {
+  $('resultados').hidden = true; $('consulta').value = x.principal + (x.lugar ? ', ' + x.lugar : '');
+  $('consulta').setAttribute('aria-expanded', 'false');
+  fijarReferencia({ lat: x.lat, lon: x.lon, nombre: x.principal, tipo: 'direccion' }, 16);
+}
+function pintarSugerencias(lista, texto, fuente = 'Photon') {
+  const caja = $('resultados');
+  busqueda.sugerencias = lista; busqueda.activa = -1;
+  if (!lista.length) {
+    caja.replaceChildren(el('p', { class: 'suave', text: `Sin sugerencias para «${texto}». Pulsa Buscar o añade el distrito.` }));
+  } else {
+    caja.replaceChildren(...lista.map((x, i) => {
+      const b = el('button', { type: 'button', role: 'option', id: 'sugerencia-' + i, 'aria-selected': 'false',
+        onmousedown: e => e.preventDefault(), onclick: () => elegirSugerencia(x) },
+        el('strong', { text: x.principal }), x.lugar ? el('div', { class: 'pequeno suave', text: x.lugar }) : null);
+      return b;
+    }), el('p', { class: 'pequeno suave', text: `Resultados: ${fuente} · © OpenStreetMap. La búsqueda no indica si la calle está en riesgo.` }));
+  }
+  caja.hidden = false; $('consulta').setAttribute('aria-expanded', 'true');
+}
+function marcarActiva(i) {
+  const n = busqueda.sugerencias.length;
+  if (!n) return;
+  busqueda.activa = (i + n) % n;
+  [...$('resultados').querySelectorAll('button[role="option"]')].forEach((b, j) => {
+    b.setAttribute('aria-selected', String(j === busqueda.activa));
+    if (j === busqueda.activa) { b.scrollIntoView({ block: 'nearest' }); $('consulta').setAttribute('aria-activedescendant', b.id); }
+  });
+}
+$('consulta').setAttribute('role', 'combobox');
+$('consulta').setAttribute('aria-autocomplete', 'list');
+$('consulta').setAttribute('aria-controls', 'resultados');
+$('consulta').setAttribute('aria-expanded', 'false');
+$('resultados').setAttribute('role', 'listbox');
+$('consulta').addEventListener('input', () => {
+  clearTimeout(busqueda.temporizador);
+  const texto = $('consulta').value.trim();
+  if (texto.length < 3) { $('resultados').hidden = true; busqueda.sugerencias = []; return; }
+  busqueda.temporizador = setTimeout(async () => {   // wait for a pause in typing: one request, not one per key
+    try {
+      const lista = await sugerir(texto);
+      if ($('consulta').value.trim() === texto) pintarSugerencias(lista, texto);
+    } catch (e) {
+      if (e.name !== 'AbortError') { $('resultados').hidden = false;
+        $('resultados').replaceChildren(el('p', { class: 'suave', text: 'No pudimos cargar sugerencias. Pulsa Buscar.' })); }
+    }
+  }, 280);
+});
+$('consulta').addEventListener('keydown', e => {
+  if ($('resultados').hidden) return;
+  if (e.key === 'ArrowDown') { e.preventDefault(); marcarActiva(busqueda.activa + 1); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); marcarActiva(busqueda.activa - 1); }
+  else if (e.key === 'Escape') { $('resultados').hidden = true; $('consulta').setAttribute('aria-expanded', 'false'); }
+});
+$('consulta').addEventListener('blur', () => setTimeout(() => { $('resultados').hidden = true; $('consulta').setAttribute('aria-expanded', 'false'); }, 150));
+$('consulta').addEventListener('focus', () => { if (busqueda.sugerencias.length && $('consulta').value.trim().length >= 3) $('resultados').hidden = false; });
 $('buscador').addEventListener('submit', async e => {
   e.preventDefault();
   const texto = $('consulta').value.trim(), caja = $('resultados');
   if (texto.length < 3) return;
-  if (Date.now() - ultimaBusqueda < 1100) return; // política de uso de Nominatim: 1 consulta por segundo
-  ultimaBusqueda = Date.now();
+  if (busqueda.activa >= 0 && busqueda.sugerencias[busqueda.activa]) return elegirSugerencia(busqueda.sugerencias[busqueda.activa]);
+  clearTimeout(busqueda.temporizador);
   caja.hidden = false; caja.replaceChildren(el('p', { class: 'suave', text: 'Buscando…' }));
+  try {
+    const lista = await sugerir(texto);
+    if (lista.length === 1) return elegirSugerencia(lista[0]);
+    if (lista.length) return pintarSugerencias(lista, texto);
+  } catch {}
+  // Fallback on explicit submit only, at most one Nominatim request per second (its usage policy).
+  if (Date.now() - busqueda.ultimaNominatim < 1100) return;
+  busqueda.ultimaNominatim = Date.now();
   try {
     const q = new URLSearchParams({ q: texto, format: 'jsonv2', limit: '6', countrycodes: 'pe', 'accept-language': 'es',
       viewbox: '-77.4,-11.5,-76.45,-12.65', bounded: '1' });
     const r = await (await fetch('https://nominatim.openstreetmap.org/search?' + q)).json();
-    const ok = r.filter(x => +x.lat >= -12.65 && +x.lat <= -11.5 && +x.lon >= -77.4 && +x.lon <= -76.45);
+    const ok = r.filter(x => enLima(+x.lat, +x.lon)).map(x => ({ lat: +x.lat, lon: +x.lon,
+      principal: limpio(x.name || x.display_name.split(',')[0], 80), lugar: limpio(x.display_name.split(',').slice(1, 3).join(','), 80) }));
     if (!ok.length) { caja.replaceChildren(el('p', { text: 'No encontramos ese lugar en Lima y Callao. Prueba con la calle y el distrito.' })); return; }
-    caja.replaceChildren(el('p', { class: 'pequeno suave', text: 'Elige una ubicación. La búsqueda no determina si la calle está en riesgo.' }),
-      ...ok.map(x => el('button', { type: 'button', text: x.display_name, onclick: () => {
-        caja.hidden = true;
-        fijarReferencia({ lat: +x.lat, lon: +x.lon, nombre: limpio(x.name || x.display_name.split(',')[0], 80), tipo: 'direccion' }, 16);
-      } })), el('p', { class: 'pequeno suave', text: 'Búsqueda: © OpenStreetMap (Nominatim)' }));
+    pintarSugerencias(ok, texto, 'Nominatim');
   } catch { caja.replaceChildren(el('p', { text: 'No pudimos buscar ese lugar. Revisa la conexión y reintenta.' })); }
 });
 $('miUbicacion').addEventListener('click', () => {
