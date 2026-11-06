@@ -97,12 +97,12 @@ def extract(article, shadow, client, run_spent):
     except Exception as error:
         last = client.ledger['attempts'][-1] if client.ledger['attempts'] else {}
         cost = last.get('cost_usd', last.get('reserved_usd', 0.0))  # a failed attempt keeps its reservation
-        shadow.state['attempts'].append({'day': day, 'cost_usd': round(cost, 8), 'status': 'error'})
+        shadow.state['attempts'].append({'day': day, 'run': shadow.now.isoformat(timespec='minutes'), 'cost_usd': round(cost, 8), 'status': 'error'})
         shadow.state['articles'][article['url']] = {**entry, 'text_sha': text_sha, 'failed_at': shadow.now.isoformat(),
                                                     'error': type(error).__name__}
         shadow.save()
         raise
-    shadow.state['attempts'].append({'day': day, 'cost_usd': round(cost, 8), 'status': 'success',
+    shadow.state['attempts'].append({'day': day, 'run': shadow.now.isoformat(timespec='minutes'), 'cost_usd': round(cost, 8), 'status': 'success',
                                      'input_tokens': attempt.get('input_tokens'),
                                      'output_tokens': attempt.get('output_tokens')})
     shadow.state['articles'][article['url']] = {

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aniegos recientes · Agua Cerca</title>
+<meta name="description" content="Aniegos reportados en Lima en las últimas 48 horas, con fuentes. Cobertura parcial.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="estilo.css">
+<style>
+  .diseno { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 14px; }
+  #mapa { height: min(72vh, 680px); border-radius: var(--radio); border: 1px solid var(--borde); }
+  .lista { max-height: min(72vh, 680px); overflow-y: auto; padding: 0; }
+  .lista h2 { font-size: 14px; margin: 0; padding: 10px 14px; position: sticky; top: 0;
+              background: var(--tarjeta); border-bottom: 1px solid var(--borde); z-index: 1; }
+  .item { padding: 10px 14px; border-bottom: 1px solid var(--borde); }
+  .item h3 { font-size: 15px; margin: 2px 0 4px; }
+  .item p { margin: 4px 0; font-size: 14px; }
+  .item .acciones { display: flex; gap: 10px; flex-wrap: wrap; font-size: 13px; margin-top: 6px; }
+  .item button { font: inherit; color: var(--azul); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; }
+  .controles { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; font-size: 14px; }
+  .leyenda { display: flex; gap: 12px; flex-wrap: wrap; font-size: 13px; }
+  .punto { display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+  .leaflet-popup-content { font: 14px/1.4 system-ui, sans-serif; }
+  @media (max-width: 860px) {
+    .diseno { grid-template-columns: 1fr; }
+    #mapa { height: 58vh; }
+    .lista { max-height: none; }
+  }
+</style>
+</head>
+<body>
+<header class="barra">
+  <h1>Agua Cerca · Aniegos recientes</h1>
+  <nav><a href="./" aria-current="page">Mapa</a><a href="costos.html">Costos</a></nav>
+  <div class="estado" id="estado">Cargando…</div>
+</header>
+<main>
+  <div class="aviso" style="margin-bottom:12px">
+    Recopilación de medios y fuentes oficiales de las últimas 48 horas. Cobertura parcial: un mapa sin puntos
+    no significa que no haya aniegos. Los puntos son referenciales y no muestran la extensión inundada ni
+    confirman que el agua siga ahí.
+  </div>
+  <div class="controles">
+    <label><input type="checkbox" id="verSombra"> Mostrar detección automática (GPT · no publicada)</label>
+    <div class="leyenda">
+      <span><span class="punto" style="background:var(--azul)"></span>Incidente revisado</span>
+      <span><span class="punto" style="background:var(--ambar)"></span>Detección automática</span>
+    </div>
+  </div>
+  <div class="diseno">
+    <div id="mapa" role="region" aria-label="Mapa de aniegos"></div>
+    <section class="tarjeta lista" id="lista" aria-label="Lista por distrito"></section>
+  </div>
+  <p class="suave pequeno">Datos: <a href="https://github.com/0sw2ld0/agua-cerca-aniegos-piloto">agua-cerca-aniegos-piloto</a>.
+    Mapa y ubicaciones © colaboradores de OpenStreetMap (ODbL).</p>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+const RAW = 'https://raw.githubusercontent.com/0sw2ld0/agua-cerca-aniegos-piloto/main/data/';
+const mapa = L.map('mapa', { scrollWheelZoom: true }).setView([-12.19, -76.95], 13);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19, attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(mapa);
+const capaRevisada = L.layerGroup().addTo(mapa);
+const capaSombra = L.layerGroup();
+const marcadores = new Map();
+let datos = { feed: null, sombra: null };
+
+function el(tag, attrs = {}, ...hijos) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === 'class') n.className = v; else if (k === 'text') n.textContent = v; else n.setAttribute(k, v);
+  }
+  for (const h of hijos) if (h != null) n.append(h);
+  return n;
+}
+function enlaceSeguro(url, texto) {
+  try { const u = new URL(url); if (u.protocol !== 'https:') return null; return el('a', { href: u.href, target: '_blank', rel: 'noopener noreferrer', text: texto || u.hostname.replace(/^www\./, '') }); }
+  catch { return null; }
+}
+function fecha(dia) { const [a, m, d] = String(dia).split('-'); return d && m ? `${d}/${m}/${a}` : 'Fecha no informada'; }
+function hace(iso) {
+  const min = Math.round((Date.now() - new Date(iso)) / 60000);
+  if (!isFinite(min)) return 'sin dato';
+  if (min < 60) return `hace ${min} min`;
+  const h = Math.round(min / 60); return h < 48 ? `hace ${h} h` : `hace ${Math.round(h / 24)} días`;
+}
+async function json(nombre) {
+  const r = await fetch(RAW + nombre + '?t=' + Math.floor(Date.now() / 120000), { cache: 'no-store' });
+  if (!r.ok) throw new Error(nombre + ' ' + r.status);
+  return r.json();
+}
+function popup(titulo, lineas, fuentes) {
+  const c = el('div', {}, el('strong', { text: titulo }));
+  for (const l of lineas) if (l) c.append(el('div', { text: l }));
+  const f = el('div', { class: 'acciones' });
+  for (const s of fuentes) { const a = enlaceSeguro(s.url, s.name); if (a) f.append(a, ' '); }
+  if (f.childNodes.length) c.append(f);
+  return c;
+}
+function marcar(capa, clave, lonlat, color, contenido) {
+  const m = L.circleMarker([lonlat[1], lonlat[0]], { radius: 9, color: '#fff', weight: 2, fillColor: color, fillOpacity: 0.95 })
+    .bindPopup(contenido).addTo(capa);
+  marcadores.set(clave, m);
+}
+function pintar() {
+  capaRevisada.clearLayers(); capaSombra.clearLayers(); marcadores.clear();
+  const ahora = Date.now();
+  const filas = (datos.feed?.reports || []).filter(r => new Date(r.expires_at) > ahora);
+  const sombra = document.getElementById('verSombra').checked ? (datos.sombra?.current || []) : [];
+  const css = getComputedStyle(document.documentElement);
+  const azul = css.getPropertyValue('--azul').trim(), ambar = css.getPropertyValue('--ambar').trim();
+  const puntos = [];
+  for (const r of filas) {
+    if (r.kind === 'incident' && Array.isArray(r.coordinates)) {
+      marcar(capaRevisada, 'r' + r.id, r.coordinates, azul,
+        popup(r.location, [r.district + ' · ' + fecha(r.date), r.summary, r.precision], r.sources || []));
+      puntos.push([r.coordinates[1], r.coordinates[0]]);
+    }
+  }
+  sombra.forEach((s, i) => {
+    if (Array.isArray(s.point)) {
+      marcar(capaSombra, 's' + i, s.point, ambar, popup(s.location, [s.district + ' · ' + fecha(s.day),
+        'Detección automática no publicada' + (s.date_status !== 'stated' ? ' · fecha del hecho por verificar' : '')],
+        (s.urls || []).map(u => ({ url: u }))));
+      puntos.push([s.point[1], s.point[0]]);
+    }
+  });
+  if (sombra.length) capaSombra.addTo(mapa); else mapa.removeLayer(capaSombra);
+  if (puntos.length && !pintar.ajustado) {
+    mapa.invalidateSize();
+    mapa.fitBounds(puntos, { padding: [40, 40], maxZoom: 15 });
+    // A hidden or still-sizing container reports 0px; fit again once it has a real size.
+    pintar.ajustado = mapa.getSize().y > 100;
+  }
+
+  const lista = document.getElementById('lista');
+  lista.replaceChildren();
+  const grupos = new Map();
+  const agregar = (distrito, nodo) => { if (!grupos.has(distrito)) grupos.set(distrito, []); grupos.get(distrito).push(nodo); };
+  for (const r of filas) {
+    const acciones = el('div', { class: 'acciones' });
+    if (Array.isArray(r.coordinates)) {
+      const b = el('button', { type: 'button', text: 'Ver en el mapa' });
+      b.onclick = () => { const m = marcadores.get('r' + r.id); mapa.setView(m.getLatLng(), 16); m.openPopup(); };
+      acciones.append(b);
+    }
+    for (const s of r.sources || []) { const a = enlaceSeguro(s.url, s.name); if (a) acciones.append(a); }
+    const esPub = r.kind === 'publication';
+    agregar(r.district, el('article', { class: 'item' },
+      el('span', { class: 'chip' + (esPub ? '' : ' azul'), text: esPub ? 'Publicación por verificar' : 'Incidente revisado' }),
+      el('h3', { text: esPub ? r.summary : r.location }),
+      el('p', { class: 'suave', text: (esPub ? 'Publicada el ' : 'Reporte del ') + fecha(r.date) + (Array.isArray(r.coordinates) ? '' : ' · sin punto preciso') }),
+      esPub ? null : el('p', { text: r.summary }),
+      acciones));
+  }
+  sombra.forEach((s, i) => {
+    const acciones = el('div', { class: 'acciones' });
+    if (Array.isArray(s.point)) {
+      const b = el('button', { type: 'button', text: 'Ver en el mapa' });
+      b.onclick = () => { const m = marcadores.get('s' + i); mapa.setView(m.getLatLng(), 16); m.openPopup(); };
+      acciones.append(b);
+    }
+    for (const u of s.urls || []) { const a = enlaceSeguro(u); if (a) acciones.append(a); }
+    agregar(s.district, el('article', { class: 'item' },
+      el('span', { class: 'chip ambar', text: 'Detección automática · no publicada' }),
+      el('h3', { text: s.location }),
+      el('p', { class: 'suave', text: fecha(s.day) + (s.date_status !== 'stated' ? ' · fecha del hecho por verificar' : '') +
+        (s.matches_review ? ' · coincide con un incidente revisado' : '') }),
+      acciones));
+  });
+  if (!grupos.size) lista.append(el('p', { class: 'item suave', text: 'No hay avisos vigentes en las últimas 48 horas. Eso no garantiza que no haya aniegos.' }));
+  for (const [distrito, nodos] of [...grupos].sort((a, b) => b[1].length - a[1].length)) {
+    lista.append(el('h2', { text: `${distrito} · ${nodos.length}` }), ...nodos);
+  }
+}
+async function cargar() {
+  const estado = document.getElementById('estado');
+  try {
+    const [feed, sombra] = await Promise.all([json('aniegos.json'), json('gpt-sombra.json').catch(() => null)]);
+    datos = { feed, sombra };
+    const vigentes = feed.reports.filter(r => new Date(r.expires_at) > Date.now());
+    const viejo = (Date.now() - new Date(feed.generated_at)) / 60000 > 90;
+    estado.textContent = `Actualizado ${hace(feed.generated_at)} · ${vigentes.length} avisos · ` +
+      `${vigentes.filter(r => Array.isArray(r.coordinates)).length} con punto` +
+      (viejo ? ' · la recopilación lleva más de 90 minutos sin actualizarse' : '') +
+      (feed.source_errors > 0 ? ' · algunas fuentes no respondieron' : '');
+    pintar();
+  } catch (e) {
+    estado.textContent = 'No pudimos cargar los datos. Inténtalo de nuevo en unos minutos.';
+  }
+}
+document.getElementById('verSombra').addEventListener('change', pintar);
+cargar();
+setInterval(cargar, 5 * 60000);
+</script>
+</body>
+</html>

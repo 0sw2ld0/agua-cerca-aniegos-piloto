@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Costos de IA · Agua Cerca</title>
+<meta name="description" content="Gasto estimado de Jev y GPT Luna al explorar noticias de aniegos, por corrida, por día y total.">
+<link rel="stylesheet" href="estilo.css">
+<style>
+  .cifras { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-bottom: 14px; }
+  .cifra .valor { font-size: 28px; font-weight: 700; font-variant-numeric: tabular-nums; margin: 2px 0; }
+  .cifra .etiqueta { font-size: 13px; color: var(--suave); }
+  .barra-limite { height: 6px; border-radius: 99px; background: var(--borde); overflow: hidden; margin-top: 8px; }
+  .barra-limite span { display: block; height: 100%; background: var(--azul); }
+  .barra-limite.gpt span { background: var(--ambar); }
+  h2 { font-size: 16px; margin: 0 0 8px; }
+  .punto { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; }
+</style>
+</head>
+<body>
+<header class="barra">
+  <h1>Agua Cerca · Costos de IA</h1>
+  <nav><a href="./">Mapa</a><a href="costos.html" aria-current="page">Costos</a></nav>
+  <div class="estado" id="estado">Cargando…</div>
+</header>
+<main>
+  <section class="cifras" id="cifras"></section>
+  <section class="tarjeta">
+    <h2>Por día</h2>
+    <div class="tabla"><table id="dias"></table></div>
+  </section>
+  <section class="tarjeta">
+    <h2>Por corrida del Action</h2>
+    <p class="suave pequeno" style="margin-top:0">Solo corridas con consultas pagadas. Una corrida sin consultas nuevas
+      reutiliza respuestas guardadas y cuesta US$0. El detalle por corrida se registra desde el 6/11; lo anterior
+      aparece como «antes del registro».</p>
+    <div class="tabla"><table id="corridas"></table></div>
+  </section>
+  <section class="tarjeta pequeno suave">
+    <p style="margin-top:0"><strong>Cómo se calcula.</strong> Son estimaciones a partir de los tokens que reporta cada API
+      y de las tarifas oficiales: Jev US$0.042 por millón de tokens de entrada, con salida gratuita; GPT Luna
+      (<code>gpt-6-luna</code>) US$0.10 por millón de entrada y US$0.50 por millón de salida. No son la factura. Una
+      consulta fallida cuenta con su reserva preventiva. Los totales incluyen los ensayos locales anteriores al
+      registro (Jev: 5/11; GPT: evaluación del 6/11).</p>
+    <p>Límites: Jev US$0.02 por corrida y por día, y US$0.10 en total. GPT Luna (modo sombra) US$0.03 por corrida,
+      US$0.10 por día y US$0.50 en total. Al alcanzarlos se dejan de hacer consultas. Eso no significa que no haya aniegos.</p>
+    <p style="margin-bottom:0">Datos: <a href="https://github.com/0sw2ld0/agua-cerca-aniegos-piloto/tree/main/data">jev-state.json y gpt-state.json</a>.</p>
+  </section>
+</main>
+<script>
+const RAW = 'https://raw.githubusercontent.com/0sw2ld0/agua-cerca-aniegos-piloto/main/data/';
+const LIMITES = { jev: 0.10, gpt: 0.50 };
+const usd = v => 'US$' + (v >= 0.01 ? v.toFixed(3) : v.toFixed(5));
+function el(tag, attrs = {}, ...hijos) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) { if (k === 'class') n.className = v; else if (k === 'text') n.textContent = v; else n.setAttribute(k, v); }
+  for (const h of hijos) if (h != null) n.append(h);
+  return n;
+}
+async function json(nombre) {
+  const r = await fetch(RAW + nombre + '?t=' + Math.floor(Date.now() / 120000), { cache: 'no-store' });
+  if (!r.ok) throw new Error(nombre + ' ' + r.status);
+  return r.json();
+}
+function normalizar(estado, motor) {
+  const filas = (estado?.attempts || []).map(a => ({
+    motor, dia: a.day, corrida: a.run || null, ok: a.status === 'success',
+    costo: Number(motor === 'jev' ? a.committed_usd : a.cost_usd) || 0,
+  }));
+  const previo = Number(estado?.previous_estimated_cost_usd) || 0;
+  const diaPrevio = motor === 'jev' ? (estado?.previous_cost_day || '2026-11-05') : '2026-11-06';
+  return { filas, previo, diaPrevio };
+}
+function cifra(etiqueta, valor, detalle, limite, clase) {
+  const c = el('div', { class: 'tarjeta cifra' }, el('div', { class: 'etiqueta', text: etiqueta }),
+    el('div', { class: 'valor', text: valor }), el('div', { class: 'suave pequeno', text: detalle }));
+  if (limite) {
+    const b = el('div', { class: 'barra-limite ' + (clase || '') }, el('span'));
+    b.firstChild.style.width = Math.min(100, limite * 100).toFixed(1) + '%';
+    c.append(b);
+  }
+  return c;
+}
+function tabla(nodo, cabecera, filas) {
+  nodo.replaceChildren(el('thead', {}, el('tr', {}, ...cabecera.map(([t, num]) => el('th', { class: num ? 'num' : '', text: t })))),
+    el('tbody', {}, ...filas.map(f => el('tr', {}, ...f.map(([t, num]) => el('td', { class: num ? 'num' : '', text: t }))))));
+}
+async function cargar() {
+  const estado = document.getElementById('estado');
+  try {
+    const [jevE, gptE] = await Promise.all([json('jev-state.json').catch(() => null), json('gpt-state.json').catch(() => null)]);
+    const jev = normalizar(jevE, 'jev'), gpt = normalizar(gptE, 'gpt');
+    const suma = m => m.previo + m.filas.reduce((s, f) => s + f.costo, 0);
+    const consultas = m => m.filas.filter(f => f.ok).length;
+    const tJev = suma(jev), tGpt = suma(gpt);
+    const cifras = document.getElementById('cifras');
+    cifras.replaceChildren(
+      cifra('Total de IA', usd(tJev + tGpt), `${consultas(jev) + consultas(gpt)} consultas registradas`),
+      cifra('Jev (TypeSafe)', usd(tJev), `${consultas(jev)} consultas · ${usd(LIMITES.jev)} de límite`, tJev / LIMITES.jev),
+      cifra('GPT Luna · modo sombra', usd(tGpt), `${consultas(gpt)} notas · ${usd(LIMITES.gpt)} de límite`, tGpt / LIMITES.gpt, 'gpt'),
+      cifra('Promedio por nota con GPT', consultas(gpt) ? usd(gpt.filas.filter(f => f.ok).reduce((s, f) => s + f.costo, 0) / consultas(gpt)) : '—',
+        'Cada nota se paga una sola vez'));
+
+    const dias = new Map();
+    const fila = d => { if (!dias.has(d)) dias.set(d, { jev: 0, jevN: 0, gpt: 0, gptN: 0 }); return dias.get(d); };
+    for (const m of [jev, gpt]) {
+      if (m.previo) fila(m.diaPrevio)[m === jev ? 'jev' : 'gpt'] += m.previo;
+      for (const f of m.filas) { const d = fila(f.dia); d[f.motor] += f.costo; if (f.ok) d[f.motor + 'N']++; }
+    }
+    tabla(document.getElementById('dias'),
+      [['Día'], ['Jev', 1], ['Consultas Jev', 1], ['GPT Luna', 1], ['Notas GPT', 1], ['Total', 1]],
+      [...dias].sort((a, b) => b[0].localeCompare(a[0])).map(([d, v]) => [[d.split('-').reverse().join('/')],
+        [usd(v.jev), 1], [String(v.jevN), 1], [usd(v.gpt), 1], [String(v.gptN), 1], [usd(v.jev + v.gpt), 1]]));
+
+    const corridas = new Map();
+    for (const f of [...jev.filas, ...gpt.filas]) {
+      const k = f.corrida || 'antes';
+      if (!corridas.has(k)) corridas.set(k, { jev: 0, jevN: 0, gpt: 0, gptN: 0 });
+      const c = corridas.get(k); c[f.motor] += f.costo; if (f.ok) c[f.motor + 'N']++;
+    }
+    const nombre = k => k === 'antes' ? 'Antes del registro por corrida' :
+      new Date(k).toLocaleString('es-PE', { timeZone: 'America/Lima', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+    const orden = [...corridas].sort((a, b) => (a[0] === 'antes') - (b[0] === 'antes') || b[0].localeCompare(a[0])).slice(0, 40);
+    tabla(document.getElementById('corridas'),
+      [['Corrida (hora de Lima)'], ['Jev', 1], ['Consultas', 1], ['GPT Luna', 1], ['Notas', 1], ['Total', 1]],
+      orden.map(([k, v]) => [[nombre(k)], [usd(v.jev), 1], [String(v.jevN), 1], [usd(v.gpt), 1], [String(v.gptN), 1], [usd(v.jev + v.gpt), 1]]));
+    estado.textContent = 'Estimación a partir de los registros del repositorio · se actualiza con cada corrida del Action';
+  } catch (e) {
+    estado.textContent = 'No pudimos cargar los registros de costo. Inténtalo de nuevo en unos minutos.';
+  }
+}
+cargar();
+</script>
+</body>
+</html>

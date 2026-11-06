@@ -92,7 +92,7 @@ class PersistentJevClient:
         if (self.run_committed+reserve>RUN_LIMIT or daily+reserve>DAY_LIMIT or
                 self.state['previous_estimated_cost_usd']+spent+reserve>PILOT_LIMIT):
             raise DeferredRequest('budget_limit')
-        receipt={'day':today,'committed_usd':reserve,'status':'started','sha256':key}
+        receipt={'day':today,'run':self.now.isoformat(timespec='minutes'),'committed_usd':reserve,'status':'started','sha256':key}
         self.state['attempts'].append(receipt)
         self.state['entries'][key]={'status':'started','retry_after':(self.now+timedelta(hours=BACKOFF_HOURS)).isoformat()}
         self.run_committed+=reserve
