@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-05T17:19:40.591694-05:00",
+  "generated_at": "2026-11-05T21:50:25.544079-05:00",
   "coverage": "partial",
-  "source_errors": 1,
+  "source_errors": 0,
   "reports": [
     {
       "id": -2822031115421324,
@@ -138,6 +138,24 @@
       ]
     },
     {
+      "id": -4120311867112626,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Defensoría del Pueblo supervisa atención de aniegos en distritos de Lima Metropolitana y solicita medidas urgentes para proteger la salud de la población",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T05:18:02+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "www.defensoria.gob.pe",
+          "url": "https://www.defensoria.gob.pe/defensoria-del-pueblo-supervisa-atencion-de-aniegos-en-distritos-de-lima-metropolitana-y-solicita-medidas-urgentes-para-proteger-la-salud-de-la-poblacion/"
+        }
+      ]
+    },
+    {
       "id": -3327443709068013,
       "kind": "publication",
       "district": "Lima Metropolitana",
@@ -188,24 +206,6 @@
         {
           "name": "elbuho.pe",
           "url": "https://elbuho.pe/2026/11/el-nino-ya-afecta-lima-se-activa-una-quebrada-y-lluvias-inundan-distritos-impidiendo-el-trafico/"
-        }
-      ]
-    },
-    {
-      "id": -3530674736147524,
-      "kind": "publication",
-      "district": "Villa El Salvador",
-      "location": "Publicación reciente · por verificar",
-      "summary": "Lima no soporta las lluvias y Villa El Salvador es el primero en inundarse (VIDEO)",
-      "date": "2026-11-05",
-      "expires_at": "2026-11-07T17:42:56+00:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
-      "sources": [
-        {
-          "name": "elbuho.pe",
-          "url": "https://elbuho.pe/2026/11/lima-no-soporta-las-lluvias-y-villa-el-salvador-es-el-primero-en-inundarse-video/"
         }
       ]
     }
