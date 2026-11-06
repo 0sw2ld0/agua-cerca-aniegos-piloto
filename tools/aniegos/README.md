@@ -48,6 +48,6 @@ Algunos medios y CDN envían páginas comprimidas con gzip aunque no se pida; el
 
 ## Operación
 
-El workflow ejecuta pruebas, recopila, genera el JSON y publica solo `data/aniegos.json` en este repositorio. Programado cada 30 minutos (minutos 17 y 47 UTC) y manualmente. GitHub puede retrasar ejecuciones: no es tiempo real. Los artifacts de diagnóstico se conservan siete días. Los cambios del catálogo revisado requieren editar `reviewed.json`; no contienen direcciones privadas de afectados ni cuerpos de noticias.
+El workflow ejecuta pruebas, recopila, genera el JSON y publica solo `data/aniegos.json` en este repositorio. Programado cada 30 minutos (minutos 17 y 47 UTC) y manualmente. GitHub ejecuta pocas corridas programadas (4 de unas 44 entre el 5 y el 6/11). Por eso el workflow «Reloj de recopilación» (`.github/workflows/reloj.yml`) dispara la recopilación cada 30 minutos durante 5,5 h y luego se encadena a sí mismo. Si el reloj no está corriendo, la propia recopilación lo reinicia, y además queda un cron cada 3 h como respaldo. No es tiempo real. Los artifacts de diagnóstico se conservan siete días. Los cambios del catálogo revisado requieren editar `reviewed.json`; no contienen direcciones privadas de afectados ni cuerpos de noticias.
 
 El GeoJSON del primer piloto sigue siendo un diagnóstico de su antiguo contrato de revisión; la app utiliza exclusivamente `data/aniegos.json`, que admite avisos sin coordenadas. Cobertura parcial: un mapa sin puntos no garantiza ausencia de aniegos.

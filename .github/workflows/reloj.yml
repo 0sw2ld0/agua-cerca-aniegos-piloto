@@ -1,0 +1,33 @@
+name: Reloj de recopilación
+# GitHub runs few of the scheduled events (4 of ~44 on 5-6/11). This job dispatches the
+# collector every 30 minutes for 5.5 h and then chains a new clock. workflow_dispatch sent with
+# GITHUB_TOKEN does start runs (documented exception). The collector also restarts the clock if
+# it is missing, and the cron below is one more fallback.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 */3 * * *'
+permissions:
+  actions: write
+  contents: read
+concurrency:
+  group: reloj-aniegos
+  cancel-in-progress: false
+jobs:
+  reloj:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - name: Disparar la recopilación cada 30 minutos
+        run: |
+          for i in $(seq 1 11); do
+            echo "$(date -u +%H:%MZ) disparo $i"
+            gh workflow run aniegos-piloto.yml --ref main || echo "no se pudo disparar; se reintenta en 30 min"
+            sleep 1800
+          done
+      - name: Encadenar el siguiente reloj
+        if: always()
+        run: gh workflow run reloj.yml --ref main

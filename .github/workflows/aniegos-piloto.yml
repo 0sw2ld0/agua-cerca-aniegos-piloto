@@ -5,6 +5,7 @@ on:
     - cron: '17,47 * * * *'
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: aniegos-feed
   cancel-in-progress: false
@@ -78,6 +79,14 @@ jobs:
         run: |
           if [ -f resultado-jev/RESUMEN.md ]; then cat resultado-jev/RESUMEN.md >> "$GITHUB_STEP_SUMMARY"; fi
           if [ -f resultado-gpt/RESUMEN.md ]; then cat resultado-gpt/RESUMEN.md >> "$GITHUB_STEP_SUMMARY"; fi
+      - name: Reiniciar el reloj si no está corriendo
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          activos=$(gh run list --workflow reloj.yml --limit 5 --json status --jq '[.[] | select(.status != "completed")] | length' || echo 1)
+          if [ "$activos" = "0" ]; then gh workflow run reloj.yml --ref main && echo "Reloj reiniciado"; else echo "Reloj activo"; fi
       - name: Señalar fallos de Jev
         if: always() && steps.jev.outcome == 'failure'
         run: exit 1
