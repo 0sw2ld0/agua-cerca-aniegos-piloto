@@ -1,0 +1,1451 @@
+{
+ "articles": {
+  "https://caretas.pe/sociedad/aeropuerto-jorge-chavez-en-riesgo-de-inundacion-por-posible-desborde-del-rio-rimac-alerta-lap/": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "5 de noviembre de 2026",
+      "date_relation": "explicit_date",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "2026-11-05",
+      "location": "Aeropuerto Internacional Jorge Chávez",
+      "location_quote": "Aeropuerto Internacional Jorge Chávez",
+      "summary": "LAP advirtió de posibles afectaciones al acceso y a la infraestructura del aeropuerto si aumentan las aguas subterráneas o el caudal del río.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "5 de noviembre de 2026",
+      "date_relation": "explicit_date",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "2026-11-05",
+      "location": "avenida Néstor Gambetta",
+      "location_quote": "la avenida Néstor Gambetta",
+      "summary": "Se señaló como posible escenario la inundación de esta vía de acceso si aumenta significativamente el caudal del río Rímac.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "5 de noviembre de 2026",
+      "date_relation": "explicit_date",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "2026-11-05",
+      "location": "Segunda pista de aterrizaje",
+      "location_quote": "determinados sectores de la segunda pista de aterrizaje",
+      "summary": "Un eventual aumento del nivel de las aguas subterráneas podría afectar algunos sectores de la segunda pista.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-05T19:13:25+00:00",
+   "text_sha": "539e0088366269ee8dbb74faed02a0b3a3d895bb7a7d2e12d8d041a47519813f",
+   "title": "Aeropuerto Jorge Chávez en riesgo de inundación por posible desborde del río Rímac: alerta LAP"
+  },
+  "https://caretas.pe/sociedad/emergencia-en-lima-sur-fuertes-lluvias-inundaciones-aniegos-y-decenas-de-familias-afectadas-senamhi/": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "durante la noche del miércoles 4 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "de Villa El Salvador",
+      "explicit_date": "2026-11-04",
+      "location": "Sector 1, Grupo 1",
+      "location_quote": "Sector 1, Grupo 1, de Villa El Salvador",
+      "summary": "El colapso del alcantarillado desbordó aguas residuales e inundó viviendas y calles; unas 50 familias resultaron afectadas.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "durante la noche del miércoles 4 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa María del Triunfo",
+      "district_quote": "En Villa María del Triunfo",
+      "explicit_date": "2026-11-04",
+      "location": "Av. 26 de Noviembre",
+      "location_quote": "la avenida 26 de Noviembre",
+      "summary": "La acumulación de agua y lodo afectó esta avenida.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "este jueves",
+      "date_relation": "same_day_as_publication",
+      "district": "Villa María del Triunfo",
+      "district_quote": "en Villa María del Triunfo (VMT)",
+      "explicit_date": "",
+      "location": "Bypass de Av. Pachacútec con Av. 26 de Noviembre",
+      "location_quote": "baipás Nueva Esperanza, ubicado en el cruce de las avenidas Pachacútec y 26 de Noviembre",
+      "summary": "El paso a desnivel se inundó y fue cerrado al tránsito vehicular.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "durante la noche del miércoles 4 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "San Juan de Miraflores",
+      "district_quote": "En San Juan de Miraflores",
+      "explicit_date": "2026-11-04",
+      "location": "Av. Los Héroes",
+      "location_quote": "la avenida Los Héroes",
+      "summary": "Los aniegos afectaron la avenida y dificultaron el desplazamiento de peatones y vehículos.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-05T14:54:09+00:00",
+   "text_sha": "c7a88c1c84c87b94eee8ba71917b2c2bc1546cd3f89bfc97ae4cdf0fc6e3d22c",
+   "title": "Emergencia en Lima Sur: fuertes lluvias, inundaciones, aniegos y decenas de familias afectadas"
+  },
+  "https://caretas.pe/sociedad/mujer-de-71-anos-encara-al-ministro-de-vivienda-por-inundacion-de-su-casa-y-el-se-retira-sin-declarar/": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "vivienda",
+      "location_quote": "su vivienda",
+      "summary": "La vivienda de González se inundó por segunda vez; el agua alcanzó cerca de dos metros y dejó lodo y daños materiales.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-06T00:08:10+00:00",
+   "text_sha": "6eb666d31462cd2347a604b53bb78888d7fae4c617c8f044d2d39f3ded92a562",
+   "title": "Mujer de 71 años encara al ministro de Vivienda por inundación de su casa y él se retira sin declarar"
+  },
+  "https://caretas.pe/sociedad/villa-maria-del-triunfo-bypass-pachacutec-totalmente-inundado-tras-lluvias-intensas-en-lima/": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "jueves 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa María del Triunfo",
+      "district_quote": "en Villa María del Triunfo",
+      "explicit_date": "2026-11-05",
+      "location": "Paso a desnivel de la avenida Pachacútec con la avenida 26 de Noviembre",
+      "location_quote": "El paso a desnivel de la avenida Pachacútec, a la altura del cruce con la avenida 26 de Noviembre",
+      "summary": "El paso a desnivel quedó cubierto de agua tras las lluvias y el colapso del desagüe; cerraron la vía y desplegaron cisternas para retirar el agua.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "durante la madrugada del jueves 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa María del Triunfo",
+      "district_quote": "en Villa María del Triunfo",
+      "explicit_date": "2026-11-05",
+      "location": "Viviendas cercanas",
+      "location_quote": "las viviendas cercanas",
+      "summary": "Vecinos denunciaron que aguas residuales ingresaron a sus casas y dañaron sus pertenencias.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-05T15:28:52+00:00",
+   "text_sha": "9a0e732e6bb9ad25444ae8371194141fd17322d0700d975ff205e3cef9f4df2a",
+   "title": "Villa María del Triunfo: bypass Pachacútec totalmente inundado tras lluvias intensas en Lima"
+  },
+  "https://elbuho.pe/2026/11/se-implemento-en-36-horas-y-termino-inundado-en-un-dia-el-fiasco-del-hospital-de-campana-del-gobierno-de-keiko-fujimori-en-tumbes-video/": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-06T17:09:24+00:00",
+   "text_sha": "38250c3f60fee2a2d83c924a5e8f941114bb6b3c9684b38e4d878e1ae2ba9aaa",
+   "title": "Se implementó en 36 horas y terminó inundado en un día: el fiasco del hospital de campaña del gobierno de Keiko Fujimori en Tumbes (VIDEO)"
+  },
+  "https://elcomercio.pe/lima/lima-sur-bajo-el-agua-por-que-las-lluvias-se-concentran-en-esta-zona-y-no-en-el-norte-y-como-se-explican-los-65-puntos-de-inundacion-apuesplan-noticia/": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "",
+      "date_relation": "previous_day",
+      "district": "Villa El Salvador",
+      "district_quote": "En Villa El Salvador",
+      "explicit_date": "",
+      "location": "Villa El Salvador",
+      "location_quote": "En Villa El Salvador",
+      "summary": "El agua de lluvia mezclada con aguas servidas entró a viviendas y afectó distintas habitaciones y patios.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa María del Triunfo",
+      "district_quote": "en Villa María del Triunfo",
+      "explicit_date": "",
+      "location": "avenida 26 de Noviembre",
+      "location_quote": "la avenida 26 de Noviembre",
+      "summary": "La nota la menciona entre los puntos vulnerables ante las lluvias recorridos semanas antes.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa María del Triunfo",
+      "district_quote": "en Villa María del Triunfo",
+      "explicit_date": "",
+      "location": "Bypass de Nueva Esperanza",
+      "location_quote": "el bypass de Nueva Esperanza",
+      "summary": "La nota lo menciona entre los puntos vulnerables ante las lluvias recorridos semanas antes.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa El Salvador",
+      "district_quote": "En este último distrito",
+      "explicit_date": "",
+      "location": "Sector 1",
+      "location_quote": "el Sector 1 de Villa El Salvador",
+      "summary": "Se describieron problemas de alcantarillado y acumulación de aguas servidas, en particular en los grupos 1 y 6.",
+      "timing": "background",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa El Salvador",
+      "district_quote": "En este último distrito",
+      "explicit_date": "",
+      "location": "Sector 1, Grupo 1",
+      "location_quote": "el Sector 1 de Villa El Salvador",
+      "summary": "El grupo fue señalado entre las zonas con problemas de alcantarillado y acumulación de aguas servidas.",
+      "timing": "background",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa El Salvador",
+      "district_quote": "En este último distrito",
+      "explicit_date": "",
+      "location": "Sector 1, Grupo 6",
+      "location_quote": "el Sector 1 de Villa El Salvador",
+      "summary": "El grupo fue señalado entre las zonas con problemas de alcantarillado y acumulación de aguas servidas.",
+      "timing": "background",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-06T16:17:56+00:00",
+   "text_sha": "4ac6977ed98c5c4f209b9b1f67b29b6d5c2f43234dffae7ee9403ddecf9a2d43",
+   "title": "Lima Sur bajo el agua: ¿por qué las lluvias se concentran en esta zona y no en el norte y cómo se explican los 65 puntos de inundación?  "
+  },
+  "https://elcomercio.pe/lima/sucesos/bus-de-la-empresa-el-rapido-queda-varado-en-via-inundada-por-lluvias-en-villa-el-salvador-apuesplan-ultimas-noticia/": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "este jueves 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "en el distrito de Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "Av. Juan Velasco Alvarado",
+      "location_quote": "a un lado de la Av. Juan Velasco Alvarado",
+      "summary": "El agua empozada en la vía dejó un bus varado y dificultó el tránsito.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "este jueves 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "en el distrito de Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "área de juegos para niños",
+      "location_quote": "cerca de un área de juegos para niños",
+      "summary": "El área de juegos también presentó acumulación de agua.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "este jueves 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "de Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "Sector 1, Grupo 1",
+      "location_quote": "Sector 1, Grupo 1 de Villa El Salvador",
+      "summary": "El desagüe ingresó por los sumideros y anegó viviendas, afectando a decenas de predios.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "este jueves 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "de Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "colegio Juan Pablo II",
+      "location_quote": "al colegio Juan Pablo II",
+      "summary": "La acumulación de agua afectó al colegio.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "este jueves 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "de Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "Pasos a desnivel de la avenida El Sol",
+      "location_quote": "pasos a desnivel de la avenida El Sol y de la Av. Pachacútec",
+      "summary": "El aniego motivó el cierre del paso a desnivel para el tránsito vehicular.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "este jueves 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "de Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "Pasos a desnivel de la Av. Pachacútec",
+      "location_quote": "pasos a desnivel de la avenida El Sol y de la Av. Pachacútec",
+      "summary": "El aniego motivó el cierre del paso a desnivel para el tránsito vehicular.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "este jueves 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "de Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "Mateo Pumacahua con Separadora Industrial",
+      "location_quote": "el cruce de las avenidas Mateo Pumacahua y Separadora Industrial",
+      "summary": "El agua acumulada en el cruce dificultó el tránsito.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-05T13:57:34+00:00",
+   "text_sha": "ce2bcdef051b797b83e078408d324b1dbe64b37329b21d6fec1917abc46bd6c2",
+   "title": "Bus de la empresa El Rápido queda varado en vía inundada por lluvias en Villa El Salvador"
+  },
+  "https://elcomercio.pe/lima/sucesos/estos-son-los-116-distritos-de-lima-y-callao-expuestos-a-inundaciones-y-huaicos-por-el-nino-costero-que-deben-hacer-las-municipalidades-apuesplan-noticia/": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Miraflores",
+      "district_quote": "Miraflores",
+      "explicit_date": "",
+      "location": "Avenidas, sótanos y cocheras subterráneas",
+      "location_quote": "Miraflores, San Isidro y San Borja presentan un mayor riesgo de aniegos en avenidas, sótanos y cocheras subterráneas.",
+      "summary": "Se menciona riesgo de aniegos en avenidas, sótanos y cocheras subterráneas del distrito.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "San Isidro",
+      "district_quote": "San Isidro",
+      "explicit_date": "",
+      "location": "Avenidas, sótanos y cocheras subterráneas",
+      "location_quote": "Miraflores, San Isidro y San Borja presentan un mayor riesgo de aniegos en avenidas, sótanos y cocheras subterráneas.",
+      "summary": "Se menciona riesgo de aniegos en avenidas, sótanos y cocheras subterráneas del distrito.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "San Borja",
+      "district_quote": "San Borja",
+      "explicit_date": "",
+      "location": "Avenidas, sótanos y cocheras subterráneas",
+      "location_quote": "Miraflores, San Isidro y San Borja presentan un mayor riesgo de aniegos en avenidas, sótanos y cocheras subterráneas.",
+      "summary": "Se menciona riesgo de aniegos en avenidas, sótanos y cocheras subterráneas del distrito.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-06T16:16:25+00:00",
+   "text_sha": "6eee06c37a7fc2374d88772af41a5adfc644e775b9ec6360d43c09fbc1b81ed1",
+   "title": "Estos son los 116 distritos de Lima y Callao expuestos a inundaciones y huaicos por El Niño costero: ¿qué deben hacer las municipalidades?"
+  },
+  "https://elcomercio.pe/lima/sucesos/furgonetas-quedan-varadas-por-tratar-de-pasar-bypass-inundado-en-villa-el-salvador-tras-lluvias-apuesplan-ultimas-noticia/": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "este 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "en el distrito de Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "Bypass de 26 de Noviembre con Pachacútec",
+      "location_quote": "el bypass en el cruce de las avenidas 26 de Noviembre y Pachacútec",
+      "summary": "El bypass quedó inundado por agua de lluvia; dos furgonetas quedaron varadas y se retiró el agua con cisternas y motobombas.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-05T21:13:32+00:00",
+   "text_sha": "357588350e47235112a47fb926b6df4c22bf4dcbf74c03bc7d0d5bd5c9ca360c",
+   "title": "Furgonetas quedan varadas por tratar de pasar bypass inundado en Villa El Salvador"
+  },
+  "https://elcomercio.pe/lima/sucesos/villa-el-salvador-amanece-con-calles-inundadas-y-desagues-colapsados-por-lluvias-apuesplan-ultimas-noticia/": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "este 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "Sector 1, Grupo 1",
+      "location_quote": "Sector 1, Grupo 1",
+      "summary": "El colapso del alcantarillado hizo que desagüe ingresara a unas cinco viviendas.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "este 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "Av. Separadora Industrial con Mateo Pumacahua",
+      "location_quote": "Av. Separadora Industrial cruce con Mateo Pumacahua",
+      "summary": "El agua acumulada cubrió las llantas de algunos vehículos y dificultó el tránsito.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "este 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "Colegio Juan Pablo II",
+      "location_quote": "colegio Juan Pablo II",
+      "summary": "Las aguas servidas empozadas llevaron a suspender las clases presenciales.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "este 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "Bypass de Av. El Sol",
+      "location_quote": "bypass de la Av. El Sol",
+      "summary": "La acumulación de agua motivó el cierre temporal del paso a desnivel.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "este 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "Intercambio de Av. Pachacútec",
+      "location_quote": "intercambio de la Av. Pachacútec",
+      "summary": "El aniego obligó a cerrar el paso por segundo día consecutivo.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-05T12:22:06+00:00",
+   "text_sha": "3c6e116f2811d86d42e90ef12798c9088bfec4030c642d886cfd87ede2eefbd7",
+   "title": "Villa El Salvador amanece con calles inundadas y desagües colapsados por lluvias"
+  },
+  "https://elcomercio.pe/lima/transporte/lluvias-en-lima-20-de-los-33-bypasses-evaluados-por-cenepred-presentan-riesgo-de-inundacion-noticia/": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "en octubre",
+      "date_relation": "unknown",
+      "district": "Villa María del Triunfo",
+      "district_quote": "en Villa María del Triunfo (VMT)",
+      "explicit_date": "",
+      "location": "Bypass de la avenida Pachacútec",
+      "location_quote": "El bypass de la avenida Pachacútec, en Villa María del Triunfo (VMT)",
+      "summary": "El bypass acumuló agua en octubre y se cerró mientras equipos retiraban el agua para restablecer el tránsito.",
+      "timing": "background",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "15 de enero de 1970",
+      "date_relation": "explicit_date",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "1970-01-15",
+      "location": "Paso a desnivel de las avenidas Javier Prado y Arequipa",
+      "location_quote": "el paso a desnivel de las avenidas Javier Prado y Arequipa",
+      "summary": "El paso a desnivel quedó cubierto por agua durante las inundaciones de 1970; también se menciona entre los puntos expuestos a riesgo.",
+      "timing": "background",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Vía Expresa",
+      "location_quote": "Vía Expresa",
+      "summary": "Un tramo de la vía figura entre los puntos susceptibles de inundación o aniego.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Alfonso Ugarte",
+      "location_quote": "Alfonso Ugarte",
+      "summary": "La avenida aparece entre los tramos identificados como susceptibles de aniego.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "28 de Julio",
+      "location_quote": "28 de Julio",
+      "summary": "La avenida aparece entre los tramos identificados como susceptibles de aniego.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Bypass de la avenida Arequipa",
+      "location_quote": "el bypass de la avenida Arequipa",
+      "summary": "El bypass figura entre los puntos susceptibles de inundación o aniego.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Angamos",
+      "location_quote": "sectores de Angamos",
+      "summary": "Se mencionan sectores de Angamos entre las zonas susceptibles de aniego.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-06T15:30:14+00:00",
+   "text_sha": "5db82988a9e20f877ca15bce8d65c833d6d4284a84a5be12fdddfd8aca61ea96",
+   "title": "Lluvias en Lima: 20 de los 33 bypasses evaluados por Cenepred presentan riesgo de inundación"
+  },
+  "https://elcomercio.pe/lima/villa-el-salvador-aniegos-y-colapso-de-alcantarillado-tras-garua-nocturna-lluvias-apuesplan-ultimas-noticia/": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa El Salvador",
+      "district_quote": "en el distrito de Villa El Salvador",
+      "explicit_date": "",
+      "location": "Sector 1, Grupo 1",
+      "location_quote": "El Sector 1, Grupo 1",
+      "summary": "Se reporta acumulación de agua asociada al colapso del alcantarillado y las lloviznas.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa El Salvador",
+      "district_quote": "en el distrito de Villa El Salvador",
+      "explicit_date": "",
+      "location": "El Sectorial",
+      "location_quote": "El Sectorial",
+      "summary": "Se reporta acumulación de agua asociada al colapso del alcantarillado y las lloviznas.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-05T04:52:48+00:00",
+   "text_sha": "45212153c6343b52eb573dd2ef454ac68a83e5c57e0ad7edf002253558e5e9de",
+   "title": "Villa El Salvador: aniegos y colapso de alcantarillado tras llovizna nocturna"
+  },
+  "https://larepublica.pe/sociedad/2026/11/05/bus-de-el-rapido-queda-atascado-por-inundacion-en-villa-el-salvador-y-conductor-no-puede-salir-por-el-agua-168840": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "este jueves 5 de noviembre",
+      "date_relation": "same_day_as_publication",
+      "district": "Villa El Salvador",
+      "district_quote": "en Villa El Salvador",
+      "explicit_date": "",
+      "location": "avenida Juan Velasco Alvarado",
+      "location_quote": "avenida Juan Velasco Alvarado",
+      "summary": "La inundación cubrió parte de la avenida y dejó atascado un bus; el agua dificultaba el tránsito.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "este jueves 5 de noviembre",
+      "date_relation": "same_day_as_publication",
+      "district": "Villa El Salvador",
+      "district_quote": "en Villa El Salvador",
+      "explicit_date": "",
+      "location": "almacén",
+      "location_quote": "un almacén de la zona",
+      "summary": "El agua bloqueó el acceso al almacén y los trabajadores tuvieron que usar maquinaria y luego un camión para ingresar.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "este jueves 5 de noviembre",
+      "date_relation": "same_day_as_publication",
+      "district": "Villa El Salvador",
+      "district_quote": "en Villa El Salvador",
+      "explicit_date": "",
+      "location": "juegos infantiles",
+      "location_quote": "unos juegos infantiles ubicados en las inmediaciones",
+      "summary": "El agua alcanzó los juegos infantiles cercanos a la zona inundada.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-05T15:35:04+00:00",
+   "text_sha": "963ccc02646e2878dc031217b4a92aa6d3089dffc23632bfd62491692407f297",
+   "title": "Bus de El Rápido queda atascado por inundación en Villa El Salvador y conductor no puede salir por el agua"
+  },
+  "https://larepublica.pe/sociedad/2026/11/05/chofer-quedo-atrapado-durante-3-horas-tras-intentar-cruzar-bypass-inundado-por-las-lluvias-en-ves-no-sabia-que-hacer-104580": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "este jueves 5 de noviembre",
+      "date_relation": "same_day_as_publication",
+      "district": "Villa El Salvador",
+      "district_quote": "en Villa El Salvador",
+      "explicit_date": "",
+      "location": "Bypass de la avenida El Sol",
+      "location_quote": "bypass de la avenida El Sol",
+      "summary": "Un conductor quedó atrapado con su furgoneta en el bypass inundado mientras intentaba cruzarlo; un vecino lo ayudó a retirar el vehículo.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-05T22:59:39+00:00",
+   "text_sha": "08384adcbdaec471d82c347400154a1fc2da83b98a77871498d55bb173fd1579",
+   "title": "Chofer quedó atrapado durante 3 horas tras intentar cruzar bypass inundado por las lluvias en VES: “No sabía qué hacer”"
+  },
+  "https://larepublica.pe/sociedad/2026/11/05/habra-clases-virtuales-por-lluvias-en-lima-drelm-pide-evaluar-condiciones-de-seguridad-en-colegios-publicos-ante-riesgo-de-inundaciones-61360": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-06T00:26:26+00:00",
+   "text_sha": "91a830756e7a81047c40d03ecd6b6d1cc7b17ac109d3f2f7e464fda5593e082f",
+   "title": "¿Habrá clases virtuales por lluvias en Lima? DRELM pide evaluar condiciones de seguridad en colegios públicos ante riesgo de inundaciones"
+  },
+  "https://larepublica.pe/sociedad/2026/11/05/vecino-sorprende-al-usar-una-balsa-inflable-para-cruzar-calles-inundadas-por-las-lluvias-en-villa-el-salvador-147665": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "",
+      "location": "Sector 1, Grupo 1",
+      "location_quote": "Sector 1, Grupo 1 en Villa El Salvador",
+      "summary": "El colapso del desagüe hizo que aguas servidas ingresaran a varias viviendas del sector.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "",
+      "location": "avenida Juan Velasco Alvarado",
+      "location_quote": "en la avenida Juan Velasco Alvarado",
+      "summary": "La inundación dejó un bus atrapado y ladeado en la vía.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-05T19:22:45+00:00",
+   "text_sha": "e5e6a7ffd9dcf841df9274b41f0ee3b8c5debc66c3945228b686be433c716605",
+   "title": "Vecino sorprende al usar una balsa inflable para cruzar calles inundadas por las lluvias en Villa El Salvador"
+  },
+  "https://larepublica.pe/sociedad/2026/11/05/villa-el-salvador-vmt-y-sjm-amanecen-bajo-el-agua-tras-intensa-llovizna-en-lima-inundaciones-afectan-viviendas-y-vias-488030": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "la madrugada del jueves 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "Villa El Salvador",
+      "location_quote": "inundaciones en Villa El Salvador",
+      "summary": "El distrito figura entre los afectados por inundaciones durante las lluvias de la noche del 4 y la madrugada del 5 de noviembre.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "la madrugada del jueves 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa María del Triunfo",
+      "district_quote": "Villa María del Triunfo",
+      "explicit_date": "2026-11-05",
+      "location": "Villa María del Triunfo",
+      "location_quote": "inundaciones en Villa María del Triunfo",
+      "summary": "El distrito fue uno de los afectados por inundaciones durante el episodio de lluvias.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "la madrugada del jueves 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "San Juan de Miraflores",
+      "district_quote": "San Juan de Miraflores",
+      "explicit_date": "2026-11-05",
+      "location": "San Juan de Miraflores",
+      "location_quote": "inundaciones en San Juan de Miraflores",
+      "summary": "El distrito fue mencionado entre los lugares inundados por las lluvias.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "Durante la mañana",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "Sector 1, Grupo 1",
+      "location_quote": "los grupos 1 y 6 del sector 1",
+      "summary": "El agua entró a viviendas de este grupo y los vecinos retiraban el agua y limpiaban sus domicilios.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "Durante la mañana",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "Sector 1, Grupo 6",
+      "location_quote": "los grupos 1 y 6 del sector 1",
+      "summary": "El agua entró a viviendas de este grupo y los vecinos realizaban labores de limpieza.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "la madrugada del jueves 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "avenida Juan Velasco Alvarado",
+      "location_quote": "en la avenida Juan Velasco Alvarado",
+      "summary": "Un bus quedó atrapado allí luego de que cediera el terreno, en medio de las precipitaciones y las inundaciones.",
+      "timing": "current",
+      "water_reported": "unclear"
+     },
+     {
+      "date_quote": "la madrugada del jueves 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "colegio Juan Pablo II",
+      "location_quote": "el colegio Juan Pablo II",
+      "summary": "La acumulación de agua en las instalaciones llevó al colegio a suspender las clases presenciales.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "la madrugada del jueves 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "Villa María del Triunfo",
+      "district_quote": "Villa María del Triunfo",
+      "explicit_date": "2026-11-05",
+      "location": "paso a desnivel de la avenida Pachacútec",
+      "location_quote": "el paso a desnivel de la avenida Pachacútec",
+      "summary": "El agua acumulada inundó parte de la infraestructura vial en este paso a desnivel.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "Alrededor de las 3.00 a. m.",
+      "date_relation": "explicit_date",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "2026-11-05",
+      "location": "Alrededores del Hospital de Emergencias",
+      "location_quote": "los alrededores del Hospital de Emergencias",
+      "summary": "Se reportaron aniegos que dificultaron el desplazamiento de vehículos y peatones.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "la madrugada del jueves 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "2026-11-05",
+      "location": "avenida Pachacútec, debajo de las estaciones de la Línea 1 del Metro de Lima",
+      "location_quote": "la avenida Pachacútec, debajo de las estaciones de la Línea 1 del Metro de Lima",
+      "summary": "El agua empozada en este tramo habría ingresado a viviendas contiguas a la vía.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "la madrugada del jueves 5 de noviembre",
+      "date_relation": "explicit_date",
+      "district": "San Juan de Miraflores",
+      "district_quote": "en San Juan de Miraflores",
+      "explicit_date": "2026-11-05",
+      "location": "avenida Los Héroes",
+      "location_quote": "la avenida Los Héroes, en San Juan de Miraflores",
+      "summary": "Equipos municipales realizaron labores de succión y drenaje para retirar agua acumulada en la vía.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-05T21:40:38+00:00",
+   "text_sha": "17c6df7a6a521bd9332a1f3ac7e491423a4ab8629dda4adbfd1a9036101b3d98",
+   "title": "Lluvias inundan Lima Sur y ponen en alerta al norte: Senamhi no descarta que el ciclón Yaku coincida con El Niño en 2027"
+  },
+  "https://larepublica.pe/sociedad/2026/11/06/aeropuerto-jorge-chavez-lap-alerta-riesgo-de-inundaciones-por-crecida-del-rio-rimac-337266": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Avenida Néstor Gambetta",
+      "location_quote": "avenida Néstor Gambetta",
+      "summary": "Una eventual crecida del río Rímac podría provocar inundaciones en esta vía de acceso al aeropuerto.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "sectores de la segunda pista de aterrizaje",
+      "location_quote": "sectores de la segunda pista de aterrizaje",
+      "summary": "La nota advierte que filtraciones y el aumento de aguas subterráneas podrían afectar sectores de la pista.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-06T13:07:11+00:00",
+   "text_sha": "db2d48d940e5b48564679368b532d43db92cefdb256aeaefddc9a0b3ab6fc2ae",
+   "title": "Aeropuerto Jorge Chávez: LAP alerta riesgo de inundaciones por crecida del río Rímac"
+  },
+  "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "durante la madrugada y mañana del miércoles",
+      "date_relation": "same_day_as_publication",
+      "district": "Villa El Salvador",
+      "district_quote": "del distrito de Villa El Salvador",
+      "explicit_date": "",
+      "location": "Sector 1, Grupo 1",
+      "location_quote": "Sector 1, Grupo 1",
+      "summary": "Colapsó el alcantarillado y las aguas residuales anegaron viviendas y la vía pública; el agua también dañó bienes domésticos.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "durante la madrugada y mañana del miércoles",
+      "date_relation": "same_day_as_publication",
+      "district": "Villa María del Triunfo",
+      "district_quote": "en el distrito de Villa María del Triunfo",
+      "explicit_date": "",
+      "location": "avenida 26 de Noviembre",
+      "location_quote": "la avenida 26 de Noviembre",
+      "summary": "La acumulación de agua y lodo dificultó el tránsito peatonal y vehicular en esta avenida.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "durante la madrugada y mañana del miércoles",
+      "date_relation": "same_day_as_publication",
+      "district": "Villa El Salvador",
+      "district_quote": "entrada de Villa El Salvador",
+      "explicit_date": "",
+      "location": "Óvalo de Nueva Esperanza",
+      "location_quote": "el sector del Óvalo de Nueva Esperanza",
+      "summary": "Los aniegos se extendieron hasta la entrada del distrito por este sector.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "durante la madrugada y mañana del miércoles",
+      "date_relation": "same_day_as_publication",
+      "district": "Villa El Salvador",
+      "district_quote": "en Villa El Salvador",
+      "explicit_date": "",
+      "location": "avenida Los Héroes",
+      "location_quote": "la avenida Los Héroes",
+      "summary": "La saturación del suelo por las lluvias ocasionó una inundación en esta avenida.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "El 16 de agosto de 2026",
+      "date_relation": "explicit_date",
+      "district": "Villa María del Triunfo",
+      "district_quote": "en Villa María del Triunfo",
+      "explicit_date": "2026-08-16",
+      "location": "zona de José Gálvez",
+      "location_quote": "la zona de José Gálvez en Villa María del Triunfo",
+      "summary": "El antecedente de las lloviznas de agosto incluyó aniegos en esta zona.",
+      "timing": "background",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "El 16 de agosto de 2026",
+      "date_relation": "explicit_date",
+      "district": "San Juan de Miraflores",
+      "district_quote": "San Juan de Miraflores",
+      "explicit_date": "2026-08-16",
+      "location": "viviendas",
+      "location_quote": "filtraciones en viviendas de San Juan de Miraflores",
+      "summary": "Durante las lloviznas de agosto se reportaron filtraciones en viviendas del distrito.",
+      "timing": "background",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "El 16 de agosto de 2026",
+      "date_relation": "explicit_date",
+      "district": "Chorrillos",
+      "district_quote": "en Chorrillos",
+      "explicit_date": "2026-08-16",
+      "location": "río Surco",
+      "location_quote": "el desborde del río Surco en Chorrillos",
+      "summary": "El episodio de lloviznas de agosto también provocó el desborde del río en este distrito.",
+      "timing": "background",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-04T23:52:07-05:00",
+   "text_sha": "3770b2d1f71d9cc9ad6e479f1d63f506499dd4d4dd5814b980cd45dbaa0fcd37",
+   "title": "Intensas lloviznas en Lima Sur provocan aniegos en Villa Mar&iacute;a del Triunfo y colapso de desag&uuml;e en Villa El Salvador"
+  },
+  "https://rpp.pe/lima/actualidad/ves-al-menos-50-familias-afectadas-tras-colapso-del-sistema-de-alcantarillado-por-la-intensa-llovizna-noticia-1716018": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa El Salvador",
+      "district_quote": "en el distrito de Villa El Salvador (VES)",
+      "explicit_date": "",
+      "location": "Sector 1, Grupo 1",
+      "location_quote": "Sector 1 Grupo 1",
+      "summary": "El colapso del alcantarillado causó desbordes de sumideros e inundaciones en viviendas del sector; llegaron cisternas para drenar el agua acumulada.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-05T05:05:36-05:00",
+   "text_sha": "b488d35077d4a7d315eae44ba6871bde92e4452b4b171a7336be0dbb42fb2116",
+   "title": "Emergencia en VES: al menos 50 familias afectadas tras colapso del sistema de alcantarillado por la intensa llovizna"
+  },
+  "https://www.defensoria.gob.pe/defensoria-del-pueblo-advierte-riesgos-en-la-instalacion-de-hospital-de-campana-en-tumbes-tras-inundacion-del-terreno-por-intensas-lluvias/": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-05T22:12:22+00:00",
+   "text_sha": "01a9b3e33ac928f6832edfa173bec687e26339125cf2bd42bc6dd8299c8fc332",
+   "title": "Defensoría del Pueblo advierte riesgos en la instalación de hospital de campaña en Tumbes tras inundación del terreno por intensas lluvias"
+  },
+  "https://www.defensoria.gob.pe/defensoria-del-pueblo-despliega-personal-en-lima-sur-para-verificar-atencion-de-aniegos-y-limpieza-publica/": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Sector 1, Grupo 1",
+      "location_quote": "Sector 1, Grupo 1",
+      "summary": "Se registraron diez aniegos de infraestructura en el sector; la nota indica que el lugar ya fue limpiado.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa María del Triunfo",
+      "district_quote": "VMT",
+      "explicit_date": "",
+      "location": "Frente a la Red Integrada de Salud de Villa María del Triunfo",
+      "location_quote": "frente a la Red Integrada de Salud de Villa María del Triunfo",
+      "summary": "Se reportó un aniego de consideración frente al establecimiento; personal municipal trabajaba con bombas para retirar el agua.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Av. El Sol con Av. Separadora Industrial",
+      "location_quote": "entre la Av. El Sol y la Av. Separadora Industrial",
+      "summary": "La nota reportó un aniego entre estas avenidas y señaló que un vehículo de limpieza operaba en la zona del bypass.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-05T17:13:39+00:00",
+   "text_sha": "88439e232ad70c0d48ace77314f565a2c3452610b1bdbcbaa9dbe0e20be55668",
+   "title": "Defensoría del Pueblo despliega personal en Lima Sur para verificar atención de aniegos y limpieza pública"
+  },
+  "https://www.defensoria.gob.pe/defensoria-del-pueblo-supervisa-atencion-de-aniegos-en-distritos-de-lima-metropolitana-y-solicita-medidas-urgentes-para-proteger-la-salud-de-la-poblacion/": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "",
+      "location": "Hospital de Emergencias Villa El Salvador",
+      "location_quote": "Hospital de Emergencias Villa El Salvador",
+      "summary": "Se registraron aniegos en las inmediaciones del hospital, por lo que la Defensoría pidió verificar que no afectaran el acceso ni los servicios de emergencia.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-05T05:18:02+00:00",
+   "text_sha": "4096e3000c2cecb5733b07de79a3676e0af3af7cecc32052ee734bb66d9c6df9",
+   "title": "Defensoría del Pueblo supervisa atención de aniegos en distritos de Lima Metropolitana y solicita medidas urgentes para proteger la salud de la población"
+  },
+  "https://www.infobae.com/peru/2026/11/05/las-lloviznas-en-lima-casi-igualan-un-record-de-1970-aniegos-vias-inundadas-y-desagues-colapsados-en-distritos-del-sur/": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "",
+      "location": "Frente al Hospital de Emergencia de Villa El Salvador",
+      "location_quote": "frente al Hospital de Emergencia de Villa El Salvador",
+      "summary": "El agua cubrió la pista frente al hospital y dificultó el acceso; las personas debían bajar de los vehículos y continuar a pie.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa María del Triunfo",
+      "district_quote": "Villa María del Triunfo",
+      "explicit_date": "",
+      "location": "Calles y avenidas principales",
+      "location_quote": "calles y avenidas principales de Villa María del Triunfo",
+      "summary": "La nota reporta calles y avenidas inundadas en el distrito por las precipitaciones.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "San Juan de Miraflores",
+      "district_quote": "San Juan de Miraflores",
+      "explicit_date": "",
+      "location": "Calles y avenidas principales",
+      "location_quote": "calles y avenidas principales de San Juan de Miraflores",
+      "summary": "La nota reporta calles y avenidas inundadas en el distrito por las precipitaciones.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Chorrillos",
+      "district_quote": "Chorrillos",
+      "explicit_date": "",
+      "location": "Calles y avenidas principales",
+      "location_quote": "calles y avenidas principales de Chorrillos",
+      "summary": "La nota reporta calles y avenidas inundadas en el distrito por las precipitaciones.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "",
+      "location": "Calles y avenidas principales",
+      "location_quote": "calles y avenidas principales de Villa El Salvador",
+      "summary": "La nota reporta calles y avenidas inundadas en el distrito por las precipitaciones.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Panamericana Sur, kilómetro 17",
+      "location_quote": "En la Panamericana Sur, a la altura del kilómetro 17 y en dirección a Lima",
+      "summary": "La acumulación de agua hizo que los vehículos avanzaran con menor velocidad en ese tramo.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Chorrillos",
+      "district_quote": "Chorrillos",
+      "explicit_date": "",
+      "location": "Pasaje Los Gorriones, primera cuadra de la avenida Guardia Civil",
+      "location_quote": "una calle inundada en el pasaje Los Gorriones, en la primera cuadra de la avenida Guardia Civil, en Chorrillos",
+      "summary": "Se reportó una calle inundada en el pasaje y la cuadra señalados.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "",
+      "location": "Bypass de la av. Pachacútec",
+      "location_quote": "el cierre del bypass de la av. Pachacútec por acumulación de agua tras las fuertes lloviznas en Villa El Salvador",
+      "summary": "El bypass fue cerrado debido al agua acumulada tras las lloviznas.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "desde el día anterior",
+      "date_relation": "previous_day",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "",
+      "location": "Sector uno, grupo uno",
+      "location_quote": "En el sector uno, grupo uno, de Villa El Salvador",
+      "summary": "El aniego persistió desde el día previo y aumentó con las precipitaciones; el agua afectó viviendas y calles.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-05T13:03:50Z",
+   "text_sha": "a1aa8d4923f65540fcae7ab059b5b14704c144403dc6627b6a2706249b9430d4",
+   "title": "Las lloviznas en Lima casi igualan un récord de 1970: aniegos, vías inundadas y desagües colapsados en la zona sur"
+  },
+  "https://www.infobae.com/peru/2026/11/06/lluvias-en-lima-sur-por-que-cada-vez-la-zona-sur-de-la-capital-se-inunda-y-colapsan-los-desagues/": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "",
+      "location": "sector uno, grupo uno",
+      "location_quote": "el sector uno, grupo uno de Villa El Salvador",
+      "summary": "El colapso del alcantarillado hizo que aguas residuales ingresaran a viviendas del sector y se acumularan en sus ambientes.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa María del Triunfo",
+      "district_quote": "Villa María del Triunfo",
+      "explicit_date": "",
+      "location": "Villa María",
+      "location_quote": "Villa María",
+      "summary": "La nota reporta acumulación de agua en la zona, con mayor volumen que en otros puntos de la capital.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-06T11:37:33Z",
+   "text_sha": "8f1d97de59cfc1c76701bc98d2a2327200f1d7421adf649a0bbf1e91b8969242",
+   "title": "Lluvias en Lima Sur: ¿Por qué cada vez la zona sur de la capital se inunda y colapsan los desagües?"
+  }
+ },
+ "attempts": [
+  {
+   "cost_usd": 0.0001883,
+   "day": "2026-11-06",
+   "input_tokens": 1698,
+   "output_tokens": 37,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0010397,
+   "day": "2026-11-06",
+   "input_tokens": 1442,
+   "output_tokens": 1791,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0004249,
+   "day": "2026-11-06",
+   "input_tokens": 1479,
+   "output_tokens": 554,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002961,
+   "day": "2026-11-06",
+   "input_tokens": 1876,
+   "output_tokens": 217,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0005797,
+   "day": "2026-11-06",
+   "input_tokens": 1692,
+   "output_tokens": 821,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0009801,
+   "day": "2026-11-06",
+   "input_tokens": 1926,
+   "output_tokens": 1575,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0009366,
+   "day": "2026-11-06",
+   "input_tokens": 2111,
+   "output_tokens": 1451,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0008011,
+   "day": "2026-11-06",
+   "input_tokens": 2591,
+   "output_tokens": 1084,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0004167,
+   "day": "2026-11-06",
+   "input_tokens": 1392,
+   "output_tokens": 555,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001806,
+   "day": "2026-11-06",
+   "input_tokens": 1486,
+   "output_tokens": 64,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002994,
+   "day": "2026-11-06",
+   "input_tokens": 1534,
+   "output_tokens": 292,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0017293,
+   "day": "2026-11-06",
+   "input_tokens": 3568,
+   "output_tokens": 2745,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0004014,
+   "day": "2026-11-06",
+   "input_tokens": 1549,
+   "output_tokens": 493,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0007358,
+   "day": "2026-11-06",
+   "input_tokens": 1488,
+   "output_tokens": 1174,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.000165,
+   "day": "2026-11-06",
+   "input_tokens": 1420,
+   "output_tokens": 46,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0011077,
+   "day": "2026-11-06",
+   "input_tokens": 2647,
+   "output_tokens": 1686,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0010222,
+   "day": "2026-11-06",
+   "input_tokens": 2582,
+   "output_tokens": 1528,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0015286,
+   "day": "2026-11-06",
+   "input_tokens": 2681,
+   "output_tokens": 2521,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0003609,
+   "day": "2026-11-06",
+   "input_tokens": 1359,
+   "output_tokens": 450,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0011474,
+   "day": "2026-11-06",
+   "input_tokens": 1224,
+   "output_tokens": 2050,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0003027,
+   "day": "2026-11-06",
+   "input_tokens": 1127,
+   "output_tokens": 380,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0010908,
+   "day": "2026-11-06",
+   "input_tokens": 1633,
+   "output_tokens": 1855,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0014067,
+   "day": "2026-11-06",
+   "input_tokens": 2187,
+   "output_tokens": 2376,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002968,
+   "day": "2026-11-06",
+   "input_tokens": 1573,
+   "output_tokens": 279,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0012726,
+   "day": "2026-11-06",
+   "input_tokens": 1771,
+   "output_tokens": 2191,
+   "status": "success"
+  }
+ ],
+ "previous_estimated_cost_usd": 0.0183851,
+ "schema_version": 1
+}

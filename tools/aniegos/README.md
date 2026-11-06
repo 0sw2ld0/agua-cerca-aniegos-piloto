@@ -37,6 +37,15 @@ Los cuerpos de artículos se procesan en memoria y no se publican. Se conservan 
 
 Algunos medios y CDN envían páginas comprimidas con gzip aunque no se pida; el recolector las descomprime con el mismo límite de 3 MB. Con `--rss-cache data/rss-vistos.json` se recuerda la fecha que dio el RSS del propio medio (nunca la de Google News) para seguir leyendo una nota durante 48 h aunque haya salido del RSS. No se guardan cuerpos de notas. Se leen hasta 30 artículos por ejecución.
 
+## Modo sombra con GPT Luna
+
+`gpt_shadow.py` corre en el workflow después de generar el feed y **no lo modifica**. Toma las notas validadas por el recolector y le pide a `gpt-6-luna` que extraiga cada lugar afectado. Debe citar literalmente el distrito, el lugar y la fecha. Las mismas reglas del código de `gpt_incidents.py` y OpenStreetMap deciden qué sería un incidente.
+
+- `data/gpt-state.json`: respuestas validadas por nota (citas de hasta 200 caracteres y resúmenes propios), consumo y fallos. No guarda cuerpos de notas, solicitudes ni claves. Una nota con el mismo texto no se vuelve a consultar. Una nota que falló espera 6 h.
+- `data/gpt-sombra.json`: incidentes detectados en la ventana actual e historial por día y lugar, con la revisión manual que coincide, si la hay.
+- Límites: US$0.03 por ejecución, US$0.10 por día y US$0.50 en total (incluye la prueba local del 6/11). Al alcanzarlos se dejan de hacer consultas. El feed no cambia.
+- Sin el secreto `OPENAI_API_KEY` el paso no hace nada. Un fallo o un límite alcanzado nunca equivale a «no hubo aniegos».
+
 ## Operación
 
 El workflow ejecuta pruebas, recopila, genera el JSON y publica solo `data/aniegos.json` en este repositorio. Programado cada 30 minutos (minutos 17 y 47 UTC) y manualmente. GitHub puede retrasar ejecuciones: no es tiempo real. Los artifacts de diagnóstico se conservan siete días. Los cambios del catálogo revisado requieren editar `reviewed.json`; no contienen direcciones privadas de afectados ni cuerpos de noticias.

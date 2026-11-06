@@ -501,6 +501,16 @@
    "precision": "Referencia: hospital según OpenStreetMap, no el lugar exacto del agua",
    "reason": "verified"
   },
+  "villa el salvador|hospital de emergencias villa el salvador": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
+   "evidence": "OSM: hospital emergencias villa salvador en Villa El Salvador",
+   "point": [
+    -76.934866,
+    -12.232083
+   ],
+   "precision": "Referencia: hospital según OpenStreetMap, no el lugar exacto del agua",
+   "reason": "verified"
+  },
   "villa el salvador|sector 1 grupo 1": {
    "checked_at": "2026-11-06T12:59:07.285871-05:00",
    "evidence": "OSM: sector 1 grupo 1 en Villa El Salvador",
@@ -513,6 +523,16 @@
   },
   "villa maria del triunfo|bypass de av pachacutec con av 26 de noviembre debajo de la linea ferrea": {
    "checked_at": "2026-11-06T11:36:27.183485-05:00",
+   "evidence": "OSM: cruce de pachacutec y 26 de noviembre; estructura vial a desnivel junto al cruce",
+   "point": [
+    -76.94357,
+    -12.18042
+   ],
+   "precision": "Debajo del paso a desnivel según OpenStreetMap · punto referencial (±50 m)",
+   "reason": "verified"
+  },
+  "villa maria del triunfo|paso a desnivel de la avenida pachacutec con la avenida 26 de noviembre": {
+   "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "evidence": "OSM: cruce de pachacutec y 26 de noviembre; estructura vial a desnivel junto al cruce",
    "point": [
     -76.94357,

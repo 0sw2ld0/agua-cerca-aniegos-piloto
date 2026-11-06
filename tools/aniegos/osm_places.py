@@ -43,7 +43,7 @@ STRUCTURE = re.compile(r'\b(?:by[\s-]?pass|baip[aá]s|paso\s+a\s+desnivel|puente
 INTERSECTION = re.compile(
     r'^(?:(?:by[\s-]?pass|baip[aá]s|paso\s+a\s+desnivel|puente|t[uú]nel|[oó]valo|intercambio\s+vial|cruce)'
     r'\s+(?:de\s+(?:la\s+)?|entre\s+)?)?(?:cruce\s+de\s+)?'
-    r'(?P<a>' + ROAD + r'\s+.+?)\s+(?:con|y|esquina\s+con)\s+(?:la\s+)?(?P<b>' + ROAD + r'\s+.+)$', re.I)
+    r'(?P<a>' + ROAD + r'\s+.+?)\s+(?:con|y|esquina\s+con)\s+(?:la\s+)?(?P<b>(?:' + ROAD + r'\s+)?[A-ZÁÉÍÓÚÑ0-9].+)$', re.I)
 LANDMARKS = {
     'hospital': '["amenity"="hospital"]', 'clinica': '["amenity"~"^(clinic|hospital)$"]',
     'mercado': '["amenity"="marketplace"]', 'colegio': '["amenity"="school"]',
@@ -86,6 +86,11 @@ def parse_location(location):
         if tokens:
             return {'kind': 'landmark', 'landmark': kind, 'tokens': tokens}
     return None
+
+
+def stem(token):
+    """'emergencia' == 'emergencias'."""
+    return token[:-1] if len(token) > 4 and token.endswith('s') else token
 
 
 def distance_m(a, b):
@@ -271,7 +276,7 @@ class Locator:
         points = []
         for element in elements:
             name_tokens = set(norm(element.get('tags', {}).get('name', '')).split())
-            if not set(place['tokens']) <= name_tokens:
+            if not {stem(t) for t in place['tokens']} <= {stem(t) for t in name_tokens}:
                 continue
             where = element.get('center') or {'lat': element.get('lat'), 'lon': element.get('lon')}
             if where.get('lat') is not None and inside(district['polygon'], where['lat'], where['lon']):
@@ -303,6 +308,11 @@ class Locator:
                 'evidence': 'OSM: %s en %s' % (place['name'], district['name'])}, 'verified'
 
     # ---- entry point -----------------------------------------------------
+    def reason_for(self, review):
+        """Stored outcome for this review (e.g. 'no_junction_in_district'), or None if never resolved."""
+        key = norm(review.get('district', '')) + '|' + norm(review.get('location', ''))
+        return (self.cache['places'].get(key) or {}).get('reason')
+
     def locate(self, review):
         """Return {'point': [lon, lat], 'precision', 'evidence'} or None."""
         place = parse_location(review.get('location', ''))
