@@ -132,7 +132,7 @@ const estado = {
 /* ---------- capas activables ---------- */
 const CAPAS = [
   { id: 'cortes', nombre: 'Cortes de agua', nota: 'Reportes de las empresas a Sunass, sin verificar. El horario puede cambiar.',
-    defecto: true, leyenda: () => [['En curso', css('--naranja'), 1], ['Próximo', css('--acento'), 1]] },
+    defecto: true, leyenda: () => [['En curso', MAPA.naranja, 1], ['Próximo', MAPA.azul, 1]] },
   { id: 'sectores', nombre: 'Horas de agua al día', nota: 'Promedio por sector que reporta cada empresa a Sunass.',
     defecto: false, leyenda: () => NIVELES.map(n => [n.corto, n.color, 0.7]) },
   { id: 'puntos', nombre: 'Puntos de abastecimiento', nota: 'Hidrantes y cámaras especiales para emergencias (Lima y Callao).',
@@ -225,6 +225,7 @@ async function cargarCortes(forzar) {
   } catch { estado.cortesError = true; }
   dibujarCortes();
 }
+const MAPA = { naranja: '#e8590c', azul: '#1c62e6' };
 const GOTA = '<svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#fff" d="M12 2.5c-3.3 4.4-6.5 8.2-6.5 11.6A6.5 6.5 0 0 0 12 20.6a6.5 6.5 0 0 0 6.5-6.5C18.5 10.7 15.3 6.9 12 2.5z"/></svg>';
 const CALENDARIO = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#fff" d="M7 2h2v2h6V2h2v2h3v17H4V4h3V2zm-1 7v10h12V9H6z"/></svg>';
 function dibujarCortes() {
@@ -237,11 +238,15 @@ function dibujarCortes() {
   for (const c of estado.cortes || []) {
     const s = estadoCorte(c);
     if (s === 'vencido' || !c.poligonos.length) continue;
-    const enCurso = s === 'enCurso', color = enCurso ? css('--naranja') : css('--acento');
-    const capa = L.geoJSON({ type: 'MultiPolygon', coordinates: c.poligonos }, {
+    // The base map is always light, even in dark mode: use fixed, saturated map colours plus a white halo.
+    const enCurso = s === 'enCurso', color = enCurso ? MAPA.naranja : MAPA.azul;
+    const geo = { type: 'MultiPolygon', coordinates: c.poligonos };
+    L.geoJSON(geo, { pane: 'cortes', renderer: lienzos.cortes, smoothFactor: 0, interactive: false,
+      style: { color: '#ffffff', weight: 6, opacity: 0.95, fill: false, lineJoin: 'round' } }).addTo(grupos.cortes);
+    const capa = L.geoJSON(geo, {
       pane: 'cortes', renderer: lienzos.cortes, smoothFactor: 0,
-      style: { color, weight: 2, fillColor: color, fillOpacity: enCurso ? 0.3 : 0.18,
-               dashArray: enCurso ? null : '6 4', lineJoin: 'round' },
+      style: { color, weight: 3, opacity: 1, fillColor: color, fillOpacity: enCurso ? 0.35 : 0.28,
+               dashArray: enCurso ? null : '8 5', lineJoin: 'round' },
     });
     capa.on('click', e => { L.DomEvent.stop(e); abrir(() => fichaCorte(c)); });
     capa.addTo(grupos.cortes);
