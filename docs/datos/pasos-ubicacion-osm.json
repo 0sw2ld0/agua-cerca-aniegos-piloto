@@ -1,0 +1,26 @@
+{
+ "fuente": "Cruce único de ambas vías en OpenStreetMap (ODbL), calculado el 2026-11-06. Ubicación referencial, no coordenada oficial de CENEPRED.",
+ "pasos": {
+  "11": {
+   "point": [
+    -76.934424,
+    -12.205156
+   ],
+   "precision": "Debajo del paso a desnivel según OpenStreetMap · punto referencial (±50 m)"
+  },
+  "16": {
+   "point": [
+    -77.068424,
+    -11.962546
+   ],
+   "precision": "Debajo del paso a desnivel según OpenStreetMap · punto referencial (±50 m)"
+  },
+  "17": {
+   "point": [
+    -77.084377,
+    -11.856836
+   ],
+   "precision": "Cruce de vías según OpenStreetMap · punto referencial (±50 m) · no se ubicó la estructura del bypass"
+  }
+ }
+}
