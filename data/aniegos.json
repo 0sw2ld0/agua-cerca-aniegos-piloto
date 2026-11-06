@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T18:08:11.968742-05:00",
+  "generated_at": "2026-11-06T18:13:52.890217-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
@@ -296,42 +296,6 @@
       ]
     },
     {
-      "id": -1387392144663142,
-      "kind": "publication",
-      "district": "Villa María del Triunfo",
-      "location": "Publicación reciente · por verificar",
-      "summary": "Villa María del Triunfo: bypass Pachacútec totalmente inundado tras lluvias intensas en Lima",
-      "date": "2026-11-05",
-      "expires_at": "2026-11-07T15:28:52+00:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
-      "sources": [
-        {
-          "name": "caretas.pe",
-          "url": "https://caretas.pe/sociedad/villa-maria-del-triunfo-bypass-pachacutec-totalmente-inundado-tras-lluvias-intensas-en-lima/"
-        }
-      ]
-    },
-    {
-      "id": -3365816164748747,
-      "kind": "publication",
-      "district": "Lima Metropolitana",
-      "location": "Publicación reciente · por verificar",
-      "summary": "Emergencia en Lima Sur: fuertes lluvias, inundaciones, aniegos y decenas de familias afectadas",
-      "date": "2026-11-05",
-      "expires_at": "2026-11-07T14:54:09+00:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
-      "sources": [
-        {
-          "name": "caretas.pe",
-          "url": "https://caretas.pe/sociedad/emergencia-en-lima-sur-fuertes-lluvias-inundaciones-aniegos-y-decenas-de-familias-afectadas-senamhi/"
-        }
-      ]
-    },
-    {
       "id": -4479512560952305,
       "kind": "publication",
       "district": "Lima Metropolitana",
@@ -472,6 +436,42 @@
         {
           "name": "elcomercio.pe",
           "url": "https://elcomercio.pe/lima/sucesos/bus-de-la-empresa-el-rapido-queda-varado-en-via-inundada-por-lluvias-en-villa-el-salvador-apuesplan-ultimas-noticia/"
+        }
+      ]
+    },
+    {
+      "id": -3365816164748747,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Emergencia en Lima Sur: fuertes lluvias, inundaciones, aniegos y decenas de familias afectadas",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T14:54:09+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "caretas.pe",
+          "url": "https://caretas.pe/sociedad/emergencia-en-lima-sur-fuertes-lluvias-inundaciones-aniegos-y-decenas-de-familias-afectadas-senamhi/"
+        }
+      ]
+    },
+    {
+      "id": -1387392144663142,
+      "kind": "publication",
+      "district": "Villa María del Triunfo",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Villa María del Triunfo: bypass Pachacútec totalmente inundado tras lluvias intensas en Lima",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T15:28:52+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "caretas.pe",
+          "url": "https://caretas.pe/sociedad/villa-maria-del-triunfo-bypass-pachacutec-totalmente-inundado-tras-lluvias-intensas-en-lima/"
         }
       ]
     },
