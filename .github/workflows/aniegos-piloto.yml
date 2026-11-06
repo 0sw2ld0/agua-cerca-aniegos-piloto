@@ -42,6 +42,10 @@ jobs:
           fi
       - name: Generar archivo para la app
         run: python3 tools/aniegos/publish.py --report resultado/report.json --output data/aniegos.json --places-cache data/lugares-osm.json
+      - name: Escenarios de riesgo por lluvias (CENEPRED)
+        continue-on-error: true
+        timeout-minutes: 6
+        run: python3 tools/aniegos/riesgo_lluvias.py --index data/riesgo-lluvias.json --folder data/riesgo-lluvias
       - name: Modo sombra GPT (no publica)
         id: gpt
         continue-on-error: true
@@ -55,6 +59,7 @@ jobs:
           if [ -f data/lugares-osm.json ]; then git add data/lugares-osm.json; fi
           if [ -f data/rss-vistos.json ]; then git add data/rss-vistos.json; fi
           for f in data/gpt-state.json data/gpt-sombra.json; do if [ -f "$f" ]; then git add "$f"; fi; done
+          if [ -f data/riesgo-lluvias.json ]; then git add data/riesgo-lluvias.json; git add -A data/riesgo-lluvias; fi
           if [ -f data/jev-state.json ]; then git add data/jev-state.json; fi
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
