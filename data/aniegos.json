@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T17:21:18.006700-05:00",
+  "generated_at": "2026-11-06T17:31:08.016772-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
@@ -256,6 +256,42 @@
         {
           "name": "COEN-INDECI · Reporte 15563, 6/11 07:20",
           "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15483-4-11-2026-coen-indeci-2100-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-san-juan-de-miraflores-li/"
+        }
+      ]
+    },
+    {
+      "id": -1092021381067012,
+      "kind": "incident",
+      "district": "Villa El Salvador",
+      "location": "Panamericana Sur Km 17.5",
+      "summary": "Reporte complementario N.º 15559 del COEN-INDECI (06/11 06:10): inundación por saturación del suelo para drenaje (pluvial) en Villa El Salvador. El reporte menciona este lugar en los hechos.",
+      "date": "2026-11-06",
+      "expires_at": "2026-11-08T00:00:00-05:00",
+      "status": "Situación actual sin confirmar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "COEN-INDECI · Reporte 15559, 06/11 06:10",
+          "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15478-4-11-2026-coen-indeci-1850-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-villa-el-salvador-lima/"
+        }
+      ]
+    },
+    {
+      "id": -21779291595580,
+      "kind": "incident",
+      "district": "Villa El Salvador",
+      "location": "Av. Pumacahua con Av. La Unión",
+      "summary": "Reporte complementario N.º 15559 del COEN-INDECI (06/11 06:10): inundación por saturación del suelo para drenaje (pluvial) en Villa El Salvador. El reporte menciona este lugar en las acciones de respuesta.",
+      "date": "2026-11-06",
+      "expires_at": "2026-11-08T00:00:00-05:00",
+      "status": "Situación actual sin confirmar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "COEN-INDECI · Reporte 15559, 06/11 06:10",
+          "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15478-4-11-2026-coen-indeci-1850-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-villa-el-salvador-lima/"
         }
       ]
     },

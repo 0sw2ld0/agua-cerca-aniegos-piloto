@@ -4,6 +4,7 @@ import argparse
 from datetime import datetime, timedelta
 import hashlib
 import json
+import re
 from pathlib import Path
 from urllib.parse import urlsplit
 from generate import PERU, instant, recent_publication, Fetcher, normalized
@@ -16,6 +17,34 @@ def stable_id(key):
 def canonical(url):
     parts = urlsplit(url)
     return parts.scheme + '://' + parts.netloc.lower() + parts.path.rstrip('/')
+
+
+def place_key(district, location):
+    """Same place, written differently: 'Av. El Sol con Av. Separadora Industrial' == 'Av. Sol con Av. ...'."""
+    head = re.split(r'\s+·\s+|,', location, maxsplit=1)[0]
+    words = [w for w in normalized(head).replace('.', ' ').split() if w not in PLACE_FILLER]
+    return normalized(district) + '|' + ' '.join(sorted(words))
+
+
+PLACE_FILLER = {'av', 'avenida', 'jr', 'jiron', 'calle', 'bypass', 'baipas', 'de', 'del', 'la', 'el', 'con', 'y', 'frente', 'al'}
+
+
+def merge_official(reviews, official):
+    """Automatic COEN-INDECI incidents, skipped when a manual review covers the same place and day."""
+    def marks(r):
+        out = {(r['day'], place_key(r['district'], r['location']))}
+        if r.get('seccion') == 'vias' or 'otras vías' in r['location']:
+            out.add((r['day'], normalized(r['district']) + '|#vias'))  # one list of roads per district and day
+        return out
+    taken = set().union(*(marks(r) for r in reviews)) if reviews else set()
+    merged, keys = list(reviews), {r['key'] for r in reviews}
+    for item in official:
+        mine = marks(item)
+        if mine & taken or item['key'] in keys:
+            continue
+        taken |= mine; keys.add(item['key'])
+        merged.append(item)
+    return merged
 
 
 def build(report, reviews, now, allowed, locate=None):
@@ -85,6 +114,7 @@ if __name__ == '__main__':
     parser.add_argument('--report', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--reviews', type=Path, default=Path(__file__).with_name('reviewed.json'))
+    parser.add_argument('--official', type=Path, help='Automatic official incidents (data/indeci.json)')
     parser.add_argument('--places-cache', type=Path,
                         help='OpenStreetMap lookups (JSON). Without it, no automatic points are added.')
     args = parser.parse_args()
@@ -94,8 +124,11 @@ if __name__ == '__main__':
     if args.places_cache:
         from osm_places import Locator
         cache = json.loads(args.places_cache.read_text()) if args.places_cache.exists() else {}
-        locator = Locator(cache, now)
-    result = build(json.loads(args.report.read_text()), json.loads(args.reviews.read_text()),
+        locator = Locator(cache, now, max_lookups=10)
+    reviews = json.loads(args.reviews.read_text())
+    if args.official and args.official.exists():
+        reviews = merge_official(reviews, json.loads(args.official.read_text()).get('incidentes', []))
+    result = build(json.loads(args.report.read_text()), reviews,
                    now, config['allowed_hosts'], locator.locate if locator else None)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')

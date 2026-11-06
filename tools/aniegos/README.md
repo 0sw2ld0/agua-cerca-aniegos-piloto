@@ -60,6 +60,14 @@ Algunos medios y CDN envían páginas comprimidas con gzip aunque no se pida; el
 
 Escribe `data/riesgo-lluvias.json` (índice con vigencia, estado, niveles y departamentos) y `data/riesgo-lluvias/{id}.json` (GeoJSON simplificado a unos 110 m, para verlo por distrito). Un escenario ya descargado no se vuelve a bajar. Si la fuente falla, el índice lo indica y conserva la última copia; nunca se interpreta como ausencia de riesgo.
 
+## Reportes oficiales del COEN-INDECI
+
+`indeci.py` lee las primeras 3 páginas de https://portal.indeci.gob.pe/emergencias/ y se queda con los reportes relacionados con agua (inundación, lluvias, aniegos, desagüe, tuberías) de distritos de Lima Metropolitana y Callao publicados en las últimas 48 h. El portal muestra una entrada por emergencia, con su reporte más reciente.
+
+Cada PDF se lee una sola vez (`data/indeci-estado.json`, por URL) con `pdftotext`, o con PDFKit en macOS. Del texto salen, con reglas y sin IA, solo los lugares que el reporte nombra explícitamente: los hechos, sectores y grupos, cruces de vías («cruce con», «intersección de», «a la altura de»), establecimientos («frontis del Hospital…», «institución educativa…») y la lista de vías afectadas. Se descartan las etiquetas mezcladas con otras columnas de las tablas.
+
+Cada lugar se convierte en un incidente con la fecha del reporte, un resumen con el tipo de emergencia y la evaluación preliminar, y el enlace al reporte (`data/indeci.json`). `publish.py --official` lo agrega al feed, salvo que una revisión manual ya cubra el mismo lugar y día; la manual tiene prioridad. Un fallo del portal se informa y conserva la última lista.
+
 ## Operación
 
 El workflow ejecuta pruebas, recopila, genera el JSON y publica solo `data/aniegos.json` en este repositorio. Programado cada 30 minutos (minutos 17 y 47 UTC) y manualmente. GitHub ejecuta pocas corridas programadas (4 de unas 44 entre el 5 y el 6/11). Por eso el workflow «Reloj de recopilación» (`.github/workflows/reloj.yml`) dispara la recopilación cada 30 minutos durante 5,5 h y luego se encadena a sí mismo. Si el reloj no está corriendo, la propia recopilación lo reinicia, y además queda un cron cada 3 h como respaldo. No es tiempo real. Los artifacts de diagnóstico se conservan siete días. Los cambios del catálogo revisado requieren editar `reviewed.json`; no contienen direcciones privadas de afectados ni cuerpos de noticias.
