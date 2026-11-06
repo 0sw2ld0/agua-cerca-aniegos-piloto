@@ -21,8 +21,9 @@ Los nuevos artículos no se convierten automáticamente en incidentes georrefere
 
 - **Cruce:** el lugar nombra dos vías («Av. X con Av. Y»). Ambas deben existir en OSM con el mismo nombre y compartir nodos que formen un solo cruce dentro del polígono del distrito escrito en la revisión. Si hay dos cruces posibles, no se dibuja nada.
 - **Bypass, paso a desnivel, puente o túnel:** si el texto lo menciona, el punto se mueve al centro de las estructuras viales cortas junto a ese cruce, que es donde se acumula el agua. Se descartan viaductos largos y puentes peatonales.
+- **Grupo residencial:** «Sector N, Grupo M», con un solo lugar de ese nombre exacto en OSM dentro del distrito. El punto es el centro del grupo (±150 m), no la calle exacta.
 - **Establecimiento:** hospital, clínica, mercado o colegio nombrado en la revisión, con una sola coincidencia dentro del distrito. El punto es referencial: no es el lugar exacto del agua.
-- Una sola avenida, una cuadra, un sector o un distrito «por precisar» no generan punto.
+- Una sola avenida, una cuadra, un sector sin grupo o un distrito «por precisar» no generan punto.
 
 El resultado pasa por `validate_geocoding` y se marca como punto referencial de ±50 m, con atribución a OpenStreetMap (ODbL). La caché guarda los aciertos 30 días y los casos sin coincidencia 24 h. Un fallo de Nominatim u Overpass no se guarda: se reintenta en la siguiente ejecución y nunca equivale a «no existe el lugar». Por ejecución hay como máximo seis búsquedas nuevas y 150 s de red. Las coordenadas escritas a mano en `reviewed.json` tienen prioridad.
 

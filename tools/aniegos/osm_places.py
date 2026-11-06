@@ -5,6 +5,8 @@ Deterministic rules, never free-text guesses:
   with the same name and share nodes forming ONE junction inside the explicit district.
 - Grade separation: if the text mentions a bypass/paso a desnivel/puente/túnel, the point
   moves to the short road bridges/tunnels next to that junction (where water collects).
+- Residential group: "Sector N, Grupo M" (Villa El Salvador) with exactly one OSM
+  place=neighbourhood of that exact name inside the district; the point is its centre.
 - Landmark: a hospital, clinic, market or school named in the review, with exactly one
   match inside the district.
 Anything else (a single avenue, "cuadra 34", a sector) keeps no point. A provider failure
@@ -47,6 +49,7 @@ LANDMARKS = {
     'mercado': '["amenity"="marketplace"]', 'colegio': '["amenity"="school"]',
 }
 LANDMARK = re.compile(r'\b((?i:hospital|cl[ií]nica|mercado|colegio))\s+((?:de\s+(?:la\s+|los\s+|las\s+)?)?[A-ZÁÉÍÓÚÑ0-9][^,·]*)')
+SECTOR = re.compile(r'(?i)^\s*sector\s+(\d{1,2})\s*,?\s*grupo\s+(\d{1,2})\s*(?:$|[,·])')
 STOPWORDS = {'de', 'del', 'la', 'las', 'los', 'el', 'y'}
 
 
@@ -73,6 +76,9 @@ def parse_location(location):
         a, b = road_core(match['a']), road_core(match['b'])
         if a and b and a != b and not re.search(r'\bcuadra\b', a + ' ' + b):
             return {'kind': 'intersection', 'roads': [a, b], 'structure': structure}
+    sector = SECTOR.match(location)
+    if sector:
+        return {'kind': 'neighbourhood', 'name': 'sector %s grupo %s' % (sector[1], sector[2])}
     found = LANDMARK.search(location)
     if found:
         kind = norm(found[1])
@@ -278,6 +284,24 @@ class Locator:
                 'precision': 'Referencia: %s según OpenStreetMap, no el lugar exacto del agua' % place['landmark'],
                 'evidence': 'OSM: %s %s en %s' % (place['landmark'], ' '.join(place['tokens']), district['name'])}, 'verified'
 
+    def neighbourhood(self, place, district):
+        s, w, n, e = district['bbox']
+        elements = self.overpass('[out:json][timeout:25][bbox:%f,%f,%f,%f];nwr["place"~"^(neighbourhood|quarter)$"]'
+                                 '["name"~"grupo",i];out center tags;' % (s, w, n, e))
+        points = []
+        for element in elements:
+            if norm(element.get('tags', {}).get('name', '')) != place['name']:
+                continue
+            where = element.get('center') or {'lat': element.get('lat'), 'lon': element.get('lon')}
+            if where.get('lat') is not None and inside(district['polygon'], where['lat'], where['lon']):
+                points.append((where['lat'], where['lon']))
+        if len(points) != 1:
+            return None, 'ambiguous_neighbourhood' if points else 'neighbourhood_not_found'
+        lat, lon = points[0]
+        return {'point': [round(lon, 6), round(lat, 6)],
+                'precision': 'Centro del grupo residencial según OpenStreetMap · zona referencial (±150 m), no la calle exacta',
+                'evidence': 'OSM: %s en %s' % (place['name'], district['name'])}, 'verified'
+
     # ---- entry point -----------------------------------------------------
     def locate(self, review):
         """Return {'point': [lon, lat], 'precision', 'evidence'} or None."""
@@ -300,6 +324,8 @@ class Locator:
                 result, reason = None, 'district_unknown'
             elif place['kind'] == 'intersection':
                 result, reason = self.intersection(place, district)
+            elif place['kind'] == 'neighbourhood':
+                result, reason = self.neighbourhood(place, district)
             else:
                 result, reason = self.landmark(place, district)
         except ProviderError as error:

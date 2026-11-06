@@ -111,5 +111,47 @@
         "url": "https://www.defensoria.gob.pe/defensoria-del-pueblo-despliega-personal-en-lima-sur-para-verificar-atencion-de-aniegos-y-limpieza-publica/"
       }
     ]
+  },
+  {
+    "key": "ves-hospital-emergencias-20261105",
+    "district": "Villa El Salvador",
+    "location": "Frente al Hospital de Emergencias Villa El Salvador",
+    "summary": "Medios informaron agua hasta la altura de las rodillas en la vía de acceso al hospital; los pacientes debían bajar de los vehículos una cuadra antes. La Defensoría pidió vigilar que el aniego no impida el ingreso de ambulancias. Reportes del 5/11.",
+    "day": "2026-11-05",
+    "coordinates": null,
+    "precision": "Sin punto verificado",
+    "sources": [
+      {
+        "name": "Infobae · 5/11",
+        "url": "https://www.infobae.com/peru/2026/11/05/las-lloviznas-en-lima-casi-igualan-un-record-de-1970-aniegos-vias-inundadas-y-desagues-colapsados-en-distritos-del-sur/"
+      },
+      {
+        "name": "Defensoría del Pueblo · 5/11",
+        "url": "https://www.defensoria.gob.pe/defensoria-del-pueblo-supervisa-atencion-de-aniegos-en-distritos-de-lima-metropolitana-y-solicita-medidas-urgentes-para-proteger-la-salud-de-la-poblacion/"
+      }
+    ]
+  },
+  {
+    "key": "ves-sector1-grupo1-20261105",
+    "district": "Villa El Salvador",
+    "location": "Sector 1, Grupo 1",
+    "summary": "El 5/11 se reportó el colapso del desagüe con ingreso de aguas servidas a más de 50 viviendas; cisternas del municipio y de Sedapal llegaron a drenar. La Defensoría indicó ese mediodía que la zona estaba atendida, pero el 6/11 los vecinos seguían retirando agua de sus casas.",
+    "day": "2026-11-05",
+    "coordinates": null,
+    "precision": "Sin punto verificado",
+    "sources": [
+      {
+        "name": "RPP · 5/11",
+        "url": "https://rpp.pe/lima/actualidad/ves-al-menos-50-familias-afectadas-tras-colapso-del-sistema-de-alcantarillado-por-la-intensa-llovizna-noticia-1716018"
+      },
+      {
+        "name": "La República · 5/11",
+        "url": "https://larepublica.pe/sociedad/2026/11/05/vecino-sorprende-al-usar-una-balsa-inflable-para-cruzar-calles-inundadas-por-las-lluvias-en-villa-el-salvador-147665"
+      },
+      {
+        "name": "Infobae · 6/11",
+        "url": "https://www.infobae.com/peru/2026/11/06/lluvias-en-lima-sur-por-que-cada-vez-la-zona-sur-de-la-capital-se-inunda-y-colapsan-los-desagues/"
+      }
+    ]
   }
 ]

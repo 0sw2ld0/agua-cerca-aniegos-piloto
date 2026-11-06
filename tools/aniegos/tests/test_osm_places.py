@@ -46,9 +46,13 @@ class ParseTests(unittest.TestCase):
                          ['el sol', 'separadora industrial'])
 
     def test_imprecise_places_get_no_rule(self):
-        for text in ('Av. Pachacútec, cuadra 34 · frente a la Red Integrada de Salud', 'Sector 1, Grupo 1',
+        for text in ('Av. Pachacútec, cuadra 34 · frente a la Red Integrada de Salud', 'Sector 1',
                      'Avenida 26 de Noviembre', 'Pasaje Los Gorriones, primera cuadra de avenida Guardia Civil'):
             self.assertIsNone(parse_location(text), text)
+
+    def test_neighbourhood(self):
+        self.assertEqual(parse_location('Sector 1, Grupo 1'), {'kind': 'neighbourhood', 'name': 'sector 1 grupo 1'})
+        self.assertEqual(parse_location('Sector 2 Grupo 15 · pasaje interior')['name'], 'sector 2 grupo 15')
 
     def test_landmark(self):
         self.assertEqual(parse_location('Exteriores del Hospital de la Solidaridad'),
@@ -117,6 +121,35 @@ class LocatorTests(unittest.TestCase):
             self.assertEqual(loc.log[-1]['reason'], 'ambiguous_junctions')
         finally:
             FIXTURE['roads'] = original
+
+
+class NeighbourhoodTests(unittest.TestCase):
+    def fetch_with(self, elements):
+        fake = FakeOSM()
+
+        def fetch(url, data=None, timeout=45):
+            if 'nominatim' in url:
+                return fake(url)
+            return json.dumps({'elements': elements}).encode()
+        return fetch
+
+    def test_single_named_group_inside_district(self):
+        group = {'type': 'way', 'id': 1, 'tags': {'place': 'neighbourhood', 'name': 'Sector 1 Grupo 1'},
+                 'center': {'lat': -12.1800, 'lon': -76.9430}}
+        other = {'type': 'way', 'id': 2, 'tags': {'place': 'neighbourhood', 'name': 'Sector 1 Grupo 11'},
+                 'center': {'lat': -12.1810, 'lon': -76.9440}}
+        review = dict(BYPASS, location='Sector 1, Grupo 1')
+        found = locator(self.fetch_with([group, other])).locate(review)
+        self.assertEqual(found['point'], [-76.943, -12.18])
+        self.assertIn('zona referencial', found['precision'])
+
+    def test_duplicate_group_names_are_ambiguous(self):
+        a = {'type': 'node', 'id': 1, 'tags': {'place': 'neighbourhood', 'name': 'Sector 1 Grupo 1'},
+             'lat': -12.1800, 'lon': -76.9430}
+        b = dict(a, id=2, lat=-12.1700)
+        loc = locator(self.fetch_with([a, b]))
+        self.assertIsNone(loc.locate(dict(BYPASS, location='Sector 1, Grupo 1')))
+        self.assertEqual(loc.log[-1]['reason'], 'ambiguous_neighbourhood')
 
 
 class PublishIntegrationTests(unittest.TestCase):
