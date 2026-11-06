@@ -10,7 +10,10 @@
 </head>
 <body>
 <header class="barra">
-  <h1>Agua Cerca</h1>
+  <a class="marca" href="./" aria-label="Agua Cerca, inicio">
+    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="#fff" d="M12 2.5c-3.3 4.4-6.5 8.2-6.5 11.6A6.5 6.5 0 0 0 12 20.6a6.5 6.5 0 0 0 6.5-6.5C18.5 10.7 15.3 6.9 12 2.5z"/></svg>
+    <span><strong>Agua Cerca</strong><small>Pasos a desnivel</small></span>
+  </a>
   <nav><a href="./">Mapa</a><a href="pasos.html" aria-current="page">Pasos a desnivel</a><a href="costos.html">Costos</a></nav>
 </header>
 <main style="max-width:760px">
@@ -64,7 +67,7 @@ function pintar() {
     const accion = u?.point
       ? el('a', { href: `./?lat=${u.point[1]}&lon=${u.point[0]}&capa=inundables&nombre=${encodeURIComponent(p.nombre)}`, text: 'Ver en el mapa' })
       : el('button', { class: 'enlace', type: 'button', text: 'Buscar ubicación', onclick: () => ubicar(p, caja) });
-    return el('article', { class: 'item' }, el('h3', { text: p.nombre }),
+    return el('article', { class: 'item estatico' }, el('h3', { text: p.nombre }),
       el('p', { class: 'pequeno suave', text: `Antecedente documentado · pág. ${p.pagina}` }),
       u?.point ? el('p', { class: 'pequeno', text: 'Ubicación referencial: cruce de ambas vías en OpenStreetMap, no una coordenada oficial de CENEPRED.' }) : null,
       el('div', { class: 'acciones' }, accion), caja);

@@ -153,7 +153,7 @@ function activa(id) { const v = leer('capa_' + id); return v ? v.valor : CAPAS.f
 function pintarCapas() {
   const caja = $('capas');
   caja.replaceChildren(...CAPAS.map(c => {
-    const casilla = el('input', { type: 'checkbox', id: 'capa-' + c.id });
+    const casilla = el('input', { type: 'checkbox', id: 'capa-' + c.id, class: 'interruptor', role: 'switch' });
     casilla.checked = activa(c.id);
     casilla.addEventListener('change', () => { guardar('capa_' + c.id, casilla.checked); aplicarCapa(c.id); });
     const ley = el('div', { class: 'leyenda' }, ...c.leyenda().map(([t, color, op, discontinua]) => {
@@ -162,16 +162,28 @@ function pintarCapas() {
       if (discontinua) { m.style.background = 'transparent'; m.style.border = `1.5px dashed ${color}`; m.style.opacity = 1; }
       return el('span', {}, m, t);
     }));
-    return el('div', { class: 'capa' }, el('label', { for: 'capa-' + c.id }, casilla, el('span', { text: c.nombre })),
+    return el('div', { class: 'capa' }, el('label', { for: 'capa-' + c.id }, casilla, el('span', { class: 'nombre-capa', text: c.nombre })),
       el('p', { class: 'nota', text: c.nota }), ley);
   }));
 }
+function pintarLeyenda() {
+  // Compact legend on the map for the active layers that need one.
+  const cajas = CAPAS.filter(c => activa(c.id) && ['cortes', 'sectores', 'lluvias', 'inundables'].includes(c.id)).map(c =>
+    el('div', { class: 'caja' }, el('strong', { text: c.id === 'sectores' ? 'Horas de agua' : c.nombre }),
+      ...c.leyenda().map(([t, color, op]) => { const m = el('span', { class: 'muestra' }); m.style.background = color; m.style.opacity = op; return el('span', {}, m, t); })));
+  $('leyendaMapa').replaceChildren(...cajas);
+}
+$('botonCapas').addEventListener('click', () => {
+  const abierto = $('popoverCapas').hidden;
+  $('popoverCapas').hidden = !abierto; $('botonCapas').setAttribute('aria-expanded', String(abierto));
+});
+$('cerrarCapas').addEventListener('click', () => { $('popoverCapas').hidden = true; $('botonCapas').setAttribute('aria-expanded', 'false'); });
 function aplicarCapa(id) {
   const on = activa(id);
   if (on) grupos[id].addTo(mapa); else mapa.removeLayer(grupos[id]);
   if (on) ({ cortes: cargarCortes, sectores: cargarSectores, puntos: cargarPuntos, aniegos: cargarAniegos,
              inundables: activarInundables, ana: cargarAna, lluvias: cargarLluvias })[id]?.();
-  pintarPestanas();
+  pintarLeyenda(); pintarPestanas();
 }
 
 /* ---------- 1. cortes de agua ---------- */
@@ -226,38 +238,62 @@ async function cargarCortes(forzar) {
   dibujarCortes();
 }
 const MAPA = { naranja: '#e8590c', azul: '#1c62e6' };
-const GOTA = '<svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#fff" d="M12 2.5c-3.3 4.4-6.5 8.2-6.5 11.6A6.5 6.5 0 0 0 12 20.6a6.5 6.5 0 0 0 6.5-6.5C18.5 10.7 15.3 6.9 12 2.5z"/></svg>';
-const CALENDARIO = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#fff" d="M7 2h2v2h6V2h2v2h3v17H4V4h3V2zm-1 7v10h12V9H6z"/></svg>';
+// Crossed-out drop: a water drop with a slash (no water). The slash gap uses the marker colour.
+const gotaTachada = (fondo, tam = 18) => `<svg viewBox="0 0 24 24" width="${tam}" height="${tam}" aria-hidden="true">
+  <path fill="#fff" d="M12 2.5c-3.3 4.4-6.5 8.2-6.5 11.6A6.5 6.5 0 0 0 12 20.6a6.5 6.5 0 0 0 6.5-6.5C18.5 10.7 15.3 6.9 12 2.5z"/>
+  <line x1="3.5" y1="3.5" x2="20.5" y2="20.5" stroke="${fondo}" stroke-width="5" stroke-linecap="round"/>
+  <line x1="3.5" y1="3.5" x2="20.5" y2="20.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>`;
+const capasCorte = new Map(), marcasCorte = new Map();
+let corteElegido = null;
+function estiloCorte(c, elegido) {
+  const enCurso = estadoCorte(c) === 'enCurso', color = enCurso ? MAPA.naranja : MAPA.azul;
+  return { color, weight: elegido ? 4.5 : 3, opacity: 1, fillColor: color, fillOpacity: (enCurso ? 0.35 : 0.28) + (elegido ? 0.17 : 0),
+           dashArray: enCurso ? null : '8 5', lineJoin: 'round' };
+}
 function dibujarCortes() {
-  grupos.cortes.clearLayers();
-  // At city or country scale the areas are a few pixels (the iOS map has the same problem): add a marker
-  // at the centre of each cut, grouped when they overlap, and keep the area for closer zooms.
+  grupos.cortes.clearLayers(); capasCorte.clear(); marcasCorte.clear();
+  // At city or country scale the areas are a few pixels (the iOS map has the same problem): a marker sits
+  // at the centre of each cut. Overlapping markers are grouped; a small group opens a list instead of zooming.
   const marcas = L.markerClusterGroup({ clusterPane: 'marcasCortes', showCoverageOnHover: false, maxClusterRadius: 40,
-    iconCreateFunction: g => L.divIcon({ className: '', iconSize: [30, 30],
-      html: `<div class="racimo corte${g.getAllChildMarkers().some(m => m.options.enCurso) ? ' en-curso' : ''}">${GOTA}<span>${g.getChildCount()}</span></div>` }) });
+    zoomToBoundsOnClick: false, spiderfyOnMaxZoom: false,
+    iconCreateFunction: g => { const curso = g.getAllChildMarkers().some(m => m.options.enCurso);
+      return L.divIcon({ className: '', iconSize: [48, 32], iconAnchor: [24, 16],
+        html: `<div class="racimo corte${curso ? ' en-curso' : ''}">${gotaTachada(curso ? MAPA.naranja : MAPA.azul, 16)}<span>${g.getChildCount()}</span></div>` }); } });
+  marcas.on('clusterclick', e => {
+    const cortes = e.layer.getAllChildMarkers().map(m => m.options.corte);
+    if (cortes.length <= 5 || mapa.getZoom() >= 16) seleccionarGrupo(cortes);
+    else e.layer.zoomToBounds({ padding: [50, 50] });
+  });
   for (const c of estado.cortes || []) {
     const s = estadoCorte(c);
     if (s === 'vencido' || !c.poligonos.length) continue;
-    // The base map is always light, even in dark mode: use fixed, saturated map colours plus a white halo.
-    const enCurso = s === 'enCurso', color = enCurso ? MAPA.naranja : MAPA.azul;
+    const enCurso = s === 'enCurso';
     const geo = { type: 'MultiPolygon', coordinates: c.poligonos };
+    // The base map is always light, even in dark mode: fixed saturated colours plus a white halo.
     L.geoJSON(geo, { pane: 'cortes', renderer: lienzos.cortes, smoothFactor: 0, interactive: false,
       style: { color: '#ffffff', weight: 6, opacity: 0.95, fill: false, lineJoin: 'round' } }).addTo(grupos.cortes);
-    const capa = L.geoJSON(geo, {
-      pane: 'cortes', renderer: lienzos.cortes, smoothFactor: 0,
-      style: { color, weight: 3, opacity: 1, fillColor: color, fillOpacity: enCurso ? 0.35 : 0.28,
-               dashArray: enCurso ? null : '8 5', lineJoin: 'round' },
-    });
-    capa.on('click', e => { L.DomEvent.stop(e); abrir(() => fichaCorte(c)); });
+    const capa = L.geoJSON(geo, { pane: 'cortes', renderer: lienzos.cortes, smoothFactor: 0, style: estiloCorte(c, c.id === corteElegido) });
+    capa.on('click', e => { L.DomEvent.stop(e); seleccionarCorte(c); });
     capa.addTo(grupos.cortes);
-    const caja = capa.getBounds().getCenter();
-    L.marker(caja, { pane: 'marcasCortes', enCurso, title: `${enCurso ? 'Corte en curso' : 'Próximo corte'} · ${zona(c)}`,
-      icon: L.divIcon({ className: '', iconSize: [32, 32], iconAnchor: [16, 16],
-        html: `<div class="marca-corte ${enCurso ? 'en-curso' : 'proximo'}">${enCurso ? GOTA : CALENDARIO}</div>` }) })
-      .on('click', () => { abrir(() => fichaCorte(c)); }).addTo(marcas);
+    capasCorte.set(c.id, capa);
+    const marca = L.marker(capa.getBounds().getCenter(), { pane: 'marcasCortes', enCurso, corte: c, keyboard: true,
+      title: `${enCurso ? 'Corte en curso' : 'Próximo corte'} · ${zona(c)}`,
+      icon: L.divIcon({ className: '', iconSize: [34, 34], iconAnchor: [17, 17],
+        html: `<div class="marca-corte ${enCurso ? 'en-curso' : 'proximo'}${c.id === corteElegido ? ' elegido' : ''}">${gotaTachada(enCurso ? MAPA.naranja : MAPA.azul)}</div>` }) })
+      .on('click', () => seleccionarCorte(c));
+    marca.addTo(marcas);
+    marcasCorte.set(c.id, marca);
   }
   marcas.addTo(grupos.cortes);
   if (estado.pestana === 'cortes') pintarContenido();
+}
+function resaltarCorte(id) {
+  for (const [cid, capa] of capasCorte) {
+    const c = (estado.cortes || []).find(x => x.id === cid);
+    if (c) capa.setStyle(estiloCorte(c, cid === id));
+  }
+  for (const [cid, m] of marcasCorte) m.getElement()?.firstElementChild?.classList.toggle('elegido', cid === id);
+  corteElegido = id;
 }
 function relacionCorte(c) {
   const r = estado.referencia;
@@ -265,32 +301,55 @@ function relacionCorte(c) {
   const d = distanciaA(c.poligonos, r.lat, r.lon);
   return { d, texto: d === 0 ? (r.tipo === 'ubicacion' ? 'Afecta tu ubicación' : 'Afecta esta dirección') : `A ${distancia(d)} · No afecta este lugar` };
 }
-function tarjetaCorte(c) {
-  const s = estadoCorte(c), rel = relacionCorte(c);
-  const mismoDia = diaLima(c.inicio) === diaLima(c.fin);
-  const horario = s === 'enCurso' ? `Vuelve aprox. ${fechaHora(c.fin)}` :
+function horarioCorte(c) {
+  const s = estadoCorte(c), mismoDia = diaLima(c.inicio) === diaLima(c.fin);
+  return s === 'enCurso' ? `Vuelve aprox. ${fechaHora(c.fin)}` :
     s === 'proximo' ? (mismoDia ? `${capital(dia(c.inicio))}, ${hora(c.inicio)}–${hora(c.fin)}` : `${fechaHora(c.inicio)} a ${fechaHora(c.fin)}`) :
     `Debía terminar ${fechaHora(c.fin)}`;
-  return el('article', { class: 'item' + (rel && rel.d === 0 ? ' destacado' : '') },
-    el('span', { class: 'chip ' + (s === 'enCurso' ? 'naranja' : s === 'proximo' ? 'acento' : 'gris'),
-                 text: s === 'enCurso' ? 'En curso' : s === 'proximo' ? 'Próximo' : 'Ya debía terminar' }), ' ',
-    el('span', { class: 'chip', text: ({ programado: 'Programado', imprevisto: 'Imprevisto' })[c.tipo] || 'Reporte de agua' }),
-    el('h3', { text: zona(c) }),
-    el('p', { text: horario }),
+}
+const chipEstado = c => { const s = estadoCorte(c);
+  return el('span', { class: 'chip ' + (s === 'enCurso' ? 'naranja' : s === 'proximo' ? 'acento' : 'gris'),
+                      text: s === 'enCurso' ? 'En curso' : s === 'proximo' ? 'Próximo' : 'Ya debía terminar' }); };
+const chipTipo = c => el('span', { class: 'chip', text: ({ programado: 'Programado', imprevisto: 'Imprevisto' })[c.tipo] || 'Reporte de agua' });
+function resumenCorte(c) {
+  const rel = relacionCorte(c);
+  return [el('div', { class: 'acciones', style: 'margin-top:0' }, chipEstado(c), chipTipo(c)),
+    el('h3', { text: zona(c) }), el('p', { text: horarioCorte(c) }),
     c.motivo ? el('p', { class: 'suave', text: capital(c.motivo) }) : null,
-    rel ? el('p', { class: 'pequeno', text: rel.texto }) : null,
-    el('div', { class: 'acciones' },
-      el('button', { class: 'enlace', type: 'button', text: 'Ver detalle', onclick: () => abrir(() => fichaCorte(c)) }),
-      el('button', { class: 'enlace', type: 'button', text: 'Ver en el mapa', onclick: () => encuadrar(c.poligonos) })));
+    rel ? el('p', { class: 'pequeno', text: rel.texto }) : null];
+}
+function seleccionarCorte(c, mover) {
+  resaltarCorte(c.id);
+  seleccionar(resumenCorte(c), () => fichaCorte(c));
+  if (mover) encuadrar(c.poligonos);
+}
+function seleccionarGrupo(cortes) {
+  resaltarCorte(null);
+  const filas = cortes.sort((a, b) => (estadoCorte(a) === 'enCurso' ? 0 : 1) - (estadoCorte(b) === 'enCurso' ? 0 : 1) || a.inicio - b.inicio)
+    .map(c => el('button', { type: 'button', class: 'fila-grupo', onclick: () => seleccionarCorte(c) },
+      el('div', { class: 'acciones', style: 'margin-top:0' }, chipEstado(c), chipTipo(c)),
+      el('strong', { text: zona(c) }), el('div', { class: 'pequeno suave', text: horarioCorte(c) })));
+  seleccionar([el('h3', { text: `${cortes.length} reportes en esta zona` }),
+    el('p', { class: 'pequeno suave', text: 'Elige uno para ver su detalle.' }), ...filas], null);
+}
+function tarjetaCorte(c) {
+  const rel = relacionCorte(c);
+  return el('article', { class: 'item' + (rel && rel.d === 0 ? ' destacado' : ''), tabindex: '0',
+      onclick: () => seleccionarCorte(c, true), onkeydown: e => { if (e.key === 'Enter') seleccionarCorte(c, true); } },
+    el('div', { class: 'acciones', style: 'margin-top:0' }, chipEstado(c), chipTipo(c)),
+    el('h3', { text: zona(c) }), el('p', { text: horarioCorte(c) }),
+    c.motivo ? el('p', { class: 'suave', text: capital(c.motivo) }) : null,
+    rel ? el('p', { class: 'pequeno', text: rel.texto }) : null);
 }
 function encuadrar(polis) {
   const pts = polis.flatMap(p => p[0] || []).map(([x, y]) => [y, x]);
-  if (pts.length) mapa.fitBounds(pts, { padding: [30, 30], maxZoom: 16 });
+  // Leave room at the bottom for the selection card so it never covers the zone.
+  if (pts.length) mapa.fitBounds(pts, { paddingTopLeft: [50, 70], paddingBottomRight: [50, 230], maxZoom: 16 });
 }
 function listaCortes() {
   const nodos = [];
-  if (!estado.cortes) return [el('p', { class: 'bloque suave', text: estado.cortesError ? 'Sin datos disponibles. No se pudieron descargar los reportes. Revisa tu conexión.' : 'Cargando cortes…' })];
-  if (estado.cortesError) nodos.push(el('p', { class: 'bloque aviso pequeno', text: `Sin conexión · datos de ${fechaHora(estado.cortesFecha)}` }));
+  if (!estado.cortes) return [el('p', { class: 'vacio', text: estado.cortesError ? 'Sin datos disponibles. No se pudieron descargar los reportes. Revisa tu conexión.' : 'Cargando cortes…' })];
+  if (estado.cortesError) nodos.push(el('p', { class: 'bloque' }, el('span', { class: 'aviso pequeno', text: `Sin conexión · datos de ${fechaHora(estado.cortesFecha)}` })));
   let vigentes = estado.cortes.filter(c => estadoCorte(c) !== 'vencido');
   const r = estado.referencia;
   if (r) vigentes = vigentes.filter(c => distanciaA(c.poligonos, r.lat, r.lon) <= 3000);
@@ -300,43 +359,47 @@ function listaCortes() {
   const proximos = vigentes.filter(c => estadoCorte(c) === 'proximo').sort((a, b) => a.inicio - b.inicio);
   if (r) nodos.push(el('p', { class: 'bloque pequeno suave', text: `Cortes a menos de 3 km de ${r.nombre}` }));
   else {
-    const sel = el('select', { 'aria-label': 'Zona de consulta', onchange: e => { estado.zonaCortes = e.target.value; pintarContenido(); } },
+    const sel = el('select', { 'aria-label': 'Zona de consulta', onchange: e => { estado.zonaCortes = e.target.value; pintarPestanas(); pintarContenido(); } },
       ...[['lima', 'Lima y Callao'], ['peru', 'Todo el Perú']].map(([v, t]) => { const o = el('option', { value: v, text: t }); o.selected = estado.zonaCortes === v; return o; }));
-    nodos.push(el('div', { class: 'bloque acciones' }, sel, el('span', { class: 'suave', text: 'Busca una dirección para ver los cortes a menos de 3 km.' })));
+    nodos.push(el('div', { class: 'fila-filtros' }, sel, el('span', { class: 'pequeno suave', text: 'o busca una dirección' })));
   }
-  nodos.push(el('h2', { text: `Reportes en curso · ${ahora.length}` }));
-  if (!ahora.length) nodos.push(el('p', { class: 'bloque suave', text: 'Sin cortes reportados en esta zona. Algunos cortes se reportan tarde. Esto no garantiza que tengas agua.' }));
+  nodos.push(el('div', { class: 'resumen' },
+    el('div', { class: 'dato' }, el('strong', { text: String(ahora.length), style: 'color:var(--corte-curso)' }), el('span', { text: 'en curso' })),
+    el('div', { class: 'dato' }, el('strong', { text: String(proximos.length), style: 'color:var(--acento)' }), el('span', { text: 'próximos' }))));
+  nodos.push(el('h2', { text: 'En curso' }));
+  if (!ahora.length) nodos.push(el('p', { class: 'vacio', text: 'Sin cortes reportados en esta zona. Algunos cortes se reportan tarde. Esto no garantiza que tengas agua.' }));
   nodos.push(...ahora.map(tarjetaCorte));
-  nodos.push(el('h2', { text: `Reportes próximos · ${proximos.length}` }));
-  if (!proximos.length) nodos.push(el('p', { class: 'bloque suave', text: 'Sin próximos cortes reportados.' }));
+  nodos.push(el('h2', { text: 'Próximos' }));
+  if (!proximos.length) nodos.push(el('p', { class: 'vacio', text: 'Sin próximos cortes reportados.' }));
   let diaActual = null;
   for (const c of proximos) {
     const d = diaLima(c.inicio);
-    if (d !== diaActual) { diaActual = d; nodos.push(el('p', { class: 'bloque pequeno suave', text: capital(dia(c.inicio)) })); }
+    if (d !== diaActual) { diaActual = d; nodos.push(el('p', { class: 'bloque pequeno', style: 'font-weight:600', text: capital(dia(c.inicio)) })); }
     nodos.push(tarjetaCorte(c));
   }
   nodos.push(el('p', { class: 'bloque pequeno suave', text: `El horario puede cambiar. Actualizado ${fechaHora(estado.cortesFecha)}. Fuente: reportes de las empresas a Sunass, sin verificar.` }),
-    el('div', { class: 'bloque' }, el('button', { class: 'boton', type: 'button', text: 'Actualizar reportes', onclick: () => cargarCortes(true) })));
+    el('div', { class: 'bloque' }, el('button', { class: 'boton pequeno', type: 'button', text: 'Actualizar reportes', onclick: () => cargarCortes(true) })));
   return nodos;
 }
 function fichaCorte(c) {
-  const s = estadoCorte(c), datos = [['Motivo', capital(c.motivo)], ['Empresa de agua', c.eps], ['Inicio del corte', fechaHora(c.inicio)],
-    [zona(c), sectoresLegibles(c)]];
+  const datos = [['Motivo', capital(c.motivo)], ['Empresa de agua', c.eps], ['Inicio del corte', fechaHora(c.inicio)],
+    ['Sectores', sectoresLegibles(c)]];
   const mas = [['Detalle', c.detalle], ['Localidad', titulo(c.localidad)], ['Tipo', tipoCorte(c)],
     ['Conexiones afectadas', c.conexiones ? `Aprox. ${c.conexiones.toLocaleString('es-PE')}` : ''], ['Código del reporte', c.codigo]];
   const ficha = pares => el('dl', { class: 'ficha' }, ...pares.filter(([, v]) => v).flatMap(([k, v]) => [el('dt', { text: k }), el('dd', { text: v })]));
+  const rel = relacionCorte(c);
   return [
     el('div', { class: 'bloque' },
-      el('span', { class: 'chip ' + (s === 'enCurso' ? 'naranja' : 'acento'), text: s === 'enCurso' ? 'En curso' : s === 'proximo' ? 'Próximo' : 'Ya debía terminar' }),
-      ' ', el('span', { class: 'chip', text: tipoCorte(c) }),
-      el('h2', { text: zona(c), style: 'margin:8px 0 2px' }),
-      el('p', { class: 'suave pequeno', text: 'Reposición estimada' }), el('p', { class: 'grande', text: fechaHora(c.fin) }),
-      el('p', { class: 'pequeno', text: 'El horario puede cambiar.' }),
-      relacionCorte(c) ? el('p', { text: relacionCorte(c).texto }) : null),
+      el('div', { class: 'acciones', style: 'margin-top:0' }, chipEstado(c), el('span', { class: 'chip', text: tipoCorte(c) })),
+      el('h2', { class: 'titulo-ficha', text: zona(c) }),
+      el('p', { class: 'suave pequeno', text: estadoCorte(c) === 'proximo' ? 'Horario estimado' : 'Reposición estimada', style: 'margin-top:10px' }),
+      el('p', { class: 'grande', text: estadoCorte(c) === 'proximo' ? horarioCorte(c) : fechaHora(c.fin) }),
+      el('p', { class: 'pequeno suave', text: 'El horario puede cambiar.' }),
+      rel ? el('p', { style: 'font-weight:600', text: rel.texto }) : null),
     ficha(datos),
     el('details', { class: 'bloque' }, el('summary', { text: 'Más información del reporte' }), ficha(mas)),
+    el('div', { class: 'bloque acciones' }, el('button', { class: 'boton', type: 'button', text: 'Ver zona en el mapa', onclick: () => { resaltarCorte(c.id); encuadrar(c.poligonos); } })),
     el('p', { class: 'bloque pequeno suave', text: `Reporte a Sunass · descargado ${fechaHora(estado.cortesFecha)}. Zona y horario estimados. Sunass no ha verificado este reporte; confirma con tu empresa de agua.` }),
-    el('div', { class: 'bloque' }, el('button', { class: 'boton', type: 'button', text: 'Ver en el mapa', onclick: () => encuadrar(c.poligonos) })),
   ];
 }
 
@@ -383,7 +446,12 @@ function dibujarSectores() {
   grupos.sectores.clearLayers();
   if (!estado.sectores) return;
   capaSectores = L.geoJSON(estado.sectores, { pane: 'sectores', renderer: lienzos.sectores, smoothFactor: 0.5, style: estiloSector,
-    onEachFeature: (f, capa) => capa.on('click', () => { sectorElegido = f; capaSectores.setStyle(estiloSector); abrir(() => fichaSector(f.properties)); }) });
+    onEachFeature: (f, capa) => capa.on('click', e => { L.DomEvent.stop(e); sectorElegido = f; capaSectores.setStyle(estiloSector);
+      const h = horasSector(f.properties), n = nivel(h);
+      seleccionar([el('span', { class: 'chip', style: `background:${n.color};color:#111;border-color:transparent`, text: h == null ? 'Sin dato' : n.titulo }),
+        el('h3', { text: nombreSector(f.properties) }),
+        el('p', { text: h == null ? 'Sin dato de continuidad' : `${String(Math.round(h * 10) / 10).replace('.', ',')} horas de agua al día` }),
+        el('p', { class: 'pequeno suave', text: limpio(f.properties.eps, 80) })], () => fichaSector(f.properties)); }) });
   capaSectores.addTo(grupos.sectores);
 }
 function nombreSector(p) {
@@ -455,20 +523,27 @@ function dibujarPuntos() {
   grupos.puntos.clearLayers();
   for (const p of puntosFiltrados()) {
     L.marker([p.lat, p.lon], { icon: iconos[p.grupo](p.operativo), pane: 'puntos', title: p.nombre })
-      .on('click', () => abrir(() => fichaPunto(p))).addTo(grupos.puntos);
+      .on('click', () => seleccionarPunto(p)).addTo(grupos.puntos);
   }
   if (estado.pestana === 'puntos') pintarContenido();
 }
 const grupoNombre = p => p.grupo === 'camara' ? 'Cámara especial' : 'Hidrante';
+function seleccionarPunto(p, mover) {
+  const r = estado.referencia, d = r ? metros([r.lat, r.lon], [p.lat, p.lon]) : null;
+  seleccionar([el('span', { class: 'chip' + (p.operativo ? '' : ' gris'), text: p.operativo ? grupoNombre(p) : `${grupoNombre(p)} · ${p.situacion}` }),
+    el('h3', { text: p.nombre }), el('p', { class: 'suave', text: p.direccion }),
+    d != null ? el('p', { class: 'pequeno', text: `${distancia(d)} · aprox. ${Math.max(1, Math.round(d * 1.3 / 75))} min a pie` }) : null,
+    el('div', { class: 'acciones' }, enlaceSeguro(`https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}&travelmode=walking`, 'Cómo llegar ↗'))],
+    () => fichaPunto(p));
+  if (mover) { mapa.setView([p.lat, p.lon], 17); mapa.panBy([0, 110]); }
+}
 function tarjetaPunto(p) {
   const r = estado.referencia, d = r ? metros([r.lat, r.lon], [p.lat, p.lon]) : null;
-  return el('article', { class: 'item' },
-    el('h3', { text: `${grupoNombre(p)} · ${p.nombre}` }), el('p', { class: 'suave', text: p.direccion }),
-    !p.operativo ? el('p', { style: 'color:#ff9500', text: p.situacion }) : null,
-    d != null ? el('p', { class: 'pequeno', text: `${distancia(d)} · aprox. ${Math.max(1, Math.round(d * 1.3 / 75))} min a pie` }) : null,
-    el('div', { class: 'acciones' },
-      el('button', { class: 'enlace', type: 'button', text: 'Ver detalle', onclick: () => abrir(() => fichaPunto(p)) }),
-      el('button', { class: 'enlace', type: 'button', text: 'Ver en el mapa', onclick: () => mapa.setView([p.lat, p.lon], 17) })));
+  return el('article', { class: 'item', tabindex: '0', onclick: () => seleccionarPunto(p, true),
+      onkeydown: e => { if (e.key === 'Enter') seleccionarPunto(p, true); } },
+    el('span', { class: 'chip' + (p.operativo ? '' : ' gris'), text: p.operativo ? grupoNombre(p) : `${grupoNombre(p)} · ${p.situacion}` }),
+    el('h3', { text: p.nombre }), el('p', { class: 'suave', text: p.direccion }),
+    d != null ? el('p', { class: 'pequeno', text: `${distancia(d)} · aprox. ${Math.max(1, Math.round(d * 1.3 / 75))} min a pie` }) : null);
 }
 function listaPuntos() {
   if (!estado.puntos) return [el('p', { class: 'bloque suave', text: estado.puntosError ? 'Sin datos. No se pudo descargar la información. Revisa tu conexión e inténtalo de nuevo.' : 'Cargando puntos de agua…' })];
@@ -512,7 +587,9 @@ async function cargarAniegos() {
   grupos.aniegos.clearLayers();
   for (const r of vigentesAniegos()) if (r.kind === 'incident' && Array.isArray(r.coordinates)) {
     L.circleMarker([r.coordinates[1], r.coordinates[0]], { radius: 9, color: '#fff', weight: 2, fillColor: '#0d66d1', fillOpacity: 0.95, pane: 'puntos' })
-      .on('click', () => abrir(() => fichaAniego(r))).addTo(grupos.aniegos);
+      .on('click', () => seleccionar([el('span', { class: 'chip azul', text: 'Incidente revisado' }), el('h3', { text: r.location }),
+        el('p', { class: 'suave', text: `${r.district} · Reporte del ${fechaDia(r.date)}` }), el('p', { class: 'pequeno', text: r.precision })],
+        () => fichaAniego(r))).addTo(grupos.aniegos);
   }
   if (estado.pestana === 'aniegos') pintarContenido();
 }
@@ -520,7 +597,9 @@ const vigentesAniegos = () => (estado.aniegos?.reports || []).filter(r => new Da
 const fechaDia = d => { const [a, m, x] = String(d).split('-'); return x ? `${x}/${m}/${a}` : 'Fecha no informada'; };
 function fichaAniego(r) {
   const esPub = r.kind === 'publication';
-  return [el('article', { class: 'item' },
+  const ubicable = Array.isArray(r.coordinates);
+  return [el('article', { class: 'item' + (ubicable ? '' : ' estatico'), tabindex: ubicable ? '0' : null,
+      onclick: e => { if (ubicable && !e.target.closest('a,button')) mapa.setView([r.coordinates[1], r.coordinates[0]], 16); } },
     el('span', { class: 'chip' + (esPub ? '' : ' azul'), text: esPub ? 'Publicación por verificar' : 'Incidente revisado' }),
     el('h3', { text: esPub ? r.summary : r.location }), el('p', { class: 'suave', text: `${r.district} · ${esPub ? 'Publicada el ' : 'Reporte del '}${fechaDia(r.date)}` }),
     esPub ? null : el('p', { text: r.summary }), el('p', { class: 'pequeno suave', text: r.precision }),
@@ -637,7 +716,10 @@ async function dibujarLluvias(encuadrar) {
       return { color: sel ? css('--texto') : c, weight: sel ? 2.5 : 1, fillColor: c, fillOpacity: sel ? 0.48 : 0.24 }; };
     lluvias.capa = L.geoJSON(fc, { pane: 'lluvias', renderer: lienzos.lluvias, smoothFactor: 0.5, style: estilo,
       onEachFeature: (f, capa) => capa.on('click', e => { L.DomEvent.stop(e); lluvias.distrito = f.properties; lluvias.capa.setStyle(estilo);
-        abrir(() => fichaDistrito(f.properties)); }) }).addTo(grupos.lluvias);
+        const p = f.properties;
+        seleccionar([el('span', { class: 'chip', style: `background:${colorRiesgo(p.nivel)};color:#111;border-color:transparent`, text: 'Riesgo ' + p.nivel.toLowerCase() }),
+          el('h3', { text: titulo(p.distrito) }), el('p', { class: 'suave', text: [titulo(p.provincia), titulo(p.departamento)].filter(Boolean).join(' · ') }),
+          el('p', { class: 'pequeno', text: 'Escenario por distrito, no aniegos actuales.' })], () => fichaDistrito(p)); }) }).addTo(grupos.lluvias);
     if (encuadrar) mapa.fitBounds(lluvias.capa.getBounds(), { padding: [30, 30] });
   }
   if (estado.pestana === 'lluvias') pintarContenido();
@@ -670,7 +752,7 @@ function listaLluvias() {
   nodos.push(el('h2', { text: 'Escenarios por lluvias' }));
   for (const x of ind.escenarios) {
     const sel = x.id === lluvias.elegido;
-    nodos.push(el('article', { class: 'item' + (sel ? ' destacado' : '') },
+    nodos.push(el('article', { class: 'item estatico' + (sel ? ' destacado' : '') },
       el('span', { class: 'chip ' + (x.estado === 'vigente' ? 'naranja' : x.estado === 'proximo' ? 'acento' : 'gris'),
                    text: x.estado === 'vigente' ? 'Vigente' : x.estado === 'proximo' ? 'Próximo' : 'Vencido' }),
       el('h3', { text: `Aviso ${x.aviso} · ${capital(x.ambito)}` }), el('p', { class: 'pequeno', text: vigencia(x) }),
@@ -693,22 +775,70 @@ function listaLluvias() {
 }
 
 /* ---------- panel ---------- */
+const ICONOS = {
+  cortes: '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><defs><mask id="mascaraGota"><rect width="24" height="24" fill="#fff"/>' +
+    '<line x1="3.5" y1="3.5" x2="20.5" y2="20.5" stroke="#000" stroke-width="5"/></mask></defs>' +
+    '<path fill="currentColor" mask="url(#mascaraGota)" d="M12 2.5c-3.3 4.4-6.5 8.2-6.5 11.6A6.5 6.5 0 0 0 12 20.6a6.5 6.5 0 0 0 6.5-6.5C18.5 10.7 15.3 6.9 12 2.5z"/>' +
+    '<line x1="3.5" y1="3.5" x2="20.5" y2="20.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  puntos: '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7zm0 4.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z"/></svg>',
+  aniegos: '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M2 15c2 0 2-1.5 4-1.5S8 15 10 15s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5V16c-2 0-2 1.5-4 1.5S16 16 14 16s-2 1.5-4 1.5S8 16 6 16s-2 1.5-4 1.5zm0 4c2 0 2-1.5 4-1.5S8 19 10 19s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5V20c-2 0-2 1.5-4 1.5S16 20 14 20s-2 1.5-4 1.5S8 20 6 20s-2 1.5-4 1.5zM12 2c-2 2.8-4 5.2-4 7.3a4 4 0 0 0 8 0C16 7.2 14 4.8 12 2z"/></svg>',
+  lluvias: '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M7 15a5 5 0 0 1-.4-10A6 6 0 0 1 18 7a4 4 0 0 1-1 8H7zm1 2h2l-1.5 4h-2L8 17zm5 0h2l-1.5 4h-2L13 17z"/></svg>',
+  inundables: '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M3 4h18v10H3V4zm2 2v6h14V6H5zm-3 11c2 0 2-1.5 4-1.5S8 17 10 17s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5V18c-2 0-2 1.5-4 1.5S16 18 14 18s-2 1.5-4 1.5S8 18 6 18s-2 1.5-4 1.5z"/></svg>',
+};
 const PESTANAS = [['cortes', 'Cortes'], ['puntos', 'Puntos'], ['aniegos', 'Aniegos'], ['lluvias', 'Lluvias'], ['inundables', 'Inundables']];
-function pintarPestanas() {
-  $('pestanas').replaceChildren(...PESTANAS.map(([id, t]) => el('button', { type: 'button', role: 'tab', 'aria-selected': String(estado.pestana === id && !estado.detalle),
-    text: t, onclick: () => { estado.pestana = id; estado.detalle = null; pintarPestanas(); pintarContenido(); } })));
+function cuenta(id) {
+  if (id === 'cortes' && estado.cortes) {
+    const r = estado.referencia;
+    return estado.cortes.filter(c => estadoCorte(c) !== 'vencido' && (r ? distanciaA(c.poligonos, r.lat, r.lon) <= 3000 :
+      estado.zonaCortes !== 'lima' || c.departamentos.some(d => /^(LIMA|CALLAO)$/i.test(d)))).length;
+  }
+  if (id === 'aniegos' && estado.aniegos) return vigentesAniegos().length;
+  if (id === 'lluvias' && lluvias.indice) return lluvias.indice.escenarios.filter(e => e.estado === 'vigente').length;
+  return null;
 }
-function abrir(dibujar) { estado.detalle = dibujar; pintarPestanas(); pintarContenido(); $('panel').scrollTop = 0;
-  if (matchMedia('(max-width: 900px)').matches) $('panel').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+function pintarPestanas() {
+  $('pestanas').replaceChildren(...PESTANAS.map(([id, t]) => {
+    const n = cuenta(id), b = el('button', { type: 'button', role: 'tab', 'aria-selected': String(estado.pestana === id && !estado.detalle),
+      onclick: () => { estado.pestana = id; estado.detalle = null; pintarPestanas(); pintarContenido(); $('panel').scrollTop = 0; } });
+    b.innerHTML = ICONOS[id];  // constant SVG only
+    b.append(t, n != null ? el('span', { class: 'cuenta', text: String(n) }) : '');
+    return b;
+  }));
+}
+// Selecting anything on the map shows a short card over the map and the full detail in the panel.
+let alCerrarSeleccion = null;
+function seleccionar(resumen, detalle, alCerrar) {
+  alCerrarSeleccion?.(); alCerrarSeleccion = alCerrar || null;
+  const t = $('tarjetaMapa');
+  const cerrar = el('button', { type: 'button', class: 'cerrar', 'aria-label': 'Cerrar', text: '×', onclick: cerrarSeleccion });
+  const acciones = detalle ? el('div', { class: 'acciones solo-movil' }, el('button', { class: 'boton primario pequeno', type: 'button', text: 'Ver detalle',
+    onclick: () => { abrir(detalle); if (matchMedia('(max-width: 760px)').matches) $('panel').scrollIntoView({ behavior: 'smooth', block: 'start' }); } })) : null;
+  t.replaceChildren(...[el('div', { class: 'cabecera' }, el('div', {}, ...resumen), cerrar), acciones].filter(Boolean));
+  t.hidden = false;
+  $('popoverCapas').hidden = true; $('botonCapas').setAttribute('aria-expanded', 'false');
+  if (detalle && !matchMedia('(max-width: 760px)').matches) abrir(detalle);
+}
+function cerrarSeleccion() {
+  $('tarjetaMapa').hidden = true;
+  alCerrarSeleccion?.(); alCerrarSeleccion = null;
+  resaltarCorte(null);
+  if (sectorElegido) { sectorElegido = null; capaSectores?.setStyle(estiloSector); }
+  if (lluvias.distrito) { lluvias.distrito = null; lluvias.capa?.setStyle(lluvias.capa.options.style); }
+  if (estado.detalle) { estado.detalle = null; pintarPestanas(); pintarContenido(); }
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarSeleccion(); });
+mapa.on('click', () => { if (!$('tarjetaMapa').hidden) cerrarSeleccion(); });
+function abrir(dibujar) { estado.detalle = dibujar; pintarPestanas(); pintarContenido(); $('panel').scrollTop = 0; }
 function pintarContenido() {
   const c = $('contenido');
   if (estado.detalle) {
-    c.replaceChildren(el('div', { class: 'bloque' }, el('button', { class: 'enlace', type: 'button', text: '← Volver',
-      onclick: () => { estado.detalle = null; sectorElegido = null; capaSectores?.setStyle(estiloSector); pintarPestanas(); pintarContenido(); } })), ...estado.detalle());
+    c.replaceChildren(el('div', { class: 'bloque' }, el('button', { class: 'enlace volver', type: 'button', text: '← Volver a la lista',
+      onclick: cerrarSeleccion })), ...estado.detalle());
     return;
   }
-  const ref = estado.referencia ? [el('p', { class: 'bloque pequeno' }, `Consultando: ${estado.referencia.nombre} · `,
-    el('button', { class: 'enlace', type: 'button', text: 'Quitar', onclick: quitarReferencia }))] : [];
+  const ref = estado.referencia ? [el('div', { class: 'bloque' }, el('div', { class: 'aviso pequeno' },
+    el('strong', { text: 'Consultando: ' }), estado.referencia.nombre, ' · ',
+    el('button', { class: 'enlace', type: 'button', text: 'Quitar', onclick: quitarReferencia })))] : [];
   const vista = { cortes: listaCortes, puntos: listaPuntos, aniegos: listaAniegos, lluvias: listaLluvias, inundables: infoInundables }[estado.pestana];
   c.replaceChildren(...ref, ...vista());
 }

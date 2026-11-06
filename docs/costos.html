@@ -6,6 +6,7 @@
 <title>Costos de IA · Agua Cerca</title>
 <meta name="description" content="Gasto estimado de Jev y GPT Luna al explorar noticias de aniegos, por corrida, por día y total.">
 <link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="mapa.css">
 <style>
   .cifras { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-bottom: 14px; }
   .cifra .valor { font-size: 28px; font-weight: 700; font-variant-numeric: tabular-nums; margin: 2px 0; }
@@ -19,7 +20,10 @@
 </head>
 <body>
 <header class="barra">
-  <h1>Agua Cerca · Costos de IA</h1>
+  <a class="marca" href="./" aria-label="Agua Cerca, inicio">
+    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="#fff" d="M12 2.5c-3.3 4.4-6.5 8.2-6.5 11.6A6.5 6.5 0 0 0 12 20.6a6.5 6.5 0 0 0 6.5-6.5C18.5 10.7 15.3 6.9 12 2.5z"/></svg>
+    <span><strong>Agua Cerca</strong><small>Costos de IA</small></span>
+  </a>
   <nav><a href="./">Mapa</a><a href="pasos.html">Pasos a desnivel</a><a href="costos.html" aria-current="page">Costos</a></nav>
   <div class="estado" id="estado">Cargando…</div>
 </header>

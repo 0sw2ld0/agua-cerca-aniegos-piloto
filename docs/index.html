@@ -2,9 +2,10 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Agua Cerca · Mapa</title>
-<meta name="description" content="Cortes de agua, horas de servicio, puntos de abastecimiento, zonas inundables y aniegos recientes en Lima y Callao.">
+<meta name="description" content="Cortes de agua, horas de servicio, puntos de abastecimiento, zonas inundables, riesgo por lluvias y aniegos recientes en Lima y Callao.">
+<meta name="theme-color" content="#0d66d1">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
@@ -12,35 +13,50 @@
 <link rel="stylesheet" href="estilo.css">
 <link rel="stylesheet" href="mapa.css">
 </head>
-<body>
+<body class="pantalla-mapa">
 <header class="barra">
-  <h1>Agua Cerca</h1>
+  <a class="marca" href="./" aria-label="Agua Cerca, inicio">
+    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="#fff" d="M12 2.5c-3.3 4.4-6.5 8.2-6.5 11.6A6.5 6.5 0 0 0 12 20.6a6.5 6.5 0 0 0 6.5-6.5C18.5 10.7 15.3 6.9 12 2.5z"/></svg>
+    <span><strong>Agua Cerca</strong><small>Lima y Callao</small></span>
+  </a>
   <nav><a href="./" aria-current="page">Mapa</a><a href="pasos.html">Pasos a desnivel</a><a href="costos.html">Costos</a></nav>
 </header>
-<main class="app">
-  <form class="buscador" id="buscador" role="search">
-    <input id="consulta" type="search" placeholder="Buscar dirección o lugar en Lima y Callao" autocomplete="off" aria-label="Buscar dirección o lugar">
-    <button type="submit">Buscar</button>
-    <button type="button" id="miUbicacion" title="Centrar en mi ubicación">Mi ubicación</button>
-  </form>
-  <div class="resultados" id="resultados" hidden></div>
-  <div class="diseno">
-    <div class="columna-mapa">
-      <div id="mapa" role="region" aria-label="Mapa"></div>
-      <div class="estado-mapa" id="estadoMapa" hidden></div>
-    </div>
-    <aside class="panel" id="panel">
-      <details class="capas" open>
-        <summary>Capas del mapa</summary>
-        <div id="capas"></div>
-      </details>
-      <div class="pestanas" role="tablist" id="pestanas"></div>
-      <section id="contenido" class="contenido" aria-live="polite"></section>
-    </aside>
+<main class="shell">
+  <div class="zona-busqueda">
+    <form class="buscador" id="buscador" role="search">
+      <svg class="lupa" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M10 3a7 7 0 0 1 5.6 11.2l4.6 4.6-1.4 1.4-4.6-4.6A7 7 0 1 1 10 3zm0 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg>
+      <input id="consulta" type="search" placeholder="Buscar dirección o lugar" autocomplete="off" aria-label="Buscar dirección o lugar en Lima y Callao">
+      <button type="submit" class="boton primario">Buscar</button>
+    </form>
+    <div class="resultados" id="resultados" hidden></div>
   </div>
-  <p class="suave pequeno pie">Fuentes: Sunass (GeoSunass), MINAM, ANA, Defensoría y medios.
-    Mapa © colaboradores de <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.
-    Información referencial: confirma con tu empresa de agua y sigue las indicaciones de las autoridades.</p>
+  <section class="columna-mapa" aria-label="Mapa">
+    <div id="mapa"></div>
+    <div class="controles-mapa">
+      <button type="button" class="boton-mapa" id="botonCapas" aria-expanded="false" aria-controls="popoverCapas" title="Capas del mapa">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 3 2 8l10 5 10-5-10-5zm-7.8 8.9L2 13l10 5 10-5-2.2-1.1L12 15.8l-7.8-3.9zm0 4L2 17l10 5 10-5-2.2-1.1L12 19.8l-7.8-3.9z"/></svg>
+        <span>Capas</span>
+      </button>
+      <button type="button" class="boton-mapa solo-icono" id="miUbicacion" title="Centrar en mi ubicación" aria-label="Centrar en mi ubicación">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm1-6v2.1A8 8 0 0 1 19.9 11H22v2h-2.1A8 8 0 0 1 13 19.9V22h-2v-2.1A8 8 0 0 1 4.1 13H2v-2h2.1A8 8 0 0 1 11 4.1V2h2zm-1 4a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"/></svg>
+      </button>
+    </div>
+    <div class="popover-capas" id="popoverCapas" hidden>
+      <div class="popover-cabecera"><strong>Capas del mapa</strong>
+        <button type="button" class="cerrar" id="cerrarCapas" aria-label="Cerrar capas">×</button></div>
+      <div id="capas"></div>
+    </div>
+    <div class="leyenda-mapa" id="leyendaMapa" aria-label="Leyenda"></div>
+    <div class="estado-mapa" id="estadoMapa" role="status" hidden></div>
+    <div class="tarjeta-mapa" id="tarjetaMapa" hidden></div>
+  </section>
+  <aside class="panel" id="panel" aria-label="Información">
+    <div class="pestanas" role="tablist" id="pestanas"></div>
+    <section id="contenido" class="contenido" aria-live="polite"></section>
+    <footer class="pie-panel">Fuentes: Sunass (GeoSunass), MINAM, ANA, CENEPRED, Defensoría y medios.
+      Mapa © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>. Información referencial: confirma con tu
+      empresa de agua y sigue las indicaciones de las autoridades.</footer>
+  </aside>
 </main>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
