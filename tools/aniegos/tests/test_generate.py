@@ -4,8 +4,10 @@ import sys
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from generate import (Fetcher, approved_features, article, candidate, discover,
-                      instant, recent_publication)
+import gzip
+import tempfile
+from generate import (MAX_BYTES, Fetcher, approved_features, article, candidate, decoded_body, discover,
+                      instant, recent_publication, remember_feed_entries, run)
 
 NOW = instant('2026-11-05T09:45:00-05:00')
 URL = 'https://rpp.pe/noticia-prueba'
@@ -112,6 +114,56 @@ class PilotTests(unittest.TestCase):
         self.assertEqual(len(rejected), 1)
         self.assertEqual(features[0]['geometry']['type'], 'Point')
         self.assertEqual(features[0]['properties']['status'], 'unconfirmed')
+
+
+
+class EncodingAndFeedMemoryTests(unittest.TestCase):
+    def test_unrequested_gzip_is_decoded(self):
+        html = '<meta property="og:type" content="article">'.encode()
+        self.assertEqual(decoded_body(gzip.compress(html), 'gzip'), html)
+        self.assertEqual(decoded_body(html, None), html)
+        with self.assertRaises(ValueError):
+            decoded_body(html, 'br')
+
+    def test_gzip_bomb_is_rejected(self):
+        with self.assertRaises(ValueError):
+            decoded_body(gzip.compress(b'a' * (MAX_BYTES + 10)), 'gzip')
+
+    def test_publisher_timestamp_is_remembered_and_expires(self):
+        cache = {}
+        entries = [{'url': URL, 'title': 'Aniego', 'published_at': '2026-11-05T08:00:00-05:00', 'kind': 'publisher'},
+                   {'url': 'https://news.google.com/x', 'title': 'Aniego',
+                    'published_at': '2026-11-05T08:00:00-05:00', 'kind': 'discovery_only'}]
+        remember_feed_entries(cache, entries, NOW)
+        self.assertEqual(list(cache), [URL])
+        self.assertNotIn('_body', cache[URL])
+        remember_feed_entries(cache, [], instant('2026-11-07T09:00:00-05:00'))
+        self.assertEqual(cache, {})
+
+    def test_article_that_left_the_rss_is_still_dated_by_the_remembered_entry(self):
+        html = '<meta property="og:type" content="article"><meta property="og:title" content="Aniego en VES">'
+        remembered = {URL: {'url': URL, 'title': 'Aniego en VES', 'published_at': '2026-11-05T08:00:00-05:00',
+                            'kind': 'publisher', 'first_seen': '2026-11-05T08:10:00-05:00'}}
+
+        class Offline(Fetcher):
+            def get(self, url):
+                if url.endswith('/feed/'):
+                    return '<rss><channel></channel></rss>'
+                return html
+        config = {'allowed_hosts': ['rpp.pe'], 'feeds': [{'url': 'https://rpp.pe/feed/', 'kind': 'publisher'}],
+                  'seed_urls': []}
+        import generate
+        original = generate.Fetcher
+        generate.Fetcher = Offline
+        try:
+            with tempfile.TemporaryDirectory() as folder:
+                run(config, Path(folder), NOW, [], remembered)
+                report = json.loads((Path(folder) / 'report.json').read_text())
+        finally:
+            generate.Fetcher = original
+        found = [c for c in report['candidates'] if c['url'] == URL][0]
+        self.assertEqual(found['decision'], 'needs_review')
+        self.assertEqual(found['discovered_via'], 'publisher_feed_cache')
 
 
 if __name__ == '__main__':

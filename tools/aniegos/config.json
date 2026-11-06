@@ -9,7 +9,8 @@
     "caretas.pe",
     "www.infobae.com",
     "larepublica.pe",
-    "elbuho.pe"
+    "elbuho.pe",
+    "elcomercio.pe"
   ],
   "feeds": [
     {
@@ -34,6 +35,14 @@
     },
     {
       "url": "https://elbuho.pe/feed/",
+      "kind": "publisher"
+    },
+    {
+      "url": "https://andina.pe/agencia/rss/rss.aspx",
+      "kind": "publisher"
+    },
+    {
+      "url": "https://elcomercio.pe/arcio/rss/category/lima/",
       "kind": "publisher"
     }
   ],

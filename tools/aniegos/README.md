@@ -29,11 +29,13 @@ El resultado pasa por `validate_geocoding` y se marca como punto referencial de 
 
 ## Fuentes y límites
 
-Se consultan RSS de Defensoría, Caretas, Infobae, La República y El Búho, además del descubrimiento por Google News y URLs conocidas de prueba de RPP y América. Un RSS puede no contener todas las noticias. Los enlaces Google son descubrimiento, no prueba del incidente; no se decodifican usando APIs privadas. Las fechas de los artículos se validan con sus metadatos o el RSS del propio publicador. No se toman coordenadas de la dirección de la redacción del medio.
+Se consultan RSS de Defensoría, Caretas, Infobae, La República, El Búho, Andina y El Comercio, además del descubrimiento por Google News y URLs conocidas de prueba de RPP y América. Un RSS puede no contener todas las noticias. Los enlaces Google son descubrimiento, no prueba del incidente; no se decodifican usando APIs privadas. Las fechas de los artículos se validan con sus metadatos o el RSS del propio publicador. No se toman coordenadas de la dirección de la redacción del medio.
 
 La ventana máxima es 48 h. Las fechas sin hora se retiran conservadoramente al cumplirse 48 h desde el inicio del día publicado. Se usa America/Lima y se rechazan fechas futuras. Cada ejecución genera un reporte de errores; un fallo total no sobrescribe el archivo público. El archivo anterior puede quedar disponible, pero la app oculta sus registros vencidos y avisa cuando la recopilación no se actualiza durante más de 90 minutos.
 
-Los cuerpos de artículos se procesan en memoria y no se publican. Se conservan enlaces, metadatos, resúmenes propios y títulos de publicaciones pendientes. HTTPS con hosts permitidos también en redirecciones, límite de 3 MB por respuesta, máximo 15 artículos, espera por host y timeout. No se eluden bloqueos ni se reintenta un HTTP 429.
+Los cuerpos de artículos se procesan en memoria y no se publican. Se conservan enlaces, metadatos, resúmenes propios y títulos de publicaciones pendientes. HTTPS con hosts permitidos también en redirecciones, límite de 3 MB por respuesta, máximo 30 artículos, espera por host y timeout. No se eluden bloqueos ni se reintenta un HTTP 429.
+
+Algunos medios y CDN envían páginas comprimidas con gzip aunque no se pida; el recolector las descomprime con el mismo límite de 3 MB. Con `--rss-cache data/rss-vistos.json` se recuerda la fecha que dio el RSS del propio medio (nunca la de Google News) para seguir leyendo una nota durante 48 h aunque haya salido del RSS. No se guardan cuerpos de notas. Se leen hasta 30 artículos por ejecución.
 
 ## Operación
 

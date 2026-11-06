@@ -15,9 +15,25 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
+import zlib
 
 PERU = timezone(timedelta(hours=-5))
 MAX_BYTES = 3_000_000
+MAX_ARTICLES = 30
+
+
+def decoded_body(raw, encoding):
+    """Some publishers/CDNs send gzip even when not requested: decode within the size limit."""
+    encoding = (encoding or '').strip().lower()
+    if encoding in ('', 'identity'):
+        return raw
+    if encoding not in ('gzip', 'x-gzip', 'deflate'):
+        raise ValueError('unsupported content encoding: ' + encoding)
+    inflater = zlib.decompressobj(16 + zlib.MAX_WBITS if 'gzip' in encoding else zlib.MAX_WBITS)
+    data = inflater.decompress(raw, MAX_BYTES + 1)
+    if len(data) > MAX_BYTES or inflater.unconsumed_tail:
+        raise ValueError('response too large')
+    return data
 
 
 def normalized(value):
@@ -168,11 +184,13 @@ class Fetcher:
                 owner.check(newurl)
                 return super().redirect_request(req, fp, code, msg, headers, newurl)
 
-        request = urllib.request.Request(url, headers={'User-Agent': 'AguaCerca-ReportPilot/0.1 (local research)'})
+        request = urllib.request.Request(url, headers={'User-Agent': 'AguaCerca-ReportPilot/0.1 (local research)',
+                                                       'Accept-Encoding': 'gzip'})
         with urllib.request.build_opener(Redirect).open(request, timeout=20) as response:
             raw = response.read(MAX_BYTES + 1)
             if len(raw) > MAX_BYTES:
                 raise ValueError('response too large')
+            raw = decoded_body(raw, response.headers.get('Content-Encoding'))
             return raw.decode('utf-8', errors='replace')
 
 
@@ -229,7 +247,22 @@ def approved_features(reviews, candidates, now):
     return features, rejected
 
 
-def run(config, output, now, reviews):
+def remember_feed_entries(cache, entries, now):
+    """Publisher RSS timestamps outlive the RSS window (often only the latest 10-20 items).
+
+    Only publisher/official feeds; never search-engine dates. No article bodies are stored.
+    """
+    for item in entries:
+        if item.get('kind') in ('official', 'publisher') and item.get('url') and item.get('published_at'):
+            cache.setdefault(item['url'], {'url': item['url'], 'title': item.get('title', ''),
+                                           'published_at': item['published_at'], 'kind': item['kind'],
+                                           'first_seen': now.isoformat()})
+    for url in [u for u, e in cache.items() if not recent_publication(e.get('published_at'), now)]:
+        del cache[url]
+    return cache
+
+
+def run(config, output, now, reviews, rss_cache=None):
     fetch = Fetcher(config['allowed_hosts'])
     discovery, errors, candidates = [], [], []
     healthy_sources = 0
@@ -246,7 +279,14 @@ def run(config, output, now, reviews):
                     feed_entries[item['url']] = item
         except (OSError, ValueError, ET.ParseError) as error:
             errors.append({'url': feed['url'], 'error': str(error), 'stage': 'discovery'})
-    for url, provenance in sorted(urls.items(), key=lambda item: item[1] == "seed")[:15]:
+    if rss_cache is not None:
+        remember_feed_entries(rss_cache, list(feed_entries.values()), now)
+        for url, entry in rss_cache.items():
+            if url not in urls:
+                urls[url] = 'publisher_feed_cache'
+                feed_entries[url] = {**entry, '_body': ''}
+    order = {'publisher_feed': 0, 'publisher_feed_cache': 1, 'seed': 2}
+    for url, provenance in sorted(urls.items(), key=lambda item: order.get(item[1], 3))[:MAX_ARTICLES]:
         try:
             candidates.append(candidate(fetch.get(url), url, now, provenance, feed_entries.get(url)))
             healthy_sources += 1
@@ -254,9 +294,11 @@ def run(config, output, now, reviews):
             errors.append({'url': url, 'error': str(error), 'stage': 'article'})
     features, rejected_reviews = approved_features(reviews, candidates, now)
     counts = {
-        'discovered_recent_links': len(discovery), 'articles_attempted': min(len(urls), 15),
+        'discovered_recent_links': len(discovery), 'articles_attempted': min(len(urls), MAX_ARTICLES),
         'article_candidates': sum(c.get('decision') == 'needs_review' for c in candidates),
-        'automatically_discovered_candidates': sum(c.get('discovered_via') == 'publisher_feed' for c in candidates),
+        'automatically_discovered_candidates': sum(c.get('discovered_via') in ('publisher_feed', 'publisher_feed_cache')
+                                                   for c in candidates),
+        'remembered_feed_entries': len(rss_cache) if rss_cache is not None else 0,
         'rejected_articles': sum(c.get('decision') == 'rejected' for c in candidates),
         'fetch_errors': len(errors), 'reviewed_map_points': len(features),
         'healthy_sources': healthy_sources,
@@ -294,9 +336,18 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--reviews', type=Path)
     parser.add_argument('--now', help='ISO8601 with timezone; reproducible tests only')
+    parser.add_argument('--rss-cache', type=Path, help='Publisher RSS timestamps kept between runs (JSON)')
     args = parser.parse_args()
     now = instant(args.now) if args.now else datetime.now(PERU)
     if now is None:
         parser.error('--now requires a timezone')
-    raise SystemExit(run(json.loads(args.config.read_text()), args.output, now,
-                         json.loads(args.reviews.read_text()) if args.reviews else []))
+    cache = None
+    if args.rss_cache:
+        cache = json.loads(args.rss_cache.read_text()) if args.rss_cache.exists() else {}
+        cache = cache if isinstance(cache, dict) else {}
+    code = run(json.loads(args.config.read_text()), args.output, now,
+               json.loads(args.reviews.read_text()) if args.reviews else [], cache)
+    if cache is not None and code == 0:
+        args.rss_cache.parent.mkdir(parents=True, exist_ok=True)
+        args.rss_cache.write_text(json.dumps(cache, ensure_ascii=False, indent=1, sort_keys=True) + '\n')
+    raise SystemExit(code)
