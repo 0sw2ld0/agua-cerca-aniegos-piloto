@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
  "fuente": "https://portal.indeci.gob.pe/emergencias/",
- "generated_at": "2026-11-06T17:35:16.437986-05:00",
+ "generated_at": "2026-11-06T17:37:50.332298-05:00",
  "reportes": [
   {
    "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15483-4-11-2026-coen-indeci-2100-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-san-juan-de-miraflores-li/",
@@ -127,9 +127,9 @@
    "seccion": "hechos"
   },
   {
-   "key": "indeci-91310935bd-av-sol-con-av-separadora-industrial-av",
+   "key": "indeci-91310935bd-av-sol-con-av-separadora-industrial",
    "district": "Villa El Salvador",
-   "location": "Av. Sol con Av. Separadora Industrial Av",
+   "location": "Av. Sol con Av. Separadora Industrial",
    "summary": "Reporte complementario N.º 15559 del COEN-INDECI (06/11 06:10): inundación por saturación del suelo para drenaje (pluvial) en Villa El Salvador. El reporte menciona este lugar en las acciones de respuesta.",
    "day": "2026-11-06",
    "coordinates": null,
