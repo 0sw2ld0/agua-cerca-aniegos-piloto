@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
  "fuente": "CENEPRED / SIGRID",
- "generated_at": "2026-11-06T16:09:20.562503-05:00",
+ "generated_at": "2026-11-06T16:11:53.522046-05:00",
  "lista": "https://sigrid.cenepred.gob.pe/sigridv3/escenarios/lbam",
  "escenarios": [
   {
@@ -19,7 +19,19 @@
     "Medio": 43,
     "Bajo": 7
    },
-   "descargado": "2026-11-06T16:09:20.562503-05:00"
+   "descargado": "2026-11-06T16:09:20.562503-05:00",
+   "departamentos": [
+    "AYACUCHO",
+    "CUSCO",
+    "HUANUCO",
+    "JUNIN",
+    "LORETO",
+    "MADRE DE DIOS",
+    "PASCO",
+    "PUNO",
+    "SAN MARTIN",
+    "UCAYALI"
+   ]
   },
   {
    "id": "1136",
@@ -36,7 +48,19 @@
     "Medio": 11,
     "Bajo": 5
    },
-   "descargado": "2026-11-06T16:09:20.562503-05:00"
+   "descargado": "2026-11-06T16:09:20.562503-05:00",
+   "departamentos": [
+    "ANCASH",
+    "AREQUIPA",
+    "CAJAMARCA",
+    "LA LIBERTAD",
+    "LAMBAYEQUE",
+    "MOQUEGUA",
+    "PIURA",
+    "PUNO",
+    "TACNA",
+    "TUMBES"
+   ]
   },
   {
    "id": "1135",
@@ -52,7 +76,16 @@
     "Alto": 32,
     "Medio": 1
    },
-   "descargado": "2026-11-06T16:09:20.562503-05:00"
+   "descargado": "2026-11-06T16:09:20.562503-05:00",
+   "departamentos": [
+    "APURIMAC",
+    "AREQUIPA",
+    "AYACUCHO",
+    "CUSCO",
+    "MOQUEGUA",
+    "PUNO",
+    "TACNA"
+   ]
   },
   {
    "id": "1134",
@@ -68,7 +101,15 @@
     "Medio": 65,
     "Alto": 5
    },
-   "descargado": "2026-11-06T16:09:20.562503-05:00"
+   "descargado": "2026-11-06T16:09:20.562503-05:00",
+   "departamentos": [
+    "AREQUIPA",
+    "CALLAO",
+    "ICA",
+    "LIMA",
+    "MOQUEGUA",
+    "TACNA"
+   ]
   },
   {
    "id": "1133",
@@ -85,7 +126,17 @@
     "Medio": 11,
     "Bajo": 5
    },
-   "descargado": "2026-11-06T16:09:20.562503-05:00"
+   "descargado": "2026-11-06T16:09:20.562503-05:00",
+   "departamentos": [
+    "APURIMAC",
+    "AREQUIPA",
+    "AYACUCHO",
+    "CAJAMARCA",
+    "HUANCAVELICA",
+    "LAMBAYEQUE",
+    "PIURA",
+    "TUMBES"
+   ]
   }
  ],
  "errores": [],

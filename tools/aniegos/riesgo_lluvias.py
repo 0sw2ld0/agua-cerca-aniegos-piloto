@@ -233,6 +233,10 @@ def districts(zip_bytes):
     return {'type': 'FeatureCollection', 'features': features}
 
 
+def departments(collection):
+    return sorted({f['properties']['departamento'] for f in collection['features']})
+
+
 def run(index_path, folder, now, get=fetch):
     previous = json.loads(index_path.read_text()) if index_path.exists() else {}
     known = {s['id']: s for s in previous.get('escenarios', []) if s.get('distritos')}
@@ -251,7 +255,10 @@ def run(index_path, folder, now, get=fetch):
         entry = {**row, 'estado': status(row, now)}
         target = folder / (row['id'] + '.json')
         if row['id'] in known and target.exists():
-            entry.update({k: known[row['id']][k] for k in ('distritos', 'niveles', 'descargado') if k in known[row['id']]})
+            entry.update({k: known[row['id']][k] for k in ('distritos', 'niveles', 'descargado', 'departamentos')
+                          if k in known[row['id']]})
+            if 'departamentos' not in entry:
+                entry['departamentos'] = departments(json.loads(target.read_text()))
         else:
             try:
                 collection = districts(get(ZIP_URL.format(id=row['id']), MAX_ZIP, timeout=120))
@@ -259,7 +266,8 @@ def run(index_path, folder, now, get=fetch):
                 levels = {}
                 for f in collection['features']:
                     levels[f['properties']['nivel']] = levels.get(f['properties']['nivel'], 0) + 1
-                entry.update({'distritos': len(collection['features']), 'niveles': levels, 'descargado': now.isoformat()})
+                entry.update({'distritos': len(collection['features']), 'niveles': levels, 'descargado': now.isoformat(),
+                              'departamentos': departments(collection)})
             except Exception as error:
                 code = str(error) if isinstance(error, FormatError) else 'fuente'
                 entry['error'] = code

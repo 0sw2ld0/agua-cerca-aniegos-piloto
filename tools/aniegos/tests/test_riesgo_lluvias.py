@@ -122,6 +122,7 @@ class RunTests(unittest.TestCase):
         self.assertEqual(sum('_shape.zip' in c for c in self.calls), 1)
         index = json.loads(self.index.read_text())
         self.assertEqual(index['escenarios'][0]['distritos'], 1)
+        self.assertEqual(index['escenarios'][0]['departamentos'], ['LIMA'])
         self.assertTrue((self.folder / '10.json').exists())
 
     def test_list_failure_keeps_previous_index(self):
