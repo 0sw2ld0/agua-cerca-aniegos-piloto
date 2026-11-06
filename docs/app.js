@@ -112,7 +112,7 @@ const mapa = L.map('mapa', { zoomControl: true }).setView([-12.05, -77.03], 12);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19, attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(mapa);
-for (const [n, z] of [['inundables', 350], ['sectores', 410], ['cortes', 420], ['puntos', 610]]) {
+for (const [n, z] of [['inundables', 350], ['lluvias', 405], ['sectores', 410], ['cortes', 420], ['puntos', 610]]) {
   mapa.createPane(n).style.zIndex = z;
 }
 const lienzo = L.canvas({ padding: 0.5 });
@@ -140,6 +140,8 @@ const CAPAS = [
     defecto: true, leyenda: () => [['Incidente revisado', '#0d66d1', 1]] },
   { id: 'inundables', nombre: 'Zonas inundables', nota: 'MINAM · Modelo T100. Capa preventiva: no muestra aniegos actuales ni el riesgo de cada vivienda. Sin color no garantiza seguridad.',
     defecto: false, leyenda: () => [['Modelo de inundación', '#d11b6b', 0.8]] },
+  { id: 'lluvias', nombre: 'Riesgo por lluvias', nota: 'Escenarios por distrito de CENEPRED según el aviso de lluvias. No son aniegos actuales; un nivel bajo no significa ausencia de peligro.',
+    defecto: false, leyenda: () => RIESGOS.map(r => [r.nivel, r.color, 0.6]) },
   { id: 'ana', nombre: 'Puntos críticos ANA', nota: 'Inventario histórico con el año de cada punto. No son emergencias actuales.',
     defecto: false, leyenda: () => [['Punto crítico', '#ff9500', 1]] },
 ];
@@ -167,7 +169,7 @@ function aplicarCapa(id) {
   const on = activa(id);
   if (on) grupos[id].addTo(mapa); else mapa.removeLayer(grupos[id]);
   if (on) ({ cortes: cargarCortes, sectores: cargarSectores, puntos: cargarPuntos, aniegos: cargarAniegos,
-             inundables: activarInundables, ana: cargarAna })[id]?.();
+             inundables: activarInundables, ana: cargarAna, lluvias: cargarLluvias })[id]?.();
   pintarPestanas();
 }
 
@@ -577,8 +579,96 @@ async function cargarAna() {
   } catch { aviso('No pudimos cargar los puntos ANA. La capa puede estar incompleta.'); }
 }
 
+/* ---------- 7. riesgo por lluvias (CENEPRED, recopilado por el Action) ---------- */
+const RIESGOS = [{ nivel: 'Muy alto', color: '#ff3b30' }, { nivel: 'Alto', color: '#ff9500' },
+                 { nivel: 'Medio', color: '#ffcc00' }, { nivel: 'Bajo', color: '#34c759' }];
+const colorRiesgo = n => (RIESGOS.find(r => r.nivel === n) || { color: '#8e8e93' }).color;
+const lluvias = { indice: null, error: false, elegido: null, datos: {}, cargando: false, distrito: null, capa: null };
+async function cargarLluvias() {
+  if (!lluvias.indice) {
+    try {
+      lluvias.indice = await (await fetch(RAW + 'riesgo-lluvias.json?t=' + Math.floor(Date.now() / 120000))).json();
+      const guardado = leer('lluvias_escenario')?.valor;
+      const conMapa = lluvias.indice.escenarios.filter(e => e.distritos);
+      const lima = e => (e.departamentos || []).some(d => d === 'LIMA' || d === 'CALLAO');
+      lluvias.elegido = (conMapa.find(e => e.id === guardado) || conMapa.find(e => e.estado === 'vigente' && lima(e)) ||
+                         conMapa.find(e => e.estado === 'vigente') || conMapa[0])?.id || null;
+    } catch { lluvias.error = true; }
+  }
+  await dibujarLluvias();
+}
+async function dibujarLluvias(encuadrar) {
+  const id = lluvias.elegido;
+  if (id && !lluvias.datos[id]) {
+    lluvias.cargando = true; if (estado.pestana === 'lluvias') pintarContenido();
+    try { lluvias.datos[id] = await (await fetch(RAW + 'riesgo-lluvias/' + id + '.json')).json(); }
+    catch { lluvias.datos[id] = null; aviso('No pudimos cargar el mapa distrital de este escenario. Esto no significa que no exista riesgo.'); }
+    lluvias.cargando = false;
+  }
+  grupos.lluvias.clearLayers();
+  const fc = id && lluvias.datos[id];
+  if (fc) {
+    const estilo = f => { const sel = f.id === lluvias.distrito?.ubigeo, c = colorRiesgo(f.properties.nivel);
+      return { color: sel ? css('--texto') : c, weight: sel ? 2.5 : 1, fillColor: c, fillOpacity: sel ? 0.48 : 0.24 }; };
+    lluvias.capa = L.geoJSON(fc, { pane: 'lluvias', renderer: lienzo, smoothFactor: 0.5, style: estilo,
+      onEachFeature: (f, capa) => capa.on('click', e => { L.DomEvent.stop(e); lluvias.distrito = f.properties; lluvias.capa.setStyle(estilo);
+        abrir(() => fichaDistrito(f.properties)); }) }).addTo(grupos.lluvias);
+    if (encuadrar) mapa.fitBounds(lluvias.capa.getBounds(), { padding: [30, 30] });
+  }
+  if (estado.pestana === 'lluvias') pintarContenido();
+}
+function vigencia(e) {
+  const fin = new Date(new Date(e.fin).getTime() - 1000);
+  return `${capital(dia(e.inicio))} – ${dia(fin)}. Hora de Perú.`;
+}
+const escenarioActual = () => lluvias.indice?.escenarios.find(e => e.id === lluvias.elegido);
+function fichaDistrito(p) {
+  const e = escenarioActual();
+  return [el('div', { class: 'bloque' },
+    el('span', { class: 'chip', style: `background:${colorRiesgo(p.nivel)};color:#1d1600;border-color:transparent`, text: 'Riesgo ' + p.nivel.toLowerCase() }),
+    el('h2', { text: titulo(p.distrito), style: 'margin:8px 0 2px' }),
+    el('p', { class: 'suave', text: [titulo(p.provincia), titulo(p.departamento)].filter(Boolean).join(' · ') + ' · UBIGEO ' + p.ubigeo }),
+    e ? el('p', { class: 'pequeno', text: `Aviso ${e.aviso} · ${capital(e.ambito)}. ${vigencia(e)}` }) : null,
+    el('p', { class: 'pequeno', text: 'Escenario por distrito, no aniegos actuales. Los colores describen riesgo preventivo del ámbito distrital; no indican calles inundadas ni confirman una emergencia. Un nivel bajo tampoco significa ausencia de peligro.' }),
+    e ? enlaceSeguro(e.documento, 'Informe oficial ↗', ['sigrid.cenepred.gob.pe']) : null)];
+}
+function listaLluvias() {
+  if (lluvias.error) return [el('p', { class: 'bloque suave', text: 'No pudimos consultar los escenarios. Reintenta más tarde o abre la fuente oficial.' }),
+    el('p', { class: 'bloque' }, enlaceSeguro('https://sigrid.cenepred.gob.pe/sigridv3/escenarios/lbam', 'Abrir SIGRID / CENEPRED', ['sigrid.cenepred.gob.pe']))];
+  if (!lluvias.indice) return [el('p', { class: 'bloque suave', text: activa('lluvias') ? 'Consultando avisos…' : 'Activa la capa «Riesgo por lluvias» para ver los escenarios.' }),
+    activa('lluvias') ? null : el('div', { class: 'bloque' }, el('button', { class: 'boton', type: 'button', text: 'Activar riesgo por lluvias',
+      onclick: () => { guardar('capa_lluvias', true); $('capa-lluvias').checked = true; aplicarCapa('lluvias'); } }))];
+  const ind = lluvias.indice, e = escenarioActual();
+  const viejo = (Date.now() - new Date(ind.checked_at || ind.generated_at)) / 36e5 > 24;
+  const nodos = [el('p', { class: 'bloque aviso pequeno', text: 'Escenario por distrito, no aniegos actuales.' +
+    (viejo ? ' Copia descargada hace más de un día. Consulta el informe oficial.' : '') + (ind.error_lista ? ' No pudimos actualizar las publicaciones; los datos guardados pueden haber cambiado.' : '') })];
+  nodos.push(el('h2', { text: 'Escenarios por lluvias' }));
+  for (const x of ind.escenarios) {
+    const sel = x.id === lluvias.elegido;
+    nodos.push(el('article', { class: 'item' + (sel ? ' destacado' : '') },
+      el('span', { class: 'chip ' + (x.estado === 'vigente' ? 'naranja' : x.estado === 'proximo' ? 'acento' : 'gris'),
+                   text: x.estado === 'vigente' ? 'Vigente' : x.estado === 'proximo' ? 'Próximo' : 'Vencido' }),
+      el('h3', { text: `Aviso ${x.aviso} · ${capital(x.ambito)}` }), el('p', { class: 'pequeno', text: vigencia(x) }),
+      x.departamentos ? el('p', { class: 'pequeno', text: (x.departamentos.some(d => d === 'LIMA' || d === 'CALLAO') ? 'Incluye Lima y Callao · ' : '') +
+        x.departamentos.map(titulo).join(', ') }) : null,
+      x.distritos ? el('p', { class: 'pequeno suave', text: `${x.distritos} distritos · ` + RIESGOS.filter(r => x.niveles?.[r.nivel]).map(r => `${r.nivel} ${x.niveles[r.nivel]}`).join(' · ') })
+                  : el('p', { class: 'pequeno', text: x.error === 'sin_mapa' ? 'La fuente no tiene un mapa distrital disponible para este escenario. Esto no significa que no exista riesgo.' : 'No pudimos descargar el mapa de este escenario. Abre el informe oficial.' }),
+      el('div', { class: 'acciones' },
+        x.distritos ? el('button', { class: 'enlace', type: 'button', text: sel ? 'Encuadrar distritos' : 'Ver en el mapa', onclick: () => {
+          lluvias.elegido = x.id; lluvias.distrito = null; guardar('lluvias_escenario', x.id);
+          if (!activa('lluvias')) { guardar('capa_lluvias', true); $('capa-lluvias').checked = true; grupos.lluvias.addTo(mapa); }
+          dibujarLluvias(true); } }) : null,
+        enlaceSeguro(x.documento, 'Informe oficial ↗', ['sigrid.cenepred.gob.pe']))));
+  }
+  if (lluvias.cargando) nodos.push(el('p', { class: 'bloque suave', text: 'Cargando distritos…' }));
+  nodos.push(el('p', { class: 'bloque pequeno suave', text: `CENEPRED / SIGRID · Copia del ${fechaHora(ind.generated_at)}. Toca un distrito para consultar su nivel.` +
+    (ind.omitidos ? ` Se omitieron ${ind.omitidos} publicaciones con datos incoherentes.` : '') }),
+    el('p', { class: 'bloque' }, enlaceSeguro(ind.lista, 'Ver todas las publicaciones en SIGRID', ['sigrid.cenepred.gob.pe'])));
+  return nodos;
+}
+
 /* ---------- panel ---------- */
-const PESTANAS = [['cortes', 'Cortes'], ['puntos', 'Puntos'], ['aniegos', 'Aniegos'], ['inundables', 'Inundables']];
+const PESTANAS = [['cortes', 'Cortes'], ['puntos', 'Puntos'], ['aniegos', 'Aniegos'], ['lluvias', 'Lluvias'], ['inundables', 'Inundables']];
 function pintarPestanas() {
   $('pestanas').replaceChildren(...PESTANAS.map(([id, t]) => el('button', { type: 'button', role: 'tab', 'aria-selected': String(estado.pestana === id && !estado.detalle),
     text: t, onclick: () => { estado.pestana = id; estado.detalle = null; pintarPestanas(); pintarContenido(); } })));
@@ -594,7 +684,7 @@ function pintarContenido() {
   }
   const ref = estado.referencia ? [el('p', { class: 'bloque pequeno' }, `Consultando: ${estado.referencia.nombre} · `,
     el('button', { class: 'enlace', type: 'button', text: 'Quitar', onclick: quitarReferencia }))] : [];
-  const vista = { cortes: listaCortes, puntos: listaPuntos, aniegos: listaAniegos, inundables: infoInundables }[estado.pestana];
+  const vista = { cortes: listaCortes, puntos: listaPuntos, aniegos: listaAniegos, lluvias: listaLluvias, inundables: infoInundables }[estado.pestana];
   c.replaceChildren(...ref, ...vista());
 }
 function infoInundables() {

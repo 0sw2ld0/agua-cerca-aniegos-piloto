@@ -16,7 +16,9 @@ https://0sw2ld0.github.io/agua-cerca-aniegos-piloto/ (GitHub Pages, carpeta `doc
 - **Pasos a desnivel:** CENEPRED, con la ubicación referencial del cruce en OpenStreetMap.
 - **Búsqueda de direcciones:** Nominatim, solo al pulsar «Buscar» y como máximo una consulta por segundo.
 
-Riesgo por lluvias (SIGRID/CENEPRED) y los cortes de luz no permiten consultas desde el navegador. Quedan para un recolector en el Action.
+- **Riesgo por lluvias:** escenarios distritales de CENEPRED/SIGRID. Los recoge el Action, porque SIGRID no permite consultas desde el navegador.
+
+Los cortes de luz tampoco permiten consultas desde el navegador y quedan pendientes.
 
 ## Prueba manual con Jev
 

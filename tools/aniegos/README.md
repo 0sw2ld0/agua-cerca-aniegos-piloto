@@ -46,6 +46,20 @@ Algunos medios y CDN envían páginas comprimidas con gzip aunque no se pida; el
 - Límites: US$0.03 por ejecución, US$0.10 por día y US$0.50 en total (incluye la prueba local del 6/11). Al alcanzarlos se dejan de hacer consultas. El feed no cambia.
 - Sin el secreto `OPENAI_API_KEY` el paso no hace nada. Un fallo o un límite alcanzado nunca equivale a «no hubo aniegos».
 
+## Riesgo por lluvias (CENEPRED)
+
+`riesgo_lluvias.py` corre en el workflow porque SIGRID no permite lecturas desde el navegador.
+
+1. Lee la lista pública de avisos. Si `recordsTotal` no coincide con las filas recibidas, descarta la lista; si una fila es incoherente, la omite y la cuenta.
+2. Elige hasta 6 escenarios vigentes o próximos. Si no hay ninguno, toma el más reciente.
+3. De cada ZIP extrae solo el shapefile distrital (`dist*riesgo*`) y lo valida como la app:
+   - coordenadas WGS84 sin proyección;
+   - UBIGEO de 6 dígitos y único;
+   - nivel MA, A, M o B;
+   - huecos asignados a su anillo exterior.
+
+Escribe `data/riesgo-lluvias.json` (índice con vigencia, estado, niveles y departamentos) y `data/riesgo-lluvias/{id}.json` (GeoJSON simplificado a unos 110 m, para verlo por distrito). Un escenario ya descargado no se vuelve a bajar. Si la fuente falla, el índice lo indica y conserva la última copia; nunca se interpreta como ausencia de riesgo.
+
 ## Operación
 
 El workflow ejecuta pruebas, recopila, genera el JSON y publica solo `data/aniegos.json` en este repositorio. Programado cada 30 minutos (minutos 17 y 47 UTC) y manualmente. GitHub ejecuta pocas corridas programadas (4 de unas 44 entre el 5 y el 6/11). Por eso el workflow «Reloj de recopilación» (`.github/workflows/reloj.yml`) dispara la recopilación cada 30 minutos durante 5,5 h y luego se encadena a sí mismo. Si el reloj no está corriendo, la propia recopilación lo reinicia, y además queda un cron cada 3 h como respaldo. No es tiempo real. Los artifacts de diagnóstico se conservan siete días. Los cambios del catálogo revisado requieren editar `reviewed.json`; no contienen direcciones privadas de afectados ni cuerpos de noticias.
