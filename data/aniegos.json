@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T05:50:59.675280-05:00",
+  "generated_at": "2026-11-06T11:36:27.183485-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
@@ -31,8 +31,11 @@
       "date": "2026-11-05",
       "expires_at": "2026-11-07T00:00:00-05:00",
       "status": "Situación actual sin confirmar",
-      "coordinates": null,
-      "precision": "Dirección publicada por Defensoría; sin punto verificado",
+      "coordinates": [
+        -76.94357,
+        -12.18042
+      ],
+      "precision": "Debajo del paso a desnivel según OpenStreetMap · punto referencial (±50 m)",
       "sources": [
         {
           "name": "Defensoría del Pueblo · 5/11, 12:13",
@@ -77,20 +80,56 @@
       ]
     },
     {
-      "id": -3327443709068013,
+      "id": -1387392144663142,
+      "kind": "publication",
+      "district": "Villa María del Triunfo",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Villa María del Triunfo: bypass Pachacútec totalmente inundado tras lluvias intensas en Lima",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T15:28:52+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "caretas.pe",
+          "url": "https://caretas.pe/sociedad/villa-maria-del-triunfo-bypass-pachacutec-totalmente-inundado-tras-lluvias-intensas-en-lima/"
+        }
+      ]
+    },
+    {
+      "id": -3365816164748747,
       "kind": "publication",
       "district": "Lima Metropolitana",
       "location": "Publicación reciente · por verificar",
-      "summary": "Lluvias en Perú EN VIVO: precipitaciones por el Fenómeno El Niño en el sur de Lima inundan calles y dejan viviendas afectadas",
+      "summary": "Emergencia en Lima Sur: fuertes lluvias, inundaciones, aniegos y decenas de familias afectadas",
       "date": "2026-11-05",
-      "expires_at": "2026-11-07T11:42:28+00:00",
+      "expires_at": "2026-11-07T14:54:09+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "caretas.pe",
+          "url": "https://caretas.pe/sociedad/emergencia-en-lima-sur-fuertes-lluvias-inundaciones-aniegos-y-decenas-de-familias-afectadas-senamhi/"
+        }
+      ]
+    },
+    {
+      "id": -3677947450413952,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Lluvias en Lima Sur: ¿Por qué cada vez la zona sur de la capital se inunda y colapsan los desagües?",
+      "date": "2026-11-06",
+      "expires_at": "2026-11-08T11:37:33+00:00",
       "status": "Fecha del hecho por verificar",
       "coordinates": null,
       "precision": "Sin punto verificado",
       "sources": [
         {
           "name": "www.infobae.com",
-          "url": "https://www.infobae.com/peru/2026/11/05/lluvias-en-peru-en-vivo-precipitaciones-por-el-fenomeno-el-nino-en-el-sur-de-lima-inundan-calles-y-dejan-viviendas-afectadas/"
+          "url": "https://www.infobae.com/peru/2026/11/06/lluvias-en-lima-sur-por-que-cada-vez-la-zona-sur-de-la-capital-se-inunda-y-colapsan-los-desagues/"
         }
       ]
     },
@@ -113,24 +152,6 @@
       ]
     },
     {
-      "id": -776914803680170,
-      "kind": "publication",
-      "district": "Lima Metropolitana",
-      "location": "Publicación reciente · por verificar",
-      "summary": "Lluvias inundan Lima Sur y ponen en alerta al norte: Senamhi no descarta que el ciclón Yaku coincida con El Niño en 2027",
-      "date": "2026-11-05",
-      "expires_at": "2026-11-07T21:40:38+00:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
-      "sources": [
-        {
-          "name": "larepublica.pe",
-          "url": "https://larepublica.pe/sociedad/2026/11/05/villa-el-salvador-vmt-y-sjm-amanecen-bajo-el-agua-tras-intensa-llovizna-en-lima-inundaciones-afectan-viviendas-y-vias-488030"
-        }
-      ]
-    },
-    {
       "id": -2198969710561084,
       "kind": "publication",
       "district": "Villa El Salvador",
@@ -145,24 +166,6 @@
         {
           "name": "larepublica.pe",
           "url": "https://larepublica.pe/sociedad/2026/11/05/vecino-sorprende-al-usar-una-balsa-inflable-para-cruzar-calles-inundadas-por-las-lluvias-en-villa-el-salvador-147665"
-        }
-      ]
-    },
-    {
-      "id": -750501486607710,
-      "kind": "publication",
-      "district": "Lima Metropolitana",
-      "location": "Publicación reciente · por verificar",
-      "summary": "El Niño ya afecta Lima: Se activa una quebrada y lluvias inundan distritos impidiendo el tráfico",
-      "date": "2026-11-05",
-      "expires_at": "2026-11-07T20:26:26+00:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
-      "sources": [
-        {
-          "name": "elbuho.pe",
-          "url": "https://elbuho.pe/2026/11/el-nino-ya-afecta-lima-se-activa-una-quebrada-y-lluvias-inundan-distritos-impidiendo-el-trafico/"
         }
       ]
     }
