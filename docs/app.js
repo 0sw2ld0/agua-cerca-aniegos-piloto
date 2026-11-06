@@ -138,7 +138,7 @@ const CAPAS = [
   { id: 'puntos', nombre: 'Puntos de abastecimiento', nota: 'Hidrantes y cámaras especiales para emergencias (Lima y Callao).',
     defecto: true, leyenda: () => [['Hidrante', '#fabd0d', 1], ['Cámara especial', '#0d66d1', 1], ['No operativo', '#8e8e93', 1]] },
   { id: 'aniegos', nombre: 'Aniegos recientes', nota: 'Medios y fuentes oficiales, últimas 48 h. Puntos referenciales.',
-    defecto: true, leyenda: () => [['Incidente revisado', '#0d66d1', 1]] },
+    defecto: true, leyenda: () => [['Aniego reportado', COLOR_ANIEGO, 1]] },
   { id: 'inundables', nombre: 'Zonas inundables', nota: 'MINAM · Modelo T100. Capa preventiva: no muestra aniegos actuales ni el riesgo de cada vivienda. Sin color no garantiza seguridad.',
     defecto: false, leyenda: () => [['Modelo de inundación', '#d11b6b', 0.8]] },
   { id: 'lluvias', nombre: 'Riesgo por lluvias', nota: 'Escenarios por distrito de CENEPRED según el aviso de lluvias. No son aniegos actuales; un nivel bajo no significa ausencia de peligro.',
@@ -168,7 +168,7 @@ function pintarCapas() {
 }
 function pintarLeyenda() {
   // Compact legend on the map for the active layers that need one.
-  const cajas = CAPAS.filter(c => activa(c.id) && ['cortes', 'sectores', 'lluvias', 'inundables'].includes(c.id)).map(c =>
+  const cajas = CAPAS.filter(c => activa(c.id) && ['cortes', 'aniegos', 'sectores', 'lluvias', 'inundables'].includes(c.id)).map(c =>
     el('div', { class: 'caja' }, el('strong', { text: c.id === 'sectores' ? 'Horas de agua' : c.nombre }),
       ...c.leyenda().map(([t, color, op]) => { const m = el('span', { class: 'muestra' }); m.style.background = color; m.style.opacity = op; return el('span', {}, m, t); })));
   $('leyendaMapa').replaceChildren(...cajas);
@@ -276,7 +276,7 @@ function dibujarCortes() {
     capa.on('click', e => { L.DomEvent.stop(e); seleccionarCorte(c); });
     capa.addTo(grupos.cortes);
     capasCorte.set(c.id, capa);
-    const marca = L.marker(capa.getBounds().getCenter(), { pane: 'marcasCortes', enCurso, corte: c, keyboard: true,
+    const marca = L.marker(capa.getBounds().getCenter(), { pane: 'marcasCortes', enCurso, corte: c, keyboard: true, autoPanOnFocus: false,
       title: `${enCurso ? 'Corte en curso' : 'Próximo corte'} · ${zona(c)}`,
       icon: L.divIcon({ className: '', iconSize: [34, 34], iconAnchor: [17, 17],
         html: `<div class="marca-corte ${enCurso ? 'en-curso' : 'proximo'}${c.id === corteElegido ? ' elegido' : ''}">${gotaTachada(enCurso ? MAPA.naranja : MAPA.azul)}</div>` }) })
@@ -322,6 +322,7 @@ function seleccionarCorte(c, mover) {
   resaltarCorte(c.id);
   seleccionar(resumenCorte(c), () => fichaCorte(c));
   if (mover) encuadrar(c.poligonos);
+  else { const m = marcasCorte.get(c.id); if (m) mantenerVisible(m.getLatLng()); }
 }
 function seleccionarGrupo(cortes) {
   resaltarCorte(null);
@@ -522,7 +523,7 @@ const puntosFiltrados = () => (estado.puntos || []).filter(p => (!estado.soloOpe
 function dibujarPuntos() {
   grupos.puntos.clearLayers();
   for (const p of puntosFiltrados()) {
-    L.marker([p.lat, p.lon], { icon: iconos[p.grupo](p.operativo), pane: 'puntos', title: p.nombre })
+    L.marker([p.lat, p.lon], { icon: iconos[p.grupo](p.operativo), pane: 'puntos', title: p.nombre, autoPanOnFocus: false })
       .on('click', () => seleccionarPunto(p)).addTo(grupos.puntos);
   }
   if (estado.pestana === 'puntos') pintarContenido();
@@ -535,7 +536,8 @@ function seleccionarPunto(p, mover) {
     d != null ? el('p', { class: 'pequeno', text: `${distancia(d)} · aprox. ${Math.max(1, Math.round(d * 1.3 / 75))} min a pie` }) : null,
     el('div', { class: 'acciones' }, enlaceSeguro(`https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}&travelmode=walking`, 'Cómo llegar ↗'))],
     () => fichaPunto(p));
-  if (mover) { mapa.setView([p.lat, p.lon], 17); mapa.panBy([0, 110]); }
+  if (mover) mapa.setView([p.lat, p.lon], 17, { animate: false });
+  mantenerVisible(L.latLng(p.lat, p.lon));
 }
 function tarjetaPunto(p) {
   const r = estado.referencia, d = r ? metros([r.lat, r.lon], [p.lat, p.lon]) : null;
@@ -577,6 +579,13 @@ function fichaPunto(p) {
 }
 
 /* ---------- 4. aniegos recientes (feed propio) ---------- */
+const COLOR_ANIEGO = '#0e7490';
+// Pin with waves: a different shape and colour from the cut markers (circles) and the water points.
+const PIN_ANIEGO = `<svg viewBox="0 0 34 44" width="34" height="44" aria-hidden="true">
+  <path d="M17 1.5C8.4 1.5 1.5 8.3 1.5 16.8 1.5 28 17 42.5 17 42.5S32.5 28 32.5 16.8C32.5 8.3 25.6 1.5 17 1.5z" fill="${COLOR_ANIEGO}" stroke="#fff" stroke-width="2.5"/>
+  <path fill="#fff" d="M8 18.2c1.5 0 1.5-1.2 3-1.2s1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2v2c-1.5 0-1.5-1.2-3-1.2s-1.5 1.2-3 1.2-1.5-1.2-3-1.2-1.5 1.2-3 1.2-1.5-1.2-3-1.2-1.5 1.2-3 1.2zm0 4.6c1.5 0 1.5-1.2 3-1.2s1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2v2c-1.5 0-1.5-1.2-3-1.2s-1.5 1.2-3 1.2-1.5-1.2-3-1.2-1.5 1.2-3 1.2-1.5-1.2-3-1.2-1.5 1.2-3 1.2z"/>
+  <path fill="#fff" d="M17 7.5c-1.6 2.2-3.2 4-3.2 5.6a3.2 3.2 0 0 0 6.4 0c0-1.6-1.6-3.4-3.2-5.6z"/></svg>`;
+const marcasAniego = new Map();
 async function cargarAniegos() {
   try {
     const t = Math.floor(Date.now() / 120000);
@@ -584,28 +593,66 @@ async function cargarAniegos() {
       fetch(RAW + 'gpt-sombra.json?t=' + t).then(r => r.json()).catch(() => null)]);
     estado.aniegos = feed; estado.sombra = sombra;
   } catch { estado.aniegos = estado.aniegos || { error: true, reports: [] }; }
-  grupos.aniegos.clearLayers();
+  grupos.aniegos.clearLayers(); marcasAniego.clear();
   for (const r of vigentesAniegos()) if (r.kind === 'incident' && Array.isArray(r.coordinates)) {
-    L.circleMarker([r.coordinates[1], r.coordinates[0]], { radius: 9, color: '#fff', weight: 2, fillColor: '#0d66d1', fillOpacity: 0.95, pane: 'puntos' })
-      .on('click', () => seleccionar([el('span', { class: 'chip azul', text: 'Incidente revisado' }), el('h3', { text: r.location }),
-        el('p', { class: 'suave', text: `${r.district} · Reporte del ${fechaDia(r.date)}` }), el('p', { class: 'pequeno', text: r.precision })],
-        () => fichaAniego(r))).addTo(grupos.aniegos);
+    // L.marker (not a vector circle): vector clicks also reach the map, which closed the card at once.
+    const m = L.marker([r.coordinates[1], r.coordinates[0]], { pane: 'marcasCortes', autoPanOnFocus: false, title: `Aniego · ${r.location}`,
+      icon: L.divIcon({ className: '', iconSize: [34, 44], iconAnchor: [17, 43], html: `<div class="pin-aniego">${PIN_ANIEGO}</div>` }) })
+      .on('click', () => seleccionarAniego(r)).addTo(grupos.aniegos);
+    marcasAniego.set(r.id, m);
   }
+  pintarPestanas();
   if (estado.pestana === 'aniegos') pintarContenido();
 }
 const vigentesAniegos = () => (estado.aniegos?.reports || []).filter(r => new Date(r.expires_at) > Date.now());
 const fechaDia = d => { const [a, m, x] = String(d).split('-'); return x ? `${x}/${m}/${a}` : 'Fecha no informada'; };
-function fichaAniego(r) {
-  const esPub = r.kind === 'publication';
+const esPublicacion = r => r.kind === 'publication';
+const chipAniego = r => el('span', { class: 'chip' + (esPublicacion(r) ? '' : ' aniego'), text: esPublicacion(r) ? 'Publicación por verificar' : 'Aniego reportado' });
+function resaltarAniego(id) {
+  for (const [aid, m] of marcasAniego) m.getElement()?.firstElementChild?.classList.toggle('elegido', aid === id);
+}
+function seleccionarAniego(r, mover) {
   const ubicable = Array.isArray(r.coordinates);
-  return [el('article', { class: 'item' + (ubicable ? '' : ' estatico'), tabindex: ubicable ? '0' : null,
-      onclick: e => { if (ubicable && !e.target.closest('a,button')) mapa.setView([r.coordinates[1], r.coordinates[0]], 16); } },
-    el('span', { class: 'chip' + (esPub ? '' : ' azul'), text: esPub ? 'Publicación por verificar' : 'Incidente revisado' }),
-    el('h3', { text: esPub ? r.summary : r.location }), el('p', { class: 'suave', text: `${r.district} · ${esPub ? 'Publicada el ' : 'Reporte del '}${fechaDia(r.date)}` }),
-    esPub ? null : el('p', { text: r.summary }), el('p', { class: 'pequeno suave', text: r.precision }),
-    el('div', { class: 'acciones' },
-      Array.isArray(r.coordinates) ? el('button', { class: 'enlace', type: 'button', text: 'Ver en el mapa', onclick: () => mapa.setView([r.coordinates[1], r.coordinates[0]], 16) }) : null,
-      ...(r.sources || []).map(s => enlaceSeguro(s.url, s.name))))];
+  if (!ubicable) {  // publications have no point: open the detail directly
+    abrir(() => fichaAniego(r));
+    if (matchMedia('(max-width: 760px)').matches) $('panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return;
+  }
+  resaltarAniego(r.id);
+  seleccionar([chipAniego(r), el('h3', { text: r.location }),
+    el('p', { class: 'suave', text: `${r.district} · Reporte del ${fechaDia(r.date)}` }),
+    el('p', { class: 'pequeno', text: 'Situación actual sin confirmar.' })], () => fichaAniego(r), () => resaltarAniego(null));
+  if (mover) mapa.setView([r.coordinates[1], r.coordinates[0]], 16, { animate: false });
+  mantenerVisible(L.latLng(r.coordinates[1], r.coordinates[0]));
+}
+function tarjetaAniego(r) {
+  return el('article', { class: 'item', tabindex: '0', onclick: () => seleccionarAniego(r, true),
+      onkeydown: e => { if (e.key === 'Enter') seleccionarAniego(r, true); } },
+    el('div', { class: 'acciones', style: 'margin-top:0' }, chipAniego(r),
+      Array.isArray(r.coordinates) ? el('span', { class: 'chip', text: 'En el mapa' }) : el('span', { class: 'chip', text: 'Sin punto' })),
+    el('h3', { text: esPublicacion(r) ? r.summary : r.location }),
+    el('p', { class: 'suave', text: `${esPublicacion(r) ? 'Publicada el ' : 'Reporte del '}${fechaDia(r.date)} · ${(r.sources || []).length} fuente${(r.sources || []).length === 1 ? '' : 's'}` }));
+}
+function fichaAniego(r) {
+  const pub = esPublicacion(r), ubicable = Array.isArray(r.coordinates);
+  const fuentes = (r.sources || []).map(x => enlaceSeguro(x.url, x.name)).filter(Boolean);
+  const fila = (k, v) => v ? [el('dt', { text: k }), el('dd', {}, v)] : [];
+  return [
+    el('div', { class: 'bloque' },
+      el('div', { class: 'acciones', style: 'margin-top:0' }, chipAniego(r), el('span', { class: 'chip', text: r.status })),
+      el('h2', { class: 'titulo-ficha', text: pub ? r.summary : r.location }),
+      el('p', { class: 'suave', text: `${r.district} · ${pub ? 'Publicada el ' : 'Reporte del '}${fechaDia(r.date)}` })),
+    pub ? null : el('p', { class: 'bloque', text: r.summary }),
+    el('dl', { class: 'ficha' },
+      ...fila('Ubicación', ubicable ? r.precision : (pub ? 'Sin punto: la publicación no se ha revisado ni ubicado.' : r.precision)),
+      ...fila('Visible hasta', fechaHora(new Date(r.expires_at).getTime())),
+      ...fila('Fuentes', fuentes.length ? el('div', { style: 'display:flex;flex-direction:column;gap:4px' }, ...fuentes) : null)),
+    ubicable ? el('div', { class: 'bloque acciones' }, el('button', { class: 'boton', type: 'button', text: 'Ver en el mapa',
+      onclick: () => { resaltarAniego(r.id); mapa.setView([r.coordinates[1], r.coordinates[0]], 16); } })) : null,
+    el('p', { class: 'bloque pequeno suave', text: pub
+      ? 'Publicación reciente de un medio o fuente oficial. Su fecha es la de publicación, no necesariamente la del hecho.'
+      : 'Recopilación de medios y fuentes oficiales. El punto es referencial: no muestra la extensión inundada ni confirma que el agua siga ahí. Cobertura parcial.' }),
+  ];
 }
 function listaAniegos() {
   if (!estado.aniegos) return [el('p', { class: 'bloque suave', text: 'Cargando avisos…' })];
@@ -616,7 +663,7 @@ function listaAniegos() {
   const porDistrito = new Map();
   for (const r of filas) { if (!porDistrito.has(r.district)) porDistrito.set(r.district, []); porDistrito.get(r.district).push(r); }
   for (const [d, rs] of [...porDistrito].sort((a, b) => b[1].length - a[1].length)) {
-    nodos.push(el('h2', { text: `${d} · ${rs.length}` }), ...rs.flatMap(fichaAniego));
+    nodos.push(el('h2', { text: `${d} · ${rs.length}` }), ...rs.map(tarjetaAniego));
   }
   if (!filas.length) nodos.push(el('p', { class: 'bloque suave', text: 'No hay avisos vigentes en las últimas 48 horas. Eso no garantiza que no haya aniegos.' }));
   const sombra = estado.sombra?.current || [];
@@ -817,6 +864,15 @@ function seleccionar(resumen, detalle, alCerrar) {
   t.hidden = false;
   $('popoverCapas').hidden = true; $('botonCapas').setAttribute('aria-expanded', 'false');
   if (detalle && !matchMedia('(max-width: 760px)').matches) abrir(detalle);
+}
+function mantenerVisible(latlng) {
+  // Pan so the selected item sits above the card instead of under it.
+  setTimeout(() => {
+    const t = $('tarjetaMapa'), alto = mapa.getSize().y;
+    if (t.hidden) return;
+    const limite = alto - t.offsetHeight - 40, p = mapa.latLngToContainerPoint(latlng);
+    if (p.y > limite || p.y < 60) mapa.panBy([0, p.y - Math.max(80, limite * 0.55)], { animate: true });
+  }, 30);
 }
 function cerrarSeleccion() {
   $('tarjetaMapa').hidden = true;
