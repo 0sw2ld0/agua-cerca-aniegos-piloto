@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
  "fuente": "https://portal.indeci.gob.pe/emergencias/",
- "generated_at": "2026-11-06T17:37:50.332298-05:00",
+ "generated_at": "2026-11-06T17:43:41.778121-05:00",
  "reportes": [
   {
    "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15483-4-11-2026-coen-indeci-2100-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-san-juan-de-miraflores-li/",
@@ -42,157 +42,157 @@
  ],
  "incidentes": [
   {
+   "coordinates": null,
+   "day": "2026-11-06",
+   "district": "San Juan de Miraflores",
    "key": "indeci-f74d75ca68-av-los-heroes",
-   "district": "San Juan de Miraflores",
    "location": "Av. Los Héroes",
-   "summary": "Reporte complementario N.º 15563 del COEN-INDECI (06/11 07:20): inundación por saturación del suelo para drenaje (pluvial) en San Juan de Miraflores. Evaluación preliminar: 5 personas afectadas. El reporte menciona este lugar en los hechos.",
-   "day": "2026-11-06",
-   "coordinates": null,
+   "origen": "indeci",
    "precision": "Sin punto verificado",
+   "seccion": "hechos",
    "sources": [
     {
      "name": "COEN-INDECI · Reporte 15563, 06/11 07:20",
      "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15483-4-11-2026-coen-indeci-2100-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-san-juan-de-miraflores-li/"
     }
    ],
-   "origen": "indeci",
-   "seccion": "hechos"
+   "summary": "Reporte complementario N.º 15563 del COEN-INDECI (06/11 07:20): inundación por saturación del suelo para drenaje (pluvial) en San Juan de Miraflores. Evaluación preliminar: 5 personas afectadas. El reporte menciona este lugar en los hechos."
   },
   {
+   "coordinates": null,
+   "day": "2026-11-06",
+   "district": "San Juan de Miraflores",
    "key": "indeci-f74d75ca68-frente-al-hospital-maria-auxiliadora",
-   "district": "San Juan de Miraflores",
    "location": "Frente al Hospital María Auxiliadora",
-   "summary": "Reporte complementario N.º 15563 del COEN-INDECI (06/11 07:20): inundación por saturación del suelo para drenaje (pluvial) en San Juan de Miraflores. Evaluación preliminar: 5 personas afectadas. El reporte menciona este lugar en las acciones de respuesta.",
-   "day": "2026-11-06",
-   "coordinates": null,
+   "origen": "indeci",
    "precision": "Sin punto verificado",
+   "seccion": "establecimiento",
    "sources": [
     {
      "name": "COEN-INDECI · Reporte 15563, 06/11 07:20",
      "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15483-4-11-2026-coen-indeci-2100-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-san-juan-de-miraflores-li/"
     }
    ],
-   "origen": "indeci",
-   "seccion": "establecimiento"
+   "summary": "Reporte complementario N.º 15563 del COEN-INDECI (06/11 07:20): inundación por saturación del suelo para drenaje (pluvial) en San Juan de Miraflores. Evaluación preliminar: 5 personas afectadas. El reporte menciona este lugar en las acciones de respuesta."
   },
   {
-   "key": "indeci-f74d75ca68-vias",
+   "coordinates": null,
+   "day": "2026-11-06",
    "district": "San Juan de Miraflores",
+   "key": "indeci-f74d75ca68-vias",
    "location": "Av. Pastor Sevilla cuadra 6, y otras 9 vías del distrito",
-   "summary": "Reporte complementario N.º 15563 del COEN-INDECI (06/11 07:20): inundación por saturación del suelo para drenaje (pluvial) en San Juan de Miraflores. Evaluación preliminar: 5 personas afectadas. Vías afectadas: Av. Pastor Sevilla cuadra 6; Av. Los Héroes cuadra 8; Av. Los Héroes cuadra 1; Av. Los Héroes cuadra 4; Av. Juan Velasco cuadra 3; Av. Horacio Zevallos, Mz. 1; Av. Cesar Canevaro cuadra 6; Av. Bernardino Romero cuadra 4; Jr. Daniel Timoran cuadra 4; Calle La Florida Mz. E.",
-   "day": "2026-11-06",
-   "coordinates": null,
+   "origen": "indeci",
    "precision": "Vías por cuadra; sin punto verificado",
+   "seccion": "vias",
    "sources": [
     {
      "name": "COEN-INDECI · Reporte 15563, 06/11 07:20",
      "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15483-4-11-2026-coen-indeci-2100-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-san-juan-de-miraflores-li/"
     }
    ],
-   "origen": "indeci",
-   "seccion": "vias"
+   "summary": "Reporte complementario N.º 15563 del COEN-INDECI (06/11 07:20): inundación por saturación del suelo para drenaje (pluvial) en San Juan de Miraflores. Evaluación preliminar: 5 personas afectadas. Vías afectadas: Av. Pastor Sevilla cuadra 6; Av. Los Héroes cuadra 8; Av. Los Héroes cuadra 1; Av. Los Héroes cuadra 4; Av. Juan Velasco cuadra 3; Av. Horacio Zevallos, Mz. 1; Av. Cesar Canevaro cuadra 6; Av. Bernardino Romero cuadra 4; Jr. Daniel Timoran cuadra 4; Calle La Florida Mz. E."
   },
   {
+   "coordinates": null,
+   "day": "2026-11-06",
+   "district": "Villa El Salvador",
    "key": "indeci-91310935bd-sector-1-grupo-1",
-   "district": "Villa El Salvador",
    "location": "Sector 1, Grupo 1",
-   "summary": "Reporte complementario N.º 15559 del COEN-INDECI (06/11 06:10): inundación por saturación del suelo para drenaje (pluvial) en Villa El Salvador. El reporte menciona este lugar como zona afectada.",
-   "day": "2026-11-06",
-   "coordinates": null,
+   "origen": "indeci",
    "precision": "Sin punto verificado",
+   "seccion": "sector",
    "sources": [
     {
      "name": "COEN-INDECI · Reporte 15559, 06/11 06:10",
      "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15478-4-11-2026-coen-indeci-1850-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-villa-el-salvador-lima/"
     }
    ],
-   "origen": "indeci",
-   "seccion": "sector"
+   "summary": "Reporte complementario N.º 15559 del COEN-INDECI (06/11 06:10): inundación por saturación del suelo para drenaje (pluvial) en Villa El Salvador. El reporte menciona este lugar como zona afectada."
   },
   {
+   "coordinates": null,
+   "day": "2026-11-06",
+   "district": "Villa El Salvador",
    "key": "indeci-91310935bd-panamericana-sur-km-17-5",
-   "district": "Villa El Salvador",
    "location": "Panamericana Sur Km 17.5",
-   "summary": "Reporte complementario N.º 15559 del COEN-INDECI (06/11 06:10): inundación por saturación del suelo para drenaje (pluvial) en Villa El Salvador. El reporte menciona este lugar en los hechos.",
-   "day": "2026-11-06",
-   "coordinates": null,
+   "origen": "indeci",
    "precision": "Sin punto verificado",
+   "seccion": "hechos",
    "sources": [
     {
      "name": "COEN-INDECI · Reporte 15559, 06/11 06:10",
      "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15478-4-11-2026-coen-indeci-1850-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-villa-el-salvador-lima/"
     }
    ],
-   "origen": "indeci",
-   "seccion": "hechos"
+   "summary": "Reporte complementario N.º 15559 del COEN-INDECI (06/11 06:10): inundación por saturación del suelo para drenaje (pluvial) en Villa El Salvador. El reporte menciona este lugar en los hechos."
   },
   {
+   "coordinates": null,
+   "day": "2026-11-06",
+   "district": "Villa El Salvador",
    "key": "indeci-91310935bd-av-sol-con-av-separadora-industrial",
-   "district": "Villa El Salvador",
    "location": "Av. Sol con Av. Separadora Industrial",
-   "summary": "Reporte complementario N.º 15559 del COEN-INDECI (06/11 06:10): inundación por saturación del suelo para drenaje (pluvial) en Villa El Salvador. El reporte menciona este lugar en las acciones de respuesta.",
-   "day": "2026-11-06",
-   "coordinates": null,
+   "origen": "indeci",
    "precision": "Sin punto verificado",
+   "seccion": "cruce",
    "sources": [
     {
      "name": "COEN-INDECI · Reporte 15559, 06/11 06:10",
      "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15478-4-11-2026-coen-indeci-1850-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-villa-el-salvador-lima/"
     }
    ],
-   "origen": "indeci",
-   "seccion": "cruce"
+   "summary": "Reporte complementario N.º 15559 del COEN-INDECI (06/11 06:10): inundación por saturación del suelo para drenaje (pluvial) en Villa El Salvador. El reporte menciona este lugar en las acciones de respuesta."
   },
   {
+   "coordinates": null,
+   "day": "2026-11-06",
+   "district": "Villa El Salvador",
    "key": "indeci-91310935bd-av-pumacahua-con-av-la-union",
-   "district": "Villa El Salvador",
    "location": "Av. Pumacahua con Av. La Unión",
-   "summary": "Reporte complementario N.º 15559 del COEN-INDECI (06/11 06:10): inundación por saturación del suelo para drenaje (pluvial) en Villa El Salvador. El reporte menciona este lugar en las acciones de respuesta.",
-   "day": "2026-11-06",
-   "coordinates": null,
+   "origen": "indeci",
    "precision": "Sin punto verificado",
+   "seccion": "cruce",
    "sources": [
     {
      "name": "COEN-INDECI · Reporte 15559, 06/11 06:10",
      "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15478-4-11-2026-coen-indeci-1850-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-villa-el-salvador-lima/"
     }
    ],
-   "origen": "indeci",
-   "seccion": "cruce"
+   "summary": "Reporte complementario N.º 15559 del COEN-INDECI (06/11 06:10): inundación por saturación del suelo para drenaje (pluvial) en Villa El Salvador. El reporte menciona este lugar en las acciones de respuesta."
   },
   {
-   "key": "indeci-91310935bd-colegio-juan-pablo-ii",
+   "coordinates": null,
+   "day": "2026-11-06",
    "district": "Villa El Salvador",
+   "key": "indeci-91310935bd-colegio-juan-pablo-ii",
    "location": "Colegio Juan Pablo II",
-   "summary": "Reporte complementario N.º 15559 del COEN-INDECI (06/11 06:10): inundación por saturación del suelo para drenaje (pluvial) en Villa El Salvador. El reporte menciona este lugar en las acciones de respuesta.",
-   "day": "2026-11-06",
-   "coordinates": null,
+   "origen": "indeci",
    "precision": "Sin punto verificado",
+   "seccion": "establecimiento",
    "sources": [
     {
      "name": "COEN-INDECI · Reporte 15559, 06/11 06:10",
      "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15478-4-11-2026-coen-indeci-1850-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-villa-el-salvador-lima/"
     }
    ],
-   "origen": "indeci",
-   "seccion": "establecimiento"
+   "summary": "Reporte complementario N.º 15559 del COEN-INDECI (06/11 06:10): inundación por saturación del suelo para drenaje (pluvial) en Villa El Salvador. El reporte menciona este lugar en las acciones de respuesta."
   },
   {
-   "key": "indeci-8396d5000e-av-pachacutec-con-av-26-de-noviembre",
-   "district": "Villa María del Triunfo",
-   "location": "Av. Pachacútec con Av. 26 de noviembre",
-   "summary": "Reporte complementario N.º 15558 del COEN-INDECI (06/11 05:50): inundación por saturación del suelo para drenaje (pluvial) en Villa María del Triunfo. El reporte menciona este lugar en los hechos.",
-   "day": "2026-11-06",
    "coordinates": null,
+   "day": "2026-11-06",
+   "district": "Villa María del Triunfo",
+   "key": "indeci-8396d5000e-av-pachacutec-con-av-26-de-noviembre",
+   "location": "Av. Pachacútec con Av. 26 de noviembre",
+   "origen": "indeci",
    "precision": "Sin punto verificado",
+   "seccion": "hechos",
    "sources": [
     {
      "name": "COEN-INDECI · Reporte 15558, 06/11 05:50",
      "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15466-4-11-2026-coen-indeci-1330-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-villa-maria-del-triunfo-l/"
     }
    ],
-   "origen": "indeci",
-   "seccion": "hechos"
+   "summary": "Reporte complementario N.º 15558 del COEN-INDECI (06/11 05:50): inundación por saturación del suelo para drenaje (pluvial) en Villa María del Triunfo. El reporte menciona este lugar en los hechos."
   }
  ],
  "errores": []
