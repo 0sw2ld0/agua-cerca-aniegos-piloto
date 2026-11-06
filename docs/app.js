@@ -650,7 +650,23 @@ async function cargarAniegos() {
   pintarPestanas();
   if (estado.pestana === 'aniegos') pintarContenido();
 }
-const vigentesAniegos = () => (estado.aniegos?.reports || []).filter(r => new Date(r.expires_at) > Date.now());
+const claveLugar = r => plano(r.district) + '|' + plano(String(r.location).split(/\s+·\s+|,/)[0])
+  .replace(/\b(av|avenida|jr|jiron|calle|bypass|baipas|de|del|la|el|con|y|frente|al)\b/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim();
+function vigentesAniegos() {
+  // The same place can be reviewed on several days (e.g. 5/11 news, 6/11 COEN-INDECI follow-up):
+  // show one incident with the latest date and every source, instead of two overlapping pins.
+  const filas = (estado.aniegos?.reports || []).filter(r => new Date(r.expires_at) > Date.now());
+  const unidos = new Map(), salida = [];
+  for (const r of filas.slice().sort((a, b) => String(b.date).localeCompare(String(a.date)))) {
+    if (r.kind !== 'incident') { salida.push(r); continue; }
+    const k = claveLugar(r), previo = unidos.get(k);
+    if (!previo) { const copia = { ...r, sources: [...(r.sources || [])], fechas: [r.date] }; unidos.set(k, copia); salida.push(copia); continue; }
+    for (const f of r.sources || []) if (!previo.sources.some(x => x.url === f.url)) previo.sources.push(f);
+    if (!previo.fechas.includes(r.date)) previo.fechas.push(r.date);
+    if (!Array.isArray(previo.coordinates) && Array.isArray(r.coordinates)) { previo.coordinates = r.coordinates; previo.precision = r.precision; }
+  }
+  return salida;
+}
 const fechaDia = d => { const [a, m, x] = String(d).split('-'); return x ? `${x}/${m}/${a}` : 'Fecha no informada'; };
 const esPublicacion = r => r.kind === 'publication';
 const chipAniego = r => el('span', { class: 'chip' + (esPublicacion(r) ? '' : ' aniego'), text: esPublicacion(r) ? 'Publicación por verificar' : 'Aniego reportado' });
@@ -687,7 +703,8 @@ function fichaAniego(r) {
     el('div', { class: 'bloque' },
       el('div', { class: 'acciones', style: 'margin-top:0' }, chipAniego(r), el('span', { class: 'chip', text: r.status })),
       el('h2', { class: 'titulo-ficha', text: pub ? r.summary : r.location }),
-      el('p', { class: 'suave', text: `${r.district} · ${pub ? 'Publicada el ' : 'Reporte del '}${fechaDia(r.date)}` })),
+      el('p', { class: 'suave', text: `${r.district} · ${pub ? 'Publicada el ' : 'Reporte del '}${fechaDia(r.date)}` +
+        (r.fechas?.length > 1 ? ` · también reportado el ${r.fechas.slice(1).map(fechaDia).join(', ')}` : '') })),
     pub ? null : el('p', { class: 'bloque', text: r.summary }),
     el('dl', { class: 'ficha' },
       ...fila('Ubicación', ubicable ? r.precision : (pub ? 'Sin punto: la publicación no se ha revisado ni ubicado.' : r.precision)),

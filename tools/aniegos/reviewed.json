@@ -153,5 +153,110 @@
         "url": "https://www.infobae.com/peru/2026/11/06/lluvias-en-lima-sur-por-que-cada-vez-la-zona-sur-de-la-capital-se-inunda-y-colapsan-los-desagues/"
       }
     ]
+  },
+  {
+    "key": "ves-sector1-grupo1-20261106",
+    "district": "Villa El Salvador",
+    "location": "Sector 1, Grupo 1",
+    "summary": "El COEN-INDECI mantiene en seguimiento la inundación de vías y viviendas por colapso de buzones, iniciada el 4/11. El 5/11 Sedapal seguía drenando con hidrojets y el Minsa coordinaba la fumigación de las viviendas afectadas.",
+    "day": "2026-11-06",
+    "coordinates": null,
+    "precision": "Sin punto verificado",
+    "sources": [
+      {
+        "name": "COEN-INDECI · Reporte 15559, 6/11 06:10",
+        "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15478-4-11-2026-coen-indeci-1850-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-villa-el-salvador-lima/"
+      }
+    ]
+  },
+  {
+    "key": "ves-elsol-separadora-20261106",
+    "district": "Villa El Salvador",
+    "location": "Av. El Sol con Av. Separadora Industrial",
+    "summary": "Según el COEN-INDECI, cisternas de la Municipalidad de Villa El Salvador realizaban el 5/11 trabajos de succión y evacuación de agua acumulada en este cruce.",
+    "day": "2026-11-06",
+    "coordinates": null,
+    "precision": "Sin punto verificado",
+    "sources": [
+      {
+        "name": "COEN-INDECI · Reporte 15559, 6/11 06:10",
+        "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15478-4-11-2026-coen-indeci-1850-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-villa-el-salvador-lima/"
+      }
+    ]
+  },
+  {
+    "key": "ves-200millas-pastorsevilla-20261106",
+    "district": "Villa El Salvador",
+    "location": "Av. 200 Millas con Av. Mariano Pastor Sevilla",
+    "summary": "Según el COEN-INDECI, cisternas de la Municipalidad de Villa El Salvador realizaban el 5/11 trabajos de succión y evacuación de agua acumulada en este cruce.",
+    "day": "2026-11-06",
+    "coordinates": null,
+    "precision": "Sin punto verificado",
+    "sources": [
+      {
+        "name": "COEN-INDECI · Reporte 15559, 6/11 06:10",
+        "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15478-4-11-2026-coen-indeci-1850-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-villa-el-salvador-lima/"
+      }
+    ]
+  },
+  {
+    "key": "ves-colegio-juanpablo2-20261106",
+    "district": "Villa El Salvador",
+    "location": "Colegio Juan Pablo II",
+    "summary": "El COEN-INDECI informó que el 5/11 una compañía del Ejército apoyó el drenaje de agua pluvial, la limpieza y la colocación de sacos terreros en la institución educativa Juan Pablo II, en el Sector 1, Grupo 1.",
+    "day": "2026-11-06",
+    "coordinates": null,
+    "precision": "Sin punto verificado",
+    "sources": [
+      {
+        "name": "COEN-INDECI · Reporte 15559, 6/11 06:10",
+        "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15478-4-11-2026-coen-indeci-1850-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-villa-el-salvador-lima/"
+      }
+    ]
+  },
+  {
+    "key": "vmt-bypass-pachacutec26-20261106",
+    "district": "Villa María del Triunfo",
+    "location": "Bypass de Av. Pachacútec con Av. 26 de Noviembre",
+    "summary": "El COEN-INDECI reporta el cierre del bypass por la inundación iniciada el 4/11. El 5/11 EMAPE continuaba la succión y el drenaje con cuatro cisternas, y la municipalidad distrital con una.",
+    "day": "2026-11-06",
+    "coordinates": null,
+    "precision": "Sin punto verificado",
+    "sources": [
+      {
+        "name": "COEN-INDECI · Reporte 15558, 6/11 05:50",
+        "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15466-4-11-2026-coen-indeci-1330-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-villa-maria-del-triunfo-l/"
+      }
+    ]
+  },
+  {
+    "key": "sjm-hospital-mariaauxiliadora-20261106",
+    "district": "San Juan de Miraflores",
+    "location": "Frente al Hospital María Auxiliadora",
+    "summary": "Según el COEN-INDECI, el 5/11 continuaban los trabajos de succión y drenaje de agua en el frontis del hospital. El distrito reporta 5 personas, 2 viviendas y 1 establecimiento de salud afectados.",
+    "day": "2026-11-06",
+    "coordinates": null,
+    "precision": "Sin punto verificado",
+    "sources": [
+      {
+        "name": "COEN-INDECI · Reporte 15563, 6/11 07:20",
+        "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15483-4-11-2026-coen-indeci-2100-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-san-juan-de-miraflores-li/"
+      }
+    ]
+  },
+  {
+    "key": "sjm-vias-afectadas-20261106",
+    "district": "San Juan de Miraflores",
+    "location": "Av. Los Héroes, cuadras 1, 4 y 8, y otras vías del distrito",
+    "summary": "Vías afectadas según el COEN-INDECI: Av. Los Héroes cuadras 1, 4 y 8; Av. Pastor Sevilla cuadra 6; Av. Juan Velasco cuadra 3; Av. Horacio Zevallos Mz. 1; Av. César Canevaro cuadra 6; Av. Bernardino Romero cuadra 4; Jr. Daniel Timorán cuadra 4; y calle La Florida Mz. E.",
+    "day": "2026-11-06",
+    "coordinates": null,
+    "precision": "Vías por cuadra; sin punto verificado",
+    "sources": [
+      {
+        "name": "COEN-INDECI · Reporte 15563, 6/11 07:20",
+        "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15483-4-11-2026-coen-indeci-2100-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-san-juan-de-miraflores-li/"
+      }
+    ]
   }
 ]
