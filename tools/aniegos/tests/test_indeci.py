@@ -35,6 +35,11 @@ class LugaresTests(unittest.TestCase):
                           'Av. Pumacahua con Av. La Unión', 'Colegio Juan Pablo II'])
         self.assertEqual([e for e, _ in indeci.lugares(TEXTOS['sjm_15563'])], ['Av. Los Héroes', 'Frente al Hospital María Auxiliadora'])
 
+    def test_pdftotext_column_order(self):
+        # pdftotext puts the next table cell right after the crossing.
+        texto = 'ANEXO 1 Av. Sol cruce con av. Separadora Industrial Av. 200 millas cruce con MD Villa El Salvador Cisterna (P)'
+        self.assertEqual([e for e, _ in indeci.lugares(texto)], ['Av. Sol con Av. Separadora Industrial'])
+
     def test_table_noise_is_not_a_place(self):
         for texto in TEXTOS.values():
             for etiqueta, _ in indeci.lugares(texto):

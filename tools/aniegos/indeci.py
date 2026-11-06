@@ -160,7 +160,8 @@ def lugares(texto):
         # Tables interleave columns: cut the second road at the first word that belongs to another column.
         palabras = []
         for w in re.sub(r'(?i)^(?:av\.?|avenida)\s+', '', m.group(2)).split():
-            if norm(w) in PALABRAS_RUIDO:
+            # Stop at a word from another column or at the start of another road ("... Industrial Av. 200 millas").
+            if norm(w) in PALABRAS_RUIDO or (palabras and norm(w) in {'av', 'avenida', 'jr', 'jiron', 'calle', 'pasaje'}):
                 break
             palabras.append(w)
         if palabras:
