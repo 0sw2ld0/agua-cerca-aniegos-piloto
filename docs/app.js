@@ -60,14 +60,26 @@ function mesAnio(p) {
 function aviso(texto) { const e = $('estadoMapa'); e.hidden = !texto; e.textContent = texto || ''; }
 
 /* ---------- consultas ArcGIS (solo lectura) ---------- */
+async function pedirJSON(url, intentos = 2, espera = 25000) {
+  // Time limit plus one retry: a slow or failed request must end in an error state, never an endless "Cargando…".
+  for (let i = 1; ; i++) {
+    const control = new AbortController(), reloj = setTimeout(() => control.abort(), espera);
+    try {
+      const r = await fetch(url, { signal: control.signal });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return await r.json();
+    } catch (e) {
+      if (i >= intentos) throw e;
+      await new Promise(res => setTimeout(res, 1500));
+    } finally { clearTimeout(reloj); }
+  }
+}
 async function consultarTodo(capa, params, pagina = 1000) {
   const salida = [];
   for (let offset = 0; offset < 50000;) {
     const q = new URLSearchParams({ where: '1=1', outSR: '4326', ...params, resultOffset: String(offset),
                                     resultRecordCount: String(pagina), f: 'geojson' });
-    const r = await fetch(`${GEOSUNASS}${capa}/FeatureServer/0/query?${q}`);
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    const d = await r.json();
+    const d = await pedirJSON(`${GEOSUNASS}${capa}/FeatureServer/0/query?${q}`);
     if (d.error) throw new Error('ArcGIS');
     const f = d.features || [];
     salida.push(...f);
@@ -109,6 +121,16 @@ function distanciaA(polis, lat, lon) {
 
 /* ---------- mapa ---------- */
 const mapa = L.map('mapa', { zoomControl: true }).setView([-12.05, -77.03], 12);
+// Leaflet measures its container once; when the layout settles or the window changes size it must re-measure,
+// otherwise the view stays offset (Lima off-screen, only sea visible).
+const remedir = () => mapa.invalidateSize({ pan: false });
+if ('ResizeObserver' in window) new ResizeObserver(remedir).observe($('mapa'));
+let temporizadorTamano = null;
+window.addEventListener('resize', () => { clearTimeout(temporizadorTamano); temporizadorTamano = setTimeout(remedir, 150); });
+window.addEventListener('load', remedir);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) remedir(); });
+document.fonts?.ready.then(remedir);
+setTimeout(remedir, 600); setTimeout(remedir, 2000);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19, attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(mapa);
@@ -252,6 +274,7 @@ function estiloCorte(c, elegido) {
 }
 function dibujarCortes() {
   grupos.cortes.clearLayers(); capasCorte.clear(); marcasCorte.clear();
+  if (!activa('cortes')) { pintarPestanas(); if (estado.pestana === 'cortes') pintarContenido(); return; }
   // At city or country scale the areas are a few pixels (the iOS map has the same problem): a marker sits
   // at the centre of each cut. Overlapping markers are grouped; a small group opens a list instead of zooming.
   const marcas = L.markerClusterGroup({ clusterPane: 'marcasCortes', showCoverageOnHover: false, maxClusterRadius: 40,
@@ -285,6 +308,7 @@ function dibujarCortes() {
     marcasCorte.set(c.id, marca);
   }
   marcas.addTo(grupos.cortes);
+  pintarPestanas();
   if (estado.pestana === 'cortes') pintarContenido();
 }
 function resaltarCorte(id) {
@@ -347,9 +371,16 @@ function encuadrar(polis) {
   // Leave room at the bottom for the selection card so it never covers the zone.
   if (pts.length) mapa.fitBounds(pts, { paddingTopLeft: [50, 70], paddingBottomRight: [50, 230], maxZoom: 16 });
 }
+let cortesCargando = false;
 function listaCortes() {
   const nodos = [];
-  if (!estado.cortes) return [el('p', { class: 'vacio', text: estado.cortesError ? 'Sin datos disponibles. No se pudieron descargar los reportes. Revisa tu conexión.' : 'Cargando cortes…' })];
+  if (!estado.cortes && !estado.cortesError && !cortesCargando) { cortesCargando = true; cargarCortes().finally(() => { cortesCargando = false; }); }
+  if (!estado.cortes) return estado.cortesError
+    ? [el('p', { class: 'vacio', text: 'Sin datos disponibles. No se pudieron descargar los reportes de Sunass. Revisa tu conexión.' }),
+       el('div', { class: 'bloque' }, el('button', { class: 'boton', type: 'button', text: 'Reintentar', onclick: () => { estado.cortesError = false; cargarCortes(true); pintarContenido(); } }))]
+    : [el('p', { class: 'vacio', text: 'Cargando cortes…' })];
+  if (!activa('cortes')) nodos.push(el('div', { class: 'bloque' }, el('button', { class: 'boton pequeno', type: 'button', text: 'Mostrar los cortes en el mapa',
+    onclick: () => { guardar('capa_cortes', true); $('capa-cortes').checked = true; aplicarCapa('cortes'); pintarContenido(); } })));
   if (estado.cortesError) nodos.push(el('p', { class: 'bloque' }, el('span', { class: 'aviso pequeno', text: `Sin conexión · datos de ${fechaHora(estado.cortesFecha)}` })));
   let vigentes = estado.cortes.filter(c => estadoCorte(c) !== 'vencido');
   const r = estado.referencia;
@@ -506,8 +537,15 @@ function punto(f) {
            direccion, capacidad: Number(p.capacidad) || 0, situacion: t('situación') || 'Desconocida',
            distrito: dist, lat: c[1], lon: c[0], operativo: (t('situación') || 'Desconocida') === 'Operativo' };
 }
-async function cargarPuntos() {
-  if (estado.puntos) return dibujarPuntos();
+let puntosCargando = null;
+async function cargarPuntos(forzar) {
+  if (estado.puntos && !forzar) return dibujarPuntos();
+  if (puntosCargando) return puntosCargando;
+  puntosCargando = Promise.resolve().then(descargarPuntos).finally(() => { puntosCargando = null; });
+  return puntosCargando;
+}
+async function descargarPuntos() {
+  if (estado.pestana === 'puntos') pintarContenido();
   const cache = leer('puntos_agua_web_v2');
   if (cache) { estado.puntos = cache.valor.map(x => ({ ...x, operativo: x.situacion === 'Operativo' })); dibujarPuntos(); }
   try {
@@ -516,12 +554,13 @@ async function cargarPuntos() {
     estado.puntos = f.map(punto).filter(Boolean);
     guardar('puntos_agua_web_v2', estado.puntos);
     estado.puntosError = false;
-  } catch { estado.puntosError = !estado.puntos; }
+  } catch { estado.puntosError = true; }
   dibujarPuntos();
 }
 const puntosFiltrados = () => (estado.puntos || []).filter(p => (!estado.soloOperativos || p.operativo) && (estado.grupo === 'todos' || p.grupo === estado.grupo));
 function dibujarPuntos() {
   grupos.puntos.clearLayers();
+  if (!activa('puntos')) { if (estado.pestana === 'puntos') pintarContenido(); return; }
   for (const p of puntosFiltrados()) {
     L.marker([p.lat, p.lon], { icon: iconos[p.grupo](p.operativo), pane: 'puntos', title: p.nombre, autoPanOnFocus: false })
       .on('click', () => seleccionarPunto(p)).addTo(grupos.puntos);
@@ -548,7 +587,11 @@ function tarjetaPunto(p) {
     d != null ? el('p', { class: 'pequeno', text: `${distancia(d)} · aprox. ${Math.max(1, Math.round(d * 1.3 / 75))} min a pie` }) : null);
 }
 function listaPuntos() {
-  if (!estado.puntos) return [el('p', { class: 'bloque suave', text: estado.puntosError ? 'Sin datos. No se pudo descargar la información. Revisa tu conexión e inténtalo de nuevo.' : 'Cargando puntos de agua…' })];
+  if (!estado.puntos && !estado.puntosError && !puntosCargando) cargarPuntos();
+  if (!estado.puntos) return estado.puntosError
+    ? [el('p', { class: 'vacio', text: 'No se pudo descargar la información de Sunass. Revisa tu conexión e inténtalo de nuevo.' }),
+       el('div', { class: 'bloque' }, el('button', { class: 'boton', type: 'button', text: 'Reintentar', onclick: () => { estado.puntosError = false; cargarPuntos(true); } }))]
+    : [el('p', { class: 'vacio', text: 'Cargando puntos de agua…' })];
   const sel = el('select', { 'aria-label': 'Tipo de punto', onchange: e => { estado.grupo = e.target.value; dibujarPuntos(); } },
     ...[['todos', 'Todos'], ['hidrante', 'Hidrantes'], ['camara', 'Cámaras especiales']].map(([v, t]) => { const o = el('option', { value: v, text: t }); o.selected = estado.grupo === v; return o; }));
   const op = el('input', { type: 'checkbox', id: 'soloOp', onchange: e => { estado.soloOperativos = e.target.checked; dibujarPuntos(); } });
@@ -557,7 +600,10 @@ function listaPuntos() {
   const r = estado.referencia;
   const orden = r ? lista.slice().sort((a, b) => metros([r.lat, r.lon], [a.lat, a.lon]) - metros([r.lat, r.lon], [b.lat, b.lon])).slice(0, 15)
                   : lista.slice().sort((a, b) => a.nombre.localeCompare(b.nombre, 'es', { numeric: true }));
-  return [el('div', { class: 'bloque acciones' }, sel, el('label', { for: 'soloOp' }, op, ' Solo puntos operativos')),
+  return [estado.puntosError ? el('p', { class: 'bloque' }, el('span', { class: 'aviso pequeno', text: 'Sin conexión con Sunass: se muestra la última copia guardada.' })) : null,
+    !activa('puntos') ? el('div', { class: 'bloque' }, el('button', { class: 'boton pequeno', type: 'button', text: 'Mostrar los puntos en el mapa',
+      onclick: () => { guardar('capa_puntos', true); $('capa-puntos').checked = true; aplicarCapa('puntos'); pintarContenido(); } })) : null,
+    el('div', { class: 'bloque acciones' }, sel, el('label', { for: 'soloOp' }, op, ' Solo puntos operativos')),
     el('p', { class: 'bloque pequeno suave', text: `${lista.filter(p => p.grupo === 'hidrante').length} Hidrantes · ${lista.filter(p => p.grupo === 'camara').length} Cámaras · Con estos filtros · Lima y Callao` }),
     r ? el('h2', { text: `Cerca de ${r.nombre}` }) : el('h2', { text: 'Todos los puntos' }),
     ...orden.slice(0, r ? 15 : 60).map(tarjetaPunto),
@@ -889,14 +935,14 @@ function pintarContenido() {
   const c = $('contenido');
   if (estado.detalle) {
     c.replaceChildren(el('div', { class: 'bloque' }, el('button', { class: 'enlace volver', type: 'button', text: '← Volver a la lista',
-      onclick: cerrarSeleccion })), ...estado.detalle());
+      onclick: cerrarSeleccion })), ...estado.detalle().filter(Boolean));
     return;
   }
   const ref = estado.referencia ? [el('div', { class: 'bloque' }, el('div', { class: 'aviso pequeno' },
     el('strong', { text: 'Consultando: ' }), estado.referencia.nombre, ' · ',
     el('button', { class: 'enlace', type: 'button', text: 'Quitar', onclick: quitarReferencia })))] : [];
   const vista = { cortes: listaCortes, puntos: listaPuntos, aniegos: listaAniegos, lluvias: listaLluvias, inundables: infoInundables }[estado.pestana];
-  c.replaceChildren(...ref, ...vista());
+  c.replaceChildren(...[...ref, ...vista()].filter(Boolean));  // replaceChildren would print null as text
 }
 function infoInundables() {
   return [el('div', { class: 'bloque' },
