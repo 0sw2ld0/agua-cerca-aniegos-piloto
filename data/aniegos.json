@@ -1,88 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-05T21:50:25.544079-05:00",
+  "generated_at": "2026-11-06T05:50:59.675280-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
-    {
-      "id": -2822031115421324,
-      "kind": "incident",
-      "district": "Villa El Salvador",
-      "location": "Sector 1, Grupo 1",
-      "summary": "Defensoría informó el 5/11 a las 12:13 que Sector 1, Grupo 1 ya fue atendido y se encontraba limpio durante la visita. Reporte inicial del 4/11; sin verificación posterior.",
-      "date": "2026-11-04",
-      "expires_at": "2026-11-06T00:00:00-05:00",
-      "status": "Situación actual sin confirmar",
-      "coordinates": [
-        -76.9473219,
-        -12.1873388
-      ],
-      "precision": "Centro referencial del sector; no delimita el aniego",
-      "sources": [
-        {
-          "name": "RPP",
-          "url": "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004"
-        },
-        {
-          "name": "Defensoría del Pueblo · actualización 5/11, 12:13",
-          "url": "https://www.defensoria.gob.pe/defensoria-del-pueblo-despliega-personal-en-lima-sur-para-verificar-atencion-de-aniegos-y-limpieza-publica/"
-        }
-      ]
-    },
-    {
-      "id": -2486419936353639,
-      "kind": "incident",
-      "district": "Villa El Salvador",
-      "location": "Exteriores del Hospital de la Solidaridad",
-      "summary": "Una publicación reporta agua acumulada en los accesos del establecimiento. Ubicación precisa pendiente.",
-      "date": "2026-11-04",
-      "expires_at": "2026-11-06T00:00:00-05:00",
-      "status": "Situación actual sin confirmar",
-      "coordinates": null,
-      "precision": "Solo referencia del lugar; sin punto verificado",
-      "sources": [
-        {
-          "name": "América Noticias",
-          "url": "https://www.americatv.com.pe/noticias/actualidad/llovizna-genera-aniego-frente-hospital-solidaridad-ves-n524138"
-        }
-      ]
-    },
-    {
-      "id": -1039885431064824,
-      "kind": "incident",
-      "district": "Villa María del Triunfo",
-      "location": "Avenida 26 de Noviembre",
-      "summary": "Se reportó acumulación de agua y lodo en la avenida. No se ha identificado el tramo exacto.",
-      "date": "2026-11-04",
-      "expires_at": "2026-11-06T00:00:00-05:00",
-      "status": "Situación actual sin confirmar",
-      "coordinates": null,
-      "precision": "Tramo no determinado; sin punto verificado",
-      "sources": [
-        {
-          "name": "RPP",
-          "url": "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004"
-        }
-      ]
-    },
-    {
-      "id": -2267106281634186,
-      "kind": "incident",
-      "district": "Chorrillos",
-      "location": "Pasaje Los Gorriones, primera cuadra de avenida Guardia Civil",
-      "summary": "Se reportó una calle inundada. La dirección todavía requiere verificación espacial.",
-      "date": "2026-11-04",
-      "expires_at": "2026-11-06T00:00:00-05:00",
-      "status": "Situación actual sin confirmar",
-      "coordinates": null,
-      "precision": "Dirección publicada; sin punto verificado",
-      "sources": [
-        {
-          "name": "Caretas",
-          "url": "https://caretas.pe/sociedad/llovizna-en-lima-provoca-aniegos-en-vmt-villa-el-salvador-y-chorrillos-reportan-viviendas-inundadas"
-        }
-      ]
-    },
     {
       "id": -2426100408893695,
       "kind": "incident",
@@ -174,20 +95,56 @@
       ]
     },
     {
-      "id": -2368260803210119,
+      "id": -4479512560952305,
       "kind": "publication",
-      "district": "Villa El Salvador",
+      "district": "Lima Metropolitana",
       "location": "Publicación reciente · por verificar",
-      "summary": "Bus de El Rápido queda atascado por inundación en Villa El Salvador y conductor no puede salir por el agua",
+      "summary": "¿Habrá clases virtuales por lluvias en Lima? DRELM pide evaluar condiciones de seguridad en colegios ante riesgo de inundaciones",
       "date": "2026-11-05",
-      "expires_at": "2026-11-07T15:35:04+00:00",
+      "expires_at": "2026-11-08T00:26:26+00:00",
       "status": "Fecha del hecho por verificar",
       "coordinates": null,
       "precision": "Sin punto verificado",
       "sources": [
         {
           "name": "larepublica.pe",
-          "url": "https://larepublica.pe/sociedad/2026/11/05/bus-de-el-rapido-queda-atascado-por-inundacion-en-villa-el-salvador-y-conductor-no-puede-salir-por-el-agua-168840"
+          "url": "https://larepublica.pe/sociedad/2026/11/05/habra-clases-virtuales-por-lluvias-en-lima-drelm-pide-evaluar-condiciones-de-seguridad-en-colegios-publicos-ante-riesgo-de-inundaciones-61360"
+        }
+      ]
+    },
+    {
+      "id": -776914803680170,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Lluvias inundan Lima Sur y ponen en alerta al norte: Senamhi no descarta que el ciclón Yaku coincida con El Niño en 2027",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T21:40:38+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "larepublica.pe",
+          "url": "https://larepublica.pe/sociedad/2026/11/05/villa-el-salvador-vmt-y-sjm-amanecen-bajo-el-agua-tras-intensa-llovizna-en-lima-inundaciones-afectan-viviendas-y-vias-488030"
+        }
+      ]
+    },
+    {
+      "id": -2198969710561084,
+      "kind": "publication",
+      "district": "Villa El Salvador",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Vecino sorprende al usar una balsa inflable para cruzar calles inundadas por las lluvias en Villa El Salvador",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T19:22:45+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "larepublica.pe",
+          "url": "https://larepublica.pe/sociedad/2026/11/05/vecino-sorprende-al-usar-una-balsa-inflable-para-cruzar-calles-inundadas-por-las-lluvias-en-villa-el-salvador-147665"
         }
       ]
     },
