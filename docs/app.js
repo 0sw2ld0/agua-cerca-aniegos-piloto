@@ -112,17 +112,18 @@ const mapa = L.map('mapa', { zoomControl: true }).setView([-12.05, -77.03], 12);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19, attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(mapa);
-for (const [n, z] of [['inundables', 350], ['lluvias', 405], ['sectores', 410], ['cortes', 420], ['puntos', 610]]) {
+for (const [n, z] of [['inundables', 350], ['lluvias', 405], ['sectores', 410], ['cortes', 420], ['puntos', 610], ['marcasCortes', 630]]) {
   mapa.createPane(n).style.zIndex = z;
 }
-const lienzo = L.canvas({ padding: 0.5 });
+// One canvas per pane: a shared canvas draws every layer in the same pane, so later layers covered the cortes.
+const lienzos = Object.fromEntries(['sectores', 'cortes', 'lluvias'].map(p => [p, L.canvas({ padding: 0.5, pane: p })]));
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 
 const estado = {
   referencia: null,          // {lat, lon, nombre, tipo:'ubicacion'|'direccion'}
   pestana: 'cortes',
   detalle: null,             // función que dibuja una ficha en el panel
-  cortes: null, cortesFecha: null, cortesError: false,
+  cortes: null, cortesFecha: null, cortesError: false, zonaCortes: 'lima',
   puntos: null, puntosError: false, soloOperativos: true, grupo: 'todos',
   sectores: null, sectoresCargando: false,
   aniegos: null, sombra: null,
@@ -131,7 +132,7 @@ const estado = {
 /* ---------- capas activables ---------- */
 const CAPAS = [
   { id: 'cortes', nombre: 'Cortes de agua', nota: 'Reportes de las empresas a Sunass, sin verificar. El horario puede cambiar.',
-    defecto: true, leyenda: () => [['En curso', css('--naranja'), 0.5], ['Próximo', css('--acento'), 0.15, true]] },
+    defecto: true, leyenda: () => [['En curso', css('--naranja'), 1], ['Próximo', css('--acento'), 1]] },
   { id: 'sectores', nombre: 'Horas de agua al día', nota: 'Promedio por sector que reporta cada empresa a Sunass.',
     defecto: false, leyenda: () => NIVELES.map(n => [n.corto, n.color, 0.7]) },
   { id: 'puntos', nombre: 'Puntos de abastecimiento', nota: 'Hidrantes y cámaras especiales para emergencias (Lima y Callao).',
@@ -147,7 +148,7 @@ const CAPAS = [
 ];
 const racimo = clase => L.markerClusterGroup({ clusterPane: 'puntos', showCoverageOnHover: false, maxClusterRadius: 50,
   iconCreateFunction: g => L.divIcon({ className: '', iconSize: [34, 34], html: `<div class="racimo ${clase}">${g.getChildCount()}</div>` }) });
-const grupos = Object.fromEntries(CAPAS.map(c => [c.id, c.id === 'puntos' ? racimo('') : c.id === 'ana' ? racimo('ana') : L.layerGroup()]));
+const grupos = Object.fromEntries(CAPAS.map(c => [c.id, c.id === 'puntos' ? racimo('punto') : c.id === 'ana' ? racimo('ana') : L.layerGroup()]));
 function activa(id) { const v = leer('capa_' + id); return v ? v.valor : CAPAS.find(c => c.id === id).defecto; }
 function pintarCapas() {
   const caja = $('capas');
@@ -224,20 +225,33 @@ async function cargarCortes(forzar) {
   } catch { estado.cortesError = true; }
   dibujarCortes();
 }
+const GOTA = '<svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#fff" d="M12 2.5c-3.3 4.4-6.5 8.2-6.5 11.6A6.5 6.5 0 0 0 12 20.6a6.5 6.5 0 0 0 6.5-6.5C18.5 10.7 15.3 6.9 12 2.5z"/></svg>';
+const CALENDARIO = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#fff" d="M7 2h2v2h6V2h2v2h3v17H4V4h3V2zm-1 7v10h12V9H6z"/></svg>';
 function dibujarCortes() {
   grupos.cortes.clearLayers();
+  // At city or country scale the areas are a few pixels (the iOS map has the same problem): add a marker
+  // at the centre of each cut, grouped when they overlap, and keep the area for closer zooms.
+  const marcas = L.markerClusterGroup({ clusterPane: 'marcasCortes', showCoverageOnHover: false, maxClusterRadius: 40,
+    iconCreateFunction: g => L.divIcon({ className: '', iconSize: [30, 30],
+      html: `<div class="racimo corte${g.getAllChildMarkers().some(m => m.options.enCurso) ? ' en-curso' : ''}">${GOTA}<span>${g.getChildCount()}</span></div>` }) });
   for (const c of estado.cortes || []) {
     const s = estadoCorte(c);
     if (s === 'vencido' || !c.poligonos.length) continue;
-    const color = s === 'enCurso' ? css('--naranja') : css('--acento');
+    const enCurso = s === 'enCurso', color = enCurso ? css('--naranja') : css('--acento');
     const capa = L.geoJSON({ type: 'MultiPolygon', coordinates: c.poligonos }, {
-      pane: 'cortes', renderer: lienzo, smoothFactor: 0,
-      style: { color, weight: s === 'enCurso' ? 2 : 1.5, fillColor: color, fillOpacity: s === 'enCurso' ? 0.25 : 0.12,
-               dashArray: s === 'enCurso' ? null : '6 4', lineJoin: 'round' },
+      pane: 'cortes', renderer: lienzos.cortes, smoothFactor: 0,
+      style: { color, weight: 2, fillColor: color, fillOpacity: enCurso ? 0.3 : 0.18,
+               dashArray: enCurso ? null : '6 4', lineJoin: 'round' },
     });
     capa.on('click', e => { L.DomEvent.stop(e); abrir(() => fichaCorte(c)); });
     capa.addTo(grupos.cortes);
+    const caja = capa.getBounds().getCenter();
+    L.marker(caja, { pane: 'marcasCortes', enCurso, title: `${enCurso ? 'Corte en curso' : 'Próximo corte'} · ${zona(c)}`,
+      icon: L.divIcon({ className: '', iconSize: [32, 32], iconAnchor: [16, 16],
+        html: `<div class="marca-corte ${enCurso ? 'en-curso' : 'proximo'}">${enCurso ? GOTA : CALENDARIO}</div>` }) })
+      .on('click', () => { abrir(() => fichaCorte(c)); }).addTo(marcas);
   }
+  marcas.addTo(grupos.cortes);
   if (estado.pestana === 'cortes') pintarContenido();
 }
 function relacionCorte(c) {
@@ -275,10 +289,16 @@ function listaCortes() {
   let vigentes = estado.cortes.filter(c => estadoCorte(c) !== 'vencido');
   const r = estado.referencia;
   if (r) vigentes = vigentes.filter(c => distanciaA(c.poligonos, r.lat, r.lon) <= 3000);
+  else if (estado.zonaCortes === 'lima') vigentes = vigentes.filter(c => c.departamentos.some(d => /^(LIMA|CALLAO)$/i.test(d)));
   const ahora = vigentes.filter(c => estadoCorte(c) === 'enCurso')
     .sort((a, b) => r ? (distanciaA(a.poligonos, r.lat, r.lon) - distanciaA(b.poligonos, r.lat, r.lon)) || a.fin - b.fin : a.fin - b.fin);
   const proximos = vigentes.filter(c => estadoCorte(c) === 'proximo').sort((a, b) => a.inicio - b.inicio);
-  nodos.push(el('p', { class: 'bloque pequeno suave', text: r ? `Cortes a menos de 3 km de ${r.nombre}` : 'Todo el Perú' }));
+  if (r) nodos.push(el('p', { class: 'bloque pequeno suave', text: `Cortes a menos de 3 km de ${r.nombre}` }));
+  else {
+    const sel = el('select', { 'aria-label': 'Zona de consulta', onchange: e => { estado.zonaCortes = e.target.value; pintarContenido(); } },
+      ...[['lima', 'Lima y Callao'], ['peru', 'Todo el Perú']].map(([v, t]) => { const o = el('option', { value: v, text: t }); o.selected = estado.zonaCortes === v; return o; }));
+    nodos.push(el('div', { class: 'bloque acciones' }, sel, el('span', { class: 'suave', text: 'Busca una dirección para ver los cortes a menos de 3 km.' })));
+  }
   nodos.push(el('h2', { text: `Reportes en curso · ${ahora.length}` }));
   if (!ahora.length) nodos.push(el('p', { class: 'bloque suave', text: 'Sin cortes reportados en esta zona. Algunos cortes se reportan tarde. Esto no garantiza que tengas agua.' }));
   nodos.push(...ahora.map(tarjetaCorte));
@@ -357,7 +377,7 @@ let capaSectores = null;
 function dibujarSectores() {
   grupos.sectores.clearLayers();
   if (!estado.sectores) return;
-  capaSectores = L.geoJSON(estado.sectores, { pane: 'sectores', renderer: lienzo, smoothFactor: 0.5, style: estiloSector,
+  capaSectores = L.geoJSON(estado.sectores, { pane: 'sectores', renderer: lienzos.sectores, smoothFactor: 0.5, style: estiloSector,
     onEachFeature: (f, capa) => capa.on('click', () => { sectorElegido = f; capaSectores.setStyle(estiloSector); abrir(() => fichaSector(f.properties)); }) });
   capaSectores.addTo(grupos.sectores);
 }
@@ -610,7 +630,7 @@ async function dibujarLluvias(encuadrar) {
   if (fc) {
     const estilo = f => { const sel = f.id === lluvias.distrito?.ubigeo, c = colorRiesgo(f.properties.nivel);
       return { color: sel ? css('--texto') : c, weight: sel ? 2.5 : 1, fillColor: c, fillOpacity: sel ? 0.48 : 0.24 }; };
-    lluvias.capa = L.geoJSON(fc, { pane: 'lluvias', renderer: lienzo, smoothFactor: 0.5, style: estilo,
+    lluvias.capa = L.geoJSON(fc, { pane: 'lluvias', renderer: lienzos.lluvias, smoothFactor: 0.5, style: estilo,
       onEachFeature: (f, capa) => capa.on('click', e => { L.DomEvent.stop(e); lluvias.distrito = f.properties; lluvias.capa.setStyle(estilo);
         abrir(() => fichaDistrito(f.properties)); }) }).addTo(grupos.lluvias);
     if (encuadrar) mapa.fitBounds(lluvias.capa.getBounds(), { padding: [30, 30] });

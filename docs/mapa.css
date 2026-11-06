@@ -69,3 +69,11 @@ dl.ficha dd { margin: 0; }
 .racimo { width: 34px; height: 34px; border-radius: 50%; background: #0d66d1; color: #fff; font: 700 13px/34px system-ui;
   text-align: center; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.35); }
 .racimo.ana { background: #ff9500; border-radius: 8px; }
+.marca-corte { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center;
+  border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.4); }
+.marca-corte.en-curso { background: var(--naranja); }
+.marca-corte.proximo { background: var(--acento); }
+.racimo.corte { width: 34px; height: 30px; line-height: 30px; border-radius: 15px; background: var(--acento);
+  display: flex; align-items: center; justify-content: center; gap: 1px; }
+.racimo.corte.en-curso { background: var(--naranja); }
+.racimo.punto { background: #fabd0d; color: #1d1600; }
