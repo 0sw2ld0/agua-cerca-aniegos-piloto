@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T12:59:07.285871-05:00",
+  "generated_at": "2026-11-06T13:08:10.507439-05:00",
   "coverage": "partial",
-  "source_errors": 0,
+  "source_errors": 1,
   "reports": [
     {
       "id": -2426100408893695,
@@ -112,6 +112,240 @@
         {
           "name": "Infobae · 6/11",
           "url": "https://www.infobae.com/peru/2026/11/06/lluvias-en-lima-sur-por-que-cada-vez-la-zona-sur-de-la-capital-se-inunda-y-colapsan-los-desagues/"
+        }
+      ]
+    },
+    {
+      "id": -1387392144663142,
+      "kind": "publication",
+      "district": "Villa María del Triunfo",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Villa María del Triunfo: bypass Pachacútec totalmente inundado tras lluvias intensas en Lima",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T15:28:52+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "caretas.pe",
+          "url": "https://caretas.pe/sociedad/villa-maria-del-triunfo-bypass-pachacutec-totalmente-inundado-tras-lluvias-intensas-en-lima/"
+        }
+      ]
+    },
+    {
+      "id": -3365816164748747,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Emergencia en Lima Sur: fuertes lluvias, inundaciones, aniegos y decenas de familias afectadas",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T14:54:09+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "caretas.pe",
+          "url": "https://caretas.pe/sociedad/emergencia-en-lima-sur-fuertes-lluvias-inundaciones-aniegos-y-decenas-de-familias-afectadas-senamhi/"
+        }
+      ]
+    },
+    {
+      "id": -4479512560952305,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "¿Habrá clases virtuales por lluvias en Lima? DRELM pide evaluar condiciones de seguridad en colegios ante riesgo de inundaciones",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-08T00:26:26+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "larepublica.pe",
+          "url": "https://larepublica.pe/sociedad/2026/11/05/habra-clases-virtuales-por-lluvias-en-lima-drelm-pide-evaluar-condiciones-de-seguridad-en-colegios-publicos-ante-riesgo-de-inundaciones-61360"
+        }
+      ]
+    },
+    {
+      "id": -776914803680170,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Lluvias inundan Lima Sur y ponen en alerta al norte: Senamhi no descarta que el ciclón Yaku coincida con El Niño en 2027",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T21:40:38+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "larepublica.pe",
+          "url": "https://larepublica.pe/sociedad/2026/11/05/villa-el-salvador-vmt-y-sjm-amanecen-bajo-el-agua-tras-intensa-llovizna-en-lima-inundaciones-afectan-viviendas-y-vias-488030"
+        }
+      ]
+    },
+    {
+      "id": -2368260803210119,
+      "kind": "publication",
+      "district": "Villa El Salvador",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Bus de El Rápido queda atascado por inundación en Villa El Salvador y conductor no puede salir por el agua",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T15:35:04+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "larepublica.pe",
+          "url": "https://larepublica.pe/sociedad/2026/11/05/bus-de-el-rapido-queda-atascado-por-inundacion-en-villa-el-salvador-y-conductor-no-puede-salir-por-el-agua-168840"
+        }
+      ]
+    },
+    {
+      "id": -4103614806204810,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Lima Sur bajo el agua: ¿por qué las lluvias se concentran en esta zona y no en el norte y cómo se explican los 65 puntos de inundación?  ",
+      "date": "2026-11-06",
+      "expires_at": "2026-11-08T16:17:56+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "elcomercio.pe",
+          "url": "https://elcomercio.pe/lima/lima-sur-bajo-el-agua-por-que-las-lluvias-se-concentran-en-esta-zona-y-no-en-el-norte-y-como-se-explican-los-65-puntos-de-inundacion-apuesplan-noticia/"
+        }
+      ]
+    },
+    {
+      "id": -1334820898736118,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Estos son los 116 distritos de Lima y Callao expuestos a inundaciones y huaicos por El Niño costero: ¿qué deben hacer las municipalidades?",
+      "date": "2026-11-06",
+      "expires_at": "2026-11-08T16:16:25+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "elcomercio.pe",
+          "url": "https://elcomercio.pe/lima/sucesos/estos-son-los-116-distritos-de-lima-y-callao-expuestos-a-inundaciones-y-huaicos-por-el-nino-costero-que-deben-hacer-las-municipalidades-apuesplan-noticia/"
+        }
+      ]
+    },
+    {
+      "id": -645810520340941,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Lluvias en Lima: 20 de los 33 bypasses evaluados por Cenepred presentan riesgo de inundación",
+      "date": "2026-11-06",
+      "expires_at": "2026-11-08T15:30:14+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "elcomercio.pe",
+          "url": "https://elcomercio.pe/lima/transporte/lluvias-en-lima-20-de-los-33-bypasses-evaluados-por-cenepred-presentan-riesgo-de-inundacion-noticia/"
+        }
+      ]
+    },
+    {
+      "id": -823873878569851,
+      "kind": "publication",
+      "district": "Villa El Salvador",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Furgonetas quedan varadas por tratar de pasar bypass inundado en Villa El Salvador",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T21:13:32+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "elcomercio.pe",
+          "url": "https://elcomercio.pe/lima/sucesos/furgonetas-quedan-varadas-por-tratar-de-pasar-bypass-inundado-en-villa-el-salvador-tras-lluvias-apuesplan-ultimas-noticia/"
+        }
+      ]
+    },
+    {
+      "id": -4241400036663501,
+      "kind": "publication",
+      "district": "Villa El Salvador",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Lluvias afectan accesos al Hospital de Emergencias de Villa El Salvador por aniegos | FOTOS",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T18:11:40+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "elcomercio.pe",
+          "url": "https://elcomercio.pe/lima/sucesos/lluvias-afectan-accesos-al-hospital-de-emergencias-de-villa-el-salvador-por-aniegos-fotos-apuesplan-ultimas-noticia/"
+        }
+      ]
+    },
+    {
+      "id": -206394195416276,
+      "kind": "publication",
+      "district": "Villa El Salvador",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Bus de la empresa El Rápido queda varado en vía inundada por lluvias en Villa El Salvador",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T13:57:34+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "elcomercio.pe",
+          "url": "https://elcomercio.pe/lima/sucesos/bus-de-la-empresa-el-rapido-queda-varado-en-via-inundada-por-lluvias-en-villa-el-salvador-apuesplan-ultimas-noticia/"
+        }
+      ]
+    },
+    {
+      "id": -541087140745272,
+      "kind": "publication",
+      "district": "Villa El Salvador",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Villa El Salvador: aniegos y colapso de alcantarillado tras llovizna nocturna",
+      "date": "2026-11-04",
+      "expires_at": "2026-11-07T04:52:48+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "elcomercio.pe",
+          "url": "https://elcomercio.pe/lima/villa-el-salvador-aniegos-y-colapso-de-alcantarillado-tras-garua-nocturna-lluvias-apuesplan-ultimas-noticia/"
+        }
+      ]
+    },
+    {
+      "id": -858515494674219,
+      "kind": "publication",
+      "district": "Villa El Salvador",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Villa El Salvador amanece con calles inundadas y desagües colapsados por lluvias",
+      "date": "2026-11-05",
+      "expires_at": "2026-11-07T12:22:06+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "elcomercio.pe",
+          "url": "https://elcomercio.pe/lima/sucesos/villa-el-salvador-amanece-con-calles-inundadas-y-desagues-colapsados-por-lluvias-apuesplan-ultimas-noticia/"
         }
       ]
     }
