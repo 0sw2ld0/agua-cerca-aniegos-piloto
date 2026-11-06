@@ -60,7 +60,10 @@
    "district": "Villa El Salvador",
    "location": "colegio Juan Pablo II",
    "matches_review": null,
-   "point": null,
+   "point": [
+    -76.948932,
+    -12.188502
+   ],
    "urls": [
     "https://larepublica.pe/sociedad/2026/11/05/villa-el-salvador-vmt-y-sjm-amanecen-bajo-el-agua-tras-intensa-llovizna-en-lima-inundaciones-afectan-viviendas-y-vias-488030",
     "https://elcomercio.pe/lima/sucesos/bus-de-la-empresa-el-rapido-queda-varado-en-via-inundada-por-lluvias-en-villa-el-salvador-apuesplan-ultimas-noticia/",
@@ -158,7 +161,10 @@
    "district": "Villa El Salvador",
    "location": "Av. Separadora Industrial con Mateo Pumacahua",
    "matches_review": null,
-   "point": null,
+   "point": [
+    -76.946602,
+    -12.185404
+   ],
    "urls": [
     "https://elcomercio.pe/lima/sucesos/villa-el-salvador-amanece-con-calles-inundadas-y-desagues-colapsados-por-lluvias-apuesplan-ultimas-noticia/"
    ]
@@ -219,7 +225,7 @@
    ]
   }
  ],
- "generated_at": "2026-11-06T14:41:59.308614-05:00",
+ "generated_at": "2026-11-06T14:50:41.179402-05:00",
  "mode": "shadow_not_published",
  "model": "gpt-6-luna",
  "schema_version": 1,
@@ -230,7 +236,7 @@
    "district": "Chorrillos",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:41:59.308614-05:00",
+   "last_seen": "2026-11-06T14:50:41.179402-05:00",
    "location": "Pasaje Los Gorriones, primera cuadra de la avenida Guardia Civil",
    "point": null,
    "rule": null,
@@ -245,7 +251,7 @@
    "district": "San Juan de Miraflores",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:41:59.308614-05:00",
+   "last_seen": "2026-11-06T14:50:41.179402-05:00",
    "location": "avenida Los Héroes",
    "point": null,
    "rule": null,
@@ -260,7 +266,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:41:59.308614-05:00",
+   "last_seen": "2026-11-06T14:50:41.179402-05:00",
    "location": "Bypass de 26 de Noviembre con Pachacútec",
    "point": null,
    "rule": null,
@@ -275,7 +281,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:41:59.308614-05:00",
+   "last_seen": "2026-11-06T14:50:41.179402-05:00",
    "location": "Bypass de Av. El Sol",
    "point": null,
    "rule": null,
@@ -290,7 +296,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:41:59.308614-05:00",
+   "last_seen": "2026-11-06T14:50:41.179402-05:00",
    "location": "Bypass de la av. Pachacútec",
    "point": null,
    "rule": null,
@@ -305,7 +311,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:41:59.308614-05:00",
+   "last_seen": "2026-11-06T14:50:41.179402-05:00",
    "location": "Bypass de la avenida El Sol",
    "point": null,
    "rule": null,
@@ -320,9 +326,12 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:41:59.308614-05:00",
+   "last_seen": "2026-11-06T14:50:41.179402-05:00",
    "location": "colegio Juan Pablo II",
-   "point": null,
+   "point": [
+    -76.948932,
+    -12.188502
+   ],
    "rule": "landmark",
    "summary": "La acumulación de agua en las instalaciones llevó al colegio a suspender las clases presenciales.",
    "urls": [
@@ -337,7 +346,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:41:59.308614-05:00",
+   "last_seen": "2026-11-06T14:50:41.179402-05:00",
    "location": "Frente al Hospital de Emergencia de Villa El Salvador",
    "point": null,
    "rule": "landmark",
@@ -352,7 +361,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:41:59.308614-05:00",
+   "last_seen": "2026-11-06T14:50:41.179402-05:00",
    "location": "Hospital de Emergencias Villa El Salvador",
    "point": [
     -76.934866,
@@ -370,7 +379,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:41:59.308614-05:00",
+   "last_seen": "2026-11-06T14:50:41.179402-05:00",
    "location": "Intercambio de Av. Pachacútec",
    "point": null,
    "rule": null,
@@ -385,7 +394,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:41:59.308614-05:00",
+   "last_seen": "2026-11-06T14:50:41.179402-05:00",
    "location": "avenida Juan Velasco Alvarado",
    "point": null,
    "rule": null,
@@ -402,7 +411,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:41:59.308614-05:00",
+   "last_seen": "2026-11-06T14:50:41.179402-05:00",
    "location": "Pasos a desnivel de la Av. Pachacútec",
    "point": null,
    "rule": null,
@@ -417,7 +426,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:41:59.308614-05:00",
+   "last_seen": "2026-11-06T14:50:41.179402-05:00",
    "location": "Pasos a desnivel de la avenida El Sol",
    "point": null,
    "rule": null,
@@ -432,7 +441,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:41:59.308614-05:00",
+   "last_seen": "2026-11-06T14:50:41.179402-05:00",
    "location": "Sector 1, Grupo 1",
    "point": [
     -76.947216,
@@ -453,9 +462,12 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:41:59.308614-05:00",
+   "last_seen": "2026-11-06T14:50:41.179402-05:00",
    "location": "Av. Separadora Industrial con Mateo Pumacahua",
-   "point": null,
+   "point": [
+    -76.946602,
+    -12.185404
+   ],
    "rule": "intersection",
    "summary": "El agua acumulada cubrió las llantas de algunos vehículos y dificultó el tránsito.",
    "urls": [
@@ -468,7 +480,7 @@
    "district": "Villa María del Triunfo",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:41:59.308614-05:00",
+   "last_seen": "2026-11-06T14:50:41.179402-05:00",
    "location": "paso a desnivel de la avenida Pachacútec",
    "point": null,
    "rule": null,
@@ -483,7 +495,7 @@
    "district": "Villa María del Triunfo",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:41:59.308614-05:00",
+   "last_seen": "2026-11-06T14:50:41.179402-05:00",
    "location": "Paso a desnivel de la avenida Pachacútec con la avenida 26 de Noviembre",
    "point": [
     -76.94357,
@@ -502,7 +514,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:41:59.308614-05:00",
+   "last_seen": "2026-11-06T14:50:41.179402-05:00",
    "location": "sector 1, grupo 1",
    "point": [
     -76.947216,
