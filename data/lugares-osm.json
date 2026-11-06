@@ -511,6 +511,16 @@
    "precision": "Referencia: colegio según OpenStreetMap, no el lugar exacto del agua",
    "reason": "verified"
   },
+  "villa el salvador|frente al hospital de emergencia de villa el salvador": {
+   "checked_at": "2026-11-06T15:13:37.015166-05:00",
+   "evidence": "OSM: hospital emergencia villa salvador en Villa El Salvador",
+   "point": [
+    -76.934866,
+    -12.232083
+   ],
+   "precision": "Referencia: hospital según OpenStreetMap, no el lugar exacto del agua",
+   "reason": "verified"
+  },
   "villa el salvador|frente al hospital de emergencias villa el salvador": {
    "checked_at": "2026-11-06T12:59:07.285871-05:00",
    "evidence": "OSM: hospital emergencias villa salvador en Villa El Salvador",

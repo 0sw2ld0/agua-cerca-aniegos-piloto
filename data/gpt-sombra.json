@@ -11,7 +11,8 @@
     -12.232083
    ],
    "urls": [
-    "https://www.defensoria.gob.pe/defensoria-del-pueblo-supervisa-atencion-de-aniegos-en-distritos-de-lima-metropolitana-y-solicita-medidas-urgentes-para-proteger-la-salud-de-la-poblacion/"
+    "https://www.defensoria.gob.pe/defensoria-del-pueblo-supervisa-atencion-de-aniegos-en-distritos-de-lima-metropolitana-y-solicita-medidas-urgentes-para-proteger-la-salud-de-la-poblacion/",
+    "https://www.infobae.com/peru/2026/11/05/las-lloviznas-en-lima-casi-igualan-un-record-de-1970-aniegos-vias-inundadas-y-desagues-colapsados-en-distritos-del-sur/"
    ]
   },
   {
@@ -27,20 +28,6 @@
    "urls": [
     "https://caretas.pe/sociedad/villa-maria-del-triunfo-bypass-pachacutec-totalmente-inundado-tras-lluvias-intensas-en-lima/",
     "https://caretas.pe/sociedad/emergencia-en-lima-sur-fuertes-lluvias-inundaciones-aniegos-y-decenas-de-familias-afectadas-senamhi/"
-   ]
-  },
-  {
-   "date_status": "publication_day",
-   "day": "2026-11-06",
-   "district": "Villa El Salvador",
-   "location": "sector 1, grupo 1",
-   "matches_review": null,
-   "point": [
-    -76.947216,
-    -12.187293
-   ],
-   "urls": [
-    "https://www.infobae.com/peru/2026/11/06/lluvias-en-lima-sur-por-que-cada-vez-la-zona-sur-de-la-capital-se-inunda-y-colapsan-los-desagues/"
    ]
   },
   {
@@ -193,13 +180,16 @@
   },
   {
    "date_status": "publication_day",
-   "day": "2026-11-05",
+   "day": "2026-11-06",
    "district": "Villa El Salvador",
-   "location": "Frente al Hospital de Emergencia de Villa El Salvador",
+   "location": "sector 1, grupo 1",
    "matches_review": null,
-   "point": null,
+   "point": [
+    -76.947216,
+    -12.187293
+   ],
    "urls": [
-    "https://www.infobae.com/peru/2026/11/05/las-lloviznas-en-lima-casi-igualan-un-record-de-1970-aniegos-vias-inundadas-y-desagues-colapsados-en-distritos-del-sur/"
+    "https://www.infobae.com/peru/2026/11/06/lluvias-en-lima-sur-por-que-cada-vez-la-zona-sur-de-la-capital-se-inunda-y-colapsan-los-desagues/"
    ]
   },
   {
@@ -225,7 +215,7 @@
    ]
   }
  ],
- "generated_at": "2026-11-06T14:50:41.179402-05:00",
+ "generated_at": "2026-11-06T15:13:37.015166-05:00",
  "mode": "shadow_not_published",
  "model": "gpt-6-luna",
  "schema_version": 1,
@@ -236,7 +226,7 @@
    "district": "Chorrillos",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:50:41.179402-05:00",
+   "last_seen": "2026-11-06T15:13:37.015166-05:00",
    "location": "Pasaje Los Gorriones, primera cuadra de la avenida Guardia Civil",
    "point": null,
    "rule": null,
@@ -251,7 +241,7 @@
    "district": "San Juan de Miraflores",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:50:41.179402-05:00",
+   "last_seen": "2026-11-06T15:13:37.015166-05:00",
    "location": "avenida Los Héroes",
    "point": null,
    "rule": null,
@@ -266,7 +256,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:50:41.179402-05:00",
+   "last_seen": "2026-11-06T15:13:37.015166-05:00",
    "location": "Bypass de 26 de Noviembre con Pachacútec",
    "point": null,
    "rule": null,
@@ -281,7 +271,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:50:41.179402-05:00",
+   "last_seen": "2026-11-06T15:13:37.015166-05:00",
    "location": "Bypass de Av. El Sol",
    "point": null,
    "rule": null,
@@ -296,7 +286,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:50:41.179402-05:00",
+   "last_seen": "2026-11-06T15:13:37.015166-05:00",
    "location": "Bypass de la av. Pachacútec",
    "point": null,
    "rule": null,
@@ -311,7 +301,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:50:41.179402-05:00",
+   "last_seen": "2026-11-06T15:13:37.015166-05:00",
    "location": "Bypass de la avenida El Sol",
    "point": null,
    "rule": null,
@@ -326,7 +316,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:50:41.179402-05:00",
+   "last_seen": "2026-11-06T15:13:37.015166-05:00",
    "location": "colegio Juan Pablo II",
    "point": [
     -76.948932,
@@ -361,7 +351,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:50:41.179402-05:00",
+   "last_seen": "2026-11-06T15:13:37.015166-05:00",
    "location": "Hospital de Emergencias Villa El Salvador",
    "point": [
     -76.934866,
@@ -370,7 +360,8 @@
    "rule": "landmark",
    "summary": "Se registraron aniegos en las inmediaciones del hospital, por lo que la Defensoría pidió verificar que no afectaran el acceso ni los servicios de emergencia.",
    "urls": [
-    "https://www.defensoria.gob.pe/defensoria-del-pueblo-supervisa-atencion-de-aniegos-en-distritos-de-lima-metropolitana-y-solicita-medidas-urgentes-para-proteger-la-salud-de-la-poblacion/"
+    "https://www.defensoria.gob.pe/defensoria-del-pueblo-supervisa-atencion-de-aniegos-en-distritos-de-lima-metropolitana-y-solicita-medidas-urgentes-para-proteger-la-salud-de-la-poblacion/",
+    "https://www.infobae.com/peru/2026/11/05/las-lloviznas-en-lima-casi-igualan-un-record-de-1970-aniegos-vias-inundadas-y-desagues-colapsados-en-distritos-del-sur/"
    ]
   },
   "2026-11-05|Villa El Salvador|intercambio de av pachacutec": {
@@ -379,7 +370,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:50:41.179402-05:00",
+   "last_seen": "2026-11-06T15:13:37.015166-05:00",
    "location": "Intercambio de Av. Pachacútec",
    "point": null,
    "rule": null,
@@ -394,7 +385,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:50:41.179402-05:00",
+   "last_seen": "2026-11-06T15:13:37.015166-05:00",
    "location": "avenida Juan Velasco Alvarado",
    "point": null,
    "rule": null,
@@ -411,7 +402,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:50:41.179402-05:00",
+   "last_seen": "2026-11-06T15:13:37.015166-05:00",
    "location": "Pasos a desnivel de la Av. Pachacútec",
    "point": null,
    "rule": null,
@@ -426,7 +417,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:50:41.179402-05:00",
+   "last_seen": "2026-11-06T15:13:37.015166-05:00",
    "location": "Pasos a desnivel de la avenida El Sol",
    "point": null,
    "rule": null,
@@ -441,7 +432,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:50:41.179402-05:00",
+   "last_seen": "2026-11-06T15:13:37.015166-05:00",
    "location": "Sector 1, Grupo 1",
    "point": [
     -76.947216,
@@ -462,7 +453,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:50:41.179402-05:00",
+   "last_seen": "2026-11-06T15:13:37.015166-05:00",
    "location": "Av. Separadora Industrial con Mateo Pumacahua",
    "point": [
     -76.946602,
@@ -480,7 +471,7 @@
    "district": "Villa María del Triunfo",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:50:41.179402-05:00",
+   "last_seen": "2026-11-06T15:13:37.015166-05:00",
    "location": "paso a desnivel de la avenida Pachacútec",
    "point": null,
    "rule": null,
@@ -495,7 +486,7 @@
    "district": "Villa María del Triunfo",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:50:41.179402-05:00",
+   "last_seen": "2026-11-06T15:13:37.015166-05:00",
    "location": "Paso a desnivel de la avenida Pachacútec con la avenida 26 de Noviembre",
    "point": [
     -76.94357,
@@ -514,7 +505,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T14:50:41.179402-05:00",
+   "last_seen": "2026-11-06T15:13:37.015166-05:00",
    "location": "sector 1, grupo 1",
    "point": [
     -76.947216,
