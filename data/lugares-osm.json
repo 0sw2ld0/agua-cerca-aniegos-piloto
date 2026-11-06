@@ -1,6 +1,172 @@
 {
  "attribution": "© OpenStreetMap contributors (ODbL)",
  "districts": {
+  "villa el salvador": {
+   "bbox": [
+    -12.2525551,
+    -76.9771582,
+    -12.1824671,
+    -76.9096114
+   ],
+   "checked_at": "2026-11-06T12:59:07.285871-05:00",
+   "name": "Villa El Salvador",
+   "osm": "relation/1944858",
+   "polygon": {
+    "coordinates": [
+     [
+      [
+       -76.9771582,
+       -12.2197149
+      ],
+      [
+       -76.9723029,
+       -12.2246836
+      ],
+      [
+       -76.9759232,
+       -12.2307892
+      ],
+      [
+       -76.9652714,
+       -12.2356655
+      ],
+      [
+       -76.9607266,
+       -12.2372754
+      ],
+      [
+       -76.9401132,
+       -12.2476445
+      ],
+      [
+       -76.938104,
+       -12.2452809
+      ],
+      [
+       -76.9352246,
+       -12.2467969
+      ],
+      [
+       -76.9274066,
+       -12.2525551
+      ],
+      [
+       -76.9265647,
+       -12.2501365
+      ],
+      [
+       -76.9249591,
+       -12.2493336
+      ],
+      [
+       -76.9215875,
+       -12.2490392
+      ],
+      [
+       -76.9171406,
+       -12.2501347
+      ],
+      [
+       -76.9155381,
+       -12.2495146
+      ],
+      [
+       -76.9146824,
+       -12.2482536
+      ],
+      [
+       -76.9149526,
+       -12.245371
+      ],
+      [
+       -76.9111692,
+       -12.2414524
+      ],
+      [
+       -76.9120409,
+       -12.239877
+      ],
+      [
+       -76.9123829,
+       -12.2377559
+      ],
+      [
+       -76.9096114,
+       -12.2297735
+      ],
+      [
+       -76.9182409,
+       -12.2259349
+      ],
+      [
+       -76.9193927,
+       -12.2247139
+      ],
+      [
+       -76.9222011,
+       -12.214543
+      ],
+      [
+       -76.9266191,
+       -12.209002
+      ],
+      [
+       -76.9423156,
+       -12.1824671
+      ],
+      [
+       -76.9485089,
+       -12.1865465
+      ],
+      [
+       -76.95167,
+       -12.1855899
+      ],
+      [
+       -76.9516606,
+       -12.1865907
+      ],
+      [
+       -76.9544741,
+       -12.1866826
+      ],
+      [
+       -76.9577735,
+       -12.1890899
+      ],
+      [
+       -76.9575527,
+       -12.1895038
+      ],
+      [
+       -76.958839,
+       -12.1907635
+      ],
+      [
+       -76.9584914,
+       -12.1913479
+      ],
+      [
+       -76.9609414,
+       -12.1925899
+      ],
+      [
+       -76.9669746,
+       -12.1932887
+      ],
+      [
+       -76.972541,
+       -12.1922187
+      ],
+      [
+       -76.9771582,
+       -12.2197149
+      ]
+     ]
+    ],
+    "type": "Polygon"
+   }
+  },
   "villa maria del triunfo": {
    "bbox": [
     -12.2344897,
@@ -324,6 +490,26 @@
   "lima sur distrito por precisar|av el sol con av separadora industrial zona del bypass": {
    "checked_at": "2026-11-06T11:36:27.183485-05:00",
    "reason": "district_unknown"
+  },
+  "villa el salvador|frente al hospital de emergencias villa el salvador": {
+   "checked_at": "2026-11-06T12:59:07.285871-05:00",
+   "evidence": "OSM: hospital emergencias villa salvador en Villa El Salvador",
+   "point": [
+    -76.934866,
+    -12.232083
+   ],
+   "precision": "Referencia: hospital según OpenStreetMap, no el lugar exacto del agua",
+   "reason": "verified"
+  },
+  "villa el salvador|sector 1 grupo 1": {
+   "checked_at": "2026-11-06T12:59:07.285871-05:00",
+   "evidence": "OSM: sector 1 grupo 1 en Villa El Salvador",
+   "point": [
+    -76.947216,
+    -12.187293
+   ],
+   "precision": "Centro del grupo residencial según OpenStreetMap · zona referencial (±150 m), no la calle exacta",
+   "reason": "verified"
   },
   "villa maria del triunfo|bypass de av pachacutec con av 26 de noviembre debajo de la linea ferrea": {
    "checked_at": "2026-11-06T11:36:27.183485-05:00",

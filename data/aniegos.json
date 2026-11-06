@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T12:57:42.133804-05:00",
+  "generated_at": "2026-11-06T12:59:07.285871-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
@@ -62,56 +62,56 @@
       ]
     },
     {
-      "id": -4120311867112626,
-      "kind": "publication",
-      "district": "Lima Metropolitana",
-      "location": "Publicación reciente · por verificar",
-      "summary": "Defensoría del Pueblo supervisa atención de aniegos en distritos de Lima Metropolitana y solicita medidas urgentes para proteger la salud de la población",
+      "id": -3734490021180317,
+      "kind": "incident",
+      "district": "Villa El Salvador",
+      "location": "Frente al Hospital de Emergencias Villa El Salvador",
+      "summary": "Medios informaron agua hasta la altura de las rodillas en la vía de acceso al hospital; los pacientes debían bajar de los vehículos una cuadra antes. La Defensoría pidió vigilar que el aniego no impida el ingreso de ambulancias. Reportes del 5/11.",
       "date": "2026-11-05",
-      "expires_at": "2026-11-07T05:18:02+00:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
+      "expires_at": "2026-11-07T00:00:00-05:00",
+      "status": "Situación actual sin confirmar",
+      "coordinates": [
+        -76.934866,
+        -12.232083
+      ],
+      "precision": "Referencia: hospital según OpenStreetMap, no el lugar exacto del agua",
       "sources": [
         {
-          "name": "www.defensoria.gob.pe",
+          "name": "Infobae · 5/11",
+          "url": "https://www.infobae.com/peru/2026/11/05/las-lloviznas-en-lima-casi-igualan-un-record-de-1970-aniegos-vias-inundadas-y-desagues-colapsados-en-distritos-del-sur/"
+        },
+        {
+          "name": "Defensoría del Pueblo · 5/11",
           "url": "https://www.defensoria.gob.pe/defensoria-del-pueblo-supervisa-atencion-de-aniegos-en-distritos-de-lima-metropolitana-y-solicita-medidas-urgentes-para-proteger-la-salud-de-la-poblacion/"
         }
       ]
     },
     {
-      "id": -3677947450413952,
-      "kind": "publication",
-      "district": "Lima Metropolitana",
-      "location": "Publicación reciente · por verificar",
-      "summary": "Lluvias en Lima Sur: ¿Por qué cada vez la zona sur de la capital se inunda y colapsan los desagües?",
-      "date": "2026-11-06",
-      "expires_at": "2026-11-08T11:37:33+00:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
-      "sources": [
-        {
-          "name": "www.infobae.com",
-          "url": "https://www.infobae.com/peru/2026/11/06/lluvias-en-lima-sur-por-que-cada-vez-la-zona-sur-de-la-capital-se-inunda-y-colapsan-los-desagues/"
-        }
-      ]
-    },
-    {
-      "id": -2198969710561084,
-      "kind": "publication",
+      "id": -3250610746025172,
+      "kind": "incident",
       "district": "Villa El Salvador",
-      "location": "Publicación reciente · por verificar",
-      "summary": "Vecino sorprende al usar una balsa inflable para cruzar calles inundadas por las lluvias en Villa El Salvador",
+      "location": "Sector 1, Grupo 1",
+      "summary": "El 5/11 se reportó el colapso del desagüe con ingreso de aguas servidas a más de 50 viviendas; cisternas del municipio y de Sedapal llegaron a drenar. La Defensoría indicó ese mediodía que la zona estaba atendida, pero el 6/11 los vecinos seguían retirando agua de sus casas.",
       "date": "2026-11-05",
-      "expires_at": "2026-11-07T19:22:45+00:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
+      "expires_at": "2026-11-07T00:00:00-05:00",
+      "status": "Situación actual sin confirmar",
+      "coordinates": [
+        -76.947216,
+        -12.187293
+      ],
+      "precision": "Centro del grupo residencial según OpenStreetMap · zona referencial (±150 m), no la calle exacta",
       "sources": [
         {
-          "name": "larepublica.pe",
+          "name": "RPP · 5/11",
+          "url": "https://rpp.pe/lima/actualidad/ves-al-menos-50-familias-afectadas-tras-colapso-del-sistema-de-alcantarillado-por-la-intensa-llovizna-noticia-1716018"
+        },
+        {
+          "name": "La República · 5/11",
           "url": "https://larepublica.pe/sociedad/2026/11/05/vecino-sorprende-al-usar-una-balsa-inflable-para-cruzar-calles-inundadas-por-las-lluvias-en-villa-el-salvador-147665"
+        },
+        {
+          "name": "Infobae · 6/11",
+          "url": "https://www.infobae.com/peru/2026/11/06/lluvias-en-lima-sur-por-que-cada-vez-la-zona-sur-de-la-capital-se-inunda-y-colapsan-los-desagues/"
         }
       ]
     }
