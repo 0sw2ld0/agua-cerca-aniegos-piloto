@@ -6,6 +6,18 @@ La app consulta [data/aniegos.json](data/aniegos.json). Actualización programad
 
 Ver [metodología, fuentes y límites](tools/aniegos/README.md).
 
+## Versión web
+
+https://0sw2ld0.github.io/agua-cerca-aniegos-piloto/ (GitHub Pages, carpeta `docs/`). Es estática y de solo lectura, y consulta los datos desde el navegador:
+
+- **Cortes de agua vigentes, horas de agua por sector y puntos de abastecimiento:** GeoSunass. La capa de cortes acepta escrituras públicas; la web solo hace `/query` y muestra el texto con `textContent`.
+- **Zonas inundables T100 y puntos críticos ANA:** MINAM.
+- **Aniegos recientes, detección en modo sombra y costos de IA:** los JSON de `data/` de este repositorio.
+- **Pasos a desnivel:** CENEPRED, con la ubicación referencial del cruce en OpenStreetMap.
+- **Búsqueda de direcciones:** Nominatim, solo al pulsar «Buscar» y como máximo una consulta por segundo.
+
+Riesgo por lluvias (SIGRID/CENEPRED) y los cortes de luz no permiten consultas desde el navegador. Quedan para un recolector en el Action.
+
 ## Prueba manual con Jev
 
 Workflow **Probar Jev con noticias** (`.github/workflows/jev-prueba.yml`), ejecutable desde Actions → Run workflow. Requiere el secreto de Actions `TYPESAFE_API_KEY`.

@@ -6,7 +6,7 @@ import urllib.error
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from generate import instant
-from osm_places import Locator, distance_m, inside, parse_location
+from osm_places import Locator, crossings, distance_m, inside, parse_location
 from publish import build
 
 NOW = instant('2026-11-06T11:30:00-05:00')
@@ -57,6 +57,18 @@ class ParseTests(unittest.TestCase):
     def test_landmark(self):
         self.assertEqual(parse_location('Exteriores del Hospital de la Solidaridad'),
                          {'kind': 'landmark', 'landmark': 'hospital', 'tokens': ['solidaridad']})
+
+
+class CrossingTests(unittest.TestCase):
+    def test_grade_separated_roads_cross_without_shared_node(self):
+        a = [[(-12.10, -77.03), (-12.10, -77.01)]]
+        b = [[(-12.11, -77.02), (-12.09, -77.02)]]
+        (lat, lon), = crossings(a, b)
+        self.assertAlmostEqual(lat, -12.10)
+        self.assertAlmostEqual(lon, -77.02)
+
+    def test_parallel_roads_do_not_cross(self):
+        self.assertEqual(crossings([[(-12.10, -77.03), (-12.10, -77.01)]], [[(-12.11, -77.03), (-12.11, -77.01)]]), [])
 
 
 class LocatorTests(unittest.TestCase):

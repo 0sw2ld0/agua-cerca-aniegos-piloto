@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "nombre": "Bypass Av. Brasil/ La Marina",
+    "registroAniegos": true,
+    "pagina": 30
+  },
+  {
+    "id": 2,
+    "nombre": "Bajada Av. Malecón",
+    "registroAniegos": true,
+    "pagina": 30
+  },
+  {
+    "id": 3,
+    "nombre": "Bypass Av. Arequipa",
+    "registroAniegos": true,
+    "pagina": 30
+  },
+  {
+    "id": 4,
+    "nombre": "Bypass de 28 de julio",
+    "registroAniegos": true,
+    "pagina": 30
+  },
+  {
+    "id": 5,
+    "nombre": "Bypass Av. México",
+    "registroAniegos": true,
+    "pagina": 30
+  },
+  {
+    "id": 6,
+    "nombre": "Bypass Av. Javier Prado/ Arequipa",
+    "registroAniegos": true,
+    "pagina": 30
+  },
+  {
+    "id": 7,
+    "nombre": "Av. Javier Prado - Via Expresa",
+    "registroAniegos": true,
+    "pagina": 30
+  },
+  {
+    "id": 8,
+    "nombre": "Bypass Alfonso Ugarte",
+    "registroAniegos": true,
+    "pagina": 30
+  },
+  {
+    "id": 9,
+    "nombre": "Vía Expresa Línea Amarilla",
+    "registroAniegos": true,
+    "pagina": 30
+  },
+  {
+    "id": 10,
+    "nombre": "Bypass Mateo Pumacahua",
+    "registroAniegos": true,
+    "pagina": 31
+  },
+  {
+    "id": 11,
+    "nombre": "Av. Separadora Industrial/ Juan Velasco Alvarado",
+    "registroAniegos": true,
+    "pagina": 31
+  },
+  {
+    "id": 12,
+    "nombre": "Ovalo Pachacutec (Real Plaza) VMT",
+    "registroAniegos": true,
+    "pagina": 31
+  },
+  {
+    "id": 13,
+    "nombre": "Bypass Av. Benavides/ Panamericana Sur",
+    "registroAniegos": true,
+    "pagina": 31
+  },
+  {
+    "id": 14,
+    "nombre": "Bypass Av. Angamos Este/ San Luis",
+    "registroAniegos": true,
+    "pagina": 31
+  },
+  {
+    "id": 15,
+    "nombre": "Av. Javier Prado Este",
+    "registroAniegos": true,
+    "pagina": 31
+  },
+  {
+    "id": 16,
+    "nombre": "Av. Universitaria - Av. Panamericana Norte",
+    "registroAniegos": true,
+    "pagina": 31
+  },
+  {
+    "id": 17,
+    "nombre": "Av. Pan Norte - San Juan",
+    "registroAniegos": true,
+    "pagina": 31
+  },
+  {
+    "id": 18,
+    "nombre": "Bypass Av. Tingo Maria",
+    "registroAniegos": true,
+    "pagina": 31
+  },
+  {
+    "id": 19,
+    "nombre": "Via Nuevo Aeropuerto",
+    "registroAniegos": true,
+    "pagina": 31
+  },
+  {
+    "id": 20,
+    "nombre": "Universitaria-Linea Amarilla",
+    "registroAniegos": true,
+    "pagina": 31
+  },
+  {
+    "id": 21,
+    "nombre": "Bypass Nestor Gambetta-Aeropuerto",
+    "registroAniegos": true,
+    "pagina": 31
+  }
+]

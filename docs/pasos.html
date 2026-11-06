@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pasos a desnivel · Agua Cerca</title>
+<meta name="description" content="Pasos a desnivel con antecedentes de aniegos en Lima y Callao según CENEPRED.">
+<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="mapa.css">
+</head>
+<body>
+<header class="barra">
+  <h1>Agua Cerca</h1>
+  <nav><a href="./">Mapa</a><a href="pasos.html" aria-current="page">Pasos a desnivel</a><a href="costos.html">Costos</a></nav>
+</header>
+<main style="max-width:760px">
+  <section class="tarjeta">
+    <h2 style="margin:0 0 4px;font-size:18px">Pasos a desnivel <span class="chip">Histórico</span></h2>
+    <p class="suave" id="resumen" style="margin:0 0 8px"></p>
+    <p class="pequeno" style="margin:0">Antecedentes documentados, no aniegos actuales. Según el estudio CENEPRED 2026–2027
+      (tabla 19, páginas 30–31). El registro no confirma un aniego actual ni evalúa el estado actual del drenaje.</p>
+  </section>
+  <form class="buscador" onsubmit="return false"><input id="filtro" type="search" placeholder="Buscar avenida o paso" aria-label="Buscar avenida o paso"></form>
+  <section class="tarjeta" style="padding:0" id="lista"></section>
+  <p class="pequeno suave">El listado público no incluye coordenadas verificadas. Cuando el nombre trae dos vías, la ubicación es el único
+    cruce de ambas en OpenStreetMap; si no, «Buscar ubicación» consulta OpenStreetMap. En ambos casos es referencial y no una
+    coordenada oficial de CENEPRED. Si hay varias coincidencias debes elegir una.
+    <a href="https://sigrid.cenepred.gob.pe/sigridv3/documento/23279" target="_blank" rel="noopener noreferrer">Informe de CENEPRED</a>.</p>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const plano = t => String(t ?? '').normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
+const VACIAS = new Set(['bypass', 'bajada', 'avenida', 'av', 'del', 'de', 'la', 'el', 'los', 'las']);
+function el(tag, attrs = {}, ...hijos) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) { if (k === 'class') n.className = v; else if (k === 'text') n.textContent = v; else if (k.startsWith('on')) n.addEventListener(k.slice(2), v); else n.setAttribute(k, v); }
+  for (const h of hijos) if (h != null) n.append(h);
+  return n;
+}
+let pasos = [], ultima = 0, ubicados = {};
+async function ubicar(p, caja) {
+  if (Date.now() - ultima < 1100) return;          // Nominatim: 1 consulta por segundo
+  ultima = Date.now();
+  caja.replaceChildren(el('p', { class: 'pequeno suave', text: 'Buscando…' }));
+  const consulta = p.nombre.replace(/bypass/ig, '').replace(/\//g, ' y ').trim() + ', Lima, Perú';
+  const claves = plano(p.nombre).split(/[^a-z0-9]+/).filter(w => w.length > 2 && !VACIAS.has(w));
+  try {
+    const q = new URLSearchParams({ q: consulta, format: 'jsonv2', limit: '8', countrycodes: 'pe', 'accept-language': 'es',
+      viewbox: '-77.4,-11.5,-76.45,-12.65', bounded: '1' });
+    const r = await (await fetch('https://nominatim.openstreetmap.org/search?' + q)).json();
+    const ok = r.filter(x => +x.lat >= -12.65 && +x.lat <= -11.5 && +x.lon >= -77.4 && +x.lon <= -76.45 &&
+                             claves.some(k => plano(x.display_name).includes(k)));
+    if (!ok.length) { caja.replaceChildren(el('p', { class: 'pequeno', text: 'No encontramos una ubicación inequívoca. Busca el cruce o añade el distrito en el mapa.' })); return; }
+    const ir = x => `./?lat=${(+x.lat).toFixed(6)}&lon=${(+x.lon).toFixed(6)}&capa=inundables&nombre=${encodeURIComponent(p.nombre)}`;
+    caja.replaceChildren(el('p', { class: 'pequeno suave', text: ok.length > 1 ? 'El nombre tiene varias coincidencias. Elige la ubicación del paso a desnivel.' : 'Ubicación referencial · OpenStreetMap' }),
+      ...ok.map(x => el('p', { class: 'pequeno', style: 'margin:4px 0' }, el('a', { href: ir(x), text: x.display_name }))));
+  } catch { caja.replaceChildren(el('p', { class: 'pequeno', text: 'No pudimos buscar la ubicación. Revisa la conexión o busca el cruce manualmente.' })); }
+}
+function pintar() {
+  const f = plano($('filtro').value.trim());
+  const filas = pasos.filter(p => !f || plano(p.nombre).includes(f));
+  $('lista').replaceChildren(...filas.map(p => {
+    const caja = el('div'), u = ubicados[p.id];
+    const accion = u?.point
+      ? el('a', { href: `./?lat=${u.point[1]}&lon=${u.point[0]}&capa=inundables&nombre=${encodeURIComponent(p.nombre)}`, text: 'Ver en el mapa' })
+      : el('button', { class: 'enlace', type: 'button', text: 'Buscar ubicación', onclick: () => ubicar(p, caja) });
+    return el('article', { class: 'item' }, el('h3', { text: p.nombre }),
+      el('p', { class: 'pequeno suave', text: `Antecedente documentado · pág. ${p.pagina}` }),
+      u?.point ? el('p', { class: 'pequeno', text: 'Ubicación referencial: cruce de ambas vías en OpenStreetMap, no una coordenada oficial de CENEPRED.' }) : null,
+      el('div', { class: 'acciones' }, accion), caja);
+  }));
+  if (!filas.length) $('lista').append(el('p', { class: 'item suave', text: 'Sin coincidencias.' }));
+}
+Promise.all([fetch('datos/pasos-aniegos-cenepred-23279.json').then(r => r.json()),
+             fetch('datos/pasos-ubicacion-osm.json').then(r => r.ok ? r.json() : {}).catch(() => ({}))]).then(([d, u]) => {
+  ubicados = u.pasos || {};
+  pasos = d.filter(p => p.registroAniegos).sort((a, b) => a.id - b.id);
+  $('resumen').textContent = `${pasos.length} pasos en Lima y Callao`;
+  pintar();
+}).catch(() => { $('lista').replaceChildren(el('p', { class: 'item', text: 'Listado no disponible. Consulta la tabla 19 del informe oficial de CENEPRED.' })); });
+$('filtro').addEventListener('input', pintar);
+</script>
+</body>
+</html>

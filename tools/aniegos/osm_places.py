@@ -88,6 +88,27 @@ def parse_location(location):
     return None
 
 
+def crossings(lines_a, lines_b):
+    """Points where any segment of road A crosses a segment of road B (lat, lon)."""
+    def boxes(lines):
+        return [(a, b, min(a[0], b[0]), max(a[0], b[0]), min(a[1], b[1]), max(a[1], b[1]))
+                for line in lines for a, b in zip(line, line[1:])]
+    found = []
+    seg_b = boxes(lines_b)
+    for p1, p2, la0, la1, lo0, lo1 in boxes(lines_a):
+        for q1, q2, lb0, lb1, mo0, mo1 in seg_b:
+            if la1 < lb0 or lb1 < la0 or lo1 < mo0 or mo1 < lo0:
+                continue
+            d = (p2[0] - p1[0]) * (q2[1] - q1[1]) - (p2[1] - p1[1]) * (q2[0] - q1[0])
+            if d == 0:
+                continue
+            t = ((q1[0] - p1[0]) * (q2[1] - q1[1]) - (q1[1] - p1[1]) * (q2[0] - q1[0])) / d
+            u = ((q1[0] - p1[0]) * (p2[1] - p1[1]) - (q1[1] - p1[1]) * (p2[0] - p1[0])) / d
+            if 0 <= t <= 1 and 0 <= u <= 1:
+                found.append((p1[0] + t * (p2[0] - p1[0]), p1[1] + t * (p2[1] - p1[1])))
+    return found
+
+
 def stem(token):
     """'emergencia' == 'emergencias'."""
     return token[:-1] if len(token) > 4 and token.endswith('s') else token
@@ -212,16 +233,21 @@ class Locator:
         s, w, n, e = district['bbox']
         elements = self.overpass('[out:json][timeout:25][bbox:%f,%f,%f,%f];way["highway"]["name"~"%s",i];out body geom;'
                                  % (s, w, n, e, token_regex(place['roads'])))
-        coords, members = {}, ({}, {})
+        coords, members, lines = {}, ({}, {}), ([], [])
         for way in elements:
             core = road_core(way.get('tags', {}).get('name', ''))
             for index, road in enumerate(place['roads']):
                 if core == road:
-                    for node, point in zip(way.get('nodes', []), way.get('geometry', [])):
-                        coords[node] = (point['lat'], point['lon'])
+                    points = [(p['lat'], p['lon']) for p in way.get('geometry', [])]
+                    lines[index].append(points)
+                    for node, point in zip(way.get('nodes', []), points):
+                        coords[node] = point
                         members[index].setdefault(node, set()).add(way['id'])
         shared = [coords[n] for n in set(members[0]) & set(members[1])
                   if inside(district['polygon'], *coords[n])]
+        if not shared:
+            # Grade-separated crossings (a bypass) share no node: use where the two roads' lines cross.
+            shared = [pt for pt in crossings(lines[0], lines[1]) if inside(district['polygon'], *pt)]
         if not shared:
             return None, 'no_junction_in_district' if members[0] and members[1] else 'road_not_found'
         groups = clusters(shared, JUNCTION_RADIUS_M)
