@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
  "fuente": "CENEPRED / SIGRID",
- "generated_at": "2026-11-07T02:14:22.603875-05:00",
+ "generated_at": "2026-11-07T02:44:18.988285-05:00",
  "lista": "https://sigrid.cenepred.gob.pe/sigridv3/escenarios/lbam",
  "escenarios": [
   {
