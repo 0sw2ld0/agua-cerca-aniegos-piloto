@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
  "fuente": "CENEPRED / SIGRID",
- "generated_at": "2026-11-06T23:44:13.031778-05:00",
+ "generated_at": "2026-11-07T00:14:23.772157-05:00",
  "lista": "https://sigrid.cenepred.gob.pe/sigridv3/escenarios/lbam",
  "escenarios": [
   {
@@ -85,57 +85,6 @@
     "MOQUEGUA",
     "PUNO",
     "TACNA"
-   ]
-  },
-  {
-   "id": "1134",
-   "aviso": "454",
-   "ambito": "COSTA CENTRO Y SUR",
-   "inicio": "2026-11-05T00:00:00-05:00",
-   "fin": "2026-11-07T00:00:00-05:00",
-   "documento": "https://sigrid.cenepred.gob.pe/sigridv3/documento/23310",
-   "estado": "vigente",
-   "distritos": 108,
-   "niveles": {
-    "Bajo": 38,
-    "Medio": 65,
-    "Alto": 5
-   },
-   "descargado": "2026-11-06T16:09:20.562503-05:00",
-   "departamentos": [
-    "AREQUIPA",
-    "CALLAO",
-    "ICA",
-    "LIMA",
-    "MOQUEGUA",
-    "TACNA"
-   ]
-  },
-  {
-   "id": "1133",
-   "aviso": "451",
-   "ambito": "COSTA NORTE Y SIERRA",
-   "inicio": "2026-11-04T00:00:00-05:00",
-   "fin": "2026-11-07T00:00:00-05:00",
-   "documento": "https://sigrid.cenepred.gob.pe/sigridv3/documento/23276",
-   "estado": "vigente",
-   "distritos": 202,
-   "niveles": {
-    "Muy alto": 116,
-    "Alto": 70,
-    "Medio": 11,
-    "Bajo": 5
-   },
-   "descargado": "2026-11-06T16:09:20.562503-05:00",
-   "departamentos": [
-    "APURIMAC",
-    "AREQUIPA",
-    "AYACUCHO",
-    "CAJAMARCA",
-    "HUANCAVELICA",
-    "LAMBAYEQUE",
-    "PIURA",
-    "TUMBES"
    ]
   }
  ],

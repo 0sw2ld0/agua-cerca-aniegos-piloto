@@ -1,184 +1,6 @@
 {
  "current": [
   {
-   "date_status": "stated",
-   "day": "2026-11-05",
-   "district": "Villa El Salvador",
-   "location": "Bypass de la avenida El Sol",
-   "matches_review": null,
-   "point": null,
-   "urls": [
-    "https://larepublica.pe/sociedad/2026/11/05/chofer-quedo-atrapado-durante-3-horas-tras-intentar-cruzar-bypass-inundado-por-las-lluvias-en-ves-no-sabia-que-hacer-104580"
-   ]
-  },
-  {
-   "date_status": "stated",
-   "day": "2026-11-05",
-   "district": "Villa El Salvador",
-   "location": "colegio Juan Pablo II",
-   "matches_review": null,
-   "point": [
-    -76.948932,
-    -12.188502
-   ],
-   "urls": [
-    "https://larepublica.pe/sociedad/2026/11/05/villa-el-salvador-vmt-y-sjm-amanecen-bajo-el-agua-tras-intensa-llovizna-en-lima-inundaciones-afectan-viviendas-y-vias-488030",
-    "https://elcomercio.pe/lima/sucesos/bus-de-la-empresa-el-rapido-queda-varado-en-via-inundada-por-lluvias-en-villa-el-salvador-apuesplan-ultimas-noticia/",
-    "https://elcomercio.pe/lima/sucesos/villa-el-salvador-amanece-con-calles-inundadas-y-desagues-colapsados-por-lluvias-apuesplan-ultimas-noticia/"
-   ]
-  },
-  {
-   "date_status": "stated",
-   "day": "2026-11-05",
-   "district": "Villa María del Triunfo",
-   "location": "paso a desnivel de la avenida Pachacútec",
-   "matches_review": null,
-   "point": null,
-   "urls": [
-    "https://larepublica.pe/sociedad/2026/11/05/villa-el-salvador-vmt-y-sjm-amanecen-bajo-el-agua-tras-intensa-llovizna-en-lima-inundaciones-afectan-viviendas-y-vias-488030"
-   ]
-  },
-  {
-   "date_status": "stated",
-   "day": "2026-11-05",
-   "district": "San Juan de Miraflores",
-   "location": "avenida Los Héroes",
-   "matches_review": null,
-   "point": null,
-   "urls": [
-    "https://larepublica.pe/sociedad/2026/11/05/villa-el-salvador-vmt-y-sjm-amanecen-bajo-el-agua-tras-intensa-llovizna-en-lima-inundaciones-afectan-viviendas-y-vias-488030"
-   ]
-  },
-  {
-   "date_status": "publication_day",
-   "day": "2026-11-05",
-   "district": "Villa El Salvador",
-   "location": "Sector 1, Grupo 1",
-   "matches_review": "ves-sector1-grupo1-20261105",
-   "point": [
-    -76.947216,
-    -12.187293
-   ],
-   "urls": [
-    "https://larepublica.pe/sociedad/2026/11/05/vecino-sorprende-al-usar-una-balsa-inflable-para-cruzar-calles-inundadas-por-las-lluvias-en-villa-el-salvador-147665",
-    "https://elcomercio.pe/lima/sucesos/bus-de-la-empresa-el-rapido-queda-varado-en-via-inundada-por-lluvias-en-villa-el-salvador-apuesplan-ultimas-noticia/",
-    "https://elcomercio.pe/lima/sucesos/villa-el-salvador-amanece-con-calles-inundadas-y-desagues-colapsados-por-lluvias-apuesplan-ultimas-noticia/",
-    "https://rpp.pe/lima/actualidad/ves-al-menos-50-familias-afectadas-tras-colapso-del-sistema-de-alcantarillado-por-la-intensa-llovizna-noticia-1716018"
-   ]
-  },
-  {
-   "date_status": "publication_day",
-   "day": "2026-11-05",
-   "district": "Villa El Salvador",
-   "location": "avenida Juan Velasco Alvarado",
-   "matches_review": null,
-   "point": null,
-   "urls": [
-    "https://larepublica.pe/sociedad/2026/11/05/vecino-sorprende-al-usar-una-balsa-inflable-para-cruzar-calles-inundadas-por-las-lluvias-en-villa-el-salvador-147665",
-    "https://elcomercio.pe/lima/sucesos/bus-de-la-empresa-el-rapido-queda-varado-en-via-inundada-por-lluvias-en-villa-el-salvador-apuesplan-ultimas-noticia/",
-    "https://larepublica.pe/sociedad/2026/11/05/bus-de-el-rapido-queda-atascado-por-inundacion-en-villa-el-salvador-y-conductor-no-puede-salir-por-el-agua-168840"
-   ]
-  },
-  {
-   "date_status": "stated",
-   "day": "2026-11-05",
-   "district": "Villa El Salvador",
-   "location": "Bypass de 26 de Noviembre con Pachacútec",
-   "matches_review": null,
-   "point": null,
-   "urls": [
-    "https://elcomercio.pe/lima/sucesos/furgonetas-quedan-varadas-por-tratar-de-pasar-bypass-inundado-en-villa-el-salvador-tras-lluvias-apuesplan-ultimas-noticia/"
-   ]
-  },
-  {
-   "date_status": "stated",
-   "day": "2026-11-05",
-   "district": "Villa El Salvador",
-   "location": "Pasos a desnivel de la avenida El Sol",
-   "matches_review": null,
-   "point": null,
-   "urls": [
-    "https://elcomercio.pe/lima/sucesos/bus-de-la-empresa-el-rapido-queda-varado-en-via-inundada-por-lluvias-en-villa-el-salvador-apuesplan-ultimas-noticia/"
-   ]
-  },
-  {
-   "date_status": "stated",
-   "day": "2026-11-05",
-   "district": "Villa El Salvador",
-   "location": "Pasos a desnivel de la Av. Pachacútec",
-   "matches_review": null,
-   "point": null,
-   "urls": [
-    "https://elcomercio.pe/lima/sucesos/bus-de-la-empresa-el-rapido-queda-varado-en-via-inundada-por-lluvias-en-villa-el-salvador-apuesplan-ultimas-noticia/"
-   ]
-  },
-  {
-   "date_status": "stated",
-   "day": "2026-11-05",
-   "district": "Villa María del Triunfo",
-   "location": "Bypass de Av. Pachacútec con Av. 26 de Noviembre",
-   "matches_review": "vmt-bypass-pachacutec26-20261105",
-   "point": [
-    -76.94357,
-    -12.18042
-   ],
-   "urls": [
-    "https://caretas.pe/sociedad/emergencia-en-lima-sur-fuertes-lluvias-inundaciones-aniegos-y-decenas-de-familias-afectadas-senamhi/",
-    "https://caretas.pe/sociedad/villa-maria-del-triunfo-bypass-pachacutec-totalmente-inundado-tras-lluvias-intensas-en-lima/"
-   ]
-  },
-  {
-   "date_status": "stated",
-   "day": "2026-11-05",
-   "district": "Villa El Salvador",
-   "location": "Av. Separadora Industrial con Mateo Pumacahua",
-   "matches_review": null,
-   "point": [
-    -76.946602,
-    -12.185404
-   ],
-   "urls": [
-    "https://elcomercio.pe/lima/sucesos/villa-el-salvador-amanece-con-calles-inundadas-y-desagues-colapsados-por-lluvias-apuesplan-ultimas-noticia/"
-   ]
-  },
-  {
-   "date_status": "stated",
-   "day": "2026-11-05",
-   "district": "Villa El Salvador",
-   "location": "Bypass de Av. El Sol",
-   "matches_review": null,
-   "point": null,
-   "urls": [
-    "https://elcomercio.pe/lima/sucesos/villa-el-salvador-amanece-con-calles-inundadas-y-desagues-colapsados-por-lluvias-apuesplan-ultimas-noticia/"
-   ]
-  },
-  {
-   "date_status": "stated",
-   "day": "2026-11-05",
-   "district": "Villa El Salvador",
-   "location": "Intercambio de Av. Pachacútec",
-   "matches_review": null,
-   "point": null,
-   "urls": [
-    "https://elcomercio.pe/lima/sucesos/villa-el-salvador-amanece-con-calles-inundadas-y-desagues-colapsados-por-lluvias-apuesplan-ultimas-noticia/"
-   ]
-  },
-  {
-   "date_status": "publication_day",
-   "day": "2026-11-05",
-   "district": "Villa El Salvador",
-   "location": "Hospital de Emergencias Villa El Salvador",
-   "matches_review": "ves-hospital-emergencias-20261105",
-   "point": [
-    -76.934866,
-    -12.232083
-   ],
-   "urls": [
-    "https://www.defensoria.gob.pe/defensoria-del-pueblo-supervisa-atencion-de-aniegos-en-distritos-de-lima-metropolitana-y-solicita-medidas-urgentes-para-proteger-la-salud-de-la-poblacion/",
-    "https://www.infobae.com/peru/2026/11/05/las-lloviznas-en-lima-casi-igualan-un-record-de-1970-aniegos-vias-inundadas-y-desagues-colapsados-en-distritos-del-sur/"
-   ]
-  },
-  {
    "date_status": "publication_day",
    "day": "2026-11-06",
    "district": "Villa El Salvador",
@@ -191,31 +13,9 @@
    "urls": [
     "https://www.infobae.com/peru/2026/11/06/lluvias-en-lima-sur-por-que-cada-vez-la-zona-sur-de-la-capital-se-inunda-y-colapsan-los-desagues/"
    ]
-  },
-  {
-   "date_status": "publication_day",
-   "day": "2026-11-05",
-   "district": "Chorrillos",
-   "location": "Pasaje Los Gorriones, primera cuadra de la avenida Guardia Civil",
-   "matches_review": null,
-   "point": null,
-   "urls": [
-    "https://www.infobae.com/peru/2026/11/05/las-lloviznas-en-lima-casi-igualan-un-record-de-1970-aniegos-vias-inundadas-y-desagues-colapsados-en-distritos-del-sur/"
-   ]
-  },
-  {
-   "date_status": "publication_day",
-   "day": "2026-11-05",
-   "district": "Villa El Salvador",
-   "location": "Bypass de la av. Pachacútec",
-   "matches_review": null,
-   "point": null,
-   "urls": [
-    "https://www.infobae.com/peru/2026/11/05/las-lloviznas-en-lima-casi-igualan-un-record-de-1970-aniegos-vias-inundadas-y-desagues-colapsados-en-distritos-del-sur/"
-   ]
   }
  ],
- "generated_at": "2026-11-06T23:44:14.026589-05:00",
+ "generated_at": "2026-11-07T00:14:25.030086-05:00",
  "mode": "shadow_not_published",
  "model": "gpt-6-luna",
  "schema_version": 1,
@@ -524,7 +324,7 @@
    "district": "Villa El Salvador",
    "district_stated": null,
    "first_seen": "2026-11-06T14:41:59.308614-05:00",
-   "last_seen": "2026-11-06T23:44:14.026589-05:00",
+   "last_seen": "2026-11-07T00:14:25.030086-05:00",
    "location": "sector 1, grupo 1",
    "point": [
     -76.947216,
