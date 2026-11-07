@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T07:14:38.064135-05:00",
+  "generated_at": "2026-11-07T07:44:47.525979-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
@@ -361,24 +361,6 @@
         {
           "name": "elcomercio.pe",
           "url": "https://elcomercio.pe/lima/sucesos/bus-de-la-empresa-el-rapido-queda-varado-en-via-inundada-por-lluvias-en-villa-el-salvador-apuesplan-ultimas-noticia/"
-        }
-      ]
-    },
-    {
-      "id": -858515494674219,
-      "kind": "publication",
-      "district": "Villa El Salvador",
-      "location": "Publicación reciente · por verificar",
-      "summary": "Villa El Salvador amanece con calles inundadas y desagües colapsados por lluvias",
-      "date": "2026-11-05",
-      "expires_at": "2026-11-07T12:22:06+00:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
-      "sources": [
-        {
-          "name": "elcomercio.pe",
-          "url": "https://elcomercio.pe/lima/sucesos/villa-el-salvador-amanece-con-calles-inundadas-y-desagues-colapsados-por-lluvias-apuesplan-ultimas-noticia/"
         }
       ]
     },

@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
  "fuente": "https://portal.indeci.gob.pe/emergencias/",
- "generated_at": "2026-11-07T07:14:28.271809-05:00",
+ "generated_at": "2026-11-07T07:44:39.338107-05:00",
  "reportes": [
   {
    "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15483-4-11-2026-coen-indeci-2100-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-san-juan-de-miraflores-li/",
@@ -26,18 +26,6 @@
    "distrito": "Villa El Salvador",
    "pdf": "https://portal.indeci.gob.pe/wp-content/uploads/2026/11/REPORTE-COMPLEMENTARIO-N.º-15559-6NOV2026-INUNDACIÓN-POR-SATURACION-DEL-SUELO-EN-EL-DISTRITO-DE-VILLA-EL-SALVADOR-LIMA-5.pdf",
    "lugares": 5
-  },
-  {
-   "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15466-4-11-2026-coen-indeci-1330-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-villa-maria-del-triunfo-l/",
-   "titulo": "REPORTE COMPLEMENTARIO N.º 15558 – 6/11/2026 / COEN – INDECI / 05:50 HORAS (Reporte N.° 3) INUNDACIÓN POR SATURACIÓN DEL SUELO PARA DRENAJE (PLUVIAL) EN EL DISTRITO DE VILLA MARÍA DEL TRIUNFO – LIMA",
-   "tipo": "complementario",
-   "numero": "15558",
-   "reporte_n": 3,
-   "fecha": "2026-11-06T05:50:00-05:00",
-   "evento": "Inundación por saturación del suelo para drenaje (pluvial)",
-   "distrito": "Villa María del Triunfo",
-   "pdf": "https://portal.indeci.gob.pe/wp-content/uploads/2026/11/REPORTE-COMPLEMENTARIO-N.º-15558-6NOV2026-INUNDACIÓN-POR-SATURACION-DEL-SUELO-EN-EL-DISTRITO-DE-VILLA-MARIA-DEL-TRIUNFO-LIMA-3.pdf",
-   "lugares": 1
   }
  ],
  "incidentes": [
@@ -176,23 +164,6 @@
     }
    ],
    "summary": "Reporte complementario N.º 15559 del COEN-INDECI (06/11 06:10): inundación por saturación del suelo para drenaje (pluvial) en Villa El Salvador. El reporte menciona este lugar en las acciones de respuesta."
-  },
-  {
-   "coordinates": null,
-   "day": "2026-11-06",
-   "district": "Villa María del Triunfo",
-   "key": "indeci-8396d5000e-av-pachacutec-con-av-26-de-noviembre",
-   "location": "Av. Pachacútec con Av. 26 de noviembre",
-   "origen": "indeci",
-   "precision": "Sin punto verificado",
-   "seccion": "hechos",
-   "sources": [
-    {
-     "name": "COEN-INDECI · Reporte 15558, 06/11 05:50",
-     "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15466-4-11-2026-coen-indeci-1330-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-villa-maria-del-triunfo-l/"
-    }
-   ],
-   "summary": "Reporte complementario N.º 15558 del COEN-INDECI (06/11 05:50): inundación por saturación del suelo para drenaje (pluvial) en Villa María del Triunfo. El reporte menciona este lugar en los hechos."
   }
  ],
  "errores": []
