@@ -2593,6 +2593,110 @@
           "output_tokens": 170
         }
       }
+    },
+    "c055effd416059ef239e6d8a4779fe24ba7b82e77c5e6e108b6ff53672a3dd7b": {
+      "status": "success",
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "has_place": {
+            "type": "noul",
+            "noul": 0.05
+          },
+          "date_0": {
+            "type": "noul",
+            "noul": 0.12
+          },
+          "date_1": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "date_2": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "passage_0__observed": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "passage_0__historical": {
+            "type": "noul",
+            "noul": 0.17
+          },
+          "passage_0__water_present": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "passage_0__attended": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "passage_0__removal_work": {
+            "type": "noul",
+            "noul": 0.02
+          }
+        },
+        "usage": {
+          "input_tokens": 1932,
+          "output_tokens": 188
+        }
+      }
+    },
+    "eb7cc1e456676444a3ff6f191ce88c79f0a11e35569d5f0f4a2353f25789a1c0": {
+      "status": "success",
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "has_place": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "date_0": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "date_1": {
+            "type": "noul",
+            "noul": 0.04
+          },
+          "date_2": {
+            "type": "noul",
+            "noul": 0.09
+          },
+          "date_3": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "date_4": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "passage_0__observed": {
+            "type": "noul",
+            "noul": 0.05
+          },
+          "passage_0__historical": {
+            "type": "noul",
+            "noul": 0.23
+          },
+          "passage_0__water_present": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "passage_0__attended": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "passage_0__removal_work": {
+            "type": "noul",
+            "noul": 0.02
+          }
+        },
+        "usage": {
+          "input_tokens": 3437,
+          "output_tokens": 224
+        }
+      }
     }
   },
   "attempts": [
@@ -3013,6 +3117,20 @@
       "committed_usd": 9.298800000000001e-05,
       "status": "success",
       "sha256": "7370a629dda4aff862a816ce7cfb9496ed26343b658990d8e26e81abbc41d2d4"
+    },
+    {
+      "day": "2026-11-08",
+      "run": "2026-11-08T09:15-05:00",
+      "committed_usd": 8.114400000000001e-05,
+      "status": "success",
+      "sha256": "c055effd416059ef239e6d8a4779fe24ba7b82e77c5e6e108b6ff53672a3dd7b"
+    },
+    {
+      "day": "2026-11-08",
+      "run": "2026-11-08T09:15-05:00",
+      "committed_usd": 0.00014435400000000002,
+      "status": "success",
+      "sha256": "eb7cc1e456676444a3ff6f191ce88c79f0a11e35569d5f0f4a2353f25789a1c0"
     }
   ]
 }
