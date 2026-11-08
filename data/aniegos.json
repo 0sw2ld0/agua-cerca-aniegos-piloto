@@ -1,9 +1,27 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-08T08:23:02.189801-05:00",
+  "generated_at": "2026-11-08T08:46:05.845363-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
+    {
+      "id": -4225504198385824,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Estos 21 bypasses de Lima podrían inundarse por las lluvias intensas de El Niño, advierte Cenepred",
+      "date": "2026-11-08",
+      "expires_at": "2026-11-10T13:32:44+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "larepublica.pe",
+          "url": "https://larepublica.pe/sociedad/2026/11/08/estos-21-bypasses-de-lima-podrian-inundarse-por-las-lluvias-intensas-de-el-nino-advierte-cenepred-254968"
+        }
+      ]
+    },
     {
       "id": -464555226616018,
       "kind": "publication",

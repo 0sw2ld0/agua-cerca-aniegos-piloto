@@ -949,6 +949,269 @@
    "text_sha": "c709b96d5e201d626093a03ac730e3e32a954eb609b224d63ae0c186b630e67e",
    "title": "Lluvias en Áncash: calles inundadas y daños en viviendas dejan precipitaciones intensas en Huaraz"
   },
+  "https://larepublica.pe/sociedad/2026/11/08/estos-21-bypasses-de-lima-podrian-inundarse-por-las-lluvias-intensas-de-el-nino-advierte-cenepred-254968": {
+   "checked_at": "2026-11-08T08:46:07.003889-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Avenida Javier Prado - Vía Expresa",
+      "location_quote": "Avenida Javier Prado - Vía Expresa",
+      "summary": "Figura entre las estructuras con alta probabilidad de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Avenida Javier Prado Este - avenida José Gálvez Barrenechea",
+      "location_quote": "Avenida Javier Prado Este - avenida José Gálvez Barrenechea",
+      "summary": "Figura entre las estructuras con alta probabilidad de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Avenida Panamericana Norte - avenida San Juan de Dios",
+      "location_quote": "Avenida Panamericana Norte - avenida San Juan de Dios",
+      "summary": "Figura entre las estructuras con alta probabilidad de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Avenida Separadora Industrial - Juan Velasco Alvarado",
+      "location_quote": "Avenida Separadora Industrial - Juan Velasco Alvarado",
+      "summary": "Figura entre las estructuras con alta probabilidad de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Avenida Universitaria - avenida Panamericana Norte",
+      "location_quote": "Avenida Universitaria - avenida Panamericana Norte",
+      "summary": "Figura entre las estructuras con alta probabilidad de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Avenida Universitaria - Vía Expresa Línea Amarilla",
+      "location_quote": "Avenida Universitaria - Vía Expresa Línea Amarilla",
+      "summary": "Figura entre las estructuras con alta probabilidad de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Bajada de la avenida Malecón",
+      "location_quote": "Bajada de la avenida Malecón",
+      "summary": "La bajada aparece entre los puntos con riesgo de inundación por las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Bypass de la avenida 28 de Julio - avenida Arequipa",
+      "location_quote": "Bypass de la avenida 28 de Julio - avenida Arequipa",
+      "summary": "Figura entre las estructuras con alta probabilidad de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Bypass de la avenida 28 de Julio - Vía Expresa",
+      "location_quote": "Bypass de la avenida 28 de Julio - Vía Expresa",
+      "summary": "Figura entre las estructuras con alta probabilidad de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Bypass de la avenida Alfonso Ugarte - avenida Argentina",
+      "location_quote": "Bypass de la avenida Alfonso Ugarte - avenida Argentina",
+      "summary": "Figura entre las estructuras con alta probabilidad de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Bypass de la avenida Angamos Este - San Luis",
+      "location_quote": "Bypass de la avenida Angamos Este - San Luis",
+      "summary": "Figura entre las estructuras con alta probabilidad de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Bypass de la avenida Benavides - Panamericana Sur",
+      "location_quote": "Bypass de la avenida Benavides - Panamericana Sur",
+      "summary": "Figura entre las estructuras con alta probabilidad de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Bypass de la avenida Brasil - La Marina",
+      "location_quote": "Bypass de la avenida Brasil - La Marina",
+      "summary": "Figura entre las estructuras con alta probabilidad de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Bypass de la avenida Brigadier Mateo Pumacahua - Panamericana Sur",
+      "location_quote": "Bypass de la avenida Brigadier Mateo Pumacahua - Panamericana Sur",
+      "summary": "Figura entre las estructuras con alta probabilidad de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Bypass de la avenida Javier Prado - Arequipa",
+      "location_quote": "Bypass de la avenida Javier Prado - Arequipa",
+      "summary": "Figura entre las estructuras con alta probabilidad de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Bypass de la avenida México - Vía Expresa",
+      "location_quote": "Bypass de la avenida México - Vía Expresa",
+      "summary": "Figura entre las estructuras con alta probabilidad de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Bypass de la avenida Tingo María - avenida Venezuela",
+      "location_quote": "Bypass de la avenida Tingo María - avenida Venezuela",
+      "summary": "Figura entre las estructuras con alta probabilidad de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Bypass Néstor Gambetta - Aeropuerto",
+      "location_quote": "Bypass Néstor Gambetta - Aeropuerto",
+      "summary": "Figura entre las estructuras con alta probabilidad de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Óvalo Pachacútec (Real Plaza) - avenida 26 de Noviembre",
+      "location_quote": "Óvalo Pachacútec (Real Plaza) - avenida 26 de Noviembre",
+      "summary": "El óvalo consta entre los puntos con riesgo de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Vía de Evitamiento - avenida Prolongación Tacna",
+      "location_quote": "Vía de Evitamiento - avenida Prolongación Tacna",
+      "summary": "Figura entre las estructuras con alta probabilidad de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "",
+      "explicit_date": "",
+      "location": "Vía Nuevo Aeropuerto",
+      "location_quote": "Vía Nuevo Aeropuerto",
+      "summary": "La vía aparece entre los puntos con riesgo de inundación ante las lluvias previstas.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-08T13:32:44+00:00",
+   "text_sha": "a432ac856176b39c428ffa824980a47f0ca679ebf2edb3552b7e9ff8cd5d7756",
+   "title": "Estos 21 bypasses de Lima podrían inundarse por las lluvias intensas de El Niño, advierte Cenepred"
+  },
   "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -1492,6 +1755,14 @@
    "input_tokens": 1044,
    "output_tokens": 843,
    "run": "2026-11-08T08:15-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0012992,
+   "day": "2026-11-08",
+   "input_tokens": 2027,
+   "output_tokens": 2193,
+   "run": "2026-11-08T08:46-05:00",
    "status": "success"
   }
  ],
