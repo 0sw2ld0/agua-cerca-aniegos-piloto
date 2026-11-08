@@ -1,21 +1,6 @@
 {
- "current": [
-  {
-   "date_status": "publication_day",
-   "day": "2026-11-06",
-   "district": "Villa El Salvador",
-   "location": "sector 1, grupo 1",
-   "matches_review": "ves-sector1-grupo1-20261106",
-   "point": [
-    -76.947216,
-    -12.187293
-   ],
-   "urls": [
-    "https://www.infobae.com/peru/2026/11/06/lluvias-en-lima-sur-por-que-cada-vez-la-zona-sur-de-la-capital-se-inunda-y-colapsan-los-desagues/"
-   ]
-  }
- ],
- "generated_at": "2026-11-07T23:45:23.851889-05:00",
+ "current": [],
+ "generated_at": "2026-11-08T00:15:23.007937-05:00",
  "mode": "shadow_not_published",
  "model": "gpt-6-luna",
  "schema_version": 1,

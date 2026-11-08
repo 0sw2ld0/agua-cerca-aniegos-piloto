@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
  "fuente": "CENEPRED / SIGRID",
- "generated_at": "2026-11-07T23:45:22.585613-05:00",
+ "generated_at": "2026-11-08T00:15:22.128291-05:00",
  "lista": "https://sigrid.cenepred.gob.pe/sigridv3/escenarios/lbam",
  "escenarios": [
   {
@@ -45,7 +45,7 @@
    "inicio": "2026-11-08T00:00:00-05:00",
    "fin": "2026-11-10T00:00:00-05:00",
    "documento": "https://sigrid.cenepred.gob.pe/sigridv3/documento/23331",
-   "estado": "proximo",
+   "estado": "vigente",
    "distritos": 194,
    "niveles": {
     "Alto": 111,
