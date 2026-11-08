@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-08T10:16:13.743057-05:00",
+  "generated_at": "2026-11-08T10:46:02.629835-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
@@ -41,6 +41,24 @@
       ]
     },
     {
+      "id": -1334820898736118,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Estos son los 116 distritos de Lima y Callao expuestos a inundaciones y huaicos por El Niño costero: ¿qué deben hacer las municipalidades?",
+      "date": "2026-11-08",
+      "expires_at": "2026-11-10T15:39:51+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "elcomercio.pe",
+          "url": "https://elcomercio.pe/lima/sucesos/estos-son-los-116-distritos-de-lima-y-callao-expuestos-a-inundaciones-y-huaicos-por-el-nino-costero-que-deben-hacer-las-municipalidades-apuesplan-noticia/"
+        }
+      ]
+    },
+    {
       "id": -4103614806204810,
       "kind": "publication",
       "district": "Lima Metropolitana",
@@ -55,42 +73,6 @@
         {
           "name": "elcomercio.pe",
           "url": "https://elcomercio.pe/lima/lima-sur-bajo-el-agua-por-que-las-lluvias-se-concentran-en-esta-zona-y-no-en-el-norte-y-como-se-explican-los-65-puntos-de-inundacion-apuesplan-noticia/"
-        }
-      ]
-    },
-    {
-      "id": -1334820898736118,
-      "kind": "publication",
-      "district": "Lima Metropolitana",
-      "location": "Publicación reciente · por verificar",
-      "summary": "Estos son los 116 distritos de Lima y Callao expuestos a inundaciones y huaicos por El Niño costero: ¿qué deben hacer las municipalidades?",
-      "date": "2026-11-07",
-      "expires_at": "2026-11-09T14:44:37+00:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
-      "sources": [
-        {
-          "name": "elcomercio.pe",
-          "url": "https://elcomercio.pe/lima/sucesos/estos-son-los-116-distritos-de-lima-y-callao-expuestos-a-inundaciones-y-huaicos-por-el-nino-costero-que-deben-hacer-las-municipalidades-apuesplan-noticia/"
-        }
-      ]
-    },
-    {
-      "id": -645810520340941,
-      "kind": "publication",
-      "district": "Lima Metropolitana",
-      "location": "Publicación reciente · por verificar",
-      "summary": "Lluvias en Lima: 20 de los 33 bypasses evaluados por Cenepred presentan riesgo de inundación",
-      "date": "2026-11-06",
-      "expires_at": "2026-11-08T15:30:14+00:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
-      "sources": [
-        {
-          "name": "elcomercio.pe",
-          "url": "https://elcomercio.pe/lima/transporte/lluvias-en-lima-20-de-los-33-bypasses-evaluados-por-cenepred-presentan-riesgo-de-inundacion-noticia/"
         }
       ]
     }
