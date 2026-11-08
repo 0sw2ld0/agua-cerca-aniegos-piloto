@@ -916,6 +916,16 @@
    "text_sha": "db2d48d940e5b48564679368b532d43db92cefdb256aeaefddc9a0b3ab6fc2ae",
    "title": "Aeropuerto Jorge Chávez: LAP alerta riesgo de inundaciones por crecida del río Rímac"
   },
+  "https://larepublica.pe/sociedad/2026/11/07/lluvias-en-ancash-calles-inundadas-y-danos-en-viviendas-dejan-precipitaciones-intensas-en-huaraz-390852": {
+   "checked_at": "2026-11-07T19:42:06.851627-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-07T17:07:50+00:00",
+   "text_sha": "c709b96d5e201d626093a03ac730e3e32a954eb609b224d63ae0c186b630e67e",
+   "title": "Lluvias en Áncash: calles inundadas y daños en viviendas dejan precipitaciones intensas en Huaraz"
+  },
   "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -1443,6 +1453,14 @@
    "day": "2026-11-06",
    "input_tokens": 1771,
    "output_tokens": 2191,
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001645,
+   "day": "2026-11-07",
+   "input_tokens": 1415,
+   "output_tokens": 46,
+   "run": "2026-11-07T19:42-05:00",
    "status": "success"
   }
  ],
