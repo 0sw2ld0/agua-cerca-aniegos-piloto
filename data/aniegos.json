@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-08T10:46:02.629835-05:00",
+  "generated_at": "2026-11-08T11:16:07.544438-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
@@ -23,29 +23,11 @@
       ]
     },
     {
-      "id": -464555226616018,
-      "kind": "publication",
-      "district": "Lima Metropolitana",
-      "location": "Publicación reciente · por verificar",
-      "summary": "Lluvias en Lima: conoce los 21 bypass con riesgo de aniego por falta de drenaje",
-      "date": "2026-11-08",
-      "expires_at": "2026-11-10T07:45:00-05:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
-      "sources": [
-        {
-          "name": "andina.pe",
-          "url": "https://andina.pe/agencia/noticia-lluvias-lima-conoce-los-21-bypass-riesgo-aniego-falta-drenaje-1098769.aspx"
-        }
-      ]
-    },
-    {
       "id": -1334820898736118,
       "kind": "publication",
       "district": "Lima Metropolitana",
       "location": "Publicación reciente · por verificar",
-      "summary": "Estos son los 116 distritos de Lima y Callao expuestos a inundaciones y huaicos por El Niño costero: ¿qué deben hacer las municipalidades?",
+      "summary": "Estos son los 116 distritos de Lima Metropolitana, Lima Provincias y el Callao expuestos a inundaciones y huaicos por El Niño costero",
       "date": "2026-11-08",
       "expires_at": "2026-11-10T15:39:51+00:00",
       "status": "Fecha del hecho por verificar",
@@ -73,6 +55,24 @@
         {
           "name": "elcomercio.pe",
           "url": "https://elcomercio.pe/lima/lima-sur-bajo-el-agua-por-que-las-lluvias-se-concentran-en-esta-zona-y-no-en-el-norte-y-como-se-explican-los-65-puntos-de-inundacion-apuesplan-noticia/"
+        }
+      ]
+    },
+    {
+      "id": -464555226616018,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Lluvias en Lima: conoce los 21 bypass con riesgo de aniego por falta de drenaje",
+      "date": "2026-11-08",
+      "expires_at": "2026-11-10T07:45:00-05:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "andina.pe",
+          "url": "https://andina.pe/agencia/noticia-lluvias-lima-conoce-los-21-bypass-riesgo-aniego-falta-drenaje-1098769.aspx"
         }
       ]
     }
