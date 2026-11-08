@@ -1,5 +1,28 @@
 {
  "articles": {
+  "https://andina.pe/agencia/noticia-lluvias-lima-conoce-los-21-bypass-riesgo-aniego-falta-drenaje-1098769.aspx": {
+   "checked_at": "2026-11-08T08:15:57.009952-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "",
+      "district_quote": "en el límite de los distritos de Villa María del Triunfo y Villa El Salvador",
+      "explicit_date": "",
+      "location": "avenida 26 de Noviembre con bypass Pachacútec",
+      "location_quote": "el cruce de la avenida 26 de Noviembre con el bypass Pachacútec",
+      "summary": "El cruce se inunda de forma recurrente cuando las lloviznas persistentes acumulan agua; la nota lo presenta como un punto con riesgo de aniego.",
+      "timing": "forecast_or_risk",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-08T07:45:00-05:00",
+   "text_sha": "5de73ea9b76bf2e0d589ebc0c0f4a3fb27dc85c2747ea7fd1afaa5d60b6f97e8",
+   "title": "Lluvias en Lima: conoce los 21 bypass con riesgo de aniego por falta de drenaje"
+  },
   "https://caretas.pe/sociedad/aeropuerto-jorge-chavez-en-riesgo-de-inundacion-por-posible-desborde-del-rio-rimac-alerta-lap/": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -1461,6 +1484,14 @@
    "input_tokens": 1415,
    "output_tokens": 46,
    "run": "2026-11-07T19:42-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0005259,
+   "day": "2026-11-08",
+   "input_tokens": 1044,
+   "output_tokens": 843,
+   "run": "2026-11-08T08:15-05:00",
    "status": "success"
   }
  ],
