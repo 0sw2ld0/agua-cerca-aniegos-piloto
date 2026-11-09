@@ -197,6 +197,16 @@
    "text_sha": "38250c3f60fee2a2d83c924a5e8f941114bb6b3c9684b38e4d878e1ae2ba9aaa",
    "title": "Se implementó en 36 horas y terminó inundado en un día: el fiasco del hospital de campaña del gobierno de Keiko Fujimori en Tumbes (VIDEO)"
   },
+  "https://elbuho.pe/2026/11/video-viral-de-inundaciones-en-tumbes-corresponde-a-abril-de-2025-y-no-a-la-emergencia-actual/": {
+   "checked_at": "2026-11-09T12:48:15.013557-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-09T17:30:24+00:00",
+   "text_sha": "0950b795cea0f6fb797f3dd625141da6a23ea9c10ba41693d61c4e905b1b870f",
+   "title": "Video viral de inundaciones en Tumbes corresponde a abril de 2025 y no a la emergencia actual"
+  },
   "https://elcomercio.pe/lima/lima-sur-bajo-el-agua-por-que-las-lluvias-se-concentran-en-esta-zona-y-no-en-el-norte-y-como-se-explican-los-65-puntos-de-inundacion-apuesplan-noticia/": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -1771,6 +1781,14 @@
    "input_tokens": 2584,
    "output_tokens": 1279,
    "run": "2026-11-08T10:46-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.000224,
+   "day": "2026-11-09",
+   "input_tokens": 2005,
+   "output_tokens": 47,
+   "run": "2026-11-09T12:48-05:00",
    "status": "success"
   }
  ],
