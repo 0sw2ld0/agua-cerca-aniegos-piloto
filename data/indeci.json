@@ -64,5 +64,11 @@
    "summary": "Reporte complementario N.º 15669 del COEN-INDECI (08/11 21:20): lluvias intensas en Villa María del Triunfo."
   }
  ],
- "errores": []
+ "errores": [
+  {
+   "etapa": "portada",
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>"
+  }
+ ],
+ "checked_at": "2026-11-09T17:18:25.273361-05:00"
 }
