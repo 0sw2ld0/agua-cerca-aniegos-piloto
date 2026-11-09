@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-09T14:18:53.661008-05:00",
+  "generated_at": "2026-11-09T14:48:24.640836-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
@@ -73,24 +73,6 @@
         {
           "name": "elcomercio.pe",
           "url": "https://elcomercio.pe/lima/sucesos/estos-son-los-116-distritos-de-lima-y-callao-expuestos-a-inundaciones-y-huaicos-por-el-nino-costero-que-deben-hacer-las-municipalidades-apuesplan-noticia/"
-        }
-      ]
-    },
-    {
-      "id": -4103614806204810,
-      "kind": "publication",
-      "district": "Lima Metropolitana",
-      "location": "Publicación reciente · por verificar",
-      "summary": "Lima Sur bajo el agua: ¿por qué las lluvias se concentran en esta zona y no en el norte y cómo se explican los 65 puntos de inundación?  ",
-      "date": "2026-11-07",
-      "expires_at": "2026-11-09T19:25:00+00:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
-      "sources": [
-        {
-          "name": "elcomercio.pe",
-          "url": "https://elcomercio.pe/lima/lima-sur-bajo-el-agua-por-que-las-lluvias-se-concentran-en-esta-zona-y-no-en-el-norte-y-como-se-explican-los-65-puntos-de-inundacion-apuesplan-noticia/"
         }
       ]
     },
