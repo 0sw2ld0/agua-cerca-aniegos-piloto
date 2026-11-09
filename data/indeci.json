@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
  "fuente": "https://portal.indeci.gob.pe/emergencias/",
- "generated_at": "2026-11-09T08:47:42.716173-05:00",
+ "generated_at": "2026-11-09T09:17:47.022902-05:00",
  "reportes": [
   {
    "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-12039-10-9-2026-coen-indeci-0210-horas-reporte-n-1-lluvias-intensas-en-el-distrito-de-villa-maria-del-triunfo-lima/",
@@ -30,21 +30,21 @@
  ],
  "incidentes": [
   {
-   "key": "indeci-697056bc5f-distrito",
-   "district": "Villa María del Triunfo",
-   "location": "Villa María del Triunfo · ver reporte",
-   "summary": "Reporte complementario N.º 15686 del COEN-INDECI (09/11 07:20): lluvias intensas en Villa María del Triunfo.",
-   "day": "2026-11-09",
    "coordinates": null,
+   "day": "2026-11-09",
+   "district": "Villa María del Triunfo",
+   "key": "indeci-697056bc5f-distrito",
+   "location": "Villa María del Triunfo · ver reporte",
+   "origen": "indeci",
    "precision": "Sin lugar específico en el reporte",
+   "seccion": "distrito",
    "sources": [
     {
      "name": "COEN-INDECI · Reporte 15686, 09/11 07:20",
      "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-12039-10-9-2026-coen-indeci-0210-horas-reporte-n-1-lluvias-intensas-en-el-distrito-de-villa-maria-del-triunfo-lima/"
     }
    ],
-   "origen": "indeci",
-   "seccion": "distrito"
+   "summary": "Reporte complementario N.º 15686 del COEN-INDECI (09/11 07:20): lluvias intensas en Villa María del Triunfo."
   },
   {
    "coordinates": null,
