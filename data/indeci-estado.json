@@ -1,4 +1,28 @@
 {
- "pdfs": {},
+ "pdfs": {
+  "https://portal.indeci.gob.pe/wp-content/uploads/2026/08/REPORTE-COMPLEMENTARIO-N.º-15669-8NOV2026-LLUVIAS-INTENSAS-EN-EL-DISTRITO-DE-VILLA-MARÍA-DEL-TRIUNFO-LIMA-5.pdf": {
+   "incidentes": [
+    {
+     "coordinates": null,
+     "day": "2026-11-08",
+     "district": "Villa María del Triunfo",
+     "key": "indeci-3b48dca090-distrito",
+     "location": "Villa María del Triunfo · ver reporte",
+     "origen": "indeci",
+     "precision": "Sin lugar específico en el reporte",
+     "seccion": "distrito",
+     "sources": [
+      {
+       "name": "COEN-INDECI · Reporte 15669, 08/11 21:20",
+       "url": "https://portal.indeci.gob.pe/emergencias/reporte-preliminar-n-o-0745-17-8-2026-coen-indeci-0325-horas-lluvias-intensas-en-el-distrito-de-villa-maria-del-triunfo-lima/"
+      }
+     ],
+     "summary": "Reporte complementario N.º 15669 del COEN-INDECI (08/11 21:20): lluvias intensas en Villa María del Triunfo."
+    }
+   ],
+   "leido": "2026-11-08T22:16:55.395515-05:00",
+   "texto_sha": "b0096c3b59477a26022f006343c3bee6ab38d6d1afb5c898cbf2b82ce174bceb"
+  }
+ },
  "schema_version": 1
 }
