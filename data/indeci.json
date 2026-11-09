@@ -1,8 +1,20 @@
 {
  "schema_version": 1,
  "fuente": "https://portal.indeci.gob.pe/emergencias/",
- "generated_at": "2026-11-09T08:17:32.703179-05:00",
+ "generated_at": "2026-11-09T08:47:42.716173-05:00",
  "reportes": [
+  {
+   "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-12039-10-9-2026-coen-indeci-0210-horas-reporte-n-1-lluvias-intensas-en-el-distrito-de-villa-maria-del-triunfo-lima/",
+   "titulo": "REPORTE COMPLEMENTARIO N.º 15686 – 9/11/2026 / COEN – INDECI / 07:20 HORAS (Reporte N.° 3) LLUVIAS INTENSAS EN EL DISTRITO DE VILLA MARÍA DEL TRIUNFO – LIMA",
+   "tipo": "complementario",
+   "numero": "15686",
+   "reporte_n": 3,
+   "fecha": "2026-11-09T07:20:00-05:00",
+   "evento": "Lluvias intensas",
+   "distrito": "Villa María del Triunfo",
+   "pdf": "https://portal.indeci.gob.pe/wp-content/uploads/2026/09/REPORTE-COMPLEMENTARIO-N.º-15686-9NOV2026-LLUVIAS-INTENSAS-EN-EL-DISTRITO-DE-VILLA-MARIA-DEL-TRIUNFO-LIMA-3.pdf",
+   "lugares": 1
+  },
   {
    "url": "https://portal.indeci.gob.pe/emergencias/reporte-preliminar-n-o-0745-17-8-2026-coen-indeci-0325-horas-lluvias-intensas-en-el-distrito-de-villa-maria-del-triunfo-lima/",
    "titulo": "REPORTE COMPLEMENTARIO N.º 15669 – 8/11/2026/ COEN – INDECI / 21:20 HORAS (Reporte N.° 5) LLUVIAS INTENSAS EN EL DISTRITO DE VILLA MARÍA DEL TRIUNFO – LIMA",
@@ -17,6 +29,23 @@
   }
  ],
  "incidentes": [
+  {
+   "key": "indeci-697056bc5f-distrito",
+   "district": "Villa María del Triunfo",
+   "location": "Villa María del Triunfo · ver reporte",
+   "summary": "Reporte complementario N.º 15686 del COEN-INDECI (09/11 07:20): lluvias intensas en Villa María del Triunfo.",
+   "day": "2026-11-09",
+   "coordinates": null,
+   "precision": "Sin lugar específico en el reporte",
+   "sources": [
+    {
+     "name": "COEN-INDECI · Reporte 15686, 09/11 07:20",
+     "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-12039-10-9-2026-coen-indeci-0210-horas-reporte-n-1-lluvias-intensas-en-el-distrito-de-villa-maria-del-triunfo-lima/"
+    }
+   ],
+   "origen": "indeci",
+   "seccion": "distrito"
+  },
   {
    "coordinates": null,
    "day": "2026-11-08",
