@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T10:19:38.971749-05:00",
+  "generated_at": "2026-11-10T10:49:43.239972-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
@@ -37,24 +37,6 @@
         {
           "name": "elcomercio.pe",
           "url": "https://elcomercio.pe/lima/sucesos/calles-de-villa-el-salvador-y-distritos-de-lima-sur-sufren-aniegos-por-lluvias-durante-la-madrugada-ultimas-noticia/"
-        }
-      ]
-    },
-    {
-      "id": -1334820898736118,
-      "kind": "publication",
-      "district": "Lima Metropolitana",
-      "location": "Publicación reciente · por verificar",
-      "summary": "Estos son los 116 distritos de Lima Metropolitana, Lima Provincias y el Callao expuestos a inundaciones y huaicos por El Niño costero",
-      "date": "2026-11-08",
-      "expires_at": "2026-11-10T15:39:51+00:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
-      "sources": [
-        {
-          "name": "elcomercio.pe",
-          "url": "https://elcomercio.pe/lima/sucesos/estos-son-los-116-distritos-de-lima-y-callao-expuestos-a-inundaciones-y-huaicos-por-el-nino-costero-que-deben-hacer-las-municipalidades-apuesplan-noticia/"
         }
       ]
     }
