@@ -187,6 +187,16 @@
    "text_sha": "9a0e732e6bb9ad25444ae8371194141fd17322d0700d975ff205e3cef9f4df2a",
    "title": "Villa María del Triunfo: bypass Pachacútec totalmente inundado tras lluvias intensas en Lima"
   },
+  "https://elbuho.pe/2026/11/preocupante-vecinos-de-jaen-exigen-solucion-ante-constantes-colapsos-de-desague-en-camal-municipal/": {
+   "checked_at": "2026-11-10T11:49:56.339154-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-10T16:23:16+00:00",
+   "text_sha": "fb7e3bdfda8f0241818b86a2e712e68538b67acdcd31fcfd1927900e27ce06f4",
+   "title": "¡Preocupante! Vecinos de Jaén exigen solución ante constantes colapsos de desagüe en Camal Municipal"
+  },
   "https://elbuho.pe/2026/11/se-implemento-en-36-horas-y-termino-inundado-en-un-dia-el-fiasco-del-hospital-de-campana-del-gobierno-de-keiko-fujimori-en-tumbes-video/": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -1820,6 +1830,14 @@
    "input_tokens": 1345,
    "output_tokens": 605,
    "run": "2026-11-10T08:49-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001403,
+   "day": "2026-11-10",
+   "input_tokens": 1228,
+   "output_tokens": 35,
+   "run": "2026-11-10T11:49-05:00",
    "status": "success"
   }
  ],
