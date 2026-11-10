@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T07:49:34.221812-05:00",
+  "generated_at": "2026-11-10T08:19:35.602879-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
@@ -23,24 +23,6 @@
       ]
     },
     {
-      "id": -4225504198385824,
-      "kind": "publication",
-      "district": "Lima Metropolitana",
-      "location": "Publicación reciente · por verificar",
-      "summary": "Estos 21 bypasses de Lima podrían inundarse por las lluvias intensas de El Niño, advierte Cenepred",
-      "date": "2026-11-08",
-      "expires_at": "2026-11-10T13:32:44+00:00",
-      "status": "Fecha del hecho por verificar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
-      "sources": [
-        {
-          "name": "larepublica.pe",
-          "url": "https://larepublica.pe/sociedad/2026/11/08/estos-21-bypasses-de-lima-podrian-inundarse-por-las-lluvias-intensas-de-el-nino-advierte-cenepred-254968"
-        }
-      ]
-    },
-    {
       "id": -1334820898736118,
       "kind": "publication",
       "district": "Lima Metropolitana",
@@ -55,6 +37,24 @@
         {
           "name": "elcomercio.pe",
           "url": "https://elcomercio.pe/lima/sucesos/estos-son-los-116-distritos-de-lima-y-callao-expuestos-a-inundaciones-y-huaicos-por-el-nino-costero-que-deben-hacer-las-municipalidades-apuesplan-noticia/"
+        }
+      ]
+    },
+    {
+      "id": -4225504198385824,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Estos 21 bypasses de Lima podrían inundarse por las lluvias intensas de El Niño, advierte Cenepred",
+      "date": "2026-11-08",
+      "expires_at": "2026-11-10T13:32:44+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "larepublica.pe",
+          "url": "https://larepublica.pe/sociedad/2026/11/08/estos-21-bypasses-de-lima-podrian-inundarse-por-las-lluvias-intensas-de-el-nino-advierte-cenepred-254968"
         }
       ]
     }
