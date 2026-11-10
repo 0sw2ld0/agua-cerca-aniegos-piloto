@@ -385,6 +385,29 @@
    "text_sha": "ce2bcdef051b797b83e078408d324b1dbe64b37329b21d6fec1917abc46bd6c2",
    "title": "Bus de la empresa El Rápido queda varado en vía inundada por lluvias en Villa El Salvador"
   },
+  "https://elcomercio.pe/lima/sucesos/calles-de-villa-el-salvador-y-distritos-de-lima-sur-sufren-aniegos-por-lluvias-durante-la-madrugada-ultimas-noticia/": {
+   "checked_at": "2026-11-10T08:49:40.251561-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "madrugada de hoy, 10 de noviembre",
+      "date_relation": "same_day_as_publication",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "",
+      "location": "Villa El Salvador",
+      "location_quote": "calles de Villa El Salvador",
+      "summary": "Las lluvias acumularon agua en calles del distrito durante la noche del 9 y la madrugada del 10 de noviembre, dificultando el tránsito de peatones y vehículos.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-10T13:30:27+00:00",
+   "text_sha": "a47053070092e06af29038859aa1e3023e28623f9faf3f32acc4ea78acbf47e2",
+   "title": "Calles de Villa El Salvador y distritos de Lima Sur sufren aniegos por lluvias durante la madrugada"
+  },
   "https://elcomercio.pe/lima/sucesos/estos-son-los-116-distritos-de-lima-y-callao-expuestos-a-inundaciones-y-huaicos-por-el-nino-costero-que-deben-hacer-las-municipalidades-apuesplan-noticia/": {
    "checked_at": "2026-11-08T10:46:03.660938-05:00",
    "extraction": {
@@ -1789,6 +1812,14 @@
    "input_tokens": 2005,
    "output_tokens": 47,
    "run": "2026-11-09T12:48-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.000437,
+   "day": "2026-11-10",
+   "input_tokens": 1345,
+   "output_tokens": 605,
+   "run": "2026-11-10T08:49-05:00",
    "status": "success"
   }
  ],
