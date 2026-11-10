@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
  "fuente": "CENEPRED / SIGRID",
- "generated_at": "2026-11-09T23:48:41.389916-05:00",
+ "generated_at": "2026-11-10T00:19:38.871330-05:00",
  "lista": "https://sigrid.cenepred.gob.pe/sigridv3/escenarios/lbam",
  "escenarios": [
   {
@@ -36,35 +36,6 @@
     "PUNO",
     "TACNA",
     "TUMBES"
-   ]
-  },
-  {
-   "id": "1137",
-   "aviso": "457",
-   "ambito": "SELVA",
-   "inicio": "2026-11-08T00:00:00-05:00",
-   "fin": "2026-11-10T00:00:00-05:00",
-   "documento": "https://sigrid.cenepred.gob.pe/sigridv3/documento/23331",
-   "estado": "vigente",
-   "distritos": 194,
-   "niveles": {
-    "Alto": 111,
-    "Muy alto": 33,
-    "Medio": 43,
-    "Bajo": 7
-   },
-   "descargado": "2026-11-06T16:09:20.562503-05:00",
-   "departamentos": [
-    "AYACUCHO",
-    "CUSCO",
-    "HUANUCO",
-    "JUNIN",
-    "LORETO",
-    "MADRE DE DIOS",
-    "PASCO",
-    "PUNO",
-    "SAN MARTIN",
-    "UCAYALI"
    ]
   }
  ],
