@@ -12,7 +12,7 @@
    ]
   }
  ],
- "generated_at": "2026-11-11T14:21:58.523740-05:00",
+ "generated_at": "2026-11-11T14:52:11.444466-05:00",
  "mode": "shadow_not_published",
  "model": "gpt-6-luna",
  "schema_version": 1,
@@ -339,7 +339,7 @@
    "district": "Villa María del Triunfo",
    "district_stated": null,
    "first_seen": "2026-11-11T12:51:56.449758-05:00",
-   "last_seen": "2026-11-11T14:21:58.523740-05:00",
+   "last_seen": "2026-11-11T14:52:11.444466-05:00",
    "location": "baipás Nueva Esperanza",
    "point": null,
    "rule": null,
