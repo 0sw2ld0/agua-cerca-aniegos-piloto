@@ -70,6 +70,29 @@
    "text_sha": "539e0088366269ee8dbb74faed02a0b3a3d895bb7a7d2e12d8d041a47519813f",
    "title": "Aeropuerto Jorge Chávez en riesgo de inundación por posible desborde del río Rímac: alerta LAP"
   },
+  "https://caretas.pe/sociedad/baipas-nueva-esperanza-queda-cerrado-en-vmt-por-aniegos-municipalidad-de-lima-inicia-trabajos-de-rehabilitacion/": {
+   "checked_at": "2026-11-11T12:51:56.449758-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "este miércoles",
+      "date_relation": "same_day_as_publication",
+      "district": "Villa María del Triunfo",
+      "district_quote": "Villa María del Triunfo",
+      "explicit_date": "",
+      "location": "baipás Nueva Esperanza",
+      "location_quote": "baipás Nueva Esperanza",
+      "summary": "El paso a desnivel quedó bloqueado por acumulaciones de agua durante las lluvias recientes; se iniciaron labores de limpieza y drenaje.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-11T16:00:00+00:00",
+   "text_sha": "e59738ac784d4e78bb859512b9ff3011f41fb8aaf10b4e2358fcff0e4d4032e0",
+   "title": "Baipás Nueva Esperanza queda cerrado en VMT por aniegos: Municipalidad de Lima inicia trabajos de rehabilitación"
+  },
   "https://caretas.pe/sociedad/emergencia-en-lima-sur-fuertes-lluvias-inundaciones-aniegos-y-decenas-de-familias-afectadas-senamhi/": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -1838,6 +1861,14 @@
    "input_tokens": 1228,
    "output_tokens": 35,
    "run": "2026-11-10T11:49-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0003504,
+   "day": "2026-11-11",
+   "input_tokens": 1364,
+   "output_tokens": 428,
+   "run": "2026-11-11T12:51-05:00",
    "status": "success"
   }
  ],

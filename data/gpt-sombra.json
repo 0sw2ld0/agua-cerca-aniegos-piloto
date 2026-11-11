@@ -1,6 +1,18 @@
 {
- "current": [],
- "generated_at": "2026-11-11T12:21:51.722571-05:00",
+ "current": [
+  {
+   "date_status": "stated",
+   "day": "2026-11-11",
+   "district": "Villa María del Triunfo",
+   "location": "baipás Nueva Esperanza",
+   "matches_review": null,
+   "point": null,
+   "urls": [
+    "https://caretas.pe/sociedad/baipas-nueva-esperanza-queda-cerrado-en-vmt-por-aniegos-municipalidad-de-lima-inicia-trabajos-de-rehabilitacion/"
+   ]
+  }
+ ],
+ "generated_at": "2026-11-11T12:51:56.449758-05:00",
  "mode": "shadow_not_published",
  "model": "gpt-6-luna",
  "schema_version": 1,
@@ -319,6 +331,21 @@
    "summary": "El colapso del alcantarillado hizo que aguas residuales ingresaran a viviendas del sector y se acumularan en sus ambientes.",
    "urls": [
     "https://www.infobae.com/peru/2026/11/06/lluvias-en-lima-sur-por-que-cada-vez-la-zona-sur-de-la-capital-se-inunda-y-colapsan-los-desagues/"
+   ]
+  },
+  "2026-11-11|Villa María del Triunfo|baipa nueva esperanza": {
+   "date_status": "stated",
+   "day": "2026-11-11",
+   "district": "Villa María del Triunfo",
+   "district_stated": null,
+   "first_seen": "2026-11-11T12:51:56.449758-05:00",
+   "last_seen": "2026-11-11T12:51:56.449758-05:00",
+   "location": "baipás Nueva Esperanza",
+   "point": null,
+   "rule": null,
+   "summary": "El paso a desnivel quedó bloqueado por acumulaciones de agua durante las lluvias recientes; se iniciaron labores de limpieza y drenaje.",
+   "urls": [
+    "https://caretas.pe/sociedad/baipas-nueva-esperanza-queda-cerrado-en-vmt-por-aniegos-municipalidad-de-lima-inicia-trabajos-de-rehabilitacion/"
    ]
   }
  }

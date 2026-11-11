@@ -1,9 +1,27 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-11T12:21:50.317833-05:00",
+  "generated_at": "2026-11-11T12:51:55.427634-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
+    {
+      "id": -912916482539403,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Baipás Nueva Esperanza queda cerrado en VMT por aniegos: Municipalidad de Lima inicia trabajos de rehabilitación",
+      "date": "2026-11-11",
+      "expires_at": "2026-11-13T16:00:00+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "caretas.pe",
+          "url": "https://caretas.pe/sociedad/baipas-nueva-esperanza-queda-cerrado-en-vmt-por-aniegos-municipalidad-de-lima-inicia-trabajos-de-rehabilitacion/"
+        }
+      ]
+    },
     {
       "id": -4256849618685800,
       "kind": "publication",
