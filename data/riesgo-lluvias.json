@@ -76,6 +76,6 @@
  ],
  "errores": [],
  "omitidos": 8,
- "checked_at": "2026-11-12T02:22:49.607484-05:00",
+ "checked_at": "2026-11-12T02:52:47.886225-05:00",
  "error_lista": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1081)>"
 }
