@@ -1,5 +1,15 @@
 {
  "articles": {
+  "https://andina.pe/agencia/noticia-ayacucho-lluvia-fuerte-intensidad-sorprende-a-pobladores-e-inunda-viviendas-y-calles-1099621.aspx": {
+   "checked_at": "2026-11-12T10:23:33.629764-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-12T08:33:00-05:00",
+   "text_sha": "f13732ce1eafae5607f1771863e829dc24972cba4c28251694888b52177202f7",
+   "title": "Ayacucho: lluvia de fuerte intensidad sorprende a pobladores e inunda viviendas y calles"
+  },
   "https://andina.pe/agencia/noticia-lluvias-causan-inundaciones-viviendas-y-vias-publicas-al-colapsar-desag%C3%BCe-iquitos-1099557.aspx": {
    "checked_at": "2026-11-11T17:22:10.246080-05:00",
    "extraction": {
@@ -1923,6 +1933,14 @@
    "input_tokens": 1637,
    "output_tokens": 37,
    "run": "2026-11-12T09:53-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001125,
+   "day": "2026-11-12",
+   "input_tokens": 955,
+   "output_tokens": 34,
+   "run": "2026-11-12T10:23-05:00",
    "status": "success"
   }
  ],
