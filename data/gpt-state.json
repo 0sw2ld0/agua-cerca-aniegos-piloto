@@ -33,6 +33,16 @@
    "text_sha": "5de73ea9b76bf2e0d589ebc0c0f4a3fb27dc85c2747ea7fd1afaa5d60b6f97e8",
    "title": "Lluvias en Lima: conoce los 21 bypass con riesgo de aniego por falta de drenaje"
   },
+  "https://caretas.pe/mundo/cop31-inundaciones-dejan-8000-muertos-en-2026-segun-oxfam/": {
+   "checked_at": "2026-11-12T09:53:47.681903-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-12T14:19:29+00:00",
+   "text_sha": "0365a1a59e65570491db8441f88647eb02521a882363122f11188e90bb5fb776",
+   "title": "COP31: Inundaciones dejan 8000 muertos en 2026, según Oxfam"
+  },
   "https://caretas.pe/sociedad/aeropuerto-jorge-chavez-en-riesgo-de-inundacion-por-posible-desborde-del-rio-rimac-alerta-lap/": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -1905,6 +1915,14 @@
    "input_tokens": 1531,
    "output_tokens": 39,
    "run": "2026-11-11T19:22-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001822,
+   "day": "2026-11-12",
+   "input_tokens": 1637,
+   "output_tokens": 37,
+   "run": "2026-11-12T09:53-05:00",
    "status": "success"
   }
  ],
