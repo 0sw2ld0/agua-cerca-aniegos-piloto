@@ -845,6 +845,16 @@
    "checked_at": "2026-11-06T11:36:27.183485-05:00",
    "reason": "district_unknown"
   },
+  "san juan de miraflores|av 1 espalda del hospital maria auxiliadora y otras 2 vias del distrito": {
+   "checked_at": "2026-11-12T22:24:36.522625-05:00",
+   "evidence": "OSM: hospital maria auxiliadora en San Juan de Miraflores",
+   "point": [
+    -76.958259,
+    -12.161098
+   ],
+   "precision": "Referencia: hospital según OpenStreetMap, no el lugar exacto del agua",
+   "reason": "verified"
+  },
   "san juan de miraflores|frente al hospital maria auxiliadora": {
    "checked_at": "2026-11-06T17:18:58.080877-05:00",
    "evidence": "OSM: hospital maria auxiliadora en San Juan de Miraflores",
