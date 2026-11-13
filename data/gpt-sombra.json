@@ -1,18 +1,6 @@
 {
- "current": [
-  {
-   "date_status": "stated",
-   "day": "2026-11-11",
-   "district": "Villa María del Triunfo",
-   "location": "baipás Nueva Esperanza",
-   "matches_review": null,
-   "point": null,
-   "urls": [
-    "https://caretas.pe/sociedad/baipas-nueva-esperanza-queda-cerrado-en-vmt-por-aniegos-municipalidad-de-lima-inicia-trabajos-de-rehabilitacion/"
-   ]
-  }
- ],
- "generated_at": "2026-11-12T23:54:41.507878-05:00",
+ "current": [],
+ "generated_at": "2026-11-13T00:24:27.568605-05:00",
  "mode": "shadow_not_published",
  "model": "gpt-6-luna",
  "schema_version": 1,
