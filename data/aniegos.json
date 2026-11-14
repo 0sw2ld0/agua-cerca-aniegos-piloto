@@ -1,68 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-13T21:56:08.065883-05:00",
+  "generated_at": "2026-11-13T22:26:12.013670-05:00",
   "coverage": "partial",
   "source_errors": 0,
-  "reports": [
-    {
-      "id": -2250793074280543,
-      "kind": "incident",
-      "district": "San Juan de Miraflores",
-      "location": "Av. Los Héroes",
-      "summary": "Reporte complementario N.º 15861 del COEN-INDECI (12/11 21:30): inundación por saturación del suelo para drenaje (pluvial) en San Juan de Miraflores. El reporte menciona este lugar en los hechos.",
-      "date": "2026-11-12",
-      "expires_at": "2026-11-14T00:00:00-05:00",
-      "status": "Situación actual sin confirmar",
-      "coordinates": null,
-      "precision": "Sin punto verificado",
-      "sources": [
-        {
-          "name": "COEN-INDECI · Reporte 15861, 12/11 21:30",
-          "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15483-4-11-2026-coen-indeci-2100-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-san-juan-de-miraflores-li/"
-        }
-      ]
-    },
-    {
-      "id": -1486032126463711,
-      "kind": "incident",
-      "district": "San Juan de Miraflores",
-      "location": "Frente al Hospital María Auxiliadora",
-      "summary": "Reporte complementario N.º 15861 del COEN-INDECI (12/11 21:30): inundación por saturación del suelo para drenaje (pluvial) en San Juan de Miraflores. El reporte menciona este lugar en las acciones de respuesta.",
-      "date": "2026-11-12",
-      "expires_at": "2026-11-14T00:00:00-05:00",
-      "status": "Situación actual sin confirmar",
-      "coordinates": [
-        -76.958259,
-        -12.161098
-      ],
-      "precision": "Referencia: hospital según OpenStreetMap, no el lugar exacto del agua",
-      "sources": [
-        {
-          "name": "COEN-INDECI · Reporte 15861, 12/11 21:30",
-          "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15483-4-11-2026-coen-indeci-2100-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-san-juan-de-miraflores-li/"
-        }
-      ]
-    },
-    {
-      "id": -2004843446610159,
-      "kind": "incident",
-      "district": "San Juan de Miraflores",
-      "location": "Av. 1 (espalda del Hospital María Auxiliadora), y otras 2 vías del distrito",
-      "summary": "Reporte complementario N.º 15861 del COEN-INDECI (12/11 21:30): inundación por saturación del suelo para drenaje (pluvial) en San Juan de Miraflores. Vías afectadas: Av. 1 (espalda del Hospital María Auxiliadora); Av. Los Héroes con Atocongo; Av. Los Héroes con San Juan.",
-      "date": "2026-11-12",
-      "expires_at": "2026-11-14T00:00:00-05:00",
-      "status": "Situación actual sin confirmar",
-      "coordinates": [
-        -76.958259,
-        -12.161098
-      ],
-      "precision": "Referencia: hospital según OpenStreetMap, no el lugar exacto del agua",
-      "sources": [
-        {
-          "name": "COEN-INDECI · Reporte 15861, 12/11 21:30",
-          "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15483-4-11-2026-coen-indeci-2100-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-san-juan-de-miraflores-li/"
-        }
-      ]
-    }
-  ]
+  "reports": []
 }
