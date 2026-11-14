@@ -69,5 +69,11 @@
    "summary": "Reporte complementario N.º 15861 del COEN-INDECI (12/11 21:30): inundación por saturación del suelo para drenaje (pluvial) en San Juan de Miraflores. Vías afectadas: Av. 1 (espalda del Hospital María Auxiliadora); Av. Los Héroes con Atocongo; Av. Los Héroes con San Juan."
   }
  ],
- "errores": []
+ "errores": [
+  {
+   "etapa": "portada",
+   "error": "RemoteDisconnected: Remote end closed connection without response"
+  }
+ ],
+ "checked_at": "2026-11-13T19:25:50.424094-05:00"
 }
