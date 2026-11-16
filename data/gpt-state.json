@@ -10,6 +10,16 @@
    "text_sha": "f13732ce1eafae5607f1771863e829dc24972cba4c28251694888b52177202f7",
    "title": "Ayacucho: lluvia de fuerte intensidad sorprende a pobladores e inunda viviendas y calles"
   },
+  "https://andina.pe/agencia/noticia-fenomeno-nino-lluvias-e-inundaciones-provocan-colapso-vivienda-distrito-olmos-1100251.aspx": {
+   "checked_at": "2026-11-16T14:31:03.700494-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-16T14:17:00-05:00",
+   "text_sha": "38cef7a48dadb38fa335245f8aaf24781d1fbb875f69d1117db2ad6129b79049",
+   "title": "Fenómeno El Niño: lluvias e inundaciones provocan colapso de vivienda en distrito de Olmos"
+  },
   "https://andina.pe/agencia/noticia-lluvias-causan-inundaciones-viviendas-y-vias-publicas-al-colapsar-desag%C3%BCe-iquitos-1099557.aspx": {
    "checked_at": "2026-11-11T17:22:10.246080-05:00",
    "extraction": {
@@ -1949,6 +1959,14 @@
    "input_tokens": 1648,
    "output_tokens": 44,
    "run": "2026-11-12T16:54-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001219,
+   "day": "2026-11-16",
+   "input_tokens": 1024,
+   "output_tokens": 39,
+   "run": "2026-11-16T14:31-05:00",
    "status": "success"
   }
  ],
