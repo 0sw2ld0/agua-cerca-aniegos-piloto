@@ -1689,6 +1689,16 @@
    "published_at": "2026-11-06T11:37:33Z",
    "text_sha": "8f1d97de59cfc1c76701bc98d2a2327200f1d7421adf649a0bbf1e91b8969242",
    "title": "Lluvias en Lima Sur: ¿Por qué cada vez la zona sur de la capital se inunda y colapsan los desagües?"
+  },
+  "https://www.infobae.com/peru/2026/11/17/lanzan-campana-para-rescatar-y-proteger-a-animales-ante-huaicos-inundaciones-y-lluvias-intensas-en-peru/": {
+   "checked_at": "2026-11-17T14:32:56.235179-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-17T19:11:17Z",
+   "text_sha": "28d3fe243ebc6d193997de56266361454112e23ca9f41eaa55892349a91a7b4f",
+   "title": "Lanzan campaña para rescatar y proteger a animales ante huaicos, inundaciones y lluvias intensas en Perú"
   }
  },
  "attempts": [
@@ -1985,6 +1995,14 @@
    "input_tokens": 1955,
    "output_tokens": 37,
    "run": "2026-11-17T14:02-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002043,
+   "day": "2026-11-17",
+   "input_tokens": 1723,
+   "output_tokens": 64,
+   "run": "2026-11-17T14:32-05:00",
    "status": "success"
   }
  ],
