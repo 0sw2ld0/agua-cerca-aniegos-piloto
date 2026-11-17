@@ -1,9 +1,35 @@
 {
  "schema_version": 1,
  "fuente": "CENEPRED / SIGRID",
- "generated_at": "2026-11-17T11:02:54.126150-05:00",
+ "generated_at": "2026-11-17T11:32:48.500058-05:00",
  "lista": "https://sigrid.cenepred.gob.pe/sigridv3/escenarios/lbam",
  "escenarios": [
+  {
+   "id": "1141",
+   "aviso": "472",
+   "ambito": "COSTA NORTE Y SIERRA",
+   "inicio": "2026-11-18T00:00:00-05:00",
+   "fin": "2026-11-21T00:00:00-05:00",
+   "documento": "https://sigrid.cenepred.gob.pe/sigridv3/documento/23404",
+   "estado": "proximo",
+   "distritos": 118,
+   "niveles": {
+    "Muy alto": 75,
+    "Alto": 34,
+    "Medio": 8,
+    "Bajo": 1
+   },
+   "descargado": "2026-11-17T11:32:48.500058-05:00",
+   "departamentos": [
+    "APURIMAC",
+    "AREQUIPA",
+    "CAJAMARCA",
+    "CUSCO",
+    "LA LIBERTAD",
+    "PIURA",
+    "TUMBES"
+   ]
+  },
   {
    "id": "1140",
    "aviso": "467",
