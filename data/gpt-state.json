@@ -63,6 +63,16 @@
    "text_sha": "4e9ebe3c33ca3c0733ab6873192250913c93cb8436ab2a2af1314c39b839dca5",
    "title": "COP31: Inundaciones dejan 8000 muertos en 2026, según Oxfam"
   },
+  "https://caretas.pe/nacional/alcalde-de-tumbes-alerta-sobre-inundaciones-en-zonas-agricolas-el-limon-platano-y-arroz-son-los-mas-afectados/": {
+   "checked_at": "2026-11-17T14:02:58.081139-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-17T18:33:59+00:00",
+   "text_sha": "8f54314e1823a0eca72582e4411b9ea4e12246d56cb0bb26f6d1d682721479c1",
+   "title": "Alcalde de Tumbes alerta sobre inundaciones en zonas agrícolas: \"El limón, plátano y arroz son los más afectados\""
+  },
   "https://caretas.pe/sociedad/aeropuerto-jorge-chavez-en-riesgo-de-inundacion-por-posible-desborde-del-rio-rimac-alerta-lap/": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -1967,6 +1977,14 @@
    "input_tokens": 1024,
    "output_tokens": 39,
    "run": "2026-11-16T14:31-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.000214,
+   "day": "2026-11-17",
+   "input_tokens": 1955,
+   "output_tokens": 37,
+   "run": "2026-11-17T14:02-05:00",
    "status": "success"
   }
  ],
