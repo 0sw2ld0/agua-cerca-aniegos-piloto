@@ -1,6 +1,18 @@
 {
- "current": [],
- "generated_at": "2026-11-18T10:04:23.491816-05:00",
+ "current": [
+  {
+   "date_status": "stated",
+   "day": "2026-11-18",
+   "district": "Comas",
+   "location": "Cuadra 71 de la avenida Universitaria",
+   "matches_review": null,
+   "point": null,
+   "urls": [
+    "https://larepublica.pe/sociedad/2026/11/18/emergencia-en-comas-tuberia-de-agua-revienta-en-plena-avenida-universitaria-y-genera-aniego-esta-asi-desde-hace-dos-horas-532854"
+   ]
+  }
+ ],
+ "generated_at": "2026-11-18T10:36:27.528673-05:00",
  "mode": "shadow_not_published",
  "model": "gpt-6-luna",
  "schema_version": 1,
@@ -334,6 +346,21 @@
    "summary": "El paso a desnivel quedó bloqueado por acumulaciones de agua durante las lluvias recientes; se iniciaron labores de limpieza y drenaje.",
    "urls": [
     "https://caretas.pe/sociedad/baipas-nueva-esperanza-queda-cerrado-en-vmt-por-aniegos-municipalidad-de-lima-inicia-trabajos-de-rehabilitacion/"
+   ]
+  },
+  "2026-11-18|Comas|cuadra 71 de la avenida universitaria": {
+   "date_status": "stated",
+   "day": "2026-11-18",
+   "district": "Comas",
+   "district_stated": null,
+   "first_seen": "2026-11-18T10:36:27.528673-05:00",
+   "last_seen": "2026-11-18T10:36:27.528673-05:00",
+   "location": "Cuadra 71 de la avenida Universitaria",
+   "point": null,
+   "rule": null,
+   "summary": "La rotura de una tubería causó un aniego en la vía principal y auxiliar, con agua y lodo que dificultaron el tránsito.",
+   "urls": [
+    "https://larepublica.pe/sociedad/2026/11/18/emergencia-en-comas-tuberia-de-agua-revienta-en-plena-avenida-universitaria-y-genera-aniego-esta-asi-desde-hace-dos-horas-532854"
    ]
   }
  }

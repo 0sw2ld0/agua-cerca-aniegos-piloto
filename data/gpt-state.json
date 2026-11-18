@@ -1328,6 +1328,29 @@
    "text_sha": "a432ac856176b39c428ffa824980a47f0ca679ebf2edb3552b7e9ff8cd5d7756",
    "title": "Estos 21 bypasses de Lima podrían inundarse por las lluvias intensas de El Niño, advierte Cenepred"
   },
+  "https://larepublica.pe/sociedad/2026/11/18/emergencia-en-comas-tuberia-de-agua-revienta-en-plena-avenida-universitaria-y-genera-aniego-esta-asi-desde-hace-dos-horas-532854": {
+   "checked_at": "2026-11-18T10:36:27.528673-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "durante la mañana de este miércoles 18 de noviembre",
+      "date_relation": "same_day_as_publication",
+      "district": "Comas",
+      "district_quote": "en el distrito de Comas",
+      "explicit_date": "",
+      "location": "Cuadra 71 de la avenida Universitaria",
+      "location_quote": "la cuadra 71 de la avenida Universitaria",
+      "summary": "La rotura de una tubería causó un aniego en la vía principal y auxiliar, con agua y lodo que dificultaron el tránsito.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-18T15:29:50+00:00",
+   "text_sha": "288bd6240448ad1d3ec45929221a2576c42d72f8adb6a06d1457b62477c370e8",
+   "title": "Emergencia en Comas: tubería de agua revienta en plena avenida Universitaria y genera aniego: “Está así desde hace dos horas”"
+  },
   "https://larepublica.pe/sociedad/2026/11/18/fenomeno-el-nino-chiclayo-instalara-18-buzonetas-y-motobombas-para-reducir-riesgo-de-inundaciones-en-zonas-criticas-de-la-region-506898": {
    "checked_at": "2026-11-18T09:34:25.549340-05:00",
    "extraction": {
@@ -2021,6 +2044,14 @@
    "input_tokens": 1326,
    "output_tokens": 40,
    "run": "2026-11-18T09:34-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0003592,
+   "day": "2026-11-18",
+   "input_tokens": 1492,
+   "output_tokens": 420,
+   "run": "2026-11-18T10:36-05:00",
    "status": "success"
   }
  ],
