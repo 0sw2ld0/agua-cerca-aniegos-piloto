@@ -20,6 +20,16 @@
    "text_sha": "38cef7a48dadb38fa335245f8aaf24781d1fbb875f69d1117db2ad6129b79049",
    "title": "Fenómeno El Niño: lluvias e inundaciones provocan colapso de vivienda en distrito de Olmos"
   },
+  "https://andina.pe/agencia/noticia-la-libertad-lluvia-intensa-inunda-carretera-panamericana-norte-la-provincia-viru-1100547.aspx": {
+   "checked_at": "2026-11-18T14:05:07.920082-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-18T13:57:00-05:00",
+   "text_sha": "58e0c4e4f61b715fe39205f8e3f77fc945411782dd25a60526d694e293c1594b",
+   "title": "La Libertad: lluvia intensa inunda la carretera Panamericana Norte en la provincia de Virú"
+  },
   "https://andina.pe/agencia/noticia-lluvias-causan-inundaciones-viviendas-y-vias-publicas-al-colapsar-desag%C3%BCe-iquitos-1099557.aspx": {
    "checked_at": "2026-11-11T17:22:10.246080-05:00",
    "extraction": {
@@ -2052,6 +2062,14 @@
    "input_tokens": 1492,
    "output_tokens": 420,
    "run": "2026-11-18T10:36-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001221,
+   "day": "2026-11-18",
+   "input_tokens": 1041,
+   "output_tokens": 36,
+   "run": "2026-11-18T14:05-05:00",
    "status": "success"
   }
  ],
