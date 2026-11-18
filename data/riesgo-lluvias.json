@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
  "fuente": "CENEPRED / SIGRID",
- "generated_at": "2026-11-17T23:33:23.635788-05:00",
+ "generated_at": "2026-11-18T00:03:47.734801-05:00",
  "lista": "https://sigrid.cenepred.gob.pe/sigridv3/escenarios/lbam",
  "escenarios": [
   {
@@ -11,7 +11,7 @@
    "inicio": "2026-11-18T00:00:00-05:00",
    "fin": "2026-11-21T00:00:00-05:00",
    "documento": "https://sigrid.cenepred.gob.pe/sigridv3/documento/23405",
-   "estado": "proximo",
+   "estado": "vigente",
    "distritos": 114,
    "niveles": {
     "Bajo": 41,
@@ -35,7 +35,7 @@
    "inicio": "2026-11-18T00:00:00-05:00",
    "fin": "2026-11-21T00:00:00-05:00",
    "documento": "https://sigrid.cenepred.gob.pe/sigridv3/documento/23404",
-   "estado": "proximo",
+   "estado": "vigente",
    "distritos": 118,
    "niveles": {
     "Muy alto": 75,
@@ -50,34 +50,6 @@
     "CAJAMARCA",
     "CUSCO",
     "LA LIBERTAD",
-    "PIURA",
-    "TUMBES"
-   ]
-  },
-  {
-   "id": "1140",
-   "aviso": "467",
-   "ambito": "COSTA NORTE Y SIERRA",
-   "inicio": "2026-11-15T00:00:00-05:00",
-   "fin": "2026-11-18T00:00:00-05:00",
-   "documento": "https://sigrid.cenepred.gob.pe/sigridv3/documento/23403",
-   "estado": "vigente",
-   "distritos": 199,
-   "niveles": {
-    "Alto": 63,
-    "Muy alto": 123,
-    "Medio": 12,
-    "Bajo": 1
-   },
-   "descargado": "2026-11-13T17:26:09.734829-05:00",
-   "departamentos": [
-    "ANCASH",
-    "CAJAMARCA",
-    "HUANUCO",
-    "LA LIBERTAD",
-    "LAMBAYEQUE",
-    "LIMA",
-    "PASCO",
     "PIURA",
     "TUMBES"
    ]
