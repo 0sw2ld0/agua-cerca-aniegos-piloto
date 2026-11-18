@@ -1328,6 +1328,16 @@
    "text_sha": "a432ac856176b39c428ffa824980a47f0ca679ebf2edb3552b7e9ff8cd5d7756",
    "title": "Estos 21 bypasses de Lima podrían inundarse por las lluvias intensas de El Niño, advierte Cenepred"
   },
+  "https://larepublica.pe/sociedad/2026/11/18/fenomeno-el-nino-chiclayo-instalara-18-buzonetas-y-motobombas-para-reducir-riesgo-de-inundaciones-en-zonas-criticas-de-la-region-506898": {
+   "checked_at": "2026-11-18T09:34:25.549340-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-18T14:18:52+00:00",
+   "text_sha": "bac8e37e78a9f13ac2bb863592533ef05ed334e087f851ca0bc643917363011a",
+   "title": "Fenómeno El Niño: Chiclayo instalará 18 buzonetas y motobombas para reducir riesgo de inundaciones en zonas críticas de la región"
+  },
   "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -2003,6 +2013,14 @@
    "input_tokens": 1723,
    "output_tokens": 64,
    "run": "2026-11-17T14:32-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001526,
+   "day": "2026-11-18",
+   "input_tokens": 1326,
+   "output_tokens": 40,
+   "run": "2026-11-18T09:34-05:00",
    "status": "success"
   }
  ],
