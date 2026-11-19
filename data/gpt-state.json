@@ -281,9 +281,14 @@
    "title": "Villa María del Triunfo: bypass Pachacútec totalmente inundado tras lluvias intensas en Lima"
   },
   "https://elbuho.pe/2026/11/agua-y-desague-en-lambayeque-aciertan-los-planes-de-gobierno-de-fuerza-popular-y-somos-peru-en-los-problemas-hidricos/": {
-   "error": "RuntimeError",
-   "failed_at": "2026-11-19T11:06:15.676519-05:00",
-   "text_sha": "213dd6ac5b58945fa4d45f33cf89d3bcfecdd0483ba18e5e9f82c51dce43fc17"
+   "checked_at": "2026-11-19T17:08:06.646066-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-19T16:01:14+00:00",
+   "text_sha": "213dd6ac5b58945fa4d45f33cf89d3bcfecdd0483ba18e5e9f82c51dce43fc17",
+   "title": "Agua y desagüe en Lambayeque: ¿aciertan los planes de gobierno de Fuerza Popular y Somos Perú en los problemas hídricos?"
   },
   "https://elbuho.pe/2026/11/preocupante-vecinos-de-jaen-exigen-solucion-ante-constantes-colapsos-de-desague-en-camal-municipal/": {
    "checked_at": "2026-11-10T11:49:56.339154-05:00",
@@ -2099,6 +2104,14 @@
    "input_tokens": 990,
    "output_tokens": 37,
    "run": "2026-11-19T13:36-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002912,
+   "day": "2026-11-19",
+   "input_tokens": 2702,
+   "output_tokens": 42,
+   "run": "2026-11-19T17:08-05:00",
    "status": "success"
   }
  ],
