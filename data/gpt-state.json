@@ -10,6 +10,16 @@
    "text_sha": "f13732ce1eafae5607f1771863e829dc24972cba4c28251694888b52177202f7",
    "title": "Ayacucho: lluvia de fuerte intensidad sorprende a pobladores e inunda viviendas y calles"
   },
+  "https://andina.pe/agencia/noticia-fenomeno-nino-comerciantes-piura-colocan-sacos-arena-ante-posibles-inundaciones-1100675.aspx": {
+   "checked_at": "2026-11-19T13:36:48.248443-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-19T12:46:00-05:00",
+   "text_sha": "d00c49c5526b2c5b78f5fd1803fbad36712ad522f240a70144e243ec10a3e8c1",
+   "title": "Fenómeno El Niño: comerciantes de Piura colocan sacos de arena ante posibles inundaciones"
+  },
   "https://andina.pe/agencia/noticia-fenomeno-nino-lluvias-e-inundaciones-provocan-colapso-vivienda-distrito-olmos-1100251.aspx": {
    "checked_at": "2026-11-16T14:31:03.700494-05:00",
    "extraction": {
@@ -2082,6 +2092,14 @@
    "day": "2026-11-19",
    "run": "2026-11-19T11:06-05:00",
    "status": "error"
+  },
+  {
+   "cost_usd": 0.0001175,
+   "day": "2026-11-19",
+   "input_tokens": 990,
+   "output_tokens": 37,
+   "run": "2026-11-19T13:36-05:00",
+   "status": "success"
   }
  ],
  "previous_estimated_cost_usd": 0.0183851,
