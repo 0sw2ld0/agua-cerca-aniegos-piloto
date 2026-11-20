@@ -1392,13 +1392,13 @@
    "title": "Fenómeno El Niño: Chiclayo instalará 18 buzonetas y motobombas para reducir riesgo de inundaciones en zonas críticas de la región"
   },
   "https://larepublica.pe/sociedad/2026/11/20/mas-de-13000-colegios-estan-expuestos-a-inundaciones-ano-escolar-2027-en-riesgo-por-el-nino-1480640": {
-   "checked_at": "2026-11-20T11:40:36.047933-05:00",
+   "checked_at": "2026-11-20T12:08:53.354597-05:00",
    "extraction": {
     "incidents": []
    },
    "model": "gpt-6-luna",
-   "published_at": "2026-11-20T16:30:34+00:00",
-   "text_sha": "a51be505ca3180408733323255c4ba04c254c9afeb2e16990be8555751234120",
+   "published_at": "2026-11-20T17:03:26+00:00",
+   "text_sha": "44dba2e8a64d4ad95a73c168b813f3bb2f235b0e22eec5befbc1096af8ed7d0a",
    "title": "Más de 13.000 colegios están expuestos a inundaciones: año escolar 2027 en riesgo por El Niño"
   },
   "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004": {
@@ -2130,6 +2130,14 @@
    "input_tokens": 2411,
    "output_tokens": 59,
    "run": "2026-11-20T11:40-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002631,
+   "day": "2026-11-20",
+   "input_tokens": 2416,
+   "output_tokens": 43,
+   "run": "2026-11-20T12:08-05:00",
    "status": "success"
   }
  ],
