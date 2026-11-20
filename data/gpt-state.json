@@ -73,6 +73,16 @@
    "text_sha": "5de73ea9b76bf2e0d589ebc0c0f4a3fb27dc85c2747ea7fd1afaa5d60b6f97e8",
    "title": "Lluvias en Lima: conoce los 21 bypass con riesgo de aniego por falta de drenaje"
   },
+  "https://andina.pe/agencia/noticia-tumbes-rio-zarumilla-se-desborda-e-inunda-puerto-peru-y-pone-riesgo-a-otros-poblados-1100864.aspx": {
+   "checked_at": "2026-11-20T16:38:39.727255-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-20T16:09:00-05:00",
+   "text_sha": "1f9b11e8e17cd829d3e81c87cb37a4e6039aedd79194616e1001326d8f4ff68e",
+   "title": "Tumbes: río Zarumilla se desborda e inunda Puerto Perú y pone en riesgo a otros poblados"
+  },
   "https://caretas.pe/mundo/cop31-inundaciones-dejan-8000-muertos-en-2026-segun-oxfam/": {
    "checked_at": "2026-11-12T16:54:06.235205-05:00",
    "extraction": {
@@ -2138,6 +2148,14 @@
    "input_tokens": 2416,
    "output_tokens": 43,
    "run": "2026-11-20T12:08-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001258,
+   "day": "2026-11-20",
+   "input_tokens": 1058,
+   "output_tokens": 40,
+   "run": "2026-11-20T16:38-05:00",
    "status": "success"
   }
  ],
