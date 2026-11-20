@@ -1,18 +1,6 @@
 {
- "current": [
-  {
-   "date_status": "stated",
-   "day": "2026-11-18",
-   "district": "Comas",
-   "location": "Cuadra 71 de la avenida Universitaria",
-   "matches_review": null,
-   "point": null,
-   "urls": [
-    "https://larepublica.pe/sociedad/2026/11/18/emergencia-en-comas-tuberia-de-agua-revienta-en-plena-avenida-universitaria-y-genera-aniego-esta-asi-desde-hace-dos-horas-532854"
-   ]
-  }
- ],
- "generated_at": "2026-11-19T23:37:40.722282-05:00",
+ "current": [],
+ "generated_at": "2026-11-20T00:08:12.108425-05:00",
  "mode": "shadow_not_published",
  "model": "gpt-6-luna",
  "schema_version": 1,
