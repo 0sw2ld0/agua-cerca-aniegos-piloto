@@ -1,9 +1,32 @@
 {
  "schema_version": 1,
  "fuente": "CENEPRED / SIGRID",
- "generated_at": "2026-11-20T10:38:43.891433-05:00",
+ "generated_at": "2026-11-20T11:08:29.255745-05:00",
  "lista": "https://sigrid.cenepred.gob.pe/sigridv3/escenarios/lbam",
  "escenarios": [
+  {
+   "id": "1144",
+   "aviso": "478",
+   "ambito": "COSTA CENTRO Y SUR",
+   "inicio": "2026-11-21T00:00:00-05:00",
+   "fin": "2026-11-24T00:00:00-05:00",
+   "documento": "https://sigrid.cenepred.gob.pe/sigridv3/documento/23445",
+   "estado": "proximo",
+   "distritos": 87,
+   "niveles": {
+    "Bajo": 30,
+    "Medio": 48,
+    "Alto": 9
+   },
+   "descargado": "2026-11-20T11:08:29.255745-05:00",
+   "departamentos": [
+    "AREQUIPA",
+    "CALLAO",
+    "LIMA",
+    "MOQUEGUA",
+    "TACNA"
+   ]
+  },
   {
    "id": "1143",
    "aviso": "477",
