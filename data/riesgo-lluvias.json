@@ -1,9 +1,37 @@
 {
  "schema_version": 1,
  "fuente": "CENEPRED / SIGRID",
- "generated_at": "2026-11-19T18:37:05.864156-05:00",
+ "generated_at": "2026-11-19T19:07:19.259746-05:00",
  "lista": "https://sigrid.cenepred.gob.pe/sigridv3/escenarios/lbam",
  "escenarios": [
+  {
+   "id": "1143",
+   "aviso": "477",
+   "ambito": "COSTA NORTE Y SIERRA",
+   "inicio": "2026-11-21T00:00:00-05:00",
+   "fin": "2026-11-24T00:00:00-05:00",
+   "documento": "https://sigrid.cenepred.gob.pe/sigridv3/documento/23428",
+   "estado": "proximo",
+   "distritos": 284,
+   "niveles": {
+    "Medio": 17,
+    "Alto": 80,
+    "Muy alto": 186,
+    "Bajo": 1
+   },
+   "descargado": "2026-11-19T19:07:19.259746-05:00",
+   "departamentos": [
+    "ANCASH",
+    "AYACUCHO",
+    "CAJAMARCA",
+    "HUANCAVELICA",
+    "ICA",
+    "LA LIBERTAD",
+    "LAMBAYEQUE",
+    "PIURA",
+    "TUMBES"
+   ]
+  },
   {
    "id": "1142",
    "aviso": "473",
