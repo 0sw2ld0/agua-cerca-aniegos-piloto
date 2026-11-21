@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
  "fuente": "CENEPRED / SIGRID",
- "generated_at": "2026-11-20T23:39:02.239398-05:00",
+ "generated_at": "2026-11-21T00:09:09.798996-05:00",
  "lista": "https://sigrid.cenepred.gob.pe/sigridv3/escenarios/lbam",
  "escenarios": [
   {
@@ -11,7 +11,7 @@
    "inicio": "2026-11-21T00:00:00-05:00",
    "fin": "2026-11-24T00:00:00-05:00",
    "documento": "https://sigrid.cenepred.gob.pe/sigridv3/documento/23445",
-   "estado": "proximo",
+   "estado": "vigente",
    "distritos": 87,
    "niveles": {
     "Bajo": 30,
@@ -34,7 +34,7 @@
    "inicio": "2026-11-21T00:00:00-05:00",
    "fin": "2026-11-24T00:00:00-05:00",
    "documento": "https://sigrid.cenepred.gob.pe/sigridv3/documento/23428",
-   "estado": "proximo",
+   "estado": "vigente",
    "distritos": 284,
    "niveles": {
     "Medio": 17,
@@ -51,56 +51,6 @@
     "ICA",
     "LA LIBERTAD",
     "LAMBAYEQUE",
-    "PIURA",
-    "TUMBES"
-   ]
-  },
-  {
-   "id": "1142",
-   "aviso": "473",
-   "ambito": "COSTA CENTRO Y SUR",
-   "inicio": "2026-11-18T00:00:00-05:00",
-   "fin": "2026-11-21T00:00:00-05:00",
-   "documento": "https://sigrid.cenepred.gob.pe/sigridv3/documento/23405",
-   "estado": "vigente",
-   "distritos": 114,
-   "niveles": {
-    "Bajo": 41,
-    "Medio": 61,
-    "Alto": 12
-   },
-   "descargado": "2026-11-17T13:02:41.275730-05:00",
-   "departamentos": [
-    "AREQUIPA",
-    "CALLAO",
-    "ICA",
-    "LIMA",
-    "MOQUEGUA",
-    "TACNA"
-   ]
-  },
-  {
-   "id": "1141",
-   "aviso": "472",
-   "ambito": "COSTA NORTE Y SIERRA",
-   "inicio": "2026-11-18T00:00:00-05:00",
-   "fin": "2026-11-21T00:00:00-05:00",
-   "documento": "https://sigrid.cenepred.gob.pe/sigridv3/documento/23404",
-   "estado": "vigente",
-   "distritos": 118,
-   "niveles": {
-    "Muy alto": 75,
-    "Alto": 34,
-    "Medio": 8,
-    "Bajo": 1
-   },
-   "descargado": "2026-11-17T11:32:48.500058-05:00",
-   "departamentos": [
-    "APURIMAC",
-    "AREQUIPA",
-    "CAJAMARCA",
-    "CUSCO",
-    "LA LIBERTAD",
     "PIURA",
     "TUMBES"
    ]
