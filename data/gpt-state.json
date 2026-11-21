@@ -812,6 +812,16 @@
    "text_sha": "45212153c6343b52eb573dd2ef454ac68a83e5c57e0ad7edf002253558e5e9de",
    "title": "Villa El Salvador: aniegos y colapso de alcantarillado tras llovizna nocturna"
   },
+  "https://elcomercio.pe/peru/tumbes/fenomeno-el-nino-tumbes-sufre-tormentas-electricas-y-lluvias-intensas-que-activan-quebradas-y-provocan-aniegos-en-zonas-agricolas-ultimas-noticia/": {
+   "checked_at": "2026-11-21T14:10:06.505742-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-21T19:04:22+00:00",
+   "text_sha": "c756c79b18d0b3719d46d30705ffee812fd5efdb0b88ffc392e5d897c9f41957",
+   "title": "Tumbes sufre tormentas eléctricas y lluvias intensas que activan quebradas y provocan aniegos en zonas agrícolas"
+  },
   "https://larepublica.pe/sociedad/2026/11/05/bus-de-el-rapido-queda-atascado-por-inundacion-en-villa-el-salvador-y-conductor-no-puede-salir-por-el-agua-168840": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -2174,6 +2184,14 @@
    "input_tokens": 978,
    "output_tokens": 34,
    "run": "2026-11-20T21:09-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001699,
+   "day": "2026-11-21",
+   "input_tokens": 1509,
+   "output_tokens": 38,
+   "run": "2026-11-21T14:10-05:00",
    "status": "success"
   }
  ],
