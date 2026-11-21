@@ -73,6 +73,16 @@
    "text_sha": "5de73ea9b76bf2e0d589ebc0c0f4a3fb27dc85c2747ea7fd1afaa5d60b6f97e8",
    "title": "Lluvias en Lima: conoce los 21 bypass con riesgo de aniego por falta de drenaje"
   },
+  "https://andina.pe/agencia/noticia-ministerio-vivienda-culmina-construccion-camaras-bombeo-para-prevenir-aniegos-1100895.aspx": {
+   "checked_at": "2026-11-20T21:09:45.231021-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-20T21:00:00-05:00",
+   "text_sha": "c2aa48a0c41be1e1cde0ad778d1a5cbebe9f2ab1fa54c34b3b155a18e19862a3",
+   "title": "Ministerio de Vivienda culmina construcción de cámaras de bombeo para prevenir aniegos"
+  },
   "https://andina.pe/agencia/noticia-tumbes-rio-zarumilla-se-desborda-e-inunda-puerto-peru-y-pone-riesgo-a-otros-poblados-1100864.aspx": {
    "checked_at": "2026-11-20T16:38:39.727255-05:00",
    "extraction": {
@@ -2156,6 +2166,14 @@
    "input_tokens": 1058,
    "output_tokens": 40,
    "run": "2026-11-20T16:38-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001148,
+   "day": "2026-11-20",
+   "input_tokens": 978,
+   "output_tokens": 34,
+   "run": "2026-11-20T21:09-05:00",
    "status": "success"
   }
  ],
