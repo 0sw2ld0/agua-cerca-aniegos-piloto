@@ -311,13 +311,13 @@
    "title": "Agua y desagüe en Lambayeque: ¿aciertan los planes de gobierno de Fuerza Popular y Somos Perú en los problemas hídricos?"
   },
   "https://elbuho.pe/2026/11/las-lluvias-e-inundaciones-en-la-arequipa-del-siglo-xviii-y-la-destruccion-que-dejaron-a-su-paso/": {
-   "checked_at": "2026-11-22T11:11:50.670923-05:00",
+   "checked_at": "2026-11-22T18:12:12.865751-05:00",
    "extraction": {
     "incidents": []
    },
    "model": "gpt-6-luna",
-   "published_at": "2026-11-22T15:42:08+00:00",
-   "text_sha": "df08f4d306779c6d6ca3eb3f3847785e727211fc8a1ce2943e3ef9d90ab018db",
+   "published_at": "2026-11-22T23:10:14+00:00",
+   "text_sha": "bc09b6be88bd86b52ea0cdbdbfa6b25f3aa9caab3879a64066825ae61b3b7942",
    "title": "Las lluvias e inundaciones en la Arequipa del siglo XVIII y la destrucción que dejaron a su paso"
   },
   "https://elbuho.pe/2026/11/preocupante-vecinos-de-jaen-exigen-solucion-ante-constantes-colapsos-de-desague-en-camal-municipal/": {
@@ -2210,6 +2210,14 @@
    "input_tokens": 2767,
    "output_tokens": 44,
    "run": "2026-11-22T11:11-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002955,
+   "day": "2026-11-22",
+   "input_tokens": 2760,
+   "output_tokens": 39,
+   "run": "2026-11-22T18:12-05:00",
    "status": "success"
   }
  ],
