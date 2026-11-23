@@ -1452,13 +1452,13 @@
    "title": "Más de 13.000 colegios están expuestos a inundaciones: año escolar 2027 en riesgo por El Niño"
   },
   "https://larepublica.pe/sociedad/2026/11/23/fenomeno-el-nino-en-piura-lluvia-torrencial-de-134-litros-por-m-inunda-tambogrande-y-causa-danos-en-chulucanas-y-paita-1464203": {
-   "checked_at": "2026-11-23T09:43:34.492829-05:00",
+   "checked_at": "2026-11-23T11:13:35.323866-05:00",
    "extraction": {
     "incidents": []
    },
    "model": "gpt-6-luna",
-   "published_at": "2026-11-23T14:42:48+00:00",
-   "text_sha": "e7a2495c4aec107a163f847a7a5a60b5367fbce3412c15efe003888867e7ea1f",
+   "published_at": "2026-11-23T16:09:48+00:00",
+   "text_sha": "ec5283c07dfcb6fd3370a6c142edf0c914cb27cc50615986f02248de493f01ce",
    "title": "Fenómeno El Niño en Piura: lluvia torrencial de 134 litros por m² inunda Tambogrande y causa daños en Chulucanas y Paita"
   },
   "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004": {
@@ -2290,6 +2290,14 @@
    "input_tokens": 1606,
    "output_tokens": 39,
    "run": "2026-11-23T09:43-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001992,
+   "day": "2026-11-23",
+   "input_tokens": 1652,
+   "output_tokens": 68,
+   "run": "2026-11-23T11:13-05:00",
    "status": "success"
   }
  ],
