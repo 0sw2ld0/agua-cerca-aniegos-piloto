@@ -6281,6 +6281,78 @@
           "output_tokens": 134
         }
       }
+    },
+    "04546053ca10eba518ac34d35034c55120206a979c06666963c79e8da48566ed": {
+      "status": "success",
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "has_place": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "passage_0__observed": {
+            "type": "noul",
+            "noul": 0.96
+          },
+          "passage_0__historical": {
+            "type": "noul",
+            "noul": 0.19
+          },
+          "passage_0__water_present": {
+            "type": "noul",
+            "noul": 0.8
+          },
+          "passage_0__attended": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "passage_0__removal_work": {
+            "type": "noul",
+            "noul": 0.03
+          }
+        },
+        "usage": {
+          "input_tokens": 1009,
+          "output_tokens": 134
+        }
+      }
+    },
+    "2b64dcd181c20106df7dc5f93af8dd133d2215d744e23b733ca7bc6d4b59cca2": {
+      "status": "success",
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "has_place": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "passage_0__observed": {
+            "type": "noul",
+            "noul": 0.97
+          },
+          "passage_0__historical": {
+            "type": "noul",
+            "noul": 0.09
+          },
+          "passage_0__water_present": {
+            "type": "noul",
+            "noul": 0.74
+          },
+          "passage_0__attended": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "passage_0__removal_work": {
+            "type": "noul",
+            "noul": 0.02
+          }
+        },
+        "usage": {
+          "input_tokens": 1050,
+          "output_tokens": 134
+        }
+      }
     }
   },
   "attempts": [
@@ -7345,6 +7417,20 @@
       "committed_usd": 4.4898e-05,
       "status": "success",
       "sha256": "5eaad444878ce9f4dbe926fccf7550f37b86312a99c79dc5717954ef8dd5df73"
+    },
+    {
+      "day": "2026-11-23",
+      "run": "2026-11-23T13:13-05:00",
+      "committed_usd": 4.2378000000000007e-05,
+      "status": "success",
+      "sha256": "04546053ca10eba518ac34d35034c55120206a979c06666963c79e8da48566ed"
+    },
+    {
+      "day": "2026-11-23",
+      "run": "2026-11-23T13:13-05:00",
+      "committed_usd": 4.410000000000001e-05,
+      "status": "success",
+      "sha256": "2b64dcd181c20106df7dc5f93af8dd133d2215d744e23b733ca7bc6d4b59cca2"
     }
   ]
 }
