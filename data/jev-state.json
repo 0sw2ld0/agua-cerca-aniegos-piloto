@@ -6101,6 +6101,114 @@
           "output_tokens": 134
         }
       }
+    },
+    "c72701c6478df44d0331552cddcf260492f0fc5e7a059d29ba35ea91d82f9388": {
+      "status": "success",
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "has_place": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "passage_0__observed": {
+            "type": "noul",
+            "noul": 0.97
+          },
+          "passage_0__historical": {
+            "type": "noul",
+            "noul": 0.05
+          },
+          "passage_0__water_present": {
+            "type": "noul",
+            "noul": 0.9
+          },
+          "passage_0__attended": {
+            "type": "noul",
+            "noul": 0.06
+          },
+          "passage_0__removal_work": {
+            "type": "noul",
+            "noul": 0.97
+          }
+        },
+        "usage": {
+          "input_tokens": 973,
+          "output_tokens": 134
+        }
+      }
+    },
+    "8e1ca5c52e187485e1c6ff281beed751d0ea60fdd1bb1b15367de43763b15c54": {
+      "status": "success",
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "has_place": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "passage_0__observed": {
+            "type": "noul",
+            "noul": 0.96
+          },
+          "passage_0__historical": {
+            "type": "noul",
+            "noul": 0.2
+          },
+          "passage_0__water_present": {
+            "type": "noul",
+            "noul": 0.75
+          },
+          "passage_0__attended": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "passage_0__removal_work": {
+            "type": "noul",
+            "noul": 0.02
+          }
+        },
+        "usage": {
+          "input_tokens": 1009,
+          "output_tokens": 134
+        }
+      }
+    },
+    "04e81a644c5f06c4e58bf8da8555771014f32ca4559ae9270e3a82b75350b974": {
+      "status": "success",
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "has_place": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "passage_0__observed": {
+            "type": "noul",
+            "noul": 0.96
+          },
+          "passage_0__historical": {
+            "type": "noul",
+            "noul": 0.09
+          },
+          "passage_0__water_present": {
+            "type": "noul",
+            "noul": 0.74
+          },
+          "passage_0__attended": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "passage_0__removal_work": {
+            "type": "noul",
+            "noul": 0.03
+          }
+        },
+        "usage": {
+          "input_tokens": 1050,
+          "output_tokens": 134
+        }
+      }
     }
   },
   "attempts": [
@@ -7130,6 +7238,27 @@
       "committed_usd": 4.410000000000001e-05,
       "status": "success",
       "sha256": "6cd8815ef4274c630d1de339c928b588a5d22f71ee8407009e6abf3126760572"
+    },
+    {
+      "day": "2026-11-23",
+      "run": "2026-11-23T12:13-05:00",
+      "committed_usd": 4.0866000000000005e-05,
+      "status": "success",
+      "sha256": "c72701c6478df44d0331552cddcf260492f0fc5e7a059d29ba35ea91d82f9388"
+    },
+    {
+      "day": "2026-11-23",
+      "run": "2026-11-23T12:13-05:00",
+      "committed_usd": 4.2378000000000007e-05,
+      "status": "success",
+      "sha256": "8e1ca5c52e187485e1c6ff281beed751d0ea60fdd1bb1b15367de43763b15c54"
+    },
+    {
+      "day": "2026-11-23",
+      "run": "2026-11-23T12:13-05:00",
+      "committed_usd": 4.410000000000001e-05,
+      "status": "success",
+      "sha256": "04e81a644c5f06c4e58bf8da8555771014f32ca4559ae9270e3a82b75350b974"
     }
   ]
 }
