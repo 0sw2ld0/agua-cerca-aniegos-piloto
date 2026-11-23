@@ -1872,6 +1872,16 @@
    "published_at": "2026-11-23T01:28:43Z",
    "text_sha": "79b3258243f58c8a6a9dac2beeaa9f6060556fbb50bd39e1ec79196acbf32c78",
    "title": "Lluvias intensas provocan aniegos e inundaciones en Piura y Senamhi mantiene alerta roja por quebradas"
+  },
+  "https://www.infobae.com/peru/2026/11/23/parecia-el-fin-del-mundo-vecinos-de-piura-relatan-como-las-lluvias-inundaron-sus-casas-y-arrasaron-con-sus-pertenencias/": {
+   "checked_at": "2026-11-23T17:14:12.619993-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-23T21:59:21Z",
+   "text_sha": "83949433be3e16f42b9745935cf3ba5148225fbadd86f89291776879d1d48b74",
+   "title": "“Parecía el fin del mundo”: vecinos de Piura relatan cómo las lluvias inundaron sus casas y arrasaron con sus pertenencias"
   }
  },
  "attempts": [
@@ -2342,6 +2352,14 @@
    "input_tokens": 1999,
    "output_tokens": 52,
    "run": "2026-11-23T14:14-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002249,
+   "day": "2026-11-23",
+   "input_tokens": 2039,
+   "output_tokens": 42,
+   "run": "2026-11-23T17:14-05:00",
    "status": "success"
   }
  ],
