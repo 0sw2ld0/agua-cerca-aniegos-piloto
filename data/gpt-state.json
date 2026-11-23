@@ -370,6 +370,16 @@
    "text_sha": "0950b795cea0f6fb797f3dd625141da6a23ea9c10ba41693d61c4e905b1b870f",
    "title": "Video viral de inundaciones en Tumbes corresponde a abril de 2025 y no a la emergencia actual"
   },
+  "https://elcomercio.pe/lima/fenomeno-el-nino-como-funciona-la-tecnologia-que-permite-identificar-inundaciones-y-zonas-que-necesitan-ayuda-urgente-apuesplan-noticia/": {
+   "checked_at": "2026-11-23T12:44:12.797162-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-23T17:31:08+00:00",
+   "text_sha": "1dc1bb3e180f6648af6c1ddf9ab92ce83cf68f1a04bfa7a11e1e34f6b4e4d07e",
+   "title": "Fenómeno El Niño: ¿cómo funciona la tecnología que permite identificar inundaciones y zonas que necesitan ayuda urgente? "
+  },
   "https://elcomercio.pe/lima/lima-sur-bajo-el-agua-por-que-las-lluvias-se-concentran-en-esta-zona-y-no-en-el-norte-y-como-se-explican-los-65-puntos-de-inundacion-apuesplan-noticia/": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -2316,6 +2326,14 @@
    "input_tokens": 1016,
    "output_tokens": 38,
    "run": "2026-11-23T12:14-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002658,
+   "day": "2026-11-23",
+   "input_tokens": 2418,
+   "output_tokens": 48,
+   "run": "2026-11-23T12:44-05:00",
    "status": "success"
   }
  ],
