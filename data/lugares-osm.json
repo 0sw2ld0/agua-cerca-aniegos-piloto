@@ -903,6 +903,10 @@
    "precision": "Cruce de vías según OpenStreetMap · punto referencial (±50 m)",
    "reason": "verified"
   },
+  "villa el salvador|av sol con av separadora industrial": {
+   "checked_at": "2026-11-23T16:44:02.914247-05:00",
+   "reason": "road_not_found"
+  },
   "villa el salvador|colegio juan pablo ii": {
    "checked_at": "2026-11-06T14:50:41.179402-05:00",
    "evidence": "OSM: colegio juan pablo ii en Villa El Salvador",
