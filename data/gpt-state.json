@@ -1823,6 +1823,16 @@
    "text_sha": "28d3fe243ebc6d193997de56266361454112e23ca9f41eaa55892349a91a7b4f",
    "title": "Lanzan campaña para rescatar y proteger a animales ante huaicos, inundaciones y lluvias intensas en Perú"
   },
+  "https://www.infobae.com/peru/2026/11/23/las-lluvias-torrenciales-provocan-inundaciones-y-activan-quebradas-en-varios-distritos-de-piura/": {
+   "checked_at": "2026-11-23T08:44:36.663276-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-23T13:11:28Z",
+   "text_sha": "3f7e9dca9c5ca0ae9d6c1f25eb70a85b0812f08e6f38b25ac2367fa9e37e859f",
+   "title": "Las lluvias torrenciales provocan inundaciones y activan quebradas en varios distritos de Piura"
+  },
   "https://www.infobae.com/peru/2026/11/23/lluvias-intensas-provocan-aniegos-en-piura-y-senamhi-mantiene-alerta-roja-por-quebradas/": {
    "checked_at": "2026-11-22T20:42:20.444086-05:00",
    "extraction": {
@@ -2254,6 +2264,14 @@
    "input_tokens": 1096,
    "output_tokens": 41,
    "run": "2026-11-23T07:43-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002046,
+   "day": "2026-11-23",
+   "input_tokens": 1796,
+   "output_tokens": 50,
+   "run": "2026-11-23T08:44-05:00",
    "status": "success"
   }
  ],
