@@ -20,6 +20,16 @@
    "text_sha": "d00c49c5526b2c5b78f5fd1803fbad36712ad522f240a70144e243ec10a3e8c1",
    "title": "Fenómeno El Niño: comerciantes de Piura colocan sacos de arena ante posibles inundaciones"
   },
+  "https://andina.pe/agencia/noticia-fenomeno-nino-lluvia-torrencial-134-litros-m%C2%B2-inunda-calles-tambogrande-1101060.aspx": {
+   "checked_at": "2026-11-23T07:43:09.536363-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-23T06:57:00-05:00",
+   "text_sha": "8e5365f4c2e0d72f1270891d4ccfadceadc2d704b07a4fb098b164df8d87b98d",
+   "title": "Fenómeno El Niño: lluvia torrencial de 134 litros por m² inunda calles de Tambogrande"
+  },
   "https://andina.pe/agencia/noticia-fenomeno-nino-lluvias-e-inundaciones-provocan-colapso-vivienda-distrito-olmos-1100251.aspx": {
    "checked_at": "2026-11-16T14:31:03.700494-05:00",
    "extraction": {
@@ -2236,6 +2246,14 @@
    "input_tokens": 1738,
    "output_tokens": 41,
    "run": "2026-11-22T20:42-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001301,
+   "day": "2026-11-23",
+   "input_tokens": 1096,
+   "output_tokens": 41,
+   "run": "2026-11-23T07:43-05:00",
    "status": "success"
   }
  ],
