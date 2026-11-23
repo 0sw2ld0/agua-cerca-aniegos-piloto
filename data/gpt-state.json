@@ -40,6 +40,16 @@
    "text_sha": "38cef7a48dadb38fa335245f8aaf24781d1fbb875f69d1117db2ad6129b79049",
    "title": "Fenómeno El Niño: lluvias e inundaciones provocan colapso de vivienda en distrito de Olmos"
   },
+  "https://andina.pe/agencia/noticia-fenomeno-nino-piura-motobombas-evacuan-agua-casas-inundadas-tambogrande-1101100.aspx": {
+   "checked_at": "2026-11-23T12:14:07.073822-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-23T12:07:00-05:00",
+   "text_sha": "8d6cbfe5a1a5d6abdebb12bee87c303fb08289d0ba923998f5a60cd868be47c2",
+   "title": "Fenómeno El Niño en Piura: con motobombas evacúan agua de casas inundadas en Tambogrande"
+  },
   "https://andina.pe/agencia/noticia-la-libertad-lluvia-intensa-inunda-carretera-panamericana-norte-la-provincia-viru-1100547.aspx": {
    "checked_at": "2026-11-18T14:05:07.920082-05:00",
    "extraction": {
@@ -2298,6 +2308,14 @@
    "input_tokens": 1652,
    "output_tokens": 68,
    "run": "2026-11-23T11:13-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001206,
+   "day": "2026-11-23",
+   "input_tokens": 1016,
+   "output_tokens": 38,
+   "run": "2026-11-23T12:14-05:00",
    "status": "success"
   }
  ],
