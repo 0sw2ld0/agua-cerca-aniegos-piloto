@@ -6769,6 +6769,82 @@
           "output_tokens": 134
         }
       }
+    },
+    "eb7ecd4e1bfceefb667fd73c7438fdac62845326134d39b7d4e1f699d5471b07": {
+      "status": "success",
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "has_place": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "date_0": {
+            "type": "noul",
+            "noul": 0.99
+          },
+          "passage_0__observed": {
+            "type": "noul",
+            "noul": 0.98
+          },
+          "passage_0__historical": {
+            "type": "noul",
+            "noul": 0.17
+          },
+          "passage_0__water_present": {
+            "type": "noul",
+            "noul": 0.27
+          },
+          "passage_0__attended": {
+            "type": "noul",
+            "noul": 0.04
+          },
+          "passage_0__removal_work": {
+            "type": "noul",
+            "noul": 0.02
+          }
+        },
+        "usage": {
+          "input_tokens": 1226,
+          "output_tokens": 152
+        }
+      }
+    },
+    "07f4dd499457e4d654d47ff7e70c87026b384e7745068e8a24bbf7f1b92cbdc7": {
+      "status": "success",
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "has_place": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "passage_0__observed": {
+            "type": "noul",
+            "noul": 0.96
+          },
+          "passage_0__historical": {
+            "type": "noul",
+            "noul": 0.18
+          },
+          "passage_0__water_present": {
+            "type": "noul",
+            "noul": 0.74
+          },
+          "passage_0__attended": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "passage_0__removal_work": {
+            "type": "noul",
+            "noul": 0.03
+          }
+        },
+        "usage": {
+          "input_tokens": 1009,
+          "output_tokens": 134
+        }
+      }
     }
   },
   "attempts": [
@@ -7924,6 +8000,20 @@
       "committed_usd": 4.2378000000000007e-05,
       "status": "success",
       "sha256": "8a7bfafa579648c8d663c2881b8a8cdcc7283adfb613c69ab627b6458e3ed30a"
+    },
+    {
+      "day": "2026-11-23",
+      "run": "2026-11-23T18:14-05:00",
+      "committed_usd": 5.149200000000001e-05,
+      "status": "success",
+      "sha256": "eb7ecd4e1bfceefb667fd73c7438fdac62845326134d39b7d4e1f699d5471b07"
+    },
+    {
+      "day": "2026-11-23",
+      "run": "2026-11-23T18:14-05:00",
+      "committed_usd": 4.2378000000000007e-05,
+      "status": "success",
+      "sha256": "07f4dd499457e4d654d47ff7e70c87026b384e7745068e8a24bbf7f1b92cbdc7"
     }
   ]
 }
