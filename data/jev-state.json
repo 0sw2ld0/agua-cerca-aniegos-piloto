@@ -5461,6 +5461,162 @@
           "output_tokens": 152
         }
       }
+    },
+    "d5be94808aafa160c728bb3a08f5face9de86771fe3b72a9b2ceb2ccc7524f3c": {
+      "status": "success",
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "has_place": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "date_0": {
+            "type": "noul",
+            "noul": 0.97
+          },
+          "passage_0__observed": {
+            "type": "noul",
+            "noul": 0.97
+          },
+          "passage_0__historical": {
+            "type": "noul",
+            "noul": 0.08
+          },
+          "passage_0__water_present": {
+            "type": "noul",
+            "noul": 0.69
+          },
+          "passage_0__attended": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "passage_0__removal_work": {
+            "type": "noul",
+            "noul": 0.02
+          }
+        },
+        "usage": {
+          "input_tokens": 1291,
+          "output_tokens": 152
+        }
+      }
+    },
+    "9c7a0116f9e62a5269d6a1791dafa1e4479eceeb3f8ee1a2fa22afe53bd2a50e": {
+      "status": "success",
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "has_place": {
+            "type": "noul",
+            "noul": 0.04
+          },
+          "date_0": {
+            "type": "noul",
+            "noul": 0.22
+          },
+          "passage_0__observed": {
+            "type": "noul",
+            "noul": 0.96
+          },
+          "passage_0__historical": {
+            "type": "noul",
+            "noul": 0.18
+          },
+          "passage_0__water_present": {
+            "type": "noul",
+            "noul": 0.74
+          },
+          "passage_0__attended": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "passage_0__removal_work": {
+            "type": "noul",
+            "noul": 0.02
+          }
+        },
+        "usage": {
+          "input_tokens": 1247,
+          "output_tokens": 152
+        }
+      }
+    },
+    "5e8bb4b9a908372bdf69332c7a3f2d1cc72aa1c7b893d4981c8287b85ca6e481": {
+      "status": "success",
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "has_place": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "passage_0__observed": {
+            "type": "noul",
+            "noul": 0.04
+          },
+          "passage_0__historical": {
+            "type": "noul",
+            "noul": 0.11
+          },
+          "passage_0__water_present": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "passage_0__attended": {
+            "type": "noul",
+            "noul": 0.07
+          },
+          "passage_0__removal_work": {
+            "type": "noul",
+            "noul": 0.02
+          }
+        },
+        "usage": {
+          "input_tokens": 1104,
+          "output_tokens": 134
+        }
+      }
+    },
+    "2e650cdc51ee5d6d3e1561e567df9c5d295babeac9f30bfb1a593b065431b62f": {
+      "status": "success",
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "has_place": {
+            "type": "noul",
+            "noul": 0.04
+          },
+          "date_0": {
+            "type": "noul",
+            "noul": 0.04
+          },
+          "passage_0__observed": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "passage_0__historical": {
+            "type": "noul",
+            "noul": 0.07
+          },
+          "passage_0__water_present": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "passage_0__attended": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "passage_0__removal_work": {
+            "type": "noul",
+            "noul": 0.01
+          }
+        },
+        "usage": {
+          "input_tokens": 1689,
+          "output_tokens": 152
+        }
+      }
     }
   },
   "attempts": [
@@ -6371,6 +6527,34 @@
       "committed_usd": 6.615000000000001e-05,
       "status": "success",
       "sha256": "f8ec685349268bc5dddb8b9039d37ed6681d9e2da9a1842a2b1247a7bf9271d1"
+    },
+    {
+      "day": "2026-11-22",
+      "run": "2026-11-22T20:41-05:00",
+      "committed_usd": 5.422200000000001e-05,
+      "status": "success",
+      "sha256": "d5be94808aafa160c728bb3a08f5face9de86771fe3b72a9b2ceb2ccc7524f3c"
+    },
+    {
+      "day": "2026-11-22",
+      "run": "2026-11-22T20:41-05:00",
+      "committed_usd": 5.2374000000000004e-05,
+      "status": "success",
+      "sha256": "9c7a0116f9e62a5269d6a1791dafa1e4479eceeb3f8ee1a2fa22afe53bd2a50e"
+    },
+    {
+      "day": "2026-11-22",
+      "run": "2026-11-22T20:41-05:00",
+      "committed_usd": 4.636800000000001e-05,
+      "status": "success",
+      "sha256": "5e8bb4b9a908372bdf69332c7a3f2d1cc72aa1c7b893d4981c8287b85ca6e481"
+    },
+    {
+      "day": "2026-11-22",
+      "run": "2026-11-22T20:41-05:00",
+      "committed_usd": 7.0938e-05,
+      "status": "success",
+      "sha256": "2e650cdc51ee5d6d3e1561e567df9c5d295babeac9f30bfb1a593b065431b62f"
     }
   ]
 }
