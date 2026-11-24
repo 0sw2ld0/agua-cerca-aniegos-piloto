@@ -1,5 +1,15 @@
 {
  "articles": {
+  "https://andina.pe/agencia/noticia-ancash-oleaje-anomalo-provoca-inundacion-playa-dorado-nuevo-chimbote-1101180.aspx": {
+   "checked_at": "2026-11-23T22:44:30.920767-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-23T22:30:00-05:00",
+   "text_sha": "ca15707ad18f371bb4f28b3063dc9818bd74ffa46bfe15e5f1d6c90a82b7339f",
+   "title": "Áncash: oleaje anómalo provoca inundación en playa El Dorado de Nuevo Chimbote"
+  },
   "https://andina.pe/agencia/noticia-ayacucho-lluvia-fuerte-intensidad-sorprende-a-pobladores-e-inunda-viviendas-y-calles-1099621.aspx": {
    "checked_at": "2026-11-12T10:23:33.629764-05:00",
    "extraction": {
@@ -2391,6 +2401,14 @@
    "input_tokens": 1452,
    "output_tokens": 297,
    "run": "2026-11-23T22:14-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001248,
+   "day": "2026-11-23",
+   "input_tokens": 1018,
+   "output_tokens": 46,
+   "run": "2026-11-23T22:44-05:00",
    "status": "success"
   }
  ],
