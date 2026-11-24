@@ -1,9 +1,30 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-23T19:46:03.469269-05:00",
+  "generated_at": "2026-11-23T20:14:27.066628-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
+    {
+      "id": -2661879116513294,
+      "kind": "incident",
+      "district": "Villa María del Triunfo",
+      "location": "Av. Pachacútec con Av. 26 de noviembre",
+      "summary": "Reporte complementario N.º 16338 del COEN-INDECI (23/11 16:20): inundación por saturación del suelo para drenaje (pluvial) en Villa María del Triunfo. El reporte menciona este lugar en los hechos.",
+      "date": "2026-11-23",
+      "expires_at": "2026-11-25T00:00:00-05:00",
+      "status": "Situación actual sin confirmar",
+      "coordinates": [
+        -76.943503,
+        -12.180373
+      ],
+      "precision": "Cruce de vías según OpenStreetMap · punto referencial (±50 m)",
+      "sources": [
+        {
+          "name": "COEN-INDECI · Reporte 16338, 23/11 16:20",
+          "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-15466-4-11-2026-coen-indeci-1330-horas-reporte-n-1-inundacion-por-saturacion-del-suelo-para-drenaje-pluvial-en-el-distrito-de-villa-maria-del-triunfo-l/"
+        }
+      ]
+    },
     {
       "id": -3249083583407622,
       "kind": "incident",

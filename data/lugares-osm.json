@@ -957,6 +957,16 @@
    "precision": "Centro del grupo residencial según OpenStreetMap · zona referencial (±150 m), no la calle exacta",
    "reason": "verified"
   },
+  "villa maria del triunfo|av pachacutec con av 26 de noviembre": {
+   "checked_at": "2026-11-23T20:14:27.066628-05:00",
+   "evidence": "OSM: cruce de pachacutec y 26 de noviembre",
+   "point": [
+    -76.943503,
+    -12.180373
+   ],
+   "precision": "Cruce de vías según OpenStreetMap · punto referencial (±50 m)",
+   "reason": "verified"
+  },
   "villa maria del triunfo|bypass de av pachacutec con av 26 de noviembre": {
    "checked_at": "2026-11-06T14:50:41.179402-05:00",
    "evidence": "OSM: cruce de pachacutec y 26 de noviembre; estructura vial a desnivel junto al cruce",
