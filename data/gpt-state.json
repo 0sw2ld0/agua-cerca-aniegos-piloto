@@ -651,6 +651,29 @@
    "text_sha": "357588350e47235112a47fb926b6df4c22bf4dcbf74c03bc7d0d5bd5c9ca360c",
    "title": "Furgonetas quedan varadas por tratar de pasar bypass inundado en Villa El Salvador"
   },
+  "https://elcomercio.pe/lima/sucesos/oleajes-anomalos-en-san-bartolo-inundan-viviendas-y-dejan-cerca-de-30-forados-en-el-malecon-apuesplan-ultimas-noticia/": {
+   "checked_at": "2026-11-23T22:14:29.825450-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "San Bartolo",
+      "district_quote": "distrito de San Bartolo",
+      "explicit_date": "",
+      "location": "malecón",
+      "location_quote": "en el malecón",
+      "summary": "Oleajes anómalos inundaron viviendas y negocios ubicados en el malecón.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-24T02:41:08+00:00",
+   "text_sha": "ed05a7605b0060d99a700a91dddf5189f43920fce9c1e4d0e05262dce37d9dc6",
+   "title": "Oleajes anómalos en San Bartolo inundan viviendas y dejan cerca de 30 forados en el malecón"
+  },
   "https://elcomercio.pe/lima/sucesos/villa-el-salvador-amanece-con-calles-inundadas-y-desagues-colapsados-por-lluvias-apuesplan-ultimas-noticia/": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -2360,6 +2383,14 @@
    "input_tokens": 2039,
    "output_tokens": 42,
    "run": "2026-11-23T17:14-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002937,
+   "day": "2026-11-23",
+   "input_tokens": 1452,
+   "output_tokens": 297,
+   "run": "2026-11-23T22:14-05:00",
    "status": "success"
   }
  ],

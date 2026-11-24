@@ -1,6 +1,18 @@
 {
- "current": [],
- "generated_at": "2026-11-23T21:44:33.777499-05:00",
+ "current": [
+  {
+   "date_status": "publication_day",
+   "day": "2026-11-23",
+   "district": "San Bartolo",
+   "location": "malecón",
+   "matches_review": null,
+   "point": null,
+   "urls": [
+    "https://elcomercio.pe/lima/sucesos/oleajes-anomalos-en-san-bartolo-inundan-viviendas-y-dejan-cerca-de-30-forados-en-el-malecon-apuesplan-ultimas-noticia/"
+   ]
+  }
+ ],
+ "generated_at": "2026-11-23T22:14:29.825450-05:00",
  "mode": "shadow_not_published",
  "model": "gpt-6-luna",
  "schema_version": 1,
@@ -349,6 +361,21 @@
    "summary": "La rotura de una tubería causó un aniego en la vía principal y auxiliar, con agua y lodo que dificultaron el tránsito.",
    "urls": [
     "https://larepublica.pe/sociedad/2026/11/18/emergencia-en-comas-tuberia-de-agua-revienta-en-plena-avenida-universitaria-y-genera-aniego-esta-asi-desde-hace-dos-horas-532854"
+   ]
+  },
+  "2026-11-23|San Bartolo|malecon": {
+   "date_status": "publication_day",
+   "day": "2026-11-23",
+   "district": "San Bartolo",
+   "district_stated": null,
+   "first_seen": "2026-11-23T22:14:29.825450-05:00",
+   "last_seen": "2026-11-23T22:14:29.825450-05:00",
+   "location": "malecón",
+   "point": null,
+   "rule": null,
+   "summary": "Oleajes anómalos inundaron viviendas y negocios ubicados en el malecón.",
+   "urls": [
+    "https://elcomercio.pe/lima/sucesos/oleajes-anomalos-en-san-bartolo-inundan-viviendas-y-dejan-cerca-de-30-forados-en-el-malecon-apuesplan-ultimas-noticia/"
    ]
   }
  }
