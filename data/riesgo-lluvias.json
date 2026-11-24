@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
  "fuente": "CENEPRED / SIGRID",
- "generated_at": "2026-11-23T23:44:38.692740-05:00",
+ "generated_at": "2026-11-24T00:16:41.599367-05:00",
  "lista": "https://sigrid.cenepred.gob.pe/sigridv3/escenarios/lbam",
  "escenarios": [
   {
@@ -11,7 +11,7 @@
    "inicio": "2026-11-24T00:00:00-05:00",
    "fin": "2026-11-27T00:00:00-05:00",
    "documento": "https://sigrid.cenepred.gob.pe/sigridv3/documento/23473",
-   "estado": "proximo",
+   "estado": "vigente",
    "distritos": 85,
    "niveles": {
     "Bajo": 31,
@@ -35,7 +35,7 @@
    "inicio": "2026-11-24T00:00:00-05:00",
    "fin": "2026-11-27T00:00:00-05:00",
    "documento": "https://sigrid.cenepred.gob.pe/sigridv3/documento/23472",
-   "estado": "proximo",
+   "estado": "vigente",
    "distritos": 190,
    "niveles": {
     "Muy alto": 118,
@@ -46,57 +46,6 @@
    "descargado": "2026-11-22T16:42:14.253666-05:00",
    "departamentos": [
     "CAJAMARCA",
-    "LA LIBERTAD",
-    "LAMBAYEQUE",
-    "PIURA",
-    "TUMBES"
-   ]
-  },
-  {
-   "id": "1144",
-   "aviso": "478",
-   "ambito": "COSTA CENTRO Y SUR",
-   "inicio": "2026-11-21T00:00:00-05:00",
-   "fin": "2026-11-24T00:00:00-05:00",
-   "documento": "https://sigrid.cenepred.gob.pe/sigridv3/documento/23445",
-   "estado": "vigente",
-   "distritos": 87,
-   "niveles": {
-    "Bajo": 30,
-    "Medio": 48,
-    "Alto": 9
-   },
-   "descargado": "2026-11-20T11:08:29.255745-05:00",
-   "departamentos": [
-    "AREQUIPA",
-    "CALLAO",
-    "LIMA",
-    "MOQUEGUA",
-    "TACNA"
-   ]
-  },
-  {
-   "id": "1143",
-   "aviso": "477",
-   "ambito": "COSTA NORTE Y SIERRA",
-   "inicio": "2026-11-21T00:00:00-05:00",
-   "fin": "2026-11-24T00:00:00-05:00",
-   "documento": "https://sigrid.cenepred.gob.pe/sigridv3/documento/23428",
-   "estado": "vigente",
-   "distritos": 284,
-   "niveles": {
-    "Medio": 17,
-    "Alto": 80,
-    "Muy alto": 186,
-    "Bajo": 1
-   },
-   "descargado": "2026-11-19T19:07:19.259746-05:00",
-   "departamentos": [
-    "ANCASH",
-    "AYACUCHO",
-    "CAJAMARCA",
-    "HUANCAVELICA",
-    "ICA",
     "LA LIBERTAD",
     "LAMBAYEQUE",
     "PIURA",
