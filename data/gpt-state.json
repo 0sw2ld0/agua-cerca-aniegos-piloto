@@ -113,6 +113,16 @@
    "text_sha": "c2aa48a0c41be1e1cde0ad778d1a5cbebe9f2ab1fa54c34b3b155a18e19862a3",
    "title": "Ministerio de Vivienda culmina construcción de cámaras de bombeo para prevenir aniegos"
   },
+  "https://andina.pe/agencia/noticia-presidenta-anuncia-obras-etapa-iv-del-proyecto-agua-y-alcantarillado-juliaca-1101286.aspx": {
+   "checked_at": "2026-11-24T18:16:09.058996-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-24T18:09:00-05:00",
+   "text_sha": "d96d6fd29d756abb4e37f89428f744cf25d0dbfd1e51df5c6c525162becde77c",
+   "title": "Presidenta anuncia obras de etapa IV del Proyecto de Agua y Alcantarillado de Juliaca"
+  },
   "https://andina.pe/agencia/noticia-tumbes-rio-zarumilla-se-desborda-e-inunda-puerto-peru-y-pone-riesgo-a-otros-poblados-1100864.aspx": {
    "checked_at": "2026-11-20T16:38:39.727255-05:00",
    "extraction": {
@@ -2427,6 +2437,14 @@
    "input_tokens": 1570,
    "output_tokens": 44,
    "run": "2026-11-24T17:16-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001192,
+   "day": "2026-11-24",
+   "input_tokens": 977,
+   "output_tokens": 43,
+   "run": "2026-11-24T18:16-05:00",
    "status": "success"
   }
  ],
