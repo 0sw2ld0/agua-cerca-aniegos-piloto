@@ -12,7 +12,7 @@
    ]
   }
  ],
- "generated_at": "2026-11-24T11:15:32.027301-05:00",
+ "generated_at": "2026-11-24T11:45:34.096976-05:00",
  "mode": "shadow_not_published",
  "model": "gpt-6-luna",
  "schema_version": 1,
@@ -369,7 +369,7 @@
    "district": "San Bartolo",
    "district_stated": null,
    "first_seen": "2026-11-23T22:14:29.825450-05:00",
-   "last_seen": "2026-11-24T11:15:32.027301-05:00",
+   "last_seen": "2026-11-24T11:45:34.096976-05:00",
    "location": "malecón",
    "point": null,
    "rule": null,
