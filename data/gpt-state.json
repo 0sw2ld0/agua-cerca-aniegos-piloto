@@ -1935,6 +1935,16 @@
    "published_at": "2026-11-24T22:03:55Z",
    "text_sha": "234ea22e504f1a7e06ac273fa04c0bc4c6355586434ab0412c5ea474a876d45b",
    "title": "Fenómeno El Niño: despliegue militar, maquinaria y albergues ante lluvias y riesgo de inundaciones en Piura"
+  },
+  "https://www.infobae.com/peru/2026/11/25/juliaca-soporta-inundaciones-tras-las-lluvias-vehiculos-y-peatones-enfrentaron-dificultades-para-circular-por-las-calles/": {
+   "checked_at": "2026-11-24T19:16:15.891005-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-25T00:10:05Z",
+   "text_sha": "4a8cd8e1a4eab4dc29a245576bb401668ef1d9de633cbb00531086af038d0175",
+   "title": "Juliaca soporta inundaciones tras las lluvias: vehículos y peatones enfrentaron dificultades para circular por las calles"
   }
  },
  "attempts": [
@@ -2445,6 +2455,14 @@
    "input_tokens": 977,
    "output_tokens": 43,
    "run": "2026-11-24T18:16-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001974,
+   "day": "2026-11-24",
+   "input_tokens": 1764,
+   "output_tokens": 42,
+   "run": "2026-11-24T19:16-05:00",
    "status": "success"
   }
  ],
