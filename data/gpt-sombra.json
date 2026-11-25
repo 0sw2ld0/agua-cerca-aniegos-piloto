@@ -1,18 +1,6 @@
 {
- "current": [
-  {
-   "date_status": "publication_day",
-   "day": "2026-11-23",
-   "district": "San Bartolo",
-   "location": "malecón",
-   "matches_review": null,
-   "point": null,
-   "urls": [
-    "https://elcomercio.pe/lima/sucesos/oleajes-anomalos-en-san-bartolo-inundan-viviendas-y-dejan-cerca-de-30-forados-en-el-malecon-apuesplan-ultimas-noticia/"
-   ]
-  }
- ],
- "generated_at": "2026-11-24T23:46:35.530005-05:00",
+ "current": [],
+ "generated_at": "2026-11-25T00:16:35.106666-05:00",
  "mode": "shadow_not_published",
  "model": "gpt-6-luna",
  "schema_version": 1,
