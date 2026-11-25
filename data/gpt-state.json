@@ -390,6 +390,16 @@
    "text_sha": "bc09b6be88bd86b52ea0cdbdbfa6b25f3aa9caab3879a64066825ae61b3b7942",
    "title": "Las lluvias e inundaciones en la Arequipa del siglo XVIII y la destrucción que dejaron a su paso"
   },
+  "https://elbuho.pe/2026/11/piura-en-estado-de-emergencia-por-lluvias-inundaciones-activacion-de-quebradas-altas-temperaturas-y-dengue/": {
+   "checked_at": "2026-11-25T17:18:20.154328-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-25T22:09:40+00:00",
+   "text_sha": "0d2e178d82f6fe3de14a1bdedecec696aec3a1e96117cd476b01e9355e68aa8d",
+   "title": "Piura en estado de emergencia por lluvias, inundaciones, activación de quebradas, altas temperaturas y dengue"
+  },
   "https://elbuho.pe/2026/11/preocupante-vecinos-de-jaen-exigen-solucion-ante-constantes-colapsos-de-desague-en-camal-municipal/": {
    "checked_at": "2026-11-10T11:49:56.339154-05:00",
    "extraction": {
@@ -2535,6 +2545,14 @@
    "input_tokens": 1398,
    "output_tokens": 46,
    "run": "2026-11-25T14:48-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002188,
+   "day": "2026-11-25",
+   "input_tokens": 1978,
+   "output_tokens": 42,
+   "run": "2026-11-25T17:18-05:00",
    "status": "success"
   }
  ],
