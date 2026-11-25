@@ -360,6 +360,16 @@
    "text_sha": "213dd6ac5b58945fa4d45f33cf89d3bcfecdd0483ba18e5e9f82c51dce43fc17",
    "title": "Agua y desagüe en Lambayeque: ¿aciertan los planes de gobierno de Fuerza Popular y Somos Perú en los problemas hídricos?"
   },
+  "https://elbuho.pe/2026/11/de-20-grados-a-calles-inundadas-fuerte-lluvia-golpeo-a-juliaca-en-horas-de-la-tarde/": {
+   "checked_at": "2026-11-25T12:47:51.273318-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-25T17:44:25+00:00",
+   "text_sha": "ef17449b7d2b4866a464208481e64fccb258dddf5eac38c28af0aeeb2c08df77",
+   "title": "De 20 grados a calles inundadas: fuerte lluvia golpeo a Juliaca en horas de la tarde"
+  },
   "https://elbuho.pe/2026/11/las-lluvias-e-inundaciones-en-la-arequipa-del-siglo-xviii-y-la-destruccion-que-dejaron-a-su-paso/": {
    "checked_at": "2026-11-22T18:12:12.865751-05:00",
    "extraction": {
@@ -2499,6 +2509,14 @@
    "input_tokens": 1115,
    "output_tokens": 46,
    "run": "2026-11-25T11:18-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001511,
+   "day": "2026-11-25",
+   "input_tokens": 1301,
+   "output_tokens": 42,
+   "run": "2026-11-25T12:47-05:00",
    "status": "success"
   }
  ],
