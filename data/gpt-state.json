@@ -60,6 +60,16 @@
    "text_sha": "8d6cbfe5a1a5d6abdebb12bee87c303fb08289d0ba923998f5a60cd868be47c2",
    "title": "Fenómeno El Niño en Piura: con motobombas evacúan agua de casas inundadas en Tambogrande"
   },
+  "https://andina.pe/agencia/noticia-ica-oleajes-anomalos-inundan-calles-y-zonas-turisticas-del-balneario-paracas-1101362.aspx": {
+   "checked_at": "2026-11-25T11:18:27.198126-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-25T10:33:00-05:00",
+   "text_sha": "aae5c46f819af502549828f458a54f6d8f500fd20d9f344cb8010b16d56238e3",
+   "title": "Ica: oleajes anómalos inundan calles y zonas turísticas del balneario de Paracas"
+  },
   "https://andina.pe/agencia/noticia-la-libertad-lluvia-intensa-inunda-carretera-panamericana-norte-la-provincia-viru-1100547.aspx": {
    "checked_at": "2026-11-18T14:05:07.920082-05:00",
    "extraction": {
@@ -2481,6 +2491,14 @@
    "input_tokens": 1193,
    "output_tokens": 40,
    "run": "2026-11-25T08:47-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001345,
+   "day": "2026-11-25",
+   "input_tokens": 1115,
+   "output_tokens": 46,
+   "run": "2026-11-25T11:18-05:00",
    "status": "success"
   }
  ],
