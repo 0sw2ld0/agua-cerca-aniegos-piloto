@@ -1732,6 +1732,16 @@
    "text_sha": "4096e3000c2cecb5733b07de79a3676e0af3af7cecc32052ee734bb66d9c6df9",
    "title": "Defensoría del Pueblo supervisa atención de aniegos en distritos de Lima Metropolitana y solicita medidas urgentes para proteger la salud de la población"
   },
+  "https://www.defensoria.gob.pe/defensoria-del-pueblo-supervisa-diques-en-catacaos-y-anuncia-seguimiento-a-las-medidas-de-prevencion-ante-inundaciones/": {
+   "checked_at": "2026-11-25T08:47:09.722208-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-25T13:20:14+00:00",
+   "text_sha": "e200288e994094f3a927009f553d4cd096c22b5a5902117bebadf65204e17ca3",
+   "title": "Defensoría del Pueblo supervisa diques en Catacaos y anuncia seguimiento a las medidas de prevención ante inundaciones"
+  },
   "https://www.infobae.com/peru/2026/11/05/las-lloviznas-en-lima-casi-igualan-un-record-de-1970-aniegos-vias-inundadas-y-desagues-colapsados-en-distritos-del-sur/": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -2463,6 +2473,14 @@
    "input_tokens": 1764,
    "output_tokens": 42,
    "run": "2026-11-24T19:16-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001393,
+   "day": "2026-11-25",
+   "input_tokens": 1193,
+   "output_tokens": 40,
+   "run": "2026-11-25T08:47-05:00",
    "status": "success"
   }
  ],
