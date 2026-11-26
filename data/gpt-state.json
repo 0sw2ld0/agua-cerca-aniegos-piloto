@@ -965,6 +965,16 @@
    "text_sha": "c756c79b18d0b3719d46d30705ffee812fd5efdb0b88ffc392e5d897c9f41957",
    "title": "Tumbes sufre tormentas eléctricas y lluvias intensas que activan quebradas y provocan aniegos en zonas agrícolas"
   },
+  "https://elcomercio.pe/peru/tumbes/lluvias-intensas-e-inundaciones-provocan-severos-danos-y-el-desborde-de-rios-en-tumbes-tras-el-adelanto-de-el-nino-ultimas-noticia/": {
+   "checked_at": "2026-11-26T11:49:50.648880-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-26T16:17:48+00:00",
+   "text_sha": "ca56e5f0742c3022e9e3074d1363ef47f4c407f8e451b4a549c666faced278d4",
+   "title": "Lluvias intensas e inundaciones provocan severos daños y el desborde de ríos en Tumbes tras el adelanto de El Niño"
+  },
   "https://larepublica.pe/sociedad/2026/11/05/bus-de-el-rapido-queda-atascado-por-inundacion-en-villa-el-salvador-y-conductor-no-puede-salir-por-el-agua-168840": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -1585,13 +1595,13 @@
    "title": "Fenómeno El Niño en Piura: lluvia torrencial de 134 litros por m² inunda Tambogrande y causa daños en Chulucanas y Paita"
   },
   "https://larepublica.pe/sociedad/2026/11/26/lluvia-intensa-de-10-horas-en-tumbes-inunda-viviendas-senamhi-advierte-precipitaciones-extremas-hasta-el-domingo-1934244": {
-   "checked_at": "2026-11-26T08:49:43.887116-05:00",
+   "checked_at": "2026-11-26T11:49:50.648880-05:00",
    "extraction": {
     "incidents": []
    },
    "model": "gpt-6-luna",
-   "published_at": "2026-11-26T13:22:35+00:00",
-   "text_sha": "00cbe8bd04c4c027b3384b330659255e42668c592e7bd1b6b593e057032812ac",
+   "published_at": "2026-11-26T16:27:57+00:00",
+   "text_sha": "fee18406da72c9920ac844d491832549d6037c5264d7c7f44214cec458b2ea36",
    "title": "Lluvia intensa de 10 horas en Tumbes inunda viviendas: Senamhi advierte precipitaciones extremas hasta el domingo"
   },
   "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004": {
@@ -2633,6 +2643,22 @@
    "input_tokens": 1882,
    "output_tokens": 39,
    "run": "2026-11-26T09:49-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002309,
+   "day": "2026-11-26",
+   "input_tokens": 1849,
+   "output_tokens": 92,
+   "run": "2026-11-26T11:49-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001901,
+   "day": "2026-11-26",
+   "input_tokens": 1666,
+   "output_tokens": 47,
+   "run": "2026-11-26T11:49-05:00",
    "status": "success"
   }
  ],
