@@ -143,6 +143,16 @@
    "text_sha": "d96d6fd29d756abb4e37f89428f744cf25d0dbfd1e51df5c6c525162becde77c",
    "title": "Presidenta anuncia obras de etapa IV del Proyecto de Agua y Alcantarillado de Juliaca"
   },
+  "https://andina.pe/agencia/noticia-tumbes-lluvia-intensa-10-horas-inunda-casas-y-provoca-colapso-del-cerco-villa-naval-1101506.aspx": {
+   "checked_at": "2026-11-26T08:19:23.426377-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-26T08:01:00-05:00",
+   "text_sha": "235003f0875edb59d95c59a3908cc0a32fd2ed8fb1dfc916d3265c1c8b8e4ee3",
+   "title": "Tumbes: lluvia intensa de 10 horas inunda casas y provoca colapso del cerco de Villa Naval"
+  },
   "https://andina.pe/agencia/noticia-tumbes-rio-zarumilla-se-desborda-e-inunda-puerto-peru-y-pone-riesgo-a-otros-poblados-1100864.aspx": {
    "checked_at": "2026-11-20T16:38:39.727255-05:00",
    "extraction": {
@@ -2571,6 +2581,14 @@
    "input_tokens": 1001,
    "output_tokens": 64,
    "run": "2026-11-25T21:48-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001182,
+   "day": "2026-11-26",
+   "input_tokens": 1017,
+   "output_tokens": 33,
+   "run": "2026-11-26T08:19-05:00",
    "status": "success"
   }
  ],
