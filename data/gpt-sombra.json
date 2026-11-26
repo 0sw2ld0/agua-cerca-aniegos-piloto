@@ -1,18 +1,6 @@
 {
- "current": [
-  {
-   "date_status": "publication_day",
-   "day": "2026-11-26",
-   "district": "Villa El Salvador",
-   "location": "Sector 1",
-   "matches_review": null,
-   "point": null,
-   "urls": [
-    "https://elcomercio.pe/lima/sucesos/ministerio-de-vivienda-instala-motobombas-en-villa-el-salvador-y-vmt-para-evitar-inundaciones-por-lluvias-fenomeno-el-nino-apuesplan-ultimas-noticia/"
-   ]
-  }
- ],
- "generated_at": "2026-11-26T18:20:21.282816-05:00",
+ "current": [],
+ "generated_at": "2026-11-26T18:50:31.167501-05:00",
  "mode": "shadow_not_published",
  "model": "gpt-6-luna",
  "schema_version": 1,

@@ -308,6 +308,16 @@
    "text_sha": "e59738ac784d4e78bb859512b9ff3011f41fb8aaf10b4e2358fcff0e4d4032e0",
    "title": "Baipás Nueva Esperanza queda cerrado en VMT por aniegos: Municipalidad de Lima inicia trabajos de rehabilitación"
   },
+  "https://caretas.pe/sociedad/carabayllo-familias-de-villa-vista-enfrentan-casos-de-dengue-en-medio-de-la-falta-de-agua-y-desague/": {
+   "checked_at": "2026-11-26T18:50:31.167501-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-26T22:40:23+00:00",
+   "text_sha": "304db722401e8eb4d5f9b5a8f13d1705ced9e027950258c5f00d475ca89c4c2b",
+   "title": "Carabayllo: familias de Villa Vista enfrentan casos de dengue en medio de la falta de agua y desagüe"
+  },
   "https://caretas.pe/sociedad/emergencia-en-lima-sur-fuertes-lluvias-inundaciones-aniegos-y-decenas-de-familias-afectadas-senamhi/": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -787,7 +797,7 @@
    "title": "Furgonetas quedan varadas por tratar de pasar bypass inundado en Villa El Salvador"
   },
   "https://elcomercio.pe/lima/sucesos/ministerio-de-vivienda-instala-motobombas-en-villa-el-salvador-y-vmt-para-evitar-inundaciones-por-lluvias-fenomeno-el-nino-apuesplan-ultimas-noticia/": {
-   "checked_at": "2026-11-26T18:20:21.282816-05:00",
+   "checked_at": "2026-11-26T18:50:31.167501-05:00",
    "extraction": {
     "incidents": [
      {
@@ -798,15 +808,27 @@
       "explicit_date": "",
       "location": "Sector 1",
       "location_quote": "sector 1 de Villa El Salvador",
-      "summary": "Se menciona agua acumulada que será evacuada mediante motobombas y una conexión a un colector en el sector 1.",
-      "timing": "current",
-      "water_reported": "yes"
+      "summary": "Se instalaron motobombas en el sector, donde el agua suele estancarse y las lluvias pueden afectar las redes de alcantarillado.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa María del Triunfo",
+      "district_quote": "Villa María del Triunfo",
+      "explicit_date": "",
+      "location": "Villa María del Triunfo",
+      "location_quote": "Villa María del Triunfo",
+      "summary": "Se instalaron motobombas en puntos críticos como medida preventiva ante posibles inundaciones por lluvias.",
+      "timing": "forecast_or_risk",
+      "water_reported": "no"
      }
     ]
    },
    "model": "gpt-6-luna",
    "published_at": "2026-11-26T22:41:50+00:00",
-   "text_sha": "42fe97f3907a964620c8dd474acb0cf1f1b5c1bf302316d477c80da282217905",
+   "text_sha": "cdf4e8702be6766fee45939c5e0fdf344e170d709eaeca082299fe64a715b164",
    "title": "Ministerio de Vivienda instala motobombas en Villa El Salvador y VMT para evitar inundaciones por lluvias"
   },
   "https://elcomercio.pe/lima/sucesos/oleajes-anomalos-en-san-bartolo-inundan-viviendas-y-dejan-cerca-de-30-forados-en-el-malecon-apuesplan-ultimas-noticia/": {
@@ -2777,6 +2799,22 @@
    "input_tokens": 1555,
    "output_tokens": 688,
    "run": "2026-11-26T18:20-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002233,
+   "day": "2026-11-26",
+   "input_tokens": 1833,
+   "output_tokens": 80,
+   "run": "2026-11-26T18:50-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0005088,
+   "day": "2026-11-26",
+   "input_tokens": 1398,
+   "output_tokens": 738,
+   "run": "2026-11-26T18:50-05:00",
    "status": "success"
   }
  ],
