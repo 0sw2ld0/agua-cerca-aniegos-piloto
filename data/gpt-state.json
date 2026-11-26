@@ -134,13 +134,13 @@
    "title": "Ministerio de Vivienda culmina construcción de cámaras de bombeo para prevenir aniegos"
   },
   "https://andina.pe/agencia/noticia-oleaje-anomalo-causa-danos-e-inunda-viviendas-colan-advierten-incremento-intensidad-1101564.aspx": {
-   "checked_at": "2026-11-26T13:49:51.905347-05:00",
+   "checked_at": "2026-11-26T14:19:54.922149-05:00",
    "extraction": {
     "incidents": []
    },
    "model": "gpt-6-luna",
    "published_at": "2026-11-26T13:14:00-05:00",
-   "text_sha": "8717870b7d92b27595baeb0900e2af3e346522e3562534d291dc817a0920fa45",
+   "text_sha": "776a6a393d8fc0a0b85ed2da177aa83e0b1ef01e014f7114adcacce7cff7abbf",
    "title": "Oleaje anómalo causa daños e inunda viviendas en Colán: advierten incremento de intensidad"
   },
   "https://andina.pe/agencia/noticia-presidenta-anuncia-obras-etapa-iv-del-proyecto-agua-y-alcantarillado-juliaca-1101286.aspx": {
@@ -2677,6 +2677,14 @@
    "input_tokens": 1019,
    "output_tokens": 40,
    "run": "2026-11-26T13:49-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001303,
+   "day": "2026-11-26",
+   "input_tokens": 1088,
+   "output_tokens": 43,
+   "run": "2026-11-26T14:19-05:00",
    "status": "success"
   }
  ],
