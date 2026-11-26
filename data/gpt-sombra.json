@@ -1,6 +1,18 @@
 {
- "current": [],
- "generated_at": "2026-11-26T17:50:15.589982-05:00",
+ "current": [
+  {
+   "date_status": "publication_day",
+   "day": "2026-11-26",
+   "district": "Villa El Salvador",
+   "location": "Sector 1",
+   "matches_review": null,
+   "point": null,
+   "urls": [
+    "https://elcomercio.pe/lima/sucesos/ministerio-de-vivienda-instala-motobombas-en-villa-el-salvador-y-vmt-para-evitar-inundaciones-por-lluvias-fenomeno-el-nino-apuesplan-ultimas-noticia/"
+   ]
+  }
+ ],
+ "generated_at": "2026-11-26T18:20:21.282816-05:00",
  "mode": "shadow_not_published",
  "model": "gpt-6-luna",
  "schema_version": 1,
@@ -364,6 +376,21 @@
    "summary": "Oleajes anómalos inundaron viviendas y negocios ubicados en el malecón.",
    "urls": [
     "https://elcomercio.pe/lima/sucesos/oleajes-anomalos-en-san-bartolo-inundan-viviendas-y-dejan-cerca-de-30-forados-en-el-malecon-apuesplan-ultimas-noticia/"
+   ]
+  },
+  "2026-11-26|Villa El Salvador|sector 1": {
+   "date_status": "publication_day",
+   "day": "2026-11-26",
+   "district": "Villa El Salvador",
+   "district_stated": null,
+   "first_seen": "2026-11-26T18:20:21.282816-05:00",
+   "last_seen": "2026-11-26T18:20:21.282816-05:00",
+   "location": "Sector 1",
+   "point": null,
+   "rule": null,
+   "summary": "Se menciona agua acumulada que será evacuada mediante motobombas y una conexión a un colector en el sector 1.",
+   "urls": [
+    "https://elcomercio.pe/lima/sucesos/ministerio-de-vivienda-instala-motobombas-en-villa-el-salvador-y-vmt-para-evitar-inundaciones-por-lluvias-fenomeno-el-nino-apuesplan-ultimas-noticia/"
    ]
   }
  }

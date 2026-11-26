@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-26T17:50:14.140356-05:00",
+  "generated_at": "2026-11-26T18:20:18.372353-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
@@ -19,6 +19,24 @@
         {
           "name": "COEN-INDECI · Reporte 16500, 26/11 13:56",
           "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-15229-30-10-2026-coen-indeci-0610-horas-reporte-n-o-1-lluvias-intensas-en-el-distrito-de-lurin-lima/"
+        }
+      ]
+    },
+    {
+      "id": -3915328354193780,
+      "kind": "publication",
+      "district": "Villa El Salvador",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Ministerio de Vivienda instala motobombas en Villa El Salvador y VMT para evitar inundaciones por lluvias",
+      "date": "2026-11-26",
+      "expires_at": "2026-11-28T22:41:50+00:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "elcomercio.pe",
+          "url": "https://elcomercio.pe/lima/sucesos/ministerio-de-vivienda-instala-motobombas-en-villa-el-salvador-y-vmt-para-evitar-inundaciones-por-lluvias-fenomeno-el-nino-apuesplan-ultimas-noticia/"
         }
       ]
     },

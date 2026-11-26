@@ -178,6 +178,16 @@
    "text_sha": "776a6a393d8fc0a0b85ed2da177aa83e0b1ef01e014f7114adcacce7cff7abbf",
    "title": "Oleaje anómalo causa daños e inunda viviendas en Colán: advierten incremento de intensidad"
   },
+  "https://andina.pe/agencia/noticia-piura-soporta-ahora-una-lluvia-torrencial-inunda-calles-y-afecta-zonas-vulnerables-1101610.aspx": {
+   "checked_at": "2026-11-26T18:20:21.282816-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-26T18:13:00-05:00",
+   "text_sha": "582dc9ef00509cc7f67c0f220f2deb4acca82d7769503592e3fac190f90fd403",
+   "title": "Piura soporta ahora una lluvia torrencial que inunda calles y afecta zonas vulnerables"
+  },
   "https://andina.pe/agencia/noticia-presidenta-anuncia-obras-etapa-iv-del-proyecto-agua-y-alcantarillado-juliaca-1101286.aspx": {
    "checked_at": "2026-11-24T18:16:09.058996-05:00",
    "extraction": {
@@ -775,6 +785,29 @@
    "published_at": "2026-11-05T21:13:32+00:00",
    "text_sha": "357588350e47235112a47fb926b6df4c22bf4dcbf74c03bc7d0d5bd5c9ca360c",
    "title": "Furgonetas quedan varadas por tratar de pasar bypass inundado en Villa El Salvador"
+  },
+  "https://elcomercio.pe/lima/sucesos/ministerio-de-vivienda-instala-motobombas-en-villa-el-salvador-y-vmt-para-evitar-inundaciones-por-lluvias-fenomeno-el-nino-apuesplan-ultimas-noticia/": {
+   "checked_at": "2026-11-26T18:20:21.282816-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa El Salvador",
+      "district_quote": "Villa El Salvador",
+      "explicit_date": "",
+      "location": "Sector 1",
+      "location_quote": "sector 1 de Villa El Salvador",
+      "summary": "Se menciona agua acumulada que será evacuada mediante motobombas y una conexión a un colector en el sector 1.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-26T22:41:50+00:00",
+   "text_sha": "42fe97f3907a964620c8dd474acb0cf1f1b5c1bf302316d477c80da282217905",
+   "title": "Ministerio de Vivienda instala motobombas en Villa El Salvador y VMT para evitar inundaciones por lluvias"
   },
   "https://elcomercio.pe/lima/sucesos/oleajes-anomalos-en-san-bartolo-inundan-viviendas-y-dejan-cerca-de-30-forados-en-el-malecon-apuesplan-ultimas-noticia/": {
    "checked_at": "2026-11-23T22:14:29.825450-05:00",
@@ -2728,6 +2761,22 @@
    "input_tokens": 1004,
    "output_tokens": 974,
    "run": "2026-11-26T16:20-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001221,
+   "day": "2026-11-26",
+   "input_tokens": 1011,
+   "output_tokens": 42,
+   "run": "2026-11-26T18:20-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0004995,
+   "day": "2026-11-26",
+   "input_tokens": 1555,
+   "output_tokens": 688,
+   "run": "2026-11-26T18:20-05:00",
    "status": "success"
   }
  ],
