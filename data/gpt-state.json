@@ -20,6 +20,16 @@
    "text_sha": "f13732ce1eafae5607f1771863e829dc24972cba4c28251694888b52177202f7",
    "title": "Ayacucho: lluvia de fuerte intensidad sorprende a pobladores e inunda viviendas y calles"
   },
+  "https://andina.pe/agencia/noticia-comando-fen-vivienda-creara-programa-nacional-drenaje-pluvial-contra-inundaciones-1101469.aspx": {
+   "checked_at": "2026-11-25T21:48:46.799202-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-25T21:30:00-05:00",
+   "text_sha": "fd01b05634b3ab972423f2596b38e4d6b0854011f7e6a8bf45fa29f4402b31c6",
+   "title": "Comando FEN: Vivienda creará programa nacional de drenaje pluvial contra inundaciones"
+  },
   "https://andina.pe/agencia/noticia-fenomeno-nino-comerciantes-piura-colocan-sacos-arena-ante-posibles-inundaciones-1100675.aspx": {
    "checked_at": "2026-11-19T13:36:48.248443-05:00",
    "extraction": {
@@ -2553,6 +2563,14 @@
    "input_tokens": 1978,
    "output_tokens": 42,
    "run": "2026-11-25T17:18-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001321,
+   "day": "2026-11-25",
+   "input_tokens": 1001,
+   "output_tokens": 64,
+   "run": "2026-11-25T21:48-05:00",
    "status": "success"
   }
  ],
