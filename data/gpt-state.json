@@ -2025,6 +2025,16 @@
    "published_at": "2026-11-25T00:10:05Z",
    "text_sha": "4a8cd8e1a4eab4dc29a245576bb401668ef1d9de633cbb00531086af038d0175",
    "title": "Juliaca soporta inundaciones tras las lluvias: vehículos y peatones enfrentaron dificultades para circular por las calles"
+  },
+  "https://www.infobae.com/peru/2026/11/26/el-rio-se-mete-a-mi-casa-lluvias-en-tumbes-inundan-calles-enteras-y-la-poblacion-sufre-los-estragos-de-el-nino/": {
+   "checked_at": "2026-11-26T09:20:17.393249-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-26T14:06:31Z",
+   "text_sha": "9ee5c2c6dffa0fb8a1c76b512bf018c2d793253fccd5346685ed0b0b76d5dafc",
+   "title": "“El río se mete a mi casa”: lluvias en Tumbes inundan calles enteras y la población sufre los estragos de El Niño"
   }
  },
  "attempts": [
@@ -2607,6 +2617,14 @@
    "input_tokens": 1659,
    "output_tokens": 65,
    "run": "2026-11-26T08:49-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002748,
+   "day": "2026-11-26",
+   "input_tokens": 1983,
+   "output_tokens": 153,
+   "run": "2026-11-26T09:20-05:00",
    "status": "success"
   }
  ],
