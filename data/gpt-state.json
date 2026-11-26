@@ -90,6 +90,41 @@
    "text_sha": "58e0c4e4f61b715fe39205f8e3f77fc945411782dd25a60526d694e293c1594b",
    "title": "La Libertad: lluvia intensa inunda la carretera Panamericana Norte en la provincia de Virú"
   },
+  "https://andina.pe/agencia/noticia-lima-sur-instalan-motobombas-para-evacuar-agua-zonas-inundadas-lluvias-1101540.aspx": {
+   "checked_at": "2026-11-26T16:20:28.674064-05:00",
+   "extraction": {
+    "incidents": [
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa El Salvador",
+      "district_quote": "VES",
+      "explicit_date": "",
+      "location": "VES",
+      "location_quote": "en VES",
+      "summary": "Se instalaron motobombas para evacuar agua de zonas inundadas por lluvias.",
+      "timing": "current",
+      "water_reported": "yes"
+     },
+     {
+      "date_quote": "",
+      "date_relation": "unknown",
+      "district": "Villa María del Triunfo",
+      "district_quote": "VMT",
+      "explicit_date": "",
+      "location": "VMT",
+      "location_quote": "y VMT",
+      "summary": "Se instalaron motobombas para evacuar agua de zonas inundadas por lluvias.",
+      "timing": "current",
+      "water_reported": "yes"
+     }
+    ]
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-26T16:00:00-05:00",
+   "text_sha": "cc52d9c7ab7fbd6657f965066d4867069295ee6619b3b962bffc14d7eb16afb6",
+   "title": "Lima sur: instalan motobombas para evacuar agua de zonas inundadas por lluvias"
+  },
   "https://andina.pe/agencia/noticia-lluvias-causan-inundaciones-viviendas-y-vias-publicas-al-colapsar-desag%C3%BCe-iquitos-1099557.aspx": {
    "checked_at": "2026-11-11T17:22:10.246080-05:00",
    "extraction": {
@@ -2685,6 +2720,14 @@
    "input_tokens": 1088,
    "output_tokens": 43,
    "run": "2026-11-26T14:19-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0005874,
+   "day": "2026-11-26",
+   "input_tokens": 1004,
+   "output_tokens": 974,
+   "run": "2026-11-26T16:20-05:00",
    "status": "success"
   }
  ],

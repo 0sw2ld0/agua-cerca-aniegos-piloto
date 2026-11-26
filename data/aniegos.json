@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-26T15:49:58.451999-05:00",
+  "generated_at": "2026-11-26T16:20:27.727811-05:00",
   "coverage": "partial",
-  "source_errors": 0,
+  "source_errors": 1,
   "reports": [
     {
       "id": -1067201284542485,
@@ -19,6 +19,24 @@
         {
           "name": "COEN-INDECI · Reporte 16500, 26/11 13:56",
           "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-15229-30-10-2026-coen-indeci-0610-horas-reporte-n-o-1-lluvias-intensas-en-el-distrito-de-lurin-lima/"
+        }
+      ]
+    },
+    {
+      "id": -1944091806455927,
+      "kind": "publication",
+      "district": "Lima Metropolitana",
+      "location": "Publicación reciente · por verificar",
+      "summary": "Lima sur: instalan motobombas para evacuar agua de zonas inundadas por lluvias",
+      "date": "2026-11-26",
+      "expires_at": "2026-11-28T16:00:00-05:00",
+      "status": "Fecha del hecho por verificar",
+      "coordinates": null,
+      "precision": "Sin punto verificado",
+      "sources": [
+        {
+          "name": "andina.pe",
+          "url": "https://andina.pe/agencia/noticia-lima-sur-instalan-motobombas-para-evacuar-agua-zonas-inundadas-lluvias-1101540.aspx"
         }
       ]
     }
