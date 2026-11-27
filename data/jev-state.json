@@ -10941,6 +10941,130 @@
           "output_tokens": 134
         }
       }
+    },
+    "c78f5ff5086004620a63346d4508d7376da5b04ec08ab92434930f3dea094ff5": {
+      "status": "success",
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "has_place": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "date_0": {
+            "type": "noul",
+            "noul": 0.97
+          },
+          "passage_0__observed": {
+            "type": "noul",
+            "noul": 0.98
+          },
+          "passage_0__historical": {
+            "type": "noul",
+            "noul": 0.05
+          },
+          "passage_0__water_present": {
+            "type": "noul",
+            "noul": 0.97
+          },
+          "passage_0__attended": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "passage_0__removal_work": {
+            "type": "noul",
+            "noul": 0.03
+          }
+        },
+        "usage": {
+          "input_tokens": 1219,
+          "output_tokens": 152
+        }
+      }
+    },
+    "8b05cb17d5e4230b47341b2592ea3f3352275b949a7c60bcd3771e0572062486": {
+      "status": "success",
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "has_place": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "date_0": {
+            "type": "noul",
+            "noul": 0.97
+          },
+          "date_1": {
+            "type": "noul",
+            "noul": 0.97
+          },
+          "passage_0__observed": {
+            "type": "noul",
+            "noul": 0.98
+          },
+          "passage_0__historical": {
+            "type": "noul",
+            "noul": 0.07
+          },
+          "passage_0__water_present": {
+            "type": "noul",
+            "noul": 0.97
+          },
+          "passage_0__attended": {
+            "type": "noul",
+            "noul": 0.04
+          },
+          "passage_0__removal_work": {
+            "type": "noul",
+            "noul": 0.18
+          }
+        },
+        "usage": {
+          "input_tokens": 1533,
+          "output_tokens": 170
+        }
+      }
+    },
+    "6cb24d4a05fe2340d9520f8117ecd93e8ce249169ac1bb338d4bef87b5edbcca": {
+      "status": "success",
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "has_place": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "date_0": {
+            "type": "noul",
+            "noul": 0.05
+          },
+          "passage_0__observed": {
+            "type": "noul",
+            "noul": 0.98
+          },
+          "passage_0__historical": {
+            "type": "noul",
+            "noul": 0.17
+          },
+          "passage_0__water_present": {
+            "type": "noul",
+            "noul": 0.53
+          },
+          "passage_0__attended": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "passage_0__removal_work": {
+            "type": "noul",
+            "noul": 0.03
+          }
+        },
+        "usage": {
+          "input_tokens": 1248,
+          "output_tokens": 152
+        }
+      }
     }
   },
   "attempts": [
@@ -12866,6 +12990,27 @@
       "committed_usd": 4.8384e-05,
       "status": "success",
       "sha256": "6e1d332bd50c7f90def754b5cb1afa3b320865f1ca6adff50e76779d4027d819"
+    },
+    {
+      "day": "2026-11-27",
+      "run": "2026-11-27T10:21-05:00",
+      "committed_usd": 5.119800000000001e-05,
+      "status": "success",
+      "sha256": "c78f5ff5086004620a63346d4508d7376da5b04ec08ab92434930f3dea094ff5"
+    },
+    {
+      "day": "2026-11-27",
+      "run": "2026-11-27T10:21-05:00",
+      "committed_usd": 6.4386e-05,
+      "status": "success",
+      "sha256": "8b05cb17d5e4230b47341b2592ea3f3352275b949a7c60bcd3771e0572062486"
+    },
+    {
+      "day": "2026-11-27",
+      "run": "2026-11-27T10:21-05:00",
+      "committed_usd": 5.241600000000001e-05,
+      "status": "success",
+      "sha256": "6cb24d4a05fe2340d9520f8117ecd93e8ce249169ac1bb338d4bef87b5edbcca"
     }
   ]
 }
