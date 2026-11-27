@@ -377,6 +377,16 @@
    "text_sha": "c7a88c1c84c87b94eee8ba71917b2c2bc1546cd3f89bfc97ae4cdf0fc6e3d22c",
    "title": "Emergencia en Lima Sur: fuertes lluvias, inundaciones, aniegos y decenas de familias afectadas"
   },
+  "https://caretas.pe/sociedad/lluvias-torrenciales-inundan-piura-calles-quedan-bajo-el-agua-y-al-menos-diez-quebradas-se-activan-en-la-region/": {
+   "checked_at": "2026-11-26T20:50:32.363579-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T01:00:45+00:00",
+   "text_sha": "d5db5aafb0ef61f2348af6fa78455dcad609cd44c4324d2f3822900c18ca889a",
+   "title": "Lluvias torrenciales inundan Piura: calles quedan bajo el agua y al menos diez quebradas se activan en la región"
+  },
   "https://caretas.pe/sociedad/mujer-de-71-anos-encara-al-ministro-de-vivienda-por-inundacion-de-su-casa-y-el-se-retira-sin-declarar/": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -2833,6 +2843,14 @@
    "input_tokens": 1352,
    "output_tokens": 46,
    "run": "2026-11-26T19:20-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002121,
+   "day": "2026-11-26",
+   "input_tokens": 1911,
+   "output_tokens": 42,
+   "run": "2026-11-26T20:50-05:00",
    "status": "success"
   }
  ],
