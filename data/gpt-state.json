@@ -40,6 +40,16 @@
    "text_sha": "fd01b05634b3ab972423f2596b38e4d6b0854011f7e6a8bf45fa29f4402b31c6",
    "title": "Comando FEN: Vivienda creará programa nacional de drenaje pluvial contra inundaciones"
   },
+  "https://andina.pe/agencia/noticia-el-nino-sutran-pide-a-conductores-eviten-transitar-tramos-inundados-lluvias-1101728.aspx": {
+   "checked_at": "2026-11-27T16:24:12.979551-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T16:20:00-05:00",
+   "text_sha": "344f356ed22d346053d0a49154bf975a08df14b9fadfa9e4ced2915689938884",
+   "title": "El Niño: Sutran pide a conductores que eviten transitar por tramos inundados por lluvias"
+  },
   "https://andina.pe/agencia/noticia-fenomeno-nino-comerciantes-piura-colocan-sacos-arena-ante-posibles-inundaciones-1100675.aspx": {
    "checked_at": "2026-11-19T13:36:48.248443-05:00",
    "extraction": {
@@ -2316,6 +2326,16 @@
    "text_sha": "d78cab36f25d6f9f1e26baf46cff4c565d936f51a393e33c88f75096fe3de1e2",
    "title": "Lluvias extremas en Piura EN VIVO: miles de familias afectadas, calles inundadas, desagües colapsados y quebradas activadas"
   },
+  "https://www.infobae.com/peru/2026/11/27/keiko-fujimori-anuncia-que-viajara-hoy-a-piura-ante-inundaciones-que-dejaron-viviendas-bajo-el-agua-y-varias-familias-afectadas/": {
+   "checked_at": "2026-11-27T16:24:12.979551-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T21:14:47Z",
+   "text_sha": "37f6b3f372f88de719a105ef1a07f71cf46aa9fa6076a72c50a4ef71ba591e4a",
+   "title": "Keiko Fujimori anuncia que viajará hoy a Piura ante inundaciones que dejaron viviendas bajo el agua y varias familias afectadas"
+  },
   "https://www.infobae.com/peru/2026/11/27/lluvias-en-piura-ejercito-y-ministerio-de-vivienda-despliegan-equipos-para-drenar-las-calles-inundadas/": {
    "checked_at": "2026-11-26T22:22:00.349808-05:00",
    "extraction": {
@@ -3319,6 +3339,22 @@
    "input_tokens": 2662,
    "output_tokens": 41,
    "run": "2026-11-27T15:52-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002038,
+   "day": "2026-11-27",
+   "input_tokens": 1813,
+   "output_tokens": 45,
+   "run": "2026-11-27T16:24-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001199,
+   "day": "2026-11-27",
+   "input_tokens": 1014,
+   "output_tokens": 37,
+   "run": "2026-11-27T16:24-05:00",
    "status": "success"
   }
  ],
