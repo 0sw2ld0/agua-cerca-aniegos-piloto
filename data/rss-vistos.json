@@ -34,6 +34,13 @@
   "title": "Piura soporta ahora una lluvia torrencial que inunda calles y afecta zonas vulnerables",
   "url": "https://andina.pe/agencia/noticia-piura-soporta-ahora-una-lluvia-torrencial-inunda-calles-y-afecta-zonas-vulnerables-1101610.aspx"
  },
+ "https://andina.pe/agencia/noticia-piura-soporta-una-lluvia-torrencial-inunda-calles-y-afecta-zonas-vulnerables-1101610.aspx": {
+  "first_seen": "2026-11-26T21:49:34.672309-05:00",
+  "kind": "publisher",
+  "published_at": "2026-11-26T18:13:09-05:00",
+  "title": "Piura soporta una lluvia torrencial que inunda calles y afecta zonas vulnerables",
+  "url": "https://andina.pe/agencia/noticia-piura-soporta-una-lluvia-torrencial-inunda-calles-y-afecta-zonas-vulnerables-1101610.aspx"
+ },
  "https://andina.pe/agencia/noticia-tumbes-lluvia-intensa-10-horas-inunda-casas-y-provoca-colapso-del-cerco-villa-naval-1101506.aspx": {
   "first_seen": "2026-11-26T08:18:33.239683-05:00",
   "kind": "publisher",
@@ -90,6 +97,13 @@
   "title": "Lluvias en Perú por El Niño: noticias, lloviznas e inundaciones por fuerte oleaje",
   "url": "https://elcomercio.pe/peru/la-libertad/lluvias-en-regiones-del-peru-por-fenomeno-el-nino-en-vivo-hoy-regiones-en-alerta-posibles-desbordes-inundaciones-huaicos-y-pronostico-de-senamhi-lbposting-noticia/"
  },
+ "https://elcomercio.pe/peru/piura/piura-despliegan-maquinaria-y-equipos-tecnicos-para-drenar-zonas-inundadas-y-resguardar-viviendas-fenomeno-el-nino-apuesplan-ultimas-noticia/": {
+  "first_seen": "2026-11-26T21:49:34.672309-05:00",
+  "kind": "publisher",
+  "published_at": "2026-11-27T02:19:50+00:00",
+  "title": "Piura: despliegan maquinaria y equipos técnicos para drenar zonas inundadas y resguardar viviendas",
+  "url": "https://elcomercio.pe/peru/piura/piura-despliegan-maquinaria-y-equipos-tecnicos-para-drenar-zonas-inundadas-y-resguardar-viviendas-fenomeno-el-nino-apuesplan-ultimas-noticia/"
+ },
  "https://elcomercio.pe/peru/piura/piura-lluvias-torrenciales-inundan-la-plaza-tres-culturas-y-otras-zonas-vulnerables-fenomeno-el-nino-senamhi-ayabaca-morropon-ultimas-noticia/": {
   "first_seen": "2026-11-26T19:19:20.749852-05:00",
   "kind": "publisher",
@@ -131,5 +145,12 @@
   "published_at": "2026-11-26T14:06:31+00:00",
   "title": "“El río se mete a mi casa”: lluvias en Tumbes inundan calles enteras y la población sufre los estragos de El Niño",
   "url": "https://www.infobae.com/peru/2026/11/26/el-rio-se-mete-a-mi-casa-lluvias-en-tumbes-inundan-calles-enteras-y-la-poblacion-sufre-los-estragos-de-el-nino/"
+ },
+ "https://www.infobae.com/peru/2026/11/26/piura-bajo-agua-lluvias-extremas-inundan-el-centro-de-la-ciudad-y-activan-quebradas/": {
+  "first_seen": "2026-11-26T21:49:34.672309-05:00",
+  "kind": "publisher",
+  "published_at": "2026-11-27T02:37:20+00:00",
+  "title": "Piura y Sullana bajo agua: lluvias extremas inundan el centro de la ciudad y activan quebradas",
+  "url": "https://www.infobae.com/peru/2026/11/26/piura-bajo-agua-lluvias-extremas-inundan-el-centro-de-la-ciudad-y-activan-quebradas/"
  }
 }
