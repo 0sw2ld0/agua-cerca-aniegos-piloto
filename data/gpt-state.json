@@ -896,6 +896,16 @@
    "text_sha": "357588350e47235112a47fb926b6df4c22bf4dcbf74c03bc7d0d5bd5c9ca360c",
    "title": "Furgonetas quedan varadas por tratar de pasar bypass inundado en Villa El Salvador"
   },
+  "https://elcomercio.pe/lima/sucesos/keiko-fujimori-anuncia-viaje-a-piura-y-tumbes-ante-inundaciones-y-lluvias-intensas-fenomeno-el-nino-ultimas-noticia/": {
+   "checked_at": "2026-11-27T18:22:32.313968-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T23:05:31+00:00",
+   "text_sha": "0ec88c4a221276db0853ab811173a9f615a71904b4ba7c7a8add6b794ac9ba9a",
+   "title": "Keiko Fujimori anuncia viaje a Piura y Tumbes ante inundaciones y lluvias intensas"
+  },
   "https://elcomercio.pe/lima/sucesos/ministerio-de-vivienda-instala-motobombas-en-villa-el-salvador-y-vmt-para-evitar-inundaciones-por-lluvias-fenomeno-el-nino-apuesplan-ultimas-noticia/": {
    "checked_at": "2026-11-26T18:50:31.167501-05:00",
    "extraction": {
@@ -3381,6 +3391,14 @@
    "input_tokens": 3767,
    "output_tokens": 92,
    "run": "2026-11-27T16:52-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001879,
+   "day": "2026-11-27",
+   "input_tokens": 1634,
+   "output_tokens": 49,
+   "run": "2026-11-27T18:22-05:00",
    "status": "success"
   }
  ],
