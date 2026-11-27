@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-27T03:51:08.383242-05:00",
+  "generated_at": "2026-11-27T04:21:41.255582-05:00",
   "coverage": "partial",
-  "source_errors": 0,
+  "source_errors": 2,
   "reports": [
     {
       "id": -1067201284542485,
