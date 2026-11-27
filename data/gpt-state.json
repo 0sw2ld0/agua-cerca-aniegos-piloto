@@ -168,6 +168,16 @@
    "text_sha": "5de73ea9b76bf2e0d589ebc0c0f4a3fb27dc85c2747ea7fd1afaa5d60b6f97e8",
    "title": "Lluvias en Lima: conoce los 21 bypass con riesgo de aniego por falta de drenaje"
   },
+  "https://andina.pe/agencia/noticia-lluvias-piura-brigadas-de-policia-y-ejercito-rescatan-a-atrapados-inundaciones-1101697.aspx": {
+   "checked_at": "2026-11-27T13:23:20.176912-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T12:58:00-05:00",
+   "text_sha": "83ebcc5036d1d599e1091dd094c49546ae761baf5eceecd05734780b36e62f54",
+   "title": "Lluvias en Piura: brigadas de la Policía y Ejército rescatan a atrapados por inundaciones"
+  },
   "https://andina.pe/agencia/noticia-ministerio-vivienda-culmina-construccion-camaras-bombeo-para-prevenir-aniegos-1100895.aspx": {
    "checked_at": "2026-11-20T21:09:45.231021-05:00",
    "extraction": {
@@ -2257,13 +2267,13 @@
    "title": "“El río se mete a mi casa”: lluvias en Tumbes inundan calles enteras y la población sufre los estragos de El Niño"
   },
   "https://www.infobae.com/peru/2026/11/26/piura-bajo-agua-lluvias-extremas-inundan-el-centro-de-la-ciudad-y-activan-quebradas/": {
-   "checked_at": "2026-11-27T12:52:59.462031-05:00",
+   "checked_at": "2026-11-27T13:23:20.176912-05:00",
    "extraction": {
     "incidents": []
    },
    "model": "gpt-6-luna",
    "published_at": "2026-11-26T23:36:58Z",
-   "text_sha": "aff743e2aa92f8c8ee652f0737cebec2e76e721d21f0ba466c10fb7cb7c95bd6",
+   "text_sha": "d78cab36f25d6f9f1e26baf46cff4c565d936f51a393e33c88f75096fe3de1e2",
    "title": "Lluvias extremas en Piura EN VIVO: miles de familias afectadas, calles inundadas, desagües colapsados y quebradas activadas"
   },
   "https://www.infobae.com/peru/2026/11/27/lluvias-en-piura-ejercito-y-ministerio-de-vivienda-despliegan-equipos-para-drenar-las-calles-inundadas/": {
@@ -3181,6 +3191,22 @@
    "input_tokens": 4041,
    "output_tokens": 51,
    "run": "2026-11-27T12:52-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0004311,
+   "day": "2026-11-27",
+   "input_tokens": 4041,
+   "output_tokens": 54,
+   "run": "2026-11-27T13:23-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001247,
+   "day": "2026-11-27",
+   "input_tokens": 1037,
+   "output_tokens": 42,
+   "run": "2026-11-27T13:23-05:00",
    "status": "success"
   }
  ],
