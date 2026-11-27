@@ -1075,6 +1075,16 @@
    "text_sha": "d44ff95723d0f8dc2eefa5894d29a711ac5f215c74060fd66388065e10776c7e",
    "title": "Piura: lluvias torrenciales inundan la Plaza Tres Culturas y otras zonas vulnerables | VIDEOS"
   },
+  "https://elcomercio.pe/peru/piura/sullana-lluvia-de-gran-intensidad-provoca-inundaciones-en-distintos-sectores-de-la-ciudad-videos-fenomeno-el-nino-ultimas-noticia/": {
+   "checked_at": "2026-11-26T21:20:43.702616-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T01:57:59+00:00",
+   "text_sha": "0da1bf9d56d90fdeb6ceb8c901054842a50b3320603a3bb1fb19b2abd6768c0a",
+   "title": "Sullana: Lluvia de gran intensidad provoca inundaciones en distintos sectores de la ciudad | VIDEOS"
+  },
   "https://elcomercio.pe/peru/tumbes/fenomeno-el-nino-tumbes-sufre-tormentas-electricas-y-lluvias-intensas-que-activan-quebradas-y-provocan-aniegos-en-zonas-agricolas-ultimas-noticia/": {
    "checked_at": "2026-11-21T14:10:06.505742-05:00",
    "extraction": {
@@ -2851,6 +2861,14 @@
    "input_tokens": 1911,
    "output_tokens": 42,
    "run": "2026-11-26T20:50-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001602,
+   "day": "2026-11-26",
+   "input_tokens": 1362,
+   "output_tokens": 48,
+   "run": "2026-11-26T21:20-05:00",
    "status": "success"
   }
  ],
