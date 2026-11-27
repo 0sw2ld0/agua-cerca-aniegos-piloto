@@ -1,39 +1,8 @@
 {
  "schema_version": 1,
  "fuente": "https://portal.indeci.gob.pe/emergencias/",
- "generated_at": "2026-11-27T06:51:16.175756-05:00",
- "reportes": [
-  {
-   "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-15229-30-10-2026-coen-indeci-0610-horas-reporte-n-o-1-lluvias-intensas-en-el-distrito-de-lurin-lima/",
-   "titulo": "REPORTE COMPLEMENTARIO N.° 16500 – 26/11/2026 / COEN – INDECI / 13:56 HORAS (Reporte N.º 2) LLUVIAS INTENSAS EN EL DISTRITO DE LURÍN – LIMA",
-   "tipo": "complementario",
-   "numero": "16500",
-   "reporte_n": 2,
-   "fecha": "2026-11-26T13:56:00-05:00",
-   "evento": "Lluvias intensas",
-   "distrito": "Lurín",
-   "pdf": "https://portal.indeci.gob.pe/wp-content/uploads/2026/10/REPORTE-COMPLEMENTARIO-N.º-16500-26NOV26-LLUVIAS-INTENSAS-EN-EL-DISTRITO-DE-LURÍN-LIMA-1.pdf",
-   "lugares": 1
-  }
- ],
- "incidentes": [
-  {
-   "coordinates": null,
-   "day": "2026-11-26",
-   "district": "Lurín",
-   "key": "indeci-c77c1f1d9c-distrito",
-   "location": "Lurín · ver reporte",
-   "origen": "indeci",
-   "precision": "Sin lugar específico en el reporte",
-   "seccion": "distrito",
-   "sources": [
-    {
-     "name": "COEN-INDECI · Reporte 16500, 26/11 13:56",
-     "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-15229-30-10-2026-coen-indeci-0610-horas-reporte-n-o-1-lluvias-intensas-en-el-distrito-de-lurin-lima/"
-    }
-   ],
-   "summary": "Reporte complementario N.º 16500 del COEN-INDECI (26/11 13:56): lluvias intensas en Lurín."
-  }
- ],
+ "generated_at": "2026-11-27T07:21:30.431551-05:00",
+ "reportes": [],
+ "incidentes": [],
  "errores": []
 }

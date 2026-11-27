@@ -1,27 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-27T06:51:22.544920-05:00",
+  "generated_at": "2026-11-27T07:21:35.799524-05:00",
   "coverage": "partial",
   "source_errors": 0,
   "reports": [
-    {
-      "id": -1067201284542485,
-      "kind": "incident",
-      "district": "Lurín",
-      "location": "Lurín · ver reporte",
-      "summary": "Reporte complementario N.º 16500 del COEN-INDECI (26/11 13:56): lluvias intensas en Lurín.",
-      "date": "2026-11-26",
-      "expires_at": "2026-11-28T00:00:00-05:00",
-      "status": "Situación actual sin confirmar",
-      "coordinates": null,
-      "precision": "Sin lugar específico en el reporte",
-      "sources": [
-        {
-          "name": "COEN-INDECI · Reporte 16500, 26/11 13:56",
-          "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-15229-30-10-2026-coen-indeci-0610-horas-reporte-n-o-1-lluvias-intensas-en-el-distrito-de-lurin-lima/"
-        }
-      ]
-    },
     {
       "id": -3915328354193780,
       "kind": "publication",

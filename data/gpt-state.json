@@ -20,6 +20,16 @@
    "text_sha": "f13732ce1eafae5607f1771863e829dc24972cba4c28251694888b52177202f7",
    "title": "Ayacucho: lluvia de fuerte intensidad sorprende a pobladores e inunda viviendas y calles"
   },
+  "https://andina.pe/agencia/noticia-cenepred-advierte-riesgo-huaicos-e-inundaciones-lluvias-intensas-siete-regiones-1101649.aspx": {
+   "checked_at": "2026-11-27T07:21:37.095661-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T06:58:00-05:00",
+   "text_sha": "86b28787419c565052b479eefc4a662593394db339cab6be825c438f369ff972",
+   "title": "Cenepred advierte riesgo de huaicos e inundaciones por lluvias intensas en siete regiones"
+  },
   "https://andina.pe/agencia/noticia-comando-fen-vivienda-creara-programa-nacional-drenaje-pluvial-contra-inundaciones-1101469.aspx": {
    "checked_at": "2026-11-25T21:48:46.799202-05:00",
    "extraction": {
@@ -3015,6 +3025,14 @@
    "input_tokens": 4014,
    "output_tokens": 43,
    "run": "2026-11-27T05:21-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001209,
+   "day": "2026-11-27",
+   "input_tokens": 959,
+   "output_tokens": 50,
+   "run": "2026-11-27T07:21-05:00",
    "status": "success"
   }
  ],
