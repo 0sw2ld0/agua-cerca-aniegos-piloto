@@ -1979,6 +1979,16 @@
    "text_sha": "88439e232ad70c0d48ace77314f565a2c3452610b1bdbcbaa9dbe0e20be55668",
    "title": "Defensoría del Pueblo despliega personal en Lima Sur para verificar atención de aniegos y limpieza pública"
   },
+  "https://www.defensoria.gob.pe/defensoria-del-pueblo-llama-la-atencion-a-las-autoridades-y-servidores-publicos-por-falta-de-coordinacion-que-impidio-operacion-oportuna-de-motobombas-provocando-inundaciones-y-aniegos-que-afectan-a-m/": {
+   "checked_at": "2026-11-27T12:21:59.912668-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T16:40:16+00:00",
+   "text_sha": "f30ed73a88eca7d230fa8c81c398895620cf540358f6556c7e35fb7d75ac8781",
+   "title": "Defensoría del Pueblo llama la atención a las autoridades y servidores públicos por falta de coordinación que impidió operación oportuna de motobombas provocando inundaciones y aniegos que afectan a m"
+  },
   "https://www.defensoria.gob.pe/defensoria-del-pueblo-pide-a-municipio-de-rioja-adoptar-medidas-urgentes-frente-a-grave-crisis-por-colapso-de-desagues-en-sector-de-cascayunga/": {
    "checked_at": "2026-11-11T19:22:22.759070-05:00",
    "extraction": {
@@ -3155,6 +3165,14 @@
    "input_tokens": 4027,
    "output_tokens": 48,
    "run": "2026-11-27T11:21-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001745,
+   "day": "2026-11-27",
+   "input_tokens": 1550,
+   "output_tokens": 39,
+   "run": "2026-11-27T12:21-05:00",
    "status": "success"
   }
  ],
