@@ -298,6 +298,16 @@
    "text_sha": "8f54314e1823a0eca72582e4411b9ea4e12246d56cb0bb26f6d1d682721479c1",
    "title": "Alcalde de Tumbes alerta sobre inundaciones en zonas agrícolas: \"El limón, plátano y arroz son los más afectados\""
   },
+  "https://caretas.pe/nacional/ejercito-evacua-en-botes-a-vecinos-atrapados-por-las-inundaciones-en-piura-al-menos-2-000-familias-afectadas/": {
+   "checked_at": "2026-11-27T16:52:23.525657-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T21:00:07+00:00",
+   "text_sha": "3f4fc83568047e2665607c19f68330445f94766d79a4121edd377d05c4e64b76",
+   "title": "Ejército evacúa en botes a vecinos atrapados por las inundaciones en Piura: al menos 2.000 familias afectadas"
+  },
   "https://caretas.pe/nacional/indeci-acusa-a-alcaldes-de-piura-de-no-activar-motobombas-a-tiempo-durante-las-inundaciones-es-omision-de-funciones/": {
    "checked_at": "2026-11-27T09:51:39.564023-05:00",
    "extraction": {
@@ -1855,13 +1865,13 @@
    "title": "Piura amanece inundada: MTPE recomienda teletrabajo ante lluvias e Indeci cuestiona demora en activar motobombas"
   },
   "https://larepublica.pe/sociedad/2026/11/27/piura-bajo-el-agua-lluvias-inundan-calles-y-viviendas-mientras-el-agua-supera-el-metro-de-altura-2671785": {
-   "checked_at": "2026-11-27T15:52:19.579502-05:00",
+   "checked_at": "2026-11-27T16:52:23.525657-05:00",
    "extraction": {
     "incidents": []
    },
    "model": "gpt-6-luna",
-   "published_at": "2026-11-27T20:45:58+00:00",
-   "text_sha": "c9adfa7d7f6cffdf1f2ba4afd0ba5c2dea4cb55fe1995bf6bf0c88cf621fec31",
+   "published_at": "2026-11-27T21:28:43+00:00",
+   "text_sha": "8997b78cb9b2d4b95180668f821f753e344919a916e5ba35f6fde73736d7c9b8",
    "title": "Piura bajo el agua: lluvias inundan calles y viviendas, mientras el agua supera el metro de altura"
   },
   "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004": {
@@ -3355,6 +3365,22 @@
    "input_tokens": 1014,
    "output_tokens": 37,
    "run": "2026-11-27T16:24-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001776,
+   "day": "2026-11-27",
+   "input_tokens": 1516,
+   "output_tokens": 52,
+   "run": "2026-11-27T16:52-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0004227,
+   "day": "2026-11-27",
+   "input_tokens": 3767,
+   "output_tokens": 92,
+   "run": "2026-11-27T16:52-05:00",
    "status": "success"
   }
  ],
