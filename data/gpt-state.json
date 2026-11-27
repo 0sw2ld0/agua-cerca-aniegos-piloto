@@ -135,6 +135,16 @@
    "text_sha": "cc52d9c7ab7fbd6657f965066d4867069295ee6619b3b962bffc14d7eb16afb6",
    "title": "Lima sur: instalan motobombas para evacuar agua de zonas inundadas por lluvias"
   },
+  "https://andina.pe/agencia/noticia-lluvias-amazonas-desborde-del-rio-utcumba-inunda-carretera-y-pone-riesgo-viviendas-1101707.aspx": {
+   "checked_at": "2026-11-27T14:22:17.413806-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T14:14:00-05:00",
+   "text_sha": "0db191243350396a132a4159da28ce864c200ebd3038e94613599112ecbd3a69",
+   "title": "Lluvias en Amazonas: desborde del río Utcumba inunda carretera y pone en riesgo viviendas"
+  },
   "https://andina.pe/agencia/noticia-lluvias-causan-inundaciones-viviendas-y-vias-publicas-al-colapsar-desag%C3%BCe-iquitos-1099557.aspx": {
    "checked_at": "2026-11-11T17:22:10.246080-05:00",
    "extraction": {
@@ -536,13 +546,13 @@
    "title": "Piura en estado de emergencia por lluvias, inundaciones, activación de quebradas, altas temperaturas y dengue"
   },
   "https://elbuho.pe/2026/11/piura-esta-inundada-tras-12-horas-de-lluvias-intensas-que-continuaran-hasta-el-domingo-segun-el-senamhi/": {
-   "checked_at": "2026-11-27T13:52:07.925962-05:00",
+   "checked_at": "2026-11-27T14:22:17.413806-05:00",
    "extraction": {
     "incidents": []
    },
    "model": "gpt-6-luna",
    "published_at": "2026-11-27T18:46:16+00:00",
-   "text_sha": "8763d21916eb5b4b93bae9e6c43dda1d6c775b1589b93bc400a46104f5985e99",
+   "text_sha": "f93f7e3972a46a3f4922cc611fca17e6ac01b801c370a55be9b9ced9e1a11567",
    "title": "Piura está inundada tras 12 horas de lluvias intensas que continuarán hasta el domingo según el Senamhi"
   },
   "https://elbuho.pe/2026/11/preocupante-vecinos-de-jaen-exigen-solucion-ante-constantes-colapsos-de-desague-en-camal-municipal/": {
@@ -1815,13 +1825,13 @@
    "title": "Piura amanece inundada: MTPE recomienda teletrabajo ante lluvias e Indeci cuestiona demora en activar motobombas"
   },
   "https://larepublica.pe/sociedad/2026/11/27/piura-bajo-el-agua-lluvias-inundan-calles-y-viviendas-mientras-el-agua-supera-el-metro-de-altura-2671785": {
-   "checked_at": "2026-11-27T13:52:07.925962-05:00",
+   "checked_at": "2026-11-27T14:22:17.413806-05:00",
    "extraction": {
     "incidents": []
    },
    "model": "gpt-6-luna",
-   "published_at": "2026-11-27T18:48:46+00:00",
-   "text_sha": "f5dfad819a0a040fae9121c3701732e614973e8f4863539602edb1e3613d263b",
+   "published_at": "2026-11-27T19:11:59+00:00",
+   "text_sha": "155b7507cdae4948c5dfa7d57e5e22f25d5c8028817dfd250e42d410576c4187",
    "title": "Piura bajo el agua: lluvias inundan calles y viviendas, mientras el agua supera el metro de altura"
   },
   "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004": {
@@ -3233,6 +3243,30 @@
    "input_tokens": 1792,
    "output_tokens": 53,
    "run": "2026-11-27T13:52-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002867,
+   "day": "2026-11-27",
+   "input_tokens": 2667,
+   "output_tokens": 40,
+   "run": "2026-11-27T14:22-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002043,
+   "day": "2026-11-27",
+   "input_tokens": 1793,
+   "output_tokens": 50,
+   "run": "2026-11-27T14:22-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001194,
+   "day": "2026-11-27",
+   "input_tokens": 1009,
+   "output_tokens": 37,
+   "run": "2026-11-27T14:22-05:00",
    "status": "success"
   }
  ],
