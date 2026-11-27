@@ -1825,13 +1825,13 @@
    "title": "Piura amanece inundada: MTPE recomienda teletrabajo ante lluvias e Indeci cuestiona demora en activar motobombas"
   },
   "https://larepublica.pe/sociedad/2026/11/27/piura-bajo-el-agua-lluvias-inundan-calles-y-viviendas-mientras-el-agua-supera-el-metro-de-altura-2671785": {
-   "checked_at": "2026-11-27T14:22:17.413806-05:00",
+   "checked_at": "2026-11-27T14:52:22.605210-05:00",
    "extraction": {
     "incidents": []
    },
    "model": "gpt-6-luna",
-   "published_at": "2026-11-27T19:11:59+00:00",
-   "text_sha": "155b7507cdae4948c5dfa7d57e5e22f25d5c8028817dfd250e42d410576c4187",
+   "published_at": "2026-11-27T19:23:17+00:00",
+   "text_sha": "cfdc3cfcd8d23c19040f6d2825fecf3e2b8cc149722a74184c8a5f4793a6266b",
    "title": "Piura bajo el agua: lluvias inundan calles y viviendas, mientras el agua supera el metro de altura"
   },
   "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004": {
@@ -3267,6 +3267,14 @@
    "input_tokens": 1009,
    "output_tokens": 37,
    "run": "2026-11-27T14:22-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002898,
+   "day": "2026-11-27",
+   "input_tokens": 2663,
+   "output_tokens": 47,
+   "run": "2026-11-27T14:52-05:00",
    "status": "success"
   }
  ],
