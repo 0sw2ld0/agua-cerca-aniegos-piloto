@@ -535,6 +535,16 @@
    "text_sha": "0d2e178d82f6fe3de14a1bdedecec696aec3a1e96117cd476b01e9355e68aa8d",
    "title": "Piura en estado de emergencia por lluvias, inundaciones, activación de quebradas, altas temperaturas y dengue"
   },
+  "https://elbuho.pe/2026/11/piura-esta-inundada-tras-12-horas-de-lluvias-intensas-que-continuaran-hasta-el-domingo-segun-el-senamhi/": {
+   "checked_at": "2026-11-27T13:52:07.925962-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T18:46:16+00:00",
+   "text_sha": "8763d21916eb5b4b93bae9e6c43dda1d6c775b1589b93bc400a46104f5985e99",
+   "title": "Piura está inundada tras 12 horas de lluvias intensas que continuarán hasta el domingo según el Senamhi"
+  },
   "https://elbuho.pe/2026/11/preocupante-vecinos-de-jaen-exigen-solucion-ante-constantes-colapsos-de-desague-en-camal-municipal/": {
    "checked_at": "2026-11-10T11:49:56.339154-05:00",
    "extraction": {
@@ -1805,13 +1815,13 @@
    "title": "Piura amanece inundada: MTPE recomienda teletrabajo ante lluvias e Indeci cuestiona demora en activar motobombas"
   },
   "https://larepublica.pe/sociedad/2026/11/27/piura-bajo-el-agua-lluvias-inundan-calles-y-viviendas-mientras-el-agua-supera-el-metro-de-altura-2671785": {
-   "checked_at": "2026-11-27T09:22:19.637281-05:00",
+   "checked_at": "2026-11-27T13:52:07.925962-05:00",
    "extraction": {
     "incidents": []
    },
    "model": "gpt-6-luna",
-   "published_at": "2026-11-27T13:53:27+00:00",
-   "text_sha": "d98d303938f90ef77576649db750b180436f5938e919b17f8f3f6c7ec3a714f9",
+   "published_at": "2026-11-27T18:48:46+00:00",
+   "text_sha": "f5dfad819a0a040fae9121c3701732e614973e8f4863539602edb1e3613d263b",
    "title": "Piura bajo el agua: lluvias inundan calles y viviendas, mientras el agua supera el metro de altura"
   },
   "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004": {
@@ -3207,6 +3217,22 @@
    "input_tokens": 1037,
    "output_tokens": 42,
    "run": "2026-11-27T13:23-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002407,
+   "day": "2026-11-27",
+   "input_tokens": 2192,
+   "output_tokens": 43,
+   "run": "2026-11-27T13:52-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002057,
+   "day": "2026-11-27",
+   "input_tokens": 1792,
+   "output_tokens": 53,
+   "run": "2026-11-27T13:52-05:00",
    "status": "success"
   }
  ],
