@@ -2197,13 +2197,13 @@
    "title": "“El río se mete a mi casa”: lluvias en Tumbes inundan calles enteras y la población sufre los estragos de El Niño"
   },
   "https://www.infobae.com/peru/2026/11/26/piura-bajo-agua-lluvias-extremas-inundan-el-centro-de-la-ciudad-y-activan-quebradas/": {
-   "checked_at": "2026-11-27T00:21:12.020736-05:00",
+   "checked_at": "2026-11-27T03:21:20.139516-05:00",
    "extraction": {
     "incidents": []
    },
    "model": "gpt-6-luna",
    "published_at": "2026-11-26T23:36:58Z",
-   "text_sha": "cfbaefd158608315637cd6c49d9d61ce2d79ca4da7be931936aa07f31f8e20ee",
+   "text_sha": "eef3dca822ac2b0ee626ecebf6d99ca19b24c6138c7d05d9221176236c8fbe65",
    "title": "Lluvias extremas en Piura EN VIVO: calles inundadas, desagües colapsados y quebradas activadas"
   },
   "https://www.infobae.com/peru/2026/11/27/lluvias-en-piura-ejercito-y-ministerio-de-vivienda-despliegan-equipos-para-drenar-las-calles-inundadas/": {
@@ -2999,6 +2999,14 @@
    "input_tokens": 3445,
    "output_tokens": 55,
    "run": "2026-11-27T00:21-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0003854,
+   "day": "2026-11-27",
+   "input_tokens": 3589,
+   "output_tokens": 53,
+   "run": "2026-11-27T03:21-05:00",
    "status": "success"
   }
  ],
