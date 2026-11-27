@@ -218,6 +218,16 @@
    "text_sha": "c2aa48a0c41be1e1cde0ad778d1a5cbebe9f2ab1fa54c34b3b155a18e19862a3",
    "title": "Ministerio de Vivienda culmina construcción de cámaras de bombeo para prevenir aniegos"
   },
+  "https://andina.pe/agencia/noticia-ministro-vinelli-se-instalo-equipos-para-acelerar-drenaje-zonas-inundadas-piura-1101746.aspx": {
+   "checked_at": "2026-11-27T18:52:48.831234-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T18:39:00-05:00",
+   "text_sha": "dc3dca1d4b3ff23ffa5500e6d2f52398b30ade50034bf3dec933bc711306840e",
+   "title": "Ministro Vinelli: se instaló equipos para acelerar drenaje de zonas inundadas en Piura"
+  },
   "https://andina.pe/agencia/noticia-oleaje-anomalo-causa-danos-e-inunda-viviendas-colan-advierten-incremento-intensidad-1101564.aspx": {
    "checked_at": "2026-11-26T14:19:54.922149-05:00",
    "extraction": {
@@ -2376,6 +2386,16 @@
    "text_sha": "2ec20e9787839917f1db28cc61ddbf60dd05f8a36d67058a60263253cba4e8e8",
    "title": "Lluvias extremas en Piura: miniván queda atrapada por inundación y pasajeros bajan con sus pertenencias"
   },
+  "https://www.infobae.com/peru/2026/11/27/lluvias-por-fenomeno-el-nino-ponen-en-riesgo-las-vias-sutran-pide-a-conductores-no-cruzar-tramos-inundados/": {
+   "checked_at": "2026-11-27T18:52:48.831234-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T23:40:54Z",
+   "text_sha": "9a1bc049ce95ee849ba94278f5c527457ffba2899a082a76c10b5808c6659e95",
+   "title": "Lluvias por Fenómeno El Niño ponen en riesgo las vías: Sutran pide a conductores no cruzar tramos inundados"
+  },
   "https://www.infobae.com/peru/2026/11/27/ni-las-mototaxis-pueden-avanzar-con-normalidad-lluvias-inundan-calles-de-iquitos-durante-mas-de-12-horas/": {
    "checked_at": "2026-11-27T07:52:39.488143-05:00",
    "extraction": {
@@ -3399,6 +3419,22 @@
    "input_tokens": 1634,
    "output_tokens": 49,
    "run": "2026-11-27T18:22-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001962,
+   "day": "2026-11-27",
+   "input_tokens": 1697,
+   "output_tokens": 53,
+   "run": "2026-11-27T18:52-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001209,
+   "day": "2026-11-27",
+   "input_tokens": 974,
+   "output_tokens": 47,
+   "run": "2026-11-27T18:52-05:00",
    "status": "success"
   }
  ],
