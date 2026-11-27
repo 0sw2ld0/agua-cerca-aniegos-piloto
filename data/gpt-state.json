@@ -2197,14 +2197,34 @@
    "title": "“El río se mete a mi casa”: lluvias en Tumbes inundan calles enteras y la población sufre los estragos de El Niño"
   },
   "https://www.infobae.com/peru/2026/11/26/piura-bajo-agua-lluvias-extremas-inundan-el-centro-de-la-ciudad-y-activan-quebradas/": {
-   "checked_at": "2026-11-26T21:50:46.261347-05:00",
+   "checked_at": "2026-11-26T22:22:00.349808-05:00",
    "extraction": {
     "incidents": []
    },
    "model": "gpt-6-luna",
    "published_at": "2026-11-26T23:36:58Z",
-   "text_sha": "1ae9db958c8375da6a980b66326d0fb4aee896c4a637203e4a1fe68c08261809",
-   "title": "Piura y Sullana bajo el agua: lluvias extremas inundan calles, colapsan desagües y activan quebradas"
+   "text_sha": "05add3edc46033d9a9dea0a98019151fa60e2a73023604e794159f9d8c85a94b",
+   "title": "Lluvias extremas en Piura EN VIVO: calles inundadas, desagües colapsados y quebradas activadas"
+  },
+  "https://www.infobae.com/peru/2026/11/27/lluvias-en-piura-ejercito-y-ministerio-de-vivienda-despliegan-equipos-para-drenar-las-calles-inundadas/": {
+   "checked_at": "2026-11-26T22:22:00.349808-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T02:47:34Z",
+   "text_sha": "18f3a7f594b0cb2acf73931a3d83daf78110706a2781a506d63b8f169eba4114",
+   "title": "Lluvias en Piura: Ejército y Ministerio de Vivienda despliegan equipos para drenar las calles inundadas"
+  },
+  "https://www.infobae.com/peru/2026/11/27/lluvias-extremas-en-piura-minivan-queda-atrapada-por-inundacion-y-pasajeros-bajan-con-sus-pertenencias/": {
+   "checked_at": "2026-11-26T22:22:00.349808-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T03:02:01Z",
+   "text_sha": "2ec20e9787839917f1db28cc61ddbf60dd05f8a36d67058a60263253cba4e8e8",
+   "title": "Lluvias extremas en Piura: miniván queda atrapada por inundación y pasajeros bajan con sus pertenencias"
   }
  },
  "attempts": [
@@ -2923,6 +2943,30 @@
    "input_tokens": 1480,
    "output_tokens": 37,
    "run": "2026-11-26T21:50-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002463,
+   "day": "2026-11-26",
+   "input_tokens": 2233,
+   "output_tokens": 46,
+   "run": "2026-11-26T22:22-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002081,
+   "day": "2026-11-26",
+   "input_tokens": 1886,
+   "output_tokens": 39,
+   "run": "2026-11-26T22:22-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001878,
+   "day": "2026-11-26",
+   "input_tokens": 1678,
+   "output_tokens": 40,
+   "run": "2026-11-26T22:22-05:00",
    "status": "success"
   }
  ],
