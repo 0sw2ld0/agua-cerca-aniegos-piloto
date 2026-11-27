@@ -1764,6 +1764,16 @@
    "text_sha": "fee18406da72c9920ac844d491832549d6037c5264d7c7f44214cec458b2ea36",
    "title": "Lluvia intensa de 10 horas en Tumbes inunda viviendas: Senamhi advierte precipitaciones extremas hasta el domingo"
   },
+  "https://larepublica.pe/sociedad/2026/11/27/piura-amanece-inundada-mtpe-recomienda-teletrabajo-ante-lluvias-e-indeci-cuestiona-demora-en-activar-motobombas-1302723": {
+   "checked_at": "2026-11-27T07:52:39.488143-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T12:44:28+00:00",
+   "text_sha": "2ae99289920874215a0377c6c71f944a8ebdf416a3def155579f8801a2c42999",
+   "title": "Piura amanece inundada: MTPE recomienda teletrabajo ante lluvias e Indeci cuestiona demora en activar motobombas"
+  },
   "https://rpp.pe/lima/actualidad/lloviznas-en-lima-sur-provocan-aniegos-en-villa-maria-del-triunfo-y-villa-el-salvador-noticia-1716004": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -2235,6 +2245,16 @@
    "published_at": "2026-11-27T03:02:01Z",
    "text_sha": "2ec20e9787839917f1db28cc61ddbf60dd05f8a36d67058a60263253cba4e8e8",
    "title": "Lluvias extremas en Piura: miniván queda atrapada por inundación y pasajeros bajan con sus pertenencias"
+  },
+  "https://www.infobae.com/peru/2026/11/27/ni-las-mototaxis-pueden-avanzar-con-normalidad-lluvias-inundan-calles-de-iquitos-durante-mas-de-12-horas/": {
+   "checked_at": "2026-11-27T07:52:39.488143-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T12:23:32Z",
+   "text_sha": "10ba1533b58d7d3066c039dbf1d9ee7d49eb31b43f315c70890523bd645bec42",
+   "title": "Ni las mototaxis pueden avanzar con normalidad: lluvias inundan calles de Iquitos durante más de 12 horas"
   }
  },
  "attempts": [
@@ -3033,6 +3053,22 @@
    "input_tokens": 959,
    "output_tokens": 50,
    "run": "2026-11-27T07:21-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001924,
+   "day": "2026-11-27",
+   "input_tokens": 1719,
+   "output_tokens": 41,
+   "run": "2026-11-27T07:52-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002149,
+   "day": "2026-11-27",
+   "input_tokens": 1934,
+   "output_tokens": 43,
+   "run": "2026-11-27T07:52-05:00",
    "status": "success"
   }
  ],
