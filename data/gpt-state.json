@@ -1055,6 +1055,16 @@
    "text_sha": "45212153c6343b52eb573dd2ef454ac68a83e5c57e0ad7edf002253558e5e9de",
    "title": "Villa El Salvador: aniegos y colapso de alcantarillado tras llovizna nocturna"
   },
+  "https://elcomercio.pe/peru/piura/piura-lluvias-torrenciales-inundan-la-plaza-tres-culturas-y-otras-zonas-vulnerables-fenomeno-el-nino-senamhi-ayabaca-morropon-ultimas-noticia/": {
+   "checked_at": "2026-11-26T19:20:21.096881-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T00:08:21+00:00",
+   "text_sha": "d44ff95723d0f8dc2eefa5894d29a711ac5f215c74060fd66388065e10776c7e",
+   "title": "Piura: lluvias torrenciales inundan la Plaza Tres Culturas y otras zonas vulnerables | VIDEOS"
+  },
   "https://elcomercio.pe/peru/tumbes/fenomeno-el-nino-tumbes-sufre-tormentas-electricas-y-lluvias-intensas-que-activan-quebradas-y-provocan-aniegos-en-zonas-agricolas-ultimas-noticia/": {
    "checked_at": "2026-11-21T14:10:06.505742-05:00",
    "extraction": {
@@ -2815,6 +2825,14 @@
    "input_tokens": 1398,
    "output_tokens": 738,
    "run": "2026-11-26T18:50-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001582,
+   "day": "2026-11-26",
+   "input_tokens": 1352,
+   "output_tokens": 46,
+   "run": "2026-11-26T19:20-05:00",
    "status": "success"
   }
  ],
