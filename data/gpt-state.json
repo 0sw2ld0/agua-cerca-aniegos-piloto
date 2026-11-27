@@ -258,6 +258,16 @@
    "text_sha": "8f54314e1823a0eca72582e4411b9ea4e12246d56cb0bb26f6d1d682721479c1",
    "title": "Alcalde de Tumbes alerta sobre inundaciones en zonas agrícolas: \"El limón, plátano y arroz son los más afectados\""
   },
+  "https://caretas.pe/nacional/indeci-acusa-a-alcaldes-de-piura-de-no-activar-motobombas-a-tiempo-durante-las-inundaciones-es-omision-de-funciones/": {
+   "checked_at": "2026-11-27T09:51:39.564023-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T13:44:52+00:00",
+   "text_sha": "e0c1d9aa3e950d8c2bb4d1ed01d7c1f3c4aac5015e0b8a11dfd9f266f8339fec",
+   "title": "Indeci acusa a alcaldes de Piura de no activar motobombas a tiempo durante las inundaciones: \"Es omisión de funciones\""
+  },
   "https://caretas.pe/sociedad/aeropuerto-jorge-chavez-en-riesgo-de-inundacion-por-posible-desborde-del-rio-rimac-alerta-lap/": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -1775,13 +1785,13 @@
    "title": "Lluvias en Piura HOY EN VIVO: últimas noticias sobre calles inundadas, colapsos de desagües, pronósticos de Senamhi y el fenómeno El Niño"
   },
   "https://larepublica.pe/sociedad/2026/11/27/piura-amanece-inundada-mtpe-recomienda-teletrabajo-ante-lluvias-e-indeci-cuestiona-demora-en-activar-motobombas-1302723": {
-   "checked_at": "2026-11-27T07:52:39.488143-05:00",
+   "checked_at": "2026-11-27T09:51:39.564023-05:00",
    "extraction": {
     "incidents": []
    },
    "model": "gpt-6-luna",
-   "published_at": "2026-11-27T12:44:28+00:00",
-   "text_sha": "2ae99289920874215a0377c6c71f944a8ebdf416a3def155579f8801a2c42999",
+   "published_at": "2026-11-27T14:28:02+00:00",
+   "text_sha": "779ea51ef00fce0df7aa1285bfb1fcb01b68051e777f79a4209d6f2c4b350d22",
    "title": "Piura amanece inundada: MTPE recomienda teletrabajo ante lluvias e Indeci cuestiona demora en activar motobombas"
   },
   "https://larepublica.pe/sociedad/2026/11/27/piura-bajo-el-agua-lluvias-inundan-calles-y-viviendas-mientras-el-agua-supera-el-metro-de-altura-2671785": {
@@ -3113,6 +3123,22 @@
    "input_tokens": 2091,
    "output_tokens": 42,
    "run": "2026-11-27T09:22-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001838,
+   "day": "2026-11-27",
+   "input_tokens": 1578,
+   "output_tokens": 52,
+   "run": "2026-11-27T09:51-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002192,
+   "day": "2026-11-27",
+   "input_tokens": 1977,
+   "output_tokens": 43,
+   "run": "2026-11-27T09:51-05:00",
    "status": "success"
   }
  ],
