@@ -1764,6 +1764,16 @@
    "text_sha": "fee18406da72c9920ac844d491832549d6037c5264d7c7f44214cec458b2ea36",
    "title": "Lluvia intensa de 10 horas en Tumbes inunda viviendas: Senamhi advierte precipitaciones extremas hasta el domingo"
   },
+  "https://larepublica.pe/sociedad/2026/11/27/lluvias-en-piura-hoy-en-vivo-ultimas-noticias-sobre-calles-inundadas-colapsos-de-desagues-pronosticos-de-senamhi-y-el-fenomeno-el-nino-1216944": {
+   "checked_at": "2026-11-27T08:21:58.282401-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T13:09:19+00:00",
+   "text_sha": "0fc14878f71dc0e131fd1f2c450bc415e7fb3d9cf2f4c7214642185cc3fafe7a",
+   "title": "Lluvias en Piura HOY EN VIVO: últimas noticias sobre calles inundadas, colapsos de desagües, pronósticos de Senamhi y el fenómeno El Niño"
+  },
   "https://larepublica.pe/sociedad/2026/11/27/piura-amanece-inundada-mtpe-recomienda-teletrabajo-ante-lluvias-e-indeci-cuestiona-demora-en-activar-motobombas-1302723": {
    "checked_at": "2026-11-27T07:52:39.488143-05:00",
    "extraction": {
@@ -3069,6 +3079,14 @@
    "input_tokens": 1934,
    "output_tokens": 43,
    "run": "2026-11-27T07:52-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001193,
+   "day": "2026-11-27",
+   "input_tokens": 1023,
+   "output_tokens": 34,
+   "run": "2026-11-27T08:21-05:00",
    "status": "success"
   }
  ],
