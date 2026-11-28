@@ -2162,6 +2162,16 @@
    "text_sha": "e200288e994094f3a927009f553d4cd096c22b5a5902117bebadf65204e17ca3",
    "title": "Defensoría del Pueblo supervisa diques en Catacaos y anuncia seguimiento a las medidas de prevención ante inundaciones"
   },
+  "https://www.defensoria.gob.pe/piura-acciones-urgentes-para-atender-a-las-familias-afectadas-por-las-inundaciones-en-piura/": {
+   "checked_at": "2026-11-28T12:53:44.683419-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-28T17:36:13+00:00",
+   "text_sha": "b67ec6890d395daaee565ccbc71847c8c5de7501ea5cbe1149ca6f736369ff09",
+   "title": "Piura: Acciones urgentes para atender a las familias afectadas por las inundaciones en Piura"
+  },
   "https://www.infobae.com/peru/2026/11/05/las-lloviznas-en-lima-casi-igualan-un-record-de-1970-aniegos-vias-inundadas-y-desagues-colapsados-en-distritos-del-sur/": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -3507,6 +3517,14 @@
    "input_tokens": 1628,
    "output_tokens": 39,
    "run": "2026-11-28T09:53-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.000127,
+   "day": "2026-11-28",
+   "input_tokens": 1050,
+   "output_tokens": 44,
+   "run": "2026-11-28T12:53-05:00",
    "status": "success"
   }
  ],
