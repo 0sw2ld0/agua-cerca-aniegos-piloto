@@ -13373,6 +13373,90 @@
           "output_tokens": 195
         }
       }
+    },
+    "f434942c25395c5d0ceb5a157017c7146a1e873da7020246f23e9a932c27df6c": {
+      "status": "success",
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "has_place": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "passage_0__observed": {
+            "type": "noul",
+            "noul": 0.95
+          },
+          "passage_0__historical": {
+            "type": "noul",
+            "noul": 0.06
+          },
+          "passage_0__water_present": {
+            "type": "noul",
+            "noul": 0.84
+          },
+          "passage_0__attended": {
+            "type": "noul",
+            "noul": 0.04
+          },
+          "passage_0__removal_work": {
+            "type": "noul",
+            "noul": 0.43
+          }
+        },
+        "usage": {
+          "input_tokens": 1072,
+          "output_tokens": 134
+        }
+      }
+    },
+    "25b2af3ba0877d9527b2e02e56d04060fa56bc555fbe5c6fe472a80d205a0a23": {
+      "status": "success",
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "has_place": {
+            "type": "noul",
+            "noul": 0.54
+          },
+          "place": {
+            "type": "choice",
+            "choice": "place_0"
+          },
+          "date_0": {
+            "type": "noul",
+            "noul": 0.95
+          },
+          "date_1": {
+            "type": "noul",
+            "noul": 0.94
+          },
+          "passage_0__observed": {
+            "type": "noul",
+            "noul": 0.98
+          },
+          "passage_0__historical": {
+            "type": "noul",
+            "noul": 0.08
+          },
+          "passage_0__water_present": {
+            "type": "noul",
+            "noul": 0.9
+          },
+          "passage_0__attended": {
+            "type": "noul",
+            "noul": 0.04
+          },
+          "passage_0__removal_work": {
+            "type": "noul",
+            "noul": 0.04
+          }
+        },
+        "usage": {
+          "input_tokens": 1464,
+          "output_tokens": 195
+        }
+      }
     }
   },
   "attempts": [
@@ -15732,6 +15816,20 @@
       "committed_usd": 6.1488e-05,
       "status": "success",
       "sha256": "3e05897c09351c6fe3b8857a958b68b15ea05a9b369eaa24e9651b49b902f286"
+    },
+    {
+      "day": "2026-11-27",
+      "run": "2026-11-27T21:52-05:00",
+      "committed_usd": 4.502400000000001e-05,
+      "status": "success",
+      "sha256": "f434942c25395c5d0ceb5a157017c7146a1e873da7020246f23e9a932c27df6c"
+    },
+    {
+      "day": "2026-11-27",
+      "run": "2026-11-27T21:52-05:00",
+      "committed_usd": 6.1488e-05,
+      "status": "success",
+      "sha256": "25b2af3ba0877d9527b2e02e56d04060fa56bc555fbe5c6fe472a80d205a0a23"
     }
   ]
 }
