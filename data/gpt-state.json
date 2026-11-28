@@ -100,6 +100,16 @@
    "text_sha": "aae5c46f819af502549828f458a54f6d8f500fd20d9f344cb8010b16d56238e3",
    "title": "Ica: oleajes anómalos inundan calles y zonas turísticas del balneario de Paracas"
   },
+  "https://andina.pe/agencia/noticia-indeci-midagri-y-mindef-articulan-acciones-respuesta-ante-inundaciones-piura-1101762.aspx": {
+   "checked_at": "2026-11-27T22:22:38.896901-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-27T22:16:00-05:00",
+   "text_sha": "206ffcda3f18ea7b1ec6a55f1244d25d1466f939108ff47cd51a5dc189a9a23b",
+   "title": "Indeci, Midagri y Mindef articulan acciones de respuesta ante inundaciones en Piura"
+  },
   "https://andina.pe/agencia/noticia-la-libertad-lluvia-intensa-inunda-carretera-panamericana-norte-la-provincia-viru-1100547.aspx": {
    "checked_at": "2026-11-18T14:05:07.920082-05:00",
    "extraction": {
@@ -3471,6 +3481,14 @@
    "input_tokens": 1421,
    "output_tokens": 59,
    "run": "2026-11-27T19:52-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001135,
+   "day": "2026-11-27",
+   "input_tokens": 970,
+   "output_tokens": 33,
+   "run": "2026-11-27T22:22-05:00",
    "status": "success"
   }
  ],
