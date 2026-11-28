@@ -1874,6 +1874,16 @@
    "text_sha": "0fc14878f71dc0e131fd1f2c450bc415e7fb3d9cf2f4c7214642185cc3fafe7a",
    "title": "Lluvias en Piura HOY EN VIVO: últimas noticias sobre calles inundadas, colapsos de desagües, pronósticos de Senamhi y el fenómeno El Niño"
   },
+  "https://larepublica.pe/sociedad/2026/11/27/lluvias-por-el-nino-sutran-pide-a-conductores-no-atravesar-calles-y-baipases-inundados-y-buscar-rutas-alternas-636984": {
+   "checked_at": "2026-11-27T19:24:01.950049-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-28T00:14:14+00:00",
+   "text_sha": "399109d731b4a00bb59104a328294c5076f374a94aca4844e0acb264732f1e5e",
+   "title": "Lluvias por El Niño: Sutran pide a conductores no atravesar calles y baipases inundados y buscar rutas alternas"
+  },
   "https://larepublica.pe/sociedad/2026/11/27/piura-amanece-inundada-mtpe-recomienda-teletrabajo-ante-lluvias-e-indeci-cuestiona-demora-en-activar-motobombas-1302723": {
    "checked_at": "2026-11-27T09:51:39.564023-05:00",
    "extraction": {
@@ -3435,6 +3445,14 @@
    "input_tokens": 974,
    "output_tokens": 47,
    "run": "2026-11-27T18:52-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0002061,
+   "day": "2026-11-27",
+   "input_tokens": 1636,
+   "output_tokens": 85,
+   "run": "2026-11-27T19:24-05:00",
    "status": "success"
   }
  ],
