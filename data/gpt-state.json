@@ -338,6 +338,16 @@
    "text_sha": "e0c1d9aa3e950d8c2bb4d1ed01d7c1f3c4aac5015e0b8a11dfd9f266f8339fec",
    "title": "Indeci acusa a alcaldes de Piura de no activar motobombas a tiempo durante las inundaciones: \"Es omisión de funciones\""
   },
+  "https://caretas.pe/politica/keiko-fujimori-viaja-a-piura-y-anuncia-bonos-para-afectados-por-las-inundaciones/": {
+   "checked_at": "2026-11-28T09:53:21.486435-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-28T14:10:13+00:00",
+   "text_sha": "d877c744d26517ba71a734755376da745599e4aea5ec4d207b016d6d734e2f3c",
+   "title": "Keiko Fujimori viaja a Piura y anuncia bonos para afectados por las inundaciones"
+  },
   "https://caretas.pe/sociedad/aeropuerto-jorge-chavez-en-riesgo-de-inundacion-por-posible-desborde-del-rio-rimac-alerta-lap/": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -3489,6 +3499,14 @@
    "input_tokens": 970,
    "output_tokens": 33,
    "run": "2026-11-27T22:22-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001823,
+   "day": "2026-11-28",
+   "input_tokens": 1628,
+   "output_tokens": 39,
+   "run": "2026-11-28T09:53-05:00",
    "status": "success"
   }
  ],
