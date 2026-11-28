@@ -1205,6 +1205,16 @@
    "text_sha": "45212153c6343b52eb573dd2ef454ac68a83e5c57e0ad7edf002253558e5e9de",
    "title": "Villa El Salvador: aniegos y colapso de alcantarillado tras llovizna nocturna"
   },
+  "https://elcomercio.pe/peru/piura/alcaldes-de-piura-piden-ayuda-urgente-al-gobierno-tras-intensas-lluvias-que-dejan-inundaciones-y-unas-2-mil-familias-afectadas-ultimas-noticia/": {
+   "checked_at": "2026-11-28T13:24:12.781465-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-28T17:49:24+00:00",
+   "text_sha": "c35ce2a0a66fee9890930028102e34c49485af5cfc5d3e17db9d5f921553ccab",
+   "title": "Alcaldes de Piura piden ayuda urgente al Gobierno tras intensas lluvias que dejan inundaciones y unas 2 mil familias afectadas"
+  },
   "https://elcomercio.pe/peru/piura/piura-despliegan-maquinaria-y-equipos-tecnicos-para-drenar-zonas-inundadas-y-resguardar-viviendas-fenomeno-el-nino-apuesplan-ultimas-noticia/": {
    "checked_at": "2026-11-26T21:50:46.261347-05:00",
    "extraction": {
@@ -3525,6 +3535,14 @@
    "input_tokens": 1050,
    "output_tokens": 44,
    "run": "2026-11-28T12:53-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001862,
+   "day": "2026-11-28",
+   "input_tokens": 1667,
+   "output_tokens": 39,
+   "run": "2026-11-28T13:24-05:00",
    "status": "success"
   }
  ],

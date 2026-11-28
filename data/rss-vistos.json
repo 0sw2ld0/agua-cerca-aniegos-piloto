@@ -55,13 +55,6 @@
   "title": "Ministro Vinelli: se instaló equipos para acelerar drenaje de zonas inundadas en Piura",
   "url": "https://andina.pe/agencia/noticia-ministro-vinelli-se-instalo-equipos-para-acelerar-drenaje-zonas-inundadas-piura-1101746.aspx"
  },
- "https://andina.pe/agencia/noticia-oleaje-anomalo-causa-danos-e-inunda-viviendas-colan-advierten-incremento-intensidad-1101564.aspx": {
-  "first_seen": "2026-11-26T13:18:56.714025-05:00",
-  "kind": "publisher",
-  "published_at": "2026-11-26T13:14:50-05:00",
-  "title": "Oleaje anómalo causa daños e inunda viviendas en Colán: advierten incremento de intensidad",
-  "url": "https://andina.pe/agencia/noticia-oleaje-anomalo-causa-danos-e-inunda-viviendas-colan-advierten-incremento-intensidad-1101564.aspx"
- },
  "https://andina.pe/agencia/noticia-piura-soporta-ahora-una-lluvia-torrencial-inunda-calles-y-afecta-zonas-vulnerables-1101610.aspx": {
   "first_seen": "2026-11-26T18:19:18.197737-05:00",
   "kind": "publisher",
@@ -145,6 +138,13 @@
   "published_at": "2026-11-27T18:00:45+00:00",
   "title": "Lluvias en Piura y regiones por El Niño EN VIVO HOY: oleaje anómalo, inundaciones, huaicos y pronóstico de Senamhi",
   "url": "https://elcomercio.pe/peru/lluvias-en-piura-y-regiones-del-peru-por-el-nino-en-vivo-hoy-oleaje-anomalo-inundaciones-huaicos-y-pronostico-de-senamhi-lbposting-noticia/"
+ },
+ "https://elcomercio.pe/peru/piura/alcaldes-de-piura-piden-ayuda-urgente-al-gobierno-tras-intensas-lluvias-que-dejan-inundaciones-y-unas-2-mil-familias-afectadas-ultimas-noticia/": {
+  "first_seen": "2026-11-28T13:22:29.782584-05:00",
+  "kind": "publisher",
+  "published_at": "2026-11-28T17:49:24+00:00",
+  "title": "Alcaldes de Piura piden ayuda urgente al Gobierno tras intensas lluvias que dejan inundaciones y unas 2 mil familias afectadas",
+  "url": "https://elcomercio.pe/peru/piura/alcaldes-de-piura-piden-ayuda-urgente-al-gobierno-tras-intensas-lluvias-que-dejan-inundaciones-y-unas-2-mil-familias-afectadas-ultimas-noticia/"
  },
  "https://elcomercio.pe/peru/piura/piura-despliegan-maquinaria-y-equipos-tecnicos-para-drenar-zonas-inundadas-y-resguardar-viviendas-fenomeno-el-nino-apuesplan-ultimas-noticia/": {
   "first_seen": "2026-11-26T21:49:34.672309-05:00",
