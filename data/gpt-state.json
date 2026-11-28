@@ -883,6 +883,16 @@
    "text_sha": "22a15a8e92c1cc7be8e629a0e584f1748e8b37a9b35ed02e171604ccb929e942",
    "title": "Estos son los 116 distritos de Lima y Callao expuestos a inundaciones y huaicos por El Niño costero: ¿qué deben hacer las municipalidades?"
   },
+  "https://elcomercio.pe/lima/sucesos/fenomeno-el-nino-sutran-exhorta-a-conductores-evitar-atravesar-desniveles-inundados-apuesplan-ultimas-noticia/": {
+   "checked_at": "2026-11-27T19:52:40.939731-05:00",
+   "extraction": {
+    "incidents": []
+   },
+   "model": "gpt-6-luna",
+   "published_at": "2026-11-28T00:23:26+00:00",
+   "text_sha": "03e8ad9722497a1c8d727554cfc41c6d28c6f26224a63689c10936cef037ac2b",
+   "title": "Fenómeno El Niño: Sutran exhorta a conductores evitar atravesar desniveles inundados"
+  },
   "https://elcomercio.pe/lima/sucesos/furgonetas-quedan-varadas-por-tratar-de-pasar-bypass-inundado-en-villa-el-salvador-tras-lluvias-apuesplan-ultimas-noticia/": {
    "checked_at": "2026-11-06T14:41:59.308614-05:00",
    "extraction": {
@@ -3453,6 +3463,14 @@
    "input_tokens": 1636,
    "output_tokens": 85,
    "run": "2026-11-27T19:24-05:00",
+   "status": "success"
+  },
+  {
+   "cost_usd": 0.0001716,
+   "day": "2026-11-27",
+   "input_tokens": 1421,
+   "output_tokens": 59,
+   "run": "2026-11-27T19:52-05:00",
    "status": "success"
   }
  ],
